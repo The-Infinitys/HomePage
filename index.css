@@ -22,6 +22,7 @@ section.Title{
 }
 
 section.News{
+    text-align: right;
     background-color: black;
     color:white;
 }
