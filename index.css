@@ -12,6 +12,11 @@ header{
     background-color: white;
 }
 
+section.News{
+    background-color: white;
+    color:black;
+}
+
 footer{
     text-align: center;
     background-image: url(Pictures/The\ Infinity\(White\).png);
