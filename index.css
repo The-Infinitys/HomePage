@@ -29,6 +29,10 @@ section.News{
     color:white;
 }
 
+h1.bigger{
+    font-size: 100px;
+}
+
 footer{
     text-align: center;
     background-image: url(Pictures/The\ Infinity\(White\).png);
