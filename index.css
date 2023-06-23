@@ -10,11 +10,13 @@ header{
     height: 50px;
     color: black;
     background-color: white;
+    display: flex;
+    font-size: 50px;
 }
 
 section.News{
-    background-color: white;
-    color:black;
+    background-color: black;
+    color:white;
 }
 
 footer{
