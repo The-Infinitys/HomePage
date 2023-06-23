@@ -15,10 +15,11 @@ header{
 }
 
 section.Title{
+    margin-top: 60px;
     text-align: center;
     font-size: 100px;
-    background-color: white;
-    color:black;
+    background-color: black;
+    color:white;
 }
 
 section.News{
