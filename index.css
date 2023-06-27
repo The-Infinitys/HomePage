@@ -28,6 +28,12 @@ section.News{
     background-color: black;
     color:white;
 }
+section.HyperLinks{
+    text-align: center;
+    background-image: url(Pictures/The\ Infinity\(Black\).png);
+    background-color: black;
+    background-size: cover;
+}
 
 h1.bigger{
     font-size: 100px;
