@@ -29,12 +29,18 @@ section.News{
     background-color: black;
     color:white;
 }
+section.introduce{
+    text-align: left;
+    background-color: white;
+    color: black;
+    background-size: cover;
+}
 section.HyperLinks{
     text-align: center;
     background-color: black;
+    color: white;
     background-size: cover;
 }
-
 h1.bigger{
     font-size: 100px;
 }
