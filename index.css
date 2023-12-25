@@ -27,6 +27,8 @@ section.Title{
     background-color: black;
     background-image: url("Pictures/DarkRainbowHoneycomb.jpeg");
     color:white;
+    text-align:center;
+    padding-top: 80px;
 }
 
 section.News{
