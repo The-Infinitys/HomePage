@@ -4,6 +4,9 @@
 }
 
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
     margin-top: 0px;
     text-align: center;
     width: 100%;
@@ -14,7 +17,9 @@ header{
     display: flex;
     font-size: 20px;
 }
-
+p{
+    font-size: 20px;
+}
 section.Title{
     margin-top: 0;
     text-align: center;
