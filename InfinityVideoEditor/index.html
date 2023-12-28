@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Infinity Video Editor</title>
+</head>
+<style>
+  .flex{
+    display: flex;
+  }
+  #camButton{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+<body>
+  <div class="flex">
+    <canvas id="videoScreen"></canvas>
+    <div id="circleMenu">
+      <button id="camButton">
+        <img src="Photos/Camera.svg" alt="camera">
+      </button>
+    </div>
+  </div>
+  <div class="flex">
+  </div>    
+</body>
+</html>
