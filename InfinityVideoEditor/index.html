@@ -5,26 +5,67 @@
   <title>Infinity Video Editor</title>
 </head>
 <style>
+  #leftMenu{
+    position: relative;
+    top:0%;
+    left:0%;
+    width:10%;
+    height:100%;
+    background: green;
+  }
   #topELements{
-    display: flex;
-    width: 100%;
+    position: relative;
+    top:0%;
+    left:10%;
+    width: 90%;
     height: 50%;
+  }
+  #videoScreen{
+    position:absolute;
+    top:0%;
+    left:10%;
+    width:55%;
+    height:50%;
+    outline: black groove 5px;
+  }
+  #circleMenu{
+    position: absolute;
+    top:0%;
+    left:65%;
+    width:35%;
+    height: 50%;
+    outline: white groove 5px;
   }
   #camButton{
     width: 50px;
     height: 50px;
+    background-color: red;
+    /* 水平・垂直方向の中央揃え */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
   }
 </style>
 <body>
+  <div id='leftMenu'>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello!</p>
+    <p>Hello! Big World!</p>
+    
+  </div>
   <div id="topElements">
-    <canvas id="videoScreen"></canvas>
-    <div id="circleMenu">
+    <canvas id="videoScreen">
+    </canvas>
+    <div id='circleMenu'>
       <button id="camButton">
-        <img src="Photos/Camera.svg" alt="camera">
+        <img src="Photos/Camera.svg" alt="Camera" />
       </button>
     </div>
   </div>
-  <div class="flex">
-  </div>    
 </body>
 </html>
