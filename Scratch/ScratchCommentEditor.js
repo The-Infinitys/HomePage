@@ -1,4 +1,4 @@
-//ScratchCommentEditor
+  //ScratchCommentEditor
 //htmlのソース
 /*
 <div class="flex-row comments-list">
@@ -210,11 +210,14 @@ class ScratchCommentEditor{
     ]
   }
 
-  addcomment(comment){
-    str=comment;
+  addcomment(userName,comment){
+    let xml='';
+    let str=comment;
     for (let i=0;i<this.emojiCode.length;++i){
       str=str.replace(this.emojiCode[i],this.emojiSource[i]);
     }
     return str;
   }
 }
+var x=new ScratchCommentEditor();
+console.log(x.addcomment('s','This is _meow_'))
