@@ -28,7 +28,7 @@
   #sourceCode{
     position:absolute;
     width:100%;
-    height:50%;
+    height:55%;
     top:0;
     left:0;
     padding:0px;
@@ -41,8 +41,8 @@
   #runButton{
     position:absolute;
     width:100%;
-    height:10%;
-    top:50%;
+    height:5%;
+    top:55%;
     left:0;
     padding:0px;
     background:black;
@@ -66,13 +66,11 @@
     position:fixed;
     width:10%;
     height:10%;
-    top:50%;
+    top:0;
     left:0;
     padding:0px;
-    background:black;
-    border:2px solid #00ff00;
-    border-radius:0; 
-    color:#009900;
+    background:transpalent;
+    opacity:0;
   }
   `;
   document.body.appendChild(b);
