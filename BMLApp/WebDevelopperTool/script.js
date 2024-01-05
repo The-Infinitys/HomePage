@@ -16,13 +16,11 @@ document.querySelector('#HTML').addEventListener('click', (e) => {
   JSEditor.style.visibility='hidden';
   HTMLEditor.style.visibility='visible';
 });
-
 document.querySelector('#CSS').addEventListener('click', (e) => {
   HTMLEditor.style.visibility='hidden';
   JSEditor.style.visibility='hidden';
   CSSEditor.style.visibility='visible';
 });
-
 document.querySelector('#JS').addEventListener('click', (e) => {
   CSSEditor.style.visibility='hidden';
   HTMLEditor.style.visibility='hidden';
