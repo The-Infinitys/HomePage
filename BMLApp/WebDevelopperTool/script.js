@@ -1,6 +1,6 @@
-var HTMLEditor=document.getElementById("HTMLEditor")
-var CSSEditor=document.getElementById("CSSEditor")
-var JSEditor=document.getElementById("JSEditor")
+var HTMLEditor=document.getElementById("HTMLEditor");
+var CSSEditor=document.getElementById("CSSEditor");
+var JSEditor=document.getElementById("JSEditor");
 
 document.querySelector('#VisibleSwitch').addEventListener('click', (e) => {
   if(document.getElementById('DevelopperToolBox').style.visibility==='visible'){
@@ -12,25 +12,19 @@ document.querySelector('#VisibleSwitch').addEventListener('click', (e) => {
   }
 });
 document.querySelector('#HTML').addEventListener('click', (e) => {
-  if(HTMLEditor.style.visibility==='Hidden'){
-    CSSEditor.style.visibility='Hidden';
-    JSEditor.style.visibility='Hidden';
-    HTMLEditor.style.visibility='Visible';
-  }
+  CSSEditor.style.visibility='hidden';
+  JSEditor.style.visibility='hidden';
+  HTMLEditor.style.visibility='visible';
 });
 
 document.querySelector('#CSS').addEventListener('click', (e) => {
-  if(HTMLEditor.style.visibility==='Hidden'){
-    HTMLEditor.style.visibility='Hidden';
-    JSEditor.style.visibility='Hidden';
-    CSSEditor.style.visibility='Visible';
-  }
+  HTMLEditor.style.visibility='hidden';
+  JSEditor.style.visibility='hidden';
+  CSSEditor.style.visibility='visible';
 });
 
 document.querySelector('#JS').addEventListener('click', (e) => {
-  if(HTMLEditor.style.visibility==='Hidden'){
-    CSSEditor.style.visibility='Hidden';
-    HTMLEditor.style.visibility='Hidden';
-    JSEditor.style.visibility='Visible';
-  }
+  CSSEditor.style.visibility='hidden';
+  HTMLEditor.style.visibility='hidden';
+  JSEditor.style.visibility='visible';
 });
