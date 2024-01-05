@@ -1,7 +1,9 @@
 var HTMLEditor=document.getElementById("HTMLEditor");
 var CSSEditor=document.getElementById("CSSEditor");
 var JSEditor=document.getElementById("JSEditor");
-
+function getHTMLSource(){
+  return document.documentElement.outerHTML.replace("/&/g", "&amp;").replace("/</g", "&lt;").replace("/>/g", "&gt;");
+}
 document.querySelector('#VisibleSwitch').addEventListener('click', (e) => {
   if(document.getElementById('DevelopperToolBox').style.visibility==='visible'){
     document.getElementById('DevelopperToolBox').style.visibility = 'hidden';
@@ -25,4 +27,7 @@ document.querySelector('#JS').addEventListener('click', (e) => {
   CSSEditor.style.visibility='hidden';
   HTMLEditor.style.visibility='hidden';
   JSEditor.style.visibility='visible';
+});
+document.querySelector('#RestoreHTML').addEventListener('click',(e)=>{
+
 });
