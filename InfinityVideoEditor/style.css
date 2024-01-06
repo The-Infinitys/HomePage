@@ -1,10 +1,12 @@
 @charset "utf-8";
 
+/*全体の設定*/
 * {
   padding: 0;
   margin: 0;
 }
 
+/*取り消し、やり直しなどを載せるメニュー*/
 #leftMenu {
   position: relative;
   top: 0%;
@@ -14,6 +16,7 @@
   background: green;
 }
 
+/*動画表示スクリーンや操作ボタンの設置場所*/
 #topELements {
   position: relative;
   top: 0%;
@@ -22,6 +25,7 @@
   height: 50%;
 }
 
+/*動画スクリーン*/
 #videoScreen {
   position: absolute;
   top: 0%;
@@ -31,6 +35,7 @@
   outline: black groove 5px;
 }
 
+/*円状メニュー。ここに読み込みボタンなどを用意する*/
 #circleMenu {
   position: absolute;
   top: 0%;
@@ -40,6 +45,7 @@
   outline: white groove 5px;
 }
 
+/*カメラ起動ボタン*/
 #camButton {
   width: 50px;
   height: 50px;
