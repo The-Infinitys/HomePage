@@ -96,6 +96,7 @@
   height:10%;
 }
 #CSSEditor{
+  visibility:hidden;
   position:absolute;
   top:10%;
   left:0;
@@ -130,6 +131,7 @@
   height:10%;
 }
 #JSEditor{
+  visibility:hidden;
   position:absolute;
   top:10%;
   left:0;

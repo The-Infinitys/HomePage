@@ -8,6 +8,17 @@ function getHTMLSource() {
     .replace("/</g", "&lt;")
     .replace("/>/g", "&gt;");
 }
+function openDevelopper(){
+    document.getElementById("DevelopperToolBox").style.visibility = "visible";
+    
+  document.getElementById("MaximiseSwitch").style.visibility = "visible";
+    
+  CSSEditor.style.visibility = "hidden";
+  JSEditor.style.visibility = "hidden";
+  HTMLEditor.style.visibility = "visible";
+    document.getElementById("VisibleSwitch").style.opacity = "1";
+}
+openDevelopper();
 HTMLSource.value = getHTMLSource();
 document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
   if (
@@ -20,14 +31,7 @@ document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
   HTMLEditor.style.visibility = "hidden";
     document.getElementById("VisibleSwitch").style.opacity = "0";
   } else {
-    document.getElementById("DevelopperToolBox").style.visibility = "visible";
-    
-  document.getElementById("MaximiseSwitch").style.visibility = "visible";
-    
-  CSSEditor.style.visibility = "visible";
-  JSEditor.style.visibility = "visible";
-  HTMLEditor.style.visibility = "visible";
-    document.getElementById("VisibleSwitch").style.opacity = "1";
+    openDevelopper();
   }
 });
 document.querySelector("#MaximiseSwitch").addEventListener("click",(e)=>{
