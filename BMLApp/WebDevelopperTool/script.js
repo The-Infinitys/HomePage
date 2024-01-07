@@ -1,6 +1,7 @@
 var HTMLEditor=document.getElementById("HTMLEditor");
 var CSSEditor=document.getElementById("CSSEditor");
 var JSEditor=document.getElementById("JSEditor");
+var HTMLSource=document.getElementById("HTMLSource");
 function getHTMLSource(){
   return document.documentElement.outerHTML.replace("/&/g", "&amp;").replace("/</g", "&lt;").replace("/>/g", "&gt;");
 }
@@ -29,5 +30,8 @@ document.querySelector('#JS').addEventListener('click', (e) => {
   JSEditor.style.visibility='visible';
 });
 document.querySelector('#RestoreHTML').addEventListener('click',(e)=>{
-
+  HTMLSource.value=getHTMLSource();
+});
+document.querySelector('#UpdateHTML').addEventListener('click',(e)=>{
+  document.documentElement.outerHTML=HTMLSource.value;
 });
