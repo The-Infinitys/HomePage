@@ -78,6 +78,23 @@
   height:80%;
   border:2px solid orange;
 }
+#UpdateHTML{
+  z-index: 999999;
+  position:absolute;
+  top:80%;
+  left:0;
+  width:100%;
+  height:10%;
+}
+
+#RestoreHTML{
+  z-index: 999999;
+  position:absolute;
+  top:90%;
+  left:0;
+  width:100%;
+  height:10%;
+}
 #CSSEditor{
   position:absolute;
   top:10%;
