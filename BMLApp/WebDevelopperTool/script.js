@@ -14,9 +14,19 @@ document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
     document.getElementById("DevelopperToolBox").style.visibility === "visible"
   ) {
     document.getElementById("DevelopperToolBox").style.visibility = "hidden";
+  document.getElementById("MaximiseSwitch").style.visibility = "hidden";
+  CSSEditor.style.visibility = "hidden";
+  JSEditor.style.visibility = "hidden";
+  HTMLEditor.style.visibility = "hidden";
     document.getElementById("VisibleSwitch").style.opacity = "0";
   } else {
     document.getElementById("DevelopperToolBox").style.visibility = "visible";
+    
+  document.getElementById("MaximiseSwitch").style.visibility = "visible";
+    
+  CSSEditor.style.visibility = "visible";
+  JSEditor.style.visibility = "visible";
+  HTMLEditor.style.visibility = "visible";
     document.getElementById("VisibleSwitch").style.opacity = "1";
   }
 });
