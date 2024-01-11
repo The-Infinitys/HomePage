@@ -68,12 +68,11 @@ console.log = ((logTextAreaArgument) => {
   let logTextArea = logTextAreaArgument;
   return text => logTextArea.innerHTML += text + '<br>';
 })(document.getElementById("JSRunnerConsole"));
-function a() {
-  x = document.getElementById("test")
-  x.remove();
-  y = document.createElement("script");
-  y.id = "test";
-  y.innerHTML = "console.log(" + getRandomInt(9).toString() + ")";
-  document.body.appendChild(y);
-  document.getElementById("123").innerHTML = console;
-}
+document.querySelector("#JSRUunnerButton").addEventListener("click",(e)=>{
+  let before = document.getElementById("JSRunner")
+  before.remove();
+  let after = document.createElement("script");
+  after.id = "JSRunner";
+  after.innerHTML = program;
+  document.body.appendChild(after);
+})
