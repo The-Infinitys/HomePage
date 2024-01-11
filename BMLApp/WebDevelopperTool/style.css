@@ -134,6 +134,7 @@
   height: 10%;
   border: 2px solid lightblue;
 }
+
 #JSEditor {
   visibility: hidden;
   position: absolute;
@@ -173,7 +174,9 @@
   width: 100%;
   height: 20%;
   color: white;
-  font-family:sans;
+  font-family: sans-serif;
   background-color: black;
   border: 2px solid yellow;
+  overflow: scroll;
+  font-size:5px;
 }
