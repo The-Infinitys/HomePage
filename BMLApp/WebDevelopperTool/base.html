@@ -1,4 +1,3 @@
-<!doctype html>
 <div id="InfinityDevelopperTool">
   <style>
     #DevelopperToolBox {
@@ -81,61 +80,59 @@
     <button id="JS">JS</button>
     <div id="JSEditor"></div>
   </div>
-
-  <script>
-    var HTMLEditor = document.getElementById("HTMLEditor");
-    var CSSEditor = document.getElementById("CSSEditor");
-    var JSEditor = document.getElementById("JSEditor");
-    function openDevelopper() {
-      document.getElementById("DevelopperToolBox").style.visibility = "visible";
-
-      document.getElementById("MaximiseSwitch").style.visibility = "visible";
-
-      CSSEditor.style.visibility = "hidden";
-      JSEditor.style.visibility = "hidden";
-      HTMLEditor.style.visibility = "visible";
-      document.getElementById("VisibleSwitch").style.opacity = "1";
-    }
-    openDevelopper();
-    document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
-      if (
-        document.getElementById("DevelopperToolBox").style.visibility === "visible"
-      ) {
-        document.getElementById("DevelopperToolBox").style.visibility = "hidden";
-        document.getElementById("MaximiseSwitch").style.visibility = "hidden";
-        CSSEditor.style.visibility = "hidden";
-        JSEditor.style.visibility = "hidden";
-        HTMLEditor.style.visibility = "hidden";
-        document.getElementById("VisibleSwitch").style.opacity = "0";
-      } else {
-        openDevelopper();
-      }
-    });
-    document.querySelector("#MaximiseSwitch").addEventListener("click", (e) => {
-      if (document.getElementById("DevelopperToolBox").style.width == "100%") {
-        document.getElementById("DevelopperToolBox").style.width = "20%";
-      } else {
-        document.getElementById("DevelopperToolBox").style.width = "100%";
-      }
-    });
-    HTMLSource.value = getHTMLSource();
-    document.querySelector("#HTML").addEventListener("click", (e) => {
-      CSSEditor.style.visibility = "hidden";
-      JSEditor.style.visibility = "hidden";
-      HTMLEditor.style.visibility = "visible";
-    });
-    document.querySelector("#CSS").addEventListener("click", (e) => {
-      HTMLEditor.style.visibility = "hidden";
-      JSEditor.style.visibility = "hidden";
-      CSSEditor.style.visibility = "visible";
-    });
-    document.querySelector("#JS").addEventListener("click", (e) => {
-      CSSEditor.style.visibility = "hidden";
-      HTMLEditor.style.visibility = "hidden";
-      JSEditor.style.visibility = "visible";
-    });
-  </script>
 </div>
 </body>
 
-</html>
+<script>
+  var HTMLEditor = document.getElementById("HTMLEditor");
+  var CSSEditor = document.getElementById("CSSEditor");
+  var JSEditor = document.getElementById("JSEditor");
+  function openDevelopper() {
+    document.getElementById("DevelopperToolBox").style.visibility = "visible";
+
+    document.getElementById("MaximiseSwitch").style.visibility = "visible";
+
+    CSSEditor.style.visibility = "hidden";
+    JSEditor.style.visibility = "hidden";
+    HTMLEditor.style.visibility = "visible";
+    document.getElementById("VisibleSwitch").style.opacity = "1";
+  }
+  openDevelopper();
+  document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
+    if (
+      document.getElementById("DevelopperToolBox").style.visibility === "visible"
+    ) {
+      document.getElementById("DevelopperToolBox").style.visibility = "hidden";
+      document.getElementById("MaximiseSwitch").style.visibility = "hidden";
+      CSSEditor.style.visibility = "hidden";
+      JSEditor.style.visibility = "hidden";
+      HTMLEditor.style.visibility = "hidden";
+      document.getElementById("VisibleSwitch").style.opacity = "0";
+    } else {
+      openDevelopper();
+    }
+  });
+  document.querySelector("#MaximiseSwitch").addEventListener("click", (e) => {
+    if (document.getElementById("DevelopperToolBox").style.width == "100%") {
+      document.getElementById("DevelopperToolBox").style.width = "20%";
+    } else {
+      document.getElementById("DevelopperToolBox").style.width = "100%";
+    }
+  });
+  HTMLSource.value = getHTMLSource();
+  document.querySelector("#HTML").addEventListener("click", (e) => {
+    CSSEditor.style.visibility = "hidden";
+    JSEditor.style.visibility = "hidden";
+    HTMLEditor.style.visibility = "visible";
+  });
+  document.querySelector("#CSS").addEventListener("click", (e) => {
+    HTMLEditor.style.visibility = "hidden";
+    JSEditor.style.visibility = "hidden";
+    CSSEditor.style.visibility = "visible";
+  });
+  document.querySelector("#JS").addEventListener("click", (e) => {
+    CSSEditor.style.visibility = "hidden";
+    HTMLEditor.style.visibility = "hidden";
+    JSEditor.style.visibility = "visible";
+  });
+</script>
