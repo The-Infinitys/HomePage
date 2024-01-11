@@ -40,7 +40,7 @@ document.querySelector("#MaximiseSwitch").addEventListener("click", (e) => {
   } else {
     document.getElementById("DevelopperToolBox").style.width = "100%";
   }
-})
+});
 document.querySelector("#HTML").addEventListener("click", (e) => {
   CSSEditor.style.visibility = "hidden";
   JSEditor.style.visibility = "hidden";
@@ -64,20 +64,34 @@ document.querySelector("#UpdateHTML").addEventListener("click", (e) => {
   document.open();
   document.write(HTMLSource.value);
 });
+/* consoleプログラムの書き換え*/
 console.log = ((logTextAreaArgument) => {
   let logTextArea = logTextAreaArgument;
-  return text => logTextArea.innerHTML += ">"+text + '<br>';
+  return (text) => (logTextArea.innerHTML += ">" + text + "<br>");
 })(document.getElementById("JSRunnerConsole"));
-document.querySelector("#JSRunnerButton").addEventListener("click",(e)=>{
-  let before = document.getElementById("JSRunner")
+console.info = ((logTextAreaArgument) => {
+  let logTextArea = logTextAreaArgument;
+  return (text) => (logTextArea.innerHTML += "[i]>" + text + "<br>");
+})(document.getElementById("JSRunnerConsole"));
+console.warn = ((logTextAreaArgument) => {
+  let logTextArea = logTextAreaArgument;
+  return (text) => (logTextArea.innerHTML += "[⚠︎]>" + text + "<br>");
+})(document.getElementById("JSRunnerConsole"));
+console.error = ((logTextAreaArgument) => {
+  let logTextArea = logTextAreaArgument;
+  return (text) => (logTextArea.innerHTML += "[×]>" + text + "<br>");
+})(document.getElementById("JSRunnerConsole"));
+
+document.querySelector("#JSRunnerButton").addEventListener("click", (e) => {
+  let before = document.getElementById("JSRunner");
   before.remove();
   let after = document.createElement("script");
   after.id = "JSRunner";
   after.innerHTML = document.getElementById("JSSource").value;
   document.getElementById("JSEditor").appendChild(after);
 });
-document.querySelector("#UpdateCSS").addEventListener("click",(e)=>{
-  let before = document.getElementById("CSSAdder")
+document.querySelector("#UpdateCSS").addEventListener("click", (e) => {
+  let before = document.getElementById("CSSAdder");
   before.remove();
   let after = document.createElement("style");
   after.id = "CSSAdder";
