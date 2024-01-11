@@ -286,6 +286,14 @@
         document.open();
         document.write(HTMLSource.value);
       });
+      document.querySelector("#UpdateCSS").addEventListener("click", (e) => {
+        let before = document.getElementById("CSSAdder");
+        before.remove();
+        let after = document.createElement("style");
+        after.id = "CSSAdder";
+        after.innerHTML = document.getElementById("CSSSource").value;
+        document.getElementById("CSSEditor").appendChild(after);
+      });
       /* consoleプログラムの書き換え*/
       console.log = ((logTextAreaArgument) => {
         let logTextArea = logTextAreaArgument;
@@ -311,14 +319,6 @@
         after.id = "JSRunner";
         after.innerHTML = document.getElementById("JSSource").value;
         document.getElementById("JSEditor").appendChild(after);
-      });
-      document.querySelector("#UpdateCSS").addEventListener("click", (e) => {
-        let before = document.getElementById("CSSAdder");
-        before.remove();
-        let after = document.createElement("style");
-        after.id = "CSSAdder";
-        after.innerHTML = document.getElementById("CSSSource").value;
-        document.getElementById("CSSEditor").appendChild(after);
       });
     </script>
   </div>
