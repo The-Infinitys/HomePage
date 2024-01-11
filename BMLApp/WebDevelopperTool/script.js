@@ -66,13 +66,13 @@ document.querySelector("#UpdateHTML").addEventListener("click", (e) => {
 });
 console.log = ((logTextAreaArgument) => {
   let logTextArea = logTextAreaArgument;
-  return text => logTextArea.innerHTML += text + '<br>';
+  return text => logTextArea.innerHTML += ">"+text + '<br>';
 })(document.getElementById("JSRunnerConsole"));
-document.querySelector("#JSRUunnerButton").addEventListener("click",(e)=>{
+document.querySelector("#JSRunnerButton").addEventListener("click",(e)=>{
   let before = document.getElementById("JSRunner")
   before.remove();
   let after = document.createElement("script");
   after.id = "JSRunner";
-  after.innerHTML = program;
+  after.innerHTML = document.getElementById("JSSource").value;
   document.body.appendChild(after);
 })
