@@ -223,12 +223,6 @@
       var HTMLEditor = document.getElementById("HTMLEditor");
       var CSSEditor = document.getElementById("CSSEditor");
       var JSEditor = document.getElementById("JSEditor");
-      function getHTMLSource() {
-        return document.documentElement.outerHTML
-          .replace("/&/g", "&amp;")
-          .replace("/</g", "&lt;")
-          .replace("/>/g", "&gt;");
-      }
       function openDevelopper() {
         document.getElementById("DevelopperToolBox").style.visibility = "visible";
         
@@ -277,6 +271,12 @@
         JSEditor.style.visibility = "visible";
       });
       var HTMLSource = document.getElementById("HTMLSource");
+      function getHTMLSource() {
+        return document.documentElement.outerHTML
+          .replace("/&/g", "&amp;")
+          .replace("/</g", "&lt;")
+          .replace("/>/g", "&gt;");
+      }
       HTMLSource.value = getHTMLSource();
       document.querySelector("#RestoreHTML").addEventListener("click", (e) => {
         HTMLSource.value = getHTMLSource();
