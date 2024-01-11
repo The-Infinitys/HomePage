@@ -141,7 +141,7 @@
   top: 90%;
   left: 0;
   width: 100%;
-  height: 10%;
+  height: 100%;
   border: 2px solid lightblue;
 }
 
@@ -151,7 +151,7 @@
   top: 10%;
   left: 0;
   width: 100%;
-  height: 70%;
+  height: 90%;
   border: 2px solid yellow;
 }
 
@@ -160,7 +160,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 70%;
   border: 2px solid yellow;
 }
 
@@ -177,6 +177,12 @@
 }
 
 #JSRunnerConsole {
+  z-index: 999999;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  height: 20%;
   color: white;
   background-color: black;
   border: 2px solid yellow;
