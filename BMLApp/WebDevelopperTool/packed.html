@@ -223,7 +223,6 @@
       var HTMLEditor = document.getElementById("HTMLEditor");
       var CSSEditor = document.getElementById("CSSEditor");
       var JSEditor = document.getElementById("JSEditor");
-      var HTMLSource = document.getElementById("HTMLSource");
       function getHTMLSource() {
         return document.documentElement.outerHTML
           .replace("/&/g", "&amp;")
@@ -232,20 +231,19 @@
       }
       function openDevelopper() {
         document.getElementById("DevelopperToolBox").style.visibility = "visible";
-
+        
         document.getElementById("MaximiseSwitch").style.visibility = "visible";
-
+        
         CSSEditor.style.visibility = "hidden";
         JSEditor.style.visibility = "hidden";
         HTMLEditor.style.visibility = "visible";
         document.getElementById("VisibleSwitch").style.opacity = "1";
       }
       openDevelopper();
-      HTMLSource.value = getHTMLSource();
       document.querySelector("#VisibleSwitch").addEventListener("click", (e) => {
         if (
           document.getElementById("DevelopperToolBox").style.visibility === "visible"
-        ) {
+          ) {
           document.getElementById("DevelopperToolBox").style.visibility = "hidden";
           document.getElementById("MaximiseSwitch").style.visibility = "hidden";
           CSSEditor.style.visibility = "hidden";
@@ -278,6 +276,8 @@
         HTMLEditor.style.visibility = "hidden";
         JSEditor.style.visibility = "visible";
       });
+      var HTMLSource = document.getElementById("HTMLSource");
+      HTMLSource.value = getHTMLSource();
       document.querySelector("#RestoreHTML").addEventListener("click", (e) => {
         HTMLSource.value = getHTMLSource();
       });
