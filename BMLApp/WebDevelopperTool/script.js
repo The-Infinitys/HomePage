@@ -74,5 +74,13 @@ document.querySelector("#JSRunnerButton").addEventListener("click",(e)=>{
   let after = document.createElement("script");
   after.id = "JSRunner";
   after.innerHTML = document.getElementById("JSSource").value;
-  document.body.appendChild(after);
-})
+  document.getElementById("JSEditor").appendChild(after);
+});
+document.querySelector("#UpdateCSS").addEventListener("click",(e)=>{
+  let before = document.getElementById("CSSAdder")
+  before.remove();
+  let after = document.createElement("style");
+  after.id = "CSSAdder";
+  after.innerHTML = document.getElementById("CSSSource").value;
+  document.getElementById("CSSEditor").appendChild(after);
+});
