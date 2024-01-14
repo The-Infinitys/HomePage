@@ -8,7 +8,7 @@
 
 /*取り消し、やり直しなどを載せるメニュー*/
 #leftMenu {
-  position: relative;
+  position: fixed;
   top: 0%;
   left: 0%;
   width: 10%;
@@ -21,22 +21,24 @@
   width:100%;
   height:25%;
   background-size: cover;
+  background:black;
+  border:2px solid white;
 }
 #cancel{
-  top:0;
+  top:0%;
   background-image: url("./Photos/leftMenu/cancel.svg");
 }
 
 #redo{
-  top:25;
+  top:25%;
   background-image: url("./Photos/leftMenu/redo.svg");
 }
 #maximize{
-  top:50;
+  top:50%;
   background-image: url("./Photos/leftMenu/maximize.svg");
 }
 #download{
-  top:75;
+  top:75%;
   background-image: url("./Photos/leftMenu/downLoad.svg");
 }
 
@@ -85,6 +87,12 @@
   background-size: cover;
 }
 /*circleMenu内にある扇状のボタン*/
-#fanShapeButton{
+.fanShapeButton{
 position: absolute;
+}
+#RIGHT{
+  width:50%;
+  height:50%;
+  right:0;
+  top:25%;
 }
