@@ -20,19 +20,24 @@
   position: absolute;
   width:100%;
   height:25%;
+  background-size: cover;
 }
 #cancel{
   top:0;
+  background-image: url("./Photos/leftMenu/cancel.svg");
 }
 
 #redo{
   top:25;
+  background-image: url("./Photos/leftMenu/redo.svg");
 }
 #maximize{
   top:50;
+  background-image: url("./Photos/leftMenu/maximize.svg");
 }
 #download{
   top:75;
+  background-image: url("./Photos/leftMenu/downLoad.svg");
 }
 
 /*動画表示スクリーンや操作ボタンの設置場所*/
