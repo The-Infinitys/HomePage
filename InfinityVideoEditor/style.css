@@ -9,11 +9,11 @@
 /*取り消し、やり直しなどを載せるメニュー*/
 #leftMenu {
   position: fixed;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 10%;
-  height: 100%;
-  background: green;
+  height: 50%;
+  background: black;
 }
 /*leftMenu内にあるボタン*/
 .leftButtons{
@@ -114,4 +114,22 @@ position: absolute;
   height:50%;
   left:25%;
   bottom:0;
+}
+#bottomElements{
+  position: fixed;
+  top: 50%;
+  left:0;
+  width:100%;
+  height:50%;
+}
+#timeLines{
+  position: absolute;
+  width:60%;
+  height:100%;
+}
+#spriteSetting{
+  position:absolute;
+  right:0;
+  width: 40%;
+  height:100%;
 }
