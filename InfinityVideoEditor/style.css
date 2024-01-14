@@ -81,5 +81,5 @@
 }
 /*circleMenu内にある扇状のボタン*/
 #fanShapeButton{
-
+position: absolute;
 }
