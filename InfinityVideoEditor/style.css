@@ -22,8 +22,8 @@
   height:25%;
   background-size: contain;
   background-repeat: no-repeat;
-  background:black;
-  border:2px solid white;
+  background:gray;
+  border:2px inset white;
 }
 #cancel{
   top:0%;
