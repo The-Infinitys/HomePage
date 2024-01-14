@@ -45,7 +45,7 @@
 
 /*動画表示スクリーンや操作ボタンの設置場所*/
 #topELements {
-  position: relative;
+  position: fixed;
   top: 0%;
   left: 10%;
   width: 90%;
@@ -91,9 +91,27 @@
 .fanShapeButton{
 position: absolute;
 }
+#TOP{
+  width:50%;
+  height:50%;
+  right:25%;
+  top:0;
+}
 #RIGHT{
   width:50%;
   height:50%;
   right:0;
   top:25%;
+}
+#LEFT{
+  width:50%;
+  height:50%;
+  left:0;
+  top:25%;
+}
+#BOTTOM{
+  width:50%;
+  height:50%;
+  left:25%;
+  bottom:0;
 }
