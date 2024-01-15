@@ -63,10 +63,7 @@ header {
 
 #blogBox {
   width: 100%;
-  background-color: #222;
-  animation-name: darkrainbow;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
+  background-color: transparent;
   padding-top: 10%;
   padding-bottom: 10%;
 }
