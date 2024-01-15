@@ -4934,7 +4934,7 @@ textarea::-webkit-scrollbar-thumb {
   list-style-type: none;
   align-self: flex-end;
   white-space: nowrap;
-  float: right
+  float: right;
 }
 
 #topnav ul.account-nav>li.join-scratch,
@@ -4989,7 +4989,7 @@ textarea::-webkit-scrollbar-thumb {
   right: 0 !important;
   left: auto;
   margin-top: 18px;
-  background-color: #0f8bc0;
+  background-color: #855cd6;
   border-color: #149acb;
   border-top-left-radius: 4px
 }
@@ -5001,7 +5001,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav .sign-in .popover .arrow:after {
-  border-bottom-color: #0f8bc0
+  border-bottom-color: #855cd6
 }
 
 #topnav ul.account-nav .sign-in form label,
@@ -5122,7 +5122,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav .logged-in-user .dropdown-menu {
-  background-color: #0f8bc0;
+  background-color: #855cd6;
   margin-top: 8px;
   left: auto;
   right: 0;
@@ -5158,7 +5158,7 @@ textarea::-webkit-scrollbar-thumb {
 #topnav li.logout.divider input {
   width: 100%;
   border: 0;
-  background-color: #0f8bc0;
+  background-color: #855cd6;
   box-shadow: none;
   margin: 0;
   color: white;
