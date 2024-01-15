@@ -4861,7 +4861,7 @@ textarea::-webkit-scrollbar-thumb {
 
 #topnav ul.site-nav li {
   display: inline-block;
-  border-left: 1px solid #149acb;
+  border-left: 1px solid #855cd6;
   height: 100%;
   margin: 0;
   line-height: 35px;
@@ -4873,7 +4873,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.site-nav li.last {
-  border-right: 1px solid #149acb
+  border-right: 1px solid #855cd6
 }
 
 #topnav ul.site-nav li a {
@@ -4943,12 +4943,12 @@ textarea::-webkit-scrollbar-thumb {
   margin: 0;
   vertical-align: top;
   line-height: 33px;
-  border-left: 1px solid #149acb;
+  border-left: 1px solid #855cd6;
   cursor: pointer
 }
 
 #topnav ul.account-nav>li:last-child {
-  border-right: 1px solid #149acb
+  border-right: 1px solid #855cd6
 }
 
 #topnav ul.account-nav>li.sign-in:hover,
@@ -4990,14 +4990,14 @@ textarea::-webkit-scrollbar-thumb {
   left: auto;
   margin-top: 18px;
   background-color: #855cd6;
-  border-color: #149acb;
+  border-color: #855cd6;
   border-top-left-radius: 4px
 }
 
 #topnav ul.account-nav .sign-in .popover .arrow {
   right: 10%;
   left: auto;
-  border-bottom-color: #149acb
+  border-bottom-color: #855cd6
 }
 
 #topnav ul.account-nav .sign-in .popover .arrow:after {
@@ -5046,7 +5046,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav.logged-in>li {
-  border-left: 1px solid #149acb;
+  border-left: 1px solid #855cd6;
   line-height: 35px;
   margin: 0
 }
@@ -5152,7 +5152,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav ul.user-nav li.logout.divider {
-  border-top: 1px solid #149acb
+  border-top: 1px solid #855cd6
 }
 
 #topnav li.logout.divider input {
