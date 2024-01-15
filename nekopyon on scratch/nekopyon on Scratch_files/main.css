@@ -177,7 +177,7 @@ h4 {
 
 a,
 input.link {
-  color: #1aa0d8;
+  color: #8d67d8;
   text-decoration: none;
   text-shadow: none
 }
@@ -196,7 +196,7 @@ input.link:hover,
 input.link:active,
 input.link.black:hover,
 input.link.black:active {
-  color: #1aa0d8;
+  color: #8d67d8;
   text-decoration: underline;
   cursor: pointer
 }
@@ -1900,7 +1900,7 @@ body.admin.closed #admin-panel .expand {
 
 #admin-panel .clear-mute-score {
   float: right;
-  color: #1aa0d8;
+  color: #8d67d8;
   cursor: pointer
 }
 
@@ -2853,7 +2853,7 @@ body.admin #explore-bar [data-content="view"] {
 }
 
 #comments .more-replies .pulldown {
-  color: #1aa0d8;
+  color: #8d67d8;
   border: 1px solid #CCC;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -2969,7 +2969,7 @@ body.admin #explore-bar [data-content="view"] {
 }
 
 #comments .comment .info .name a:hover {
-  color: #1aa0d8
+  color: #8d67d8
 }
 
 #comments .comment .info .content {
@@ -3617,7 +3617,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #footer #footer-menu li a {
-  color: #1aa0d8
+  color: #8d67d8
 }
 
 #footer ul.footer-col {
@@ -4108,7 +4108,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .deletion-canceled a {
-  color: #1aa0d8
+  color: #8d67d8
 }
 
 #email-resend-box {
@@ -4131,12 +4131,12 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #email-resend-box a {
-  color: #1aa0d8
+  color: #8d67d8
 }
 
 #email-resend-box input[type="button"] {
-  background-color: #1aa0d8;
-  border-color: #1aa0d8;
+  background-color: #8d67d8;
+  border-color: #8d67d8;
   background-image: none;
   line-height: 20px
 }
@@ -5510,7 +5510,7 @@ input.hidden[type="file"] {
 .registration a.why-we-ask .question-mark {
   font-weight: bold;
   font-size: 10px;
-  background-color: #1aa0d8;
+  background-color: #8d67d8;
   padding: 1px 5px;
   border-radius: 30px;
   color: white;
