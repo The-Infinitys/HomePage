@@ -481,10 +481,10 @@ input.link {
 
 input:focus,
 textarea:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  border-color: rgba(133, 92, 214, 0.8);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(133, 92, 214, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(133, 92, 214, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(133, 92, 214, 0.6);
   outline: 0;
   outline: thin dotted \9
 }
@@ -572,7 +572,7 @@ select:focus {
 button {
   line-height: 30px;
   border: 1px solid #eee;
-  border-color: #1798c4 #1798c4 hsl(195, 79%, 38%);
+  border-color: #855CD6 #855CD6 hsl(270, 79%, 38%);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -582,14 +582,14 @@ button {
   cursor: pointer;
   overflow: visible;
   font-weight: normal;
-  background-color: #169fdb;
+  background-color: #855cd6;
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #19b6fa, #169fdb);
-  background-image: -moz-linear-gradient(top, #30aadf, #169fdb);
-  background-image: -ms-linear-gradient(top, #30aadf, #169fdb);
-  background-image: -o-linear-gradient(top, #30aadf, #169fdb);
-  background-image: linear-gradient(top, #30aadf, #169fdb);
-  filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#30aadf, endColorStr=#169fdb);
+  background-image: -webkit-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -moz-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -ms-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -o-linear-gradient(top, #855cd6, #855cd6);
+  background-image: linear-gradient(top, #855cd6, #855cd6);
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#855cd6, endColorStr=#855cd6);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -623,11 +623,11 @@ button>span.icon {
 
 .button:hover,
 button:hover {
-  background-image: -webkit-linear-gradient(top, #169fdb, #169fdb);
-  background-image: -moz-linear-gradient(top, #169fdb, #169fdb);
-  background-image: -ms-linear-gradient(top, #169fdb, #169fdb);
-  background-image: -o-linear-gradient(top, #169fdb, #169fdb);
-  background-image: linear-gradient(top, #169fdb, #169fdb);
+  background-image: -webkit-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -moz-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -ms-linear-gradient(top, #855cd6, #855cd6);
+  background-image: -o-linear-gradient(top, #855cd6, #855cd6);
+  background-image: linear-gradient(top, #855cd6, #855cd6);
   -webkit-transition: .1s linear all;
   -moz-transition: .1s linear all;
   -ms-transition: .1s linear all;
