@@ -5775,7 +5775,7 @@ input.hidden[type="file"] {
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 .clearfix {
-  *zoom: 1
+  *zoom: 1;
 }
 
 .clearfix:before,
