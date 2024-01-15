@@ -4869,7 +4869,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.site-nav li:hover {
-  background-color: #0c6185
+  background-color: #7854c0
 }
 
 #topnav ul.site-nav li.last {
@@ -4953,7 +4953,7 @@ textarea::-webkit-scrollbar-thumb {
 
 #topnav ul.account-nav>li.sign-in:hover,
 #topnav ul.account-nav>li.sign-in.open {
-  background-color: #0c6185
+  background-color: #7854c0
 }
 
 #topnav ul.account-nav>li.join-scratch {
@@ -5056,7 +5056,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav.logged-in li:hover {
-  background-color: #0c6185
+  background-color: #7854c0
 }
 
 #topnav ul.account-nav.logged-in>li>span {
@@ -5139,7 +5139,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav ul.account-nav .logged-in-user.dropdown.open {
-  background-color: #0c6185 !important
+  background-color: #7854c0 !important
 }
 
 #topnav ul.account-nav ul.user-nav li {
@@ -5166,7 +5166,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #topnav li.logout.divider input:hover {
-  background-color: #0c6185
+  background-color: #7854c0
 }
 
 #topnav ul.account-nav ul.user-nav li a {
