@@ -18,20 +18,19 @@
 /*leftMenu内にあるボタン*/
 #cancel{
   top:0%;
-  background-image: url("./Photos/leftMenu/cancel.svg");
 }
-
 #redo{
   top:25%;
-  background-image: url("./Photos/leftMenu/redo.svg");
 }
 #maximize{
   top:50%;
-  background-image: url("./Photos/leftMenu/maximize.svg");
 }
 #download{
   top:75%;
-  background-image: url("./Photos/leftMenu/downLoad.svg");
+  font-size:3vmin;
+}
+.leftButtonsSource{
+  object-fit: fill;
 }
 .leftButtons{
   position: absolute;
@@ -41,6 +40,9 @@
   background-repeat: no-repeat;
   background:gray;
   border:2px inset white;
+  color:white;
+  font-family:arial;
+  font-size:9vmin;
 }
 
 /*動画表示スクリーンや操作ボタンの設置場所*/
@@ -131,5 +133,11 @@ position: absolute;
   position:absolute;
   right:0;
   width: 40%;
+  height:100%;
+  border:2px solid red;
+}
+.infoEditor{
+  position:absolute;
+  width:100%;
   height:100%;
 }
