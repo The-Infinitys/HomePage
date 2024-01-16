@@ -4,7 +4,7 @@ function resizeCanvas() {
   RainbowHoneycomb.width = window.innerWidth.toString();
   RainbowHoneycomb.height = window.innerHeight.toString();
 }
-
+resizeCanvas();
 window.onresize = resizeCanvas;
 RainbowHoneycomb.style = "position:fixed;top:0;left:0;z-index:-100;"
 const draw = RainbowHoneycomb.getContext("2d");
