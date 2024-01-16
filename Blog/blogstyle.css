@@ -4,7 +4,7 @@ images* {
   font-family: serif;
 }
 body{
-  background-image: url("../Pictures/RainbowHoneycomb.png");
+  background-image: url("../images/RainbowHoneycomb.png");
 }
 header {
   position: fixed;
