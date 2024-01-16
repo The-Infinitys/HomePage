@@ -1,8 +1,12 @@
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.getElementById("RainbowHoneycomb");
-RainbowHoneycomb.width=window.innerWidth.toString();
-RainbowHoneycomb.height=window.innerHeight.toString();
-RainbowHoneycomb.style="position:fixed;top:0;left:0;z-index:-100;"
+function resizeCanvas() {
+  RainbowHoneycomb.width = window.innerWidth.toString();
+  RainbowHoneycomb.height = window.innerHeight.toString();
+}
+
+window.onresize = resizeCanvas;
+RainbowHoneycomb.style = "position:fixed;top:0;left:0;z-index:-100;"
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r) {
   draw.fillStyle = "black";
