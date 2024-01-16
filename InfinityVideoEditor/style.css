@@ -84,7 +84,7 @@
   border-color: red;
   border-radius: 25px;
   border-width: 5px;
-  background-image: url("InfinityVideoEditor/Photos/circleMenu/Camera.svg");
+  background-image: url("./images/circleMenu/Camera.svg");
   background-size: cover;
 }
 /*circleMenu内にある扇状のボタン*/
