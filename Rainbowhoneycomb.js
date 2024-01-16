@@ -6,7 +6,7 @@ function resizeCanvas() {
 }
 resizeCanvas();
 window.onresize = resizeCanvas;
-RainbowHoneycomb.style = "position:fixed;top:0;left:0;z-index:-100;"
+RainbowHoneycomb.style = "position:fixed;width:100%;height:100%;top:0;left:0;z-index:-100;"
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r) {
   draw.fillStyle = "black";
