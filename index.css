@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    background-image: url("Pictures/RainbowHoneycomb.png");
 }
 
 header{
@@ -24,8 +25,7 @@ section.Title{
     margin-top: 0;
     text-align: center;
     font-size: 100px;
-    background-color: black;
-    background-image: url("Pictures/DarkRainbowHoneycomb.jpeg");
+    background-color: transparent;
     color:white;
     text-align:center;
     padding-top: 80px;
