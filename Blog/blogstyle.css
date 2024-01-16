@@ -1,9 +1,10 @@
 * {
   padding: 0;
   margin: 0;
+}
+body{
   background-image: url("../Pictures/RainbowHoneycomb.png");
 }
-
 header {
   position: fixed;
   top: 0;

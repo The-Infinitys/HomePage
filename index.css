@@ -1,10 +1,13 @@
-*{
+* {
     padding: 0;
     margin: 0;
+}
+
+body {
     background-image: url("Pictures/RainbowHoneycomb.png");
 }
 
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,41 +21,46 @@ header{
     display: flex;
     font-size: 20px;
 }
-p{
+
+p {
     font-size: 20px;
 }
-section.Title{
+
+section.Title {
     margin-top: 0;
     text-align: center;
     font-size: 100px;
     background-color: transparent;
-    color:white;
-    text-align:center;
+    color: white;
+    text-align: center;
     padding-top: 80px;
 }
 
-section.News{
+section.News {
     text-align: right;
     background-color: black;
-    color:white;
+    color: white;
 }
-section.introduce{
+
+section.introduce {
     text-align: left;
     background-color: white;
     color: black;
     background-size: cover;
 }
-section.HyperLinks{
+
+section.HyperLinks {
     text-align: center;
     background-color: black;
     color: white;
     background-size: cover;
 }
-h1.bigger{
+
+h1.bigger {
     font-size: 100px;
 }
 
-footer{
+footer {
     text-align: center;
     background-image: url(Pictures/The\ Infinity\(White\).png);
     background-size: cover;
