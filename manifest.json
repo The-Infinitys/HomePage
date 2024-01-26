@@ -1,0 +1,15 @@
+{
+  "name": "The Infinity's",
+  "short_name": "The-Infinitys",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "The Infinity's!",
+  "icons": [
+    {
+      "src": "./images/ICON.jpeg",
+      "sizes": "144x1448",
+      "type": "image/jpeg"
+    }
+  ]
+}
