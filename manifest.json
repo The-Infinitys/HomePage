@@ -7,9 +7,14 @@
   "description": "The Infinity's!",
   "icons": [
     {
-      "src": "./images/ICON.jpeg",
-      "sizes": "144x1448",
+      "src": "./images/ICON.big.jpeg",
+      "sizes": "1448x1448",
       "type": "image/jpeg"
+    },
+    {
+      "src":"./images/icon.webp",
+      "sizes":"500x500",
+      "type":"image/webp"
     }
   ]
 }
