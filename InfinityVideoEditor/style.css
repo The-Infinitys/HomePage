@@ -71,6 +71,7 @@
 #circleMenu {
   position: absolute;
   aspect-ratio: 1;
+  width: 100%;
   top: 50%;
   left: 50%;
   margin: -50% 0 0 -50%;
