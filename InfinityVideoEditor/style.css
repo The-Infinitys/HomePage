@@ -60,14 +60,20 @@
   height: 50%;
   outline: black groove 5px;
 }
-
 /*円状メニュー。ここに読み込みボタンなどを用意する*/
+#circleMenuBox{
+  position:fixed;
+  top:0;
+  left: 65%;
+  width:35%;
+  height:50%;
+}
 #circleMenu {
   position: absolute;
-  top: 0%;
-  left: 65%;
-  width: 35%;
   aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  margin: -50% 0 0 -50%;
   outline: white groove 5px;
 }
 

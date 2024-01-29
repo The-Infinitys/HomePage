@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Infinity Video Editor</title>
+  </head>
+  <link rel="stylesheet" href="style.css" type="text/css" />
 
-<head>
-  <meta charset="UTF-8">
-  <title>Infinity Video Editor</title>
-</head>
-<link rel="stylesheet" href="style.css" type="text/css" />
-
-<body>
-  <div id='leftMenu'>
-    <button id="cancel" class="leftButtons"><img src="./images/leftMenu/cancel.svg" width="100%" height="auto"></button>
-    <button id="redo" class="leftButtons"><img src="./images/leftMenu/redo.svg" width="100%" height="auto"></button>
-    <button id="maximize" class="leftButtons"><img src="./images/leftMenu/maximize.svg" width="100%" height="auto"></button>
-    <button id="download" class="leftButtons"><img src="./images/leftMenu/downLoad.svg" width="100%" height="auto"></button>
-  </div>
-  <div id="topElements">
-    <canvas id="videoScreen">
-    </canvas>
-    <div id='circleMenu'>
-      <button id="camButton">
+  <body>
+    <div id="leftMenu">
+      <button id="cancel" class="leftButtons">
+        <img src="./images/leftMenu/cancel.svg" width="100%" height="auto" />
       </button>
-      <button class="fanShapeButton" id="TOP" name="upload">
-        <img src="./images/circleMenu/uploadfile.svg" width="auto" height="100%">
+      <button id="redo" class="leftButtons">
+        <img src="./images/leftMenu/redo.svg" width="100%" height="auto" />
       </button>
-      <button class="fanShapeButton" id="LEFT" name="newElem">
-        <img src="./images/circleMenu/new elem.svg" height="auto" width="100%">
+      <button id="maximize" class="leftButtons">
+        <img src="./images/leftMenu/maximize.svg" width="100%" height="auto" />
       </button>
-      <button class="fanShapeButton" id="BOTTOM" name="record">
-        <img src="./images/circleMenu/record.svg" width="auto" height="100%">
-      </button>
-      <button class="fanShapeButton" id="RIGHT" name="audio" type="input">
-        <img src="./images/circleMenu/new audio.svg" height="auto" width="100%">
+      <button id="download" class="leftButtons">
+        <img src="./images/leftMenu/downLoad.svg" width="100%" height="auto" />
       </button>
     </div>
-  </div>
-  <div id="bottomElements">
-    <canvas id="timeLines">
-    </canvas>
-    <div id="spritesSetting">
-      <div class="infoEditor" id="videoEdit">
-
-      </div>
-      <div class="infoEditor" id="ImgEdit">
-
-      </div>
-      <div class="infoEditor" id="textEdit">
-
-      </div>
-      <div class="infoEditor" id="posEdit">
-
+    <div id="topElements">
+      <canvas id="videoScreen"> </canvas>
+      <div id="circleMenuBox">
+        <div id="circleMenu">
+          <button id="camButton"></button>
+          <button class="fanShapeButton" id="TOP" name="upload">
+            <img
+              src="./images/circleMenu/uploadfile.svg"
+              width="auto"
+              height="100%"
+            />
+          </button>
+          <button class="fanShapeButton" id="LEFT" name="newElem">
+            <img
+              src="./images/circleMenu/new elem.svg"
+              height="auto"
+              width="100%"
+            />
+          </button>
+          <button class="fanShapeButton" id="BOTTOM" name="record">
+            <img
+              src="./images/circleMenu/record.svg"
+              width="auto"
+              height="100%"
+            />
+          </button>
+          <button class="fanShapeButton" id="RIGHT" name="audio" type="input">
+            <img
+              src="./images/circleMenu/new audio.svg"
+              height="auto"
+              width="100%"
+            />
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-<script src="./script.js"></script>
-
+    <div id="bottomElements">
+      <canvas id="timeLines"> </canvas>
+      <div id="spritesSetting">
+        <div class="infoEditor" id="videoEdit"></div>
+        <div class="infoEditor" id="ImgEdit"></div>
+        <div class="infoEditor" id="textEdit"></div>
+        <div class="infoEditor" id="posEdit"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
 </html>
