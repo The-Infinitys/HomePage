@@ -67,6 +67,7 @@
   left: 65%;
   width:35%;
   height:50%;
+  outline: white groove 5px;
 }
 #circleMenu {
   position: absolute;
@@ -75,7 +76,6 @@
   top: 50%;
   left: 50%;
   margin: -50% 0 0 -50%;
-  outline: white groove 5px;
 }
 
 /*カメラ起動ボタン*/
