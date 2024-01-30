@@ -12,9 +12,9 @@
       "type": "image/jpeg"
     },
     {
-      "src":"./images/icon.webp",
-      "sizes":"500x500",
-      "type":"image/webp"
+      "src": "./images/icon.webp",
+      "sizes": "500x500",
+      "type": "image/webp"
     }
   ]
 }
