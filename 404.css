@@ -45,7 +45,7 @@ section.Title {
 }
 
 @media screen and (max-aspect-ratio:35/47) {
-    #character{
+    #character {
         width: 100%;
         height: auto;
     }
