@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>The Infinity's</title>
-  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/404.css">
 </head>
 <body>
   <canvas id="RainbowHoneycomb"></canvas>
   <header>
     <a href="/">
-      <img src="/images/TheInfinitys(White).jpeg" width="80px" height="60px" alt="">
+      <img src="/images/TheInfinitys(White).jpeg" width="80px" height="60px" alt="" id="icon">
     </a>
     <h1>The Infinity's</h1>
   </header>
@@ -26,5 +26,10 @@
   </footer>
 </body>
 <script src="/Rainbowhoneycomb.js"></script>
-
+<script>
+  window.addEventListener("resize",function(){
+    const fontSize= Math.Max(40,window.innerWidth/100);
+    document.getElementById("Title").style.fontSize=fontSize+"px";
+  })
+</script>
 </html>
