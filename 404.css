@@ -27,6 +27,11 @@ header {
     top:0;
     left:0;
 }
+#TheInfinitys{
+    position:absolute;
+    top:0;
+    left:6vh;
+}
 p {
     font-size: 20px;
 }
