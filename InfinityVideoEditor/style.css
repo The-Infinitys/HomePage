@@ -117,6 +117,7 @@ body {
   top: 0;
   left: 0;
   font-size: 20vw;
+  text-align: center;
 }
 
 #left-button-importProject {
