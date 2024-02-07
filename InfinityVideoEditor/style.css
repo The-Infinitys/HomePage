@@ -107,7 +107,7 @@ body {
   width: 50%;
   height: 50%;
   background-color: black;
-  animation-name: rainbow;
+  animation-name: rainbow,raibowborder;
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
