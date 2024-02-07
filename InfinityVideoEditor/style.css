@@ -71,10 +71,45 @@ body {
   }
 }
 
+@keyframes rainbow {
+  0% {
+    color: #ff0000;
+  }
+
+  17% {
+    color: #ff00ff;
+  }
+
+  33% {
+    color: #0000ff;
+  }
+
+  50% {
+    color: #00ffff;
+  }
+
+  67% {
+    color: #00ff00;
+  }
+
+  83% {
+    color: #ffff00;
+  }
+
+  100% {
+    color: #ff0000;
+  }
+}
+
+
 .left-Menu {
   position: absolute;
   width: 50%;
   height: 50%;
+  animation-name: rainbow;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #left-button-addElem {
@@ -93,6 +128,6 @@ body {
 }
 
 #left-button-export {
-  top: 0;
-  left: 50%;
+  top: 50%;
+  left: 0;
 }
