@@ -4,106 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Infinity Video Editor</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <noscript>
-    <header>
-      <a href="/">
-        <img src="/images/TheInfinitys(White).jpeg" width="80px" height="60px" alt="">
-      </a>
-      <h1>The Infinity's</h1>
-    </header>
-    <!-- Title -->
-    <section class="Title">
-      <h5 width="100%" height="auto">You have to turn on JavaScript...</h5>
-      <img src="/images/InfinityKirby.svg" width="auto" height="60%" alt="">
-    </section>
-    <section class="HyperLinks">
-      <a href="/">
-        <h1>Go to Home</h1>
-      </a>
-    </section>
-    <footer>
-      <h1>&copy;The Infinity's</h1>
-    </footer>
-  </noscript>
   <div id="screen"><canvas id="video"></canvas></div>
-  <div id="editor"></div>
+  <div id="editor">
+    <button class="left-Menu" id="left-button-addElem">+</button>
+    <button class="left-Menu" id="left-button-import">import</button>
+    <button class="left-Menu" id="left-button-makeElem">+</button>
+    <button class="left-Menu" id="left-button-export">export</button>
+  </div>
   <div id="selector"></div>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    body{
-      background-color: black;
-    }
-    #screen,
-    #editor,
-    #selector {
-      border: 2px solid black;
-      animation-name: rainbowborder;
-      animation-duration: 5s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-
-    #screen {
-      position: fixed;
-      width: 50%;
-      height: 50%;
-      top: 0;
-      left: 10%;
-    }
-
-    #editor {
-      position: fixed;
-      width: 40%;
-      height: 50%;
-      top: 0;
-      left: 60%;
-    }
-
-    #selector {
-      position: fixed;
-      width: 90%;
-      height: 50%;
-      top: 50%;
-      left: 10%;
-    }
-
-    @keyframes rainbowborder {
-      0% {
-        border-color: #ff0000;
-      }
-
-      17% {
-        border-color: #ffff00;
-      }
-
-      33% {
-        border-color: #00ff00;
-      }
-
-      50% {
-        border-color: #00ffff;
-      }
-
-      67% {
-        border-color: #0000ff;
-      }
-
-      83% {
-        border-color: #ff00ff;
-      }
-
-      100% {
-        border-color: #ff0000;
-      }
-    }
-  </style>
 </body>
 
 </html>
