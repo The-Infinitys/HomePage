@@ -118,22 +118,23 @@ body {
   left: 0;
   font-size: 20vw;
   text-align: center;
+  line-height:0;
 }
 
 #left-button-importProject {
   top: 50%;
   left: 50%;
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 #left-button-importFile {
   top: 0;
   left: 50%;
-  font-size: 2vw;
+  font-size: 4vw;
 }
 
 #left-button-export {
   top: 50%;
   left: 0;
-  font-size: 2vw;
+  font-size: 4vw;
 }
