@@ -11,7 +11,7 @@ document.getElementById("file-dialog-source").addEventListener("change",(e)=>{
     for (let i=0;i<files.length;++i){
         file=files[i];
         importedSources.append(file);
-        console.log(file)
+        console.log(file);
     }
 });
 
