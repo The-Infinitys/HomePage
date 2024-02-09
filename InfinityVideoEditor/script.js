@@ -40,7 +40,7 @@ class sprite {
 }
 
 document
-  .getElementById("left-button-importFile")
+  .getElementById("editor-button-importFile")
   .addEventListener("click", (e) => {
     //ソース(動画、画像、音声)をimportする為にボタンを押させる関数
     let dialoger = document.getElementById("file-dialog-source");
@@ -59,7 +59,7 @@ document
   });
 
 document
-  .getElementById("left-button-importProject")
+  .getElementById("editor-button-importProject")
   .addEventListener("click", (e) => {
     //プロジェクトをimportする為にボタンを押させる関数
     let dialoger = document.getElementById("file-dialog-project");

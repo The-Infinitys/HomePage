@@ -8,14 +8,17 @@
 </head>
 
 <body>
+  <div id="leftMenu">
+
+  </div>
   <div id="screen"><canvas id="video"></canvas></div>
   <div id="editor">
-    <button class="left-Menu" id="left-button-addElem">+</button>
-    <button class="left-Menu" id="left-button-importProject">import<br />project</input>
+    <button class="editor-menu" id="editor-button-addElem">+</button>
+    <button class="editor-menu" id="editor-button-importProject">import<br />project</input>
     <input type="file" accept=".infve, .zip" class="hiddenDialog" id="file-dialog-project">
-    <button class="left-Menu" id="left-button-importFile">import<br />file</button>
+    <button class="editor-menu" id="editor-button-importFile">import<br />file</button>
     <input type="file" accept="audio/*, video/*, image/*" class="hiddenDialog" id="file-dialog-source" multiple>
-    <button class="left-Menu" id="left-button-export">export</button>
+    <button class="editor-menu" id="editor-button-export">export</button>
   </div>
   <div id="selector"></div>
   <script src="./script.js"></script>
