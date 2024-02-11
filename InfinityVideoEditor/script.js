@@ -71,3 +71,9 @@ document
   .addEventListener("change", (e) => {
     alert("現在作成中です...");
   });
+
+document
+  .getElementById("editor-button-addElem")
+  .addEventListener("click", (e) => {
+    document.getElementById("editor-menu-main").style.display="none";
+  });
