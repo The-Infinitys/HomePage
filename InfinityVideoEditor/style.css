@@ -60,11 +60,11 @@ body {
   }
 
   17% {
-    border-color: #ffff00;
+    border-color: #ff00ff;
   }
 
   33% {
-    border-color: #00ff00;
+    border-color: #0000ff;
   }
 
   50% {
@@ -72,11 +72,11 @@ body {
   }
 
   67% {
-    border-color: #0000ff;
+    border-color: #00ff00;
   }
 
   83% {
-    border-color: #ff00ff;
+    border-color: #ffff00;
   }
 
   100% {
