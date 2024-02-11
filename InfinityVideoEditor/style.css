@@ -113,8 +113,8 @@ body {
 
 .editor-menu {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   background-color: black;
   animation-name: rainbow,rainbowborder;
   animation-duration: 5s;
@@ -123,28 +123,43 @@ body {
 }
 
 #editor-button-addElem {
+  /*上*/
   top: 0;
   left: 0;
+  height:50%;
+  clip-path: polygon(0 0, 100% 0,50% 100%);
   font-size: 20vw;
   text-align: center;
   line-height:0;
 }
 
 #editor-button-importProject {
-  top: 50%;
-  left: 50%;
-  font-size: 4vw;
+  text-align: right;
+  /*右*/
+  top: 0;
+  right: 0;
+  width: 50%;
+  clip-path: polygon(0 50%,100% 100%,100% 0);
+  font-size: 3vw;
 }
 
 #editor-button-importFile {
+  text-align: left;
+  /*左*/
   top: 0;
-  left: 50%;
-  font-size: 4vw;
+  left: 0;
+  width:50%;
+  clip-path: polygon(100% 50%,0 0,0 100%);
+  font-size: 3vw;
 }
 
 #editor-button-export {
+  /*下*/
   top: 50%;
   left: 0;
+  height:50%;
+  clip-path:polygon(0 100%,100% 100%,50% 0);
+  text-align: center;
   font-size: 4vw;
 }
 .hiddenDialog{
