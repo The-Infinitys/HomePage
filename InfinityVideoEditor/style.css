@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 body {
@@ -27,34 +27,38 @@ body {
   left: 0;
 }
 
-.left-buttons{
-  position:absolute;
-  width:100%;
-  height:25%;
+.left-buttons {
+  position: absolute;
+  width: 100%;
+  height: 25%;
   vertical-align: top;
   background-color: black;
-  border:2px solid black;
+  border: 2px solid black;
   animation-name: rainbowborder, rainbow;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-#cancel{
-  top:0;
+
+#cancel {
+  top: 0;
   font-size: 8vw;
   line-height: 0;
 }
-#redo{
-  top:25%;
-  font-size:8vw;
+
+#redo {
+  top: 25%;
+  font-size: 8vw;
   line-height: 0;
 }
-#swapFullScreen{
-  bottom:25%;
-  font-size:1.5vw;
+
+#swapFullScreen {
+  bottom: 25%;
+  font-size: 1.5vw;
 }
-#setting{
-  bottom:0;
+
+#setting {
+  bottom: 0;
   font-size: 2.5vw;
 }
 
@@ -177,20 +181,20 @@ body {
   }
 }
 
-#editor-back{
+#editor-back {
   position: absolute;
-  width:10%;
+  width: 10%;
   aspect-ratio: 1;
-  border:2px solid black;
+  border: 2px solid black;
   border-radius: 50%;
   background-color: black;
-  animation-name: rainbow,rainbowborder;
+  animation-name: rainbow, rainbowborder;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   visibility: hidden;
   z-index: 30;
-  font-size:3vw;
+  font-size: 3vw;
 }
 
 .editor-menu {
@@ -204,12 +208,14 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 .editor-menus {
   position: absolute;
   width: 100%;
   height: 100%;
   visibility: hidden;
 }
+
 #editor-menu-main {
   visibility: visible;
 }
@@ -258,26 +264,58 @@ body {
 .hiddenDialog {
   display: none;
 }
+
 .editor-addElem-button {
   width: 100%;
   height: 25%;
   background-color: black;
-  border:1.5px solid black;
-  animation-name: rainbow,rainbowborder;
+  border: 1.5px solid black;
+  animation-name: rainbow, rainbowborder;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  font-size:5vh;
+  font-size: 5vh;
 }
-.editor-addElem-button-video{
+
+.editor-addElem-button-video {
+  top: 0;
+}
+
+.editor-addElem-button-image {
+  top: 25%;
+}
+
+.editor-addElem-button-audio {
+  top: 50%;
+}
+
+.editor-addElem-button-text {
+  top: 75%;
+}
+
+/*selector*/
+#playControler{
+  position:absolute;
   top:0;
+  width:100%;
+  height: 10%;
+  background-color: black;
+  border: 1.5px solid black;
+  animation-name: rainbow, rainbowborder;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
 }
-.editor-addElem-button-image{
-  top:25%;
-}
-.editor-addElem-button-audio{
-  top:50%;
-}
-.editor-addElem-button-text{
-  top:75%;
+.player-button {
+  position:absolute;
+  top:0;
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: black;
+  border: 1.5px solid black;
+  animation-name: rainbow, rainbowborder;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
