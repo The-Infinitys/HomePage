@@ -14,7 +14,22 @@
     <button class="left-buttons" id="swapFullScreen">Full<br>Screen</br></button>
     <button class="left-buttons" id="setting">setting</button>
   </div>
-  <div id="screen"><canvas id="video"></canvas></div>
+  <div id="screen">
+    <canvas id="video"></canvas>
+  </div>
+  <div id="playControler">
+    <button class="player-button" id="Rewind">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <polygon points="0 0, 0 100, 100 50" fill="#fff" />
+      </svg>
+    </button>
+    <button class="player-button" id="play-and-stop">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <polygon points="0 0, 0 100, 100 50" fill="#fff" />
+      </svg>
+    </button>
+  </div>
+
   <div id="editor">
     <button id="editor-back">↩︎</button>
     <div class="editor-menus" id="editor-menu-main">
@@ -33,18 +48,6 @@
     </div>
   </div>
   <div id="selector">
-    <div id="playControler">
-      <button class="player-button" id="Rewind">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <polygon points="0 0, 0 100, 100 50" fill="#fff" />
-        </svg>
-      </button>
-      <button class="player-button" id="play-and-stop">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <polygon points="0 0, 0 100, 100 50" fill="#fff" />
-        </svg>
-      </button>
-    </div>
   </div>
   <script src="./script.js"></script>
 </body>
