@@ -297,10 +297,11 @@ body {
 #playControler{
   position:absolute;
   top:0;
-  width:100%;
-  height: 10%;
+  left:10%;
+  width:50%;
+  height: 20%;
   background-color: black;
-  border: 1.5px solid black;
+  border: 3px solid black;
   animation-name: rainbow, rainbowborder;
   animation-duration: 5s;
   animation-timing-function: linear;
@@ -318,4 +319,10 @@ body {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+#Rewind{
+  left:20%;
+}
+#play-and-stop{
+  left:40%;
 }
