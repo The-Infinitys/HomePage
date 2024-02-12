@@ -72,9 +72,19 @@ document
     alert("現在作成中です...");
   });
 
+document.getElementById("editor-back").addEventListener("click", (e) => {
+  e.style.visibility = "hidden";
+  editorMenus=document.getElementsByClassName="editor-menus";
+  editorMenus.forEach((element) => {
+    element.style.visibility = "hidden";
+  });
+  document.getElementById("editor-menu-main").style.visibility = "visible";
+});
+
 document
   .getElementById("editor-button-addElem")
   .addEventListener("click", (e) => {
-    document.getElementById("editor-menu-main").style.visibility="hidden";
-    document.getElementById("editor-menu-addElem").style.visibility="visible";
+    document.getElementById("editor-menu-main").style.visibility = "hidden";
+    document.getElementById("editor-menu-addElem").style.visibility = "visible";
+    document.getElementsById("editor-back").style.visibility = "visible";
   });
