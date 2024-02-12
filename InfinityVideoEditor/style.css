@@ -188,7 +188,7 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   visibility: hidden;
-  z-index: 3;
+  z-index: 30;
 }
 
 .editor-menu {

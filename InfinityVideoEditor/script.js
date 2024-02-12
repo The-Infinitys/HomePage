@@ -73,11 +73,11 @@ document
   });
 
 document.getElementById("editor-back").addEventListener("click", (e) => {
-  e.style.visibility = "hidden";
-  editorMenus=document.getElementsByClassName="editor-menus";
-  editorMenus.forEach((element) => {
-    element.style.visibility = "hidden";
-  });
+  document.getElementById("editor-back").style.visibility = "hidden";
+  editorMenus = document.getElementsByClassName("editor-menus");
+  for(let i=0;i<editorMenus.length;++i){
+    editorMenus[i].style.visibility = "hidden";
+  }
   document.getElementById("editor-menu-main").style.visibility = "visible";
 });
 
@@ -86,5 +86,5 @@ document
   .addEventListener("click", (e) => {
     document.getElementById("editor-menu-main").style.visibility = "hidden";
     document.getElementById("editor-menu-addElem").style.visibility = "visible";
-    document.getElementsById("editor-back").style.visibility = "visible";
+    document.getElementById("editor-back").style.visibility = "visible";
   });
