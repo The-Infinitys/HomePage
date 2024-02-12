@@ -21,10 +21,39 @@ body {
 #leftMenu {
   position: fixed;
   width: 10%;
-  height: 100%;
+  height: 50%;
   top: 0;
   left: 0;
 }
+
+.left-buttons{
+  position:absolute;
+  width:100%;
+  height:25%;
+  background-color: black;
+  border:2px solid black;
+  animation-name: rainbowborder, rainbow;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#cancel{
+  top:0;
+  font-size: 8vw;
+}
+#redo{
+  top:25%;
+  font-size:8vw;
+}
+#swapFullScreen{
+  bottom:25%;
+  font-size:1.5vw;
+}
+#setting{
+  bottom:0;
+  font-size: 2.5vw;
+}
+
 
 #screen {
   position: fixed;
@@ -48,10 +77,10 @@ body {
 
 #selector {
   position: fixed;
-  width: 90%;
+  width: 100%;
   height: 50%;
   top: 50%;
-  left: 10%;
+  left: 0;
 }
 
 @keyframes rainbowborder {
