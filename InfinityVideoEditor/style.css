@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  overflow:hidden;
 }
 
 body {
@@ -189,6 +190,7 @@ body {
   animation-iteration-count: infinite;
   visibility: hidden;
   z-index: 30;
+  font-size:3vw;
 }
 
 .editor-menu {
@@ -265,6 +267,7 @@ body {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  font-size:5vh;
 }
 .editor-addElem-button-video{
   top:0;
