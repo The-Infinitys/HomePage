@@ -76,4 +76,5 @@ document
   .getElementById("editor-button-addElem")
   .addEventListener("click", (e) => {
     document.getElementById("editor-menu-main").style.display="none";
+    document.getElementById("editor-menu-addElem").style.display="block";
   });
