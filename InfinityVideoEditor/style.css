@@ -120,6 +120,35 @@ body {
     border-color: #ff0000;
   }
 }
+@keyframes rainbowfill {
+  0% {
+    fill: #ff0000;
+  }
+
+  17% {
+    fill: #ff00ff;
+  }
+
+  33% {
+    fill: #0000ff;
+  }
+
+  50% {
+    fill: #00ffff;
+  }
+
+  67% {
+    fill: #00ff00;
+  }
+
+  83% {
+    fill: #ffff00;
+  }
+
+  100% {
+    fill: #ff0000;
+  }
+}
 
 @keyframes rainbow {
   0% {
@@ -314,8 +343,16 @@ body {
   height: 100%;
   aspect-ratio: 1;
   background-color: black;
-  border: 1.5px solid black;
+  border: 1px solid black;
   animation-name: rainbow, rainbowborder;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.player-button-svg{
+  width:90%;
+  aspect-ratio: 1;
+  animation-name: rainbowfill;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
