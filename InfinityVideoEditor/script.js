@@ -85,6 +85,7 @@ document
   .getElementById("editor-button-addElem")
   .addEventListener("click", (e) => {
     document.getElementById("editor-menu-main").style.visibility = "hidden";
+    document.getElementById("editor-menu-sub").style.visibility="visible";
     document.getElementById("editor-menu-addElem").style.visibility = "visible";
     document.getElementById("editor-back").style.visibility = "visible";
     document.getElementById("editor-subtitle").innerHTML="add Element";

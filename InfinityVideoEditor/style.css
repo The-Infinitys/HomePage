@@ -314,7 +314,13 @@ body {
 }
 
 #editor-subtitle {
-  color: black;
+  position:absolute;
+  left:7.5vh;
+  font-size:3vh;
+  animation-name: rainbow;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #editor-menu-sub-bottom {
