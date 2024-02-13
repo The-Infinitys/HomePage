@@ -303,6 +303,11 @@ body {
   position:absolute;
   width:100%;
   height:10%;
+  background-color: black;
+  animation-name: rainbowborder;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 #editor-menu-sub-bottom{
   position:absolute;
