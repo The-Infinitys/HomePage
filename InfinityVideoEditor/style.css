@@ -294,6 +294,22 @@ body {
   display: none;
 }
 
+#editor-menu-sub{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+#editor-menu-sub-top{
+  position:absolute;
+  width:100%;
+  height:10%;
+}
+#editor-menu-sub-bottom{
+  position:absolute;
+  top:10%;
+  width:100%;
+  height:90%;
+}
 .editor-addElem-button {
   width: 100%;
   height: 25%;

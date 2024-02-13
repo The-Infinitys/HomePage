@@ -11,7 +11,7 @@
   <div id="leftMenu">
     <button class="left-buttons" id="cancel">↩︎</button>
     <button class="left-buttons" id="redo">↪︎</button>
-    <button class="left-buttons" id="swapFullScreen">Full<br>Screen</br></button>
+    <button class="left-buttons" id="swapFullScreen">Full<br>Screen</button>
     <button class="left-buttons" id="setting">setting</button>
   </div>
   <div id="screen">
@@ -52,7 +52,6 @@
   </div>
 
   <div id="editor">
-    <button id="editor-back">↩︎</button>
     <div class="editor-menus" id="editor-menu-main">
       <button class="editor-menu" id="editor-button-addElem">+</button>
       <button class="editor-menu" id="editor-button-importProject">import<br />project</input>
@@ -61,12 +60,20 @@
       <input type="file" accept=".infve, .zip" class="hiddenDialog" id="file-dialog-project">
       <input type="file" accept="audio/*, video/*, image/*" class="hiddenDialog" id="file-dialog-source" multiple>
     </div>
-    <div class="editor-menus" id="editor-menu-addElem">
-      <button class="editor-addElem-button" id="editor-addElem-button-video">video</button>
-      <button class="editor-addElem-button" id="editor-addElem-button-image">image</button>
-      <button class="editor-addElem-button" id="editor-addElem-button-audio">audio</button>
-      <button class="editor-addElem-button" id="editor-addElem-button-text">text</button>
+    <div class="editor-menus" id="editor-menu-sub">
+      <div id="editor-menu-sub-top">
+        <button id="editor-back">↩︎</button>
+      </div>
+      <div id="editor-menu-bottom">
+        <div class="editor-menus" id="editor-menu-addElem">
+          <button class="editor-addElem-button" id="editor-addElem-button-video">video</button>
+          <button class="editor-addElem-button" id="editor-addElem-button-image">image</button>
+          <button class="editor-addElem-button" id="editor-addElem-button-audio">audio</button>
+          <button class="editor-addElem-button" id="editor-addElem-button-text">text</button>
+        </div>
+      </div>
     </div>
+    
   </div>
   <div id="selector">
   </div>
