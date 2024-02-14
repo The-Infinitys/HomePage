@@ -313,6 +313,11 @@ body {
 }
 
 #editor-subtitle {
+<<<<<<< HEAD
+  position:fixed;
+  z-index:123123123;
+  color: white;
+=======
   position: absolute;
   left: 7.5vh;
   font-size: 3vh;
@@ -320,6 +325,7 @@ body {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+>>>>>>> c6d833f922746efbc018237a50607e2c09521eb1
 }
 
 #editor-menu-sub-bottom {
