@@ -1,44 +1,5 @@
 var importedSources = [];
 
-class sprite {
-  constructor(file) {
-    if (typeof file == "string") {
-      this.source = {
-        proparty: {
-          name: "text",
-          size: file.length,
-          type: "text",
-        },
-        element: null,
-      };
-    } else {
-      this.source = {
-        proparty: {
-          name: file.name,
-          size: file.size,
-          type: file.type,
-        },
-        element: null,
-      };
-      if (proparty.type.startsWith("image/")) {
-        this.source.element = document.createElement("img");
-      } else if (proparty.type.startsWith("audio/")) {
-        this.source.element = document.createElement("audio");
-      } else if (proparty.type.startsWith("video/")) {
-        this.source.element = document.createElement("video");
-      } else {
-        console.error(
-          "The type of file was invalid.You can use only video, audio, image, and string."
-        );
-      }
-      //fileオブジェクトをhtmlエレメントに変える
-      let reader = new FileReader();
-      this.source.element.src = reader.result;
-      reader.readAsDataURL(file);
-    }
-  }
-}
-
 document
   .getElementById("editor-button-importFile")
   .addEventListener("click", (e) => {
@@ -75,7 +36,7 @@ document
 document.getElementById("editor-back").addEventListener("click", (e) => {
   document.getElementById("editor-back").style.visibility = "hidden";
   editorMenus = document.getElementsByClassName("editor-menus");
-  for(let i=0;i<editorMenus.length;++i){
+  for (let i = 0; i < editorMenus.length; ++i) {
     editorMenus[i].style.visibility = "hidden";
   }
   document.getElementById("editor-menu-main").style.visibility = "visible";
@@ -85,8 +46,8 @@ document
   .getElementById("editor-button-addElem")
   .addEventListener("click", (e) => {
     document.getElementById("editor-menu-main").style.visibility = "hidden";
-    document.getElementById("editor-menu-sub").style.visibility="visible";
+    document.getElementById("editor-menu-sub").style.visibility = "visible";
     document.getElementById("editor-menu-addElem").style.visibility = "visible";
     document.getElementById("editor-back").style.visibility = "visible";
-    document.getElementById("editor-subtitle").innerHTML="add Element";
+    document.getElementById("editor-subtitle").innerHTML = "add Element";
   });

@@ -313,9 +313,9 @@ body {
 }
 
 #editor-subtitle {
-  position:absolute;
-  left:7.5vh;
-  font-size:3vh;
+  position: absolute;
+  left: 7.5vh;
+  font-size: 3vh;
   animation-name: rainbow;
   animation-duration: 5s;
   animation-timing-function: linear;
