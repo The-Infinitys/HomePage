@@ -11,6 +11,7 @@ body {
 #leftMenu,
 #screen,
 #editor,
+#play-data-display,
 #selector {
   border: 3px solid black;
   animation-name: rainbowborder;
@@ -81,14 +82,6 @@ body {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-
-#selector {
-  position: fixed;
-  width: 100%;
-  height: 50%;
-  top: 50%;
-  left: 0;
 }
 
 @keyframes rainbowborder {
@@ -313,8 +306,8 @@ body {
 }
 
 #editor-subtitle {
-  position:fixed;
-  z-index:123123123;
+  position: fixed;
+  z-index: 123123123;
   color: white;
   position: absolute;
   left: 7.5vh;
@@ -402,13 +395,43 @@ body {
   animation-iteration-count: infinite;
 }
 
-#guideline{
+#guideline {
   position: fixed;
-  top:50%;
-  left:50%;
-  height:50%;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  z-index: 100;
   animation-name: rainbowfill;
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+#play-data-display{
+  position: fixed;
+  width:100%;
+  height:5%;
+  top:50%;
+}
+
+#current-time{
+  color:white;
+  font-family: sans-selif;
+  font-size: 3vh;
+}
+
+#selector {
+  position: fixed;
+  width: 100%;
+  height: 45%;
+  top: 55%;
+  left: 0;
+  overflow: scroll;
+  text-overflow: clip;
+}
+
+.element-video {
+  color:white;
+  width: 1220%;
+  border:blue solid 5vh;
 }

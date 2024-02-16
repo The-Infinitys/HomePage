@@ -2,8 +2,8 @@
 var importedSources = [];
 var ProjectJSON = {
   title: "",
-  sources: [], //here is the name of source file
-  sprites: {},
+  sources: [], //here is the name of source file.
+  sprites: {}, //Here is the data of sprite.
 };
 
 //定数の生成(スプライトの雛形)
@@ -12,7 +12,7 @@ const sprite_animation = {
   x: 0,
   y: 0,
   direction: 0,
-  rotation_way: "right", //it needs left or right
+  rotation_way: "right", //it needs left or right.
   size: 100,
 };
 const sprite_video = {
