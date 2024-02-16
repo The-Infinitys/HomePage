@@ -430,6 +430,32 @@ body {
   text-overflow: clip;
 }
 
+#selector-start{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  background-color: black;
+}
+.selector-start-layer{
+  position:absolute;
+  width:100%;
+  height:20%;
+  background-color: black;
+  animation-name: rainbow;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#selector-end{
+  position: absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  background-color: gray;
+}
+
 .element-video {
   color:white;
   width: 1220%;
