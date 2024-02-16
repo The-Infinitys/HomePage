@@ -307,7 +307,6 @@ body {
 
 #editor-subtitle {
   position: fixed;
-  z-index: 123123123;
   color: white;
   position: absolute;
   left: 7.5vh;
@@ -398,8 +397,7 @@ body {
 #guideline {
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(calc(-50% + 3px),0);
+  left: 47.5%;
   height: 50%;
   width: 5%;
   z-index: 100;
@@ -446,11 +444,13 @@ body {
   flex-direction: column;
 }
 
-.selector-start-layer {
+.selector-start-layer,
+.selector-end-layer {
   width: 100%;
   height: 20%;
   background-color: black;
   color: white;
+  font-size:5vh;
   border: 2px solid white;
   animation-name: rainbow, rainbowborder;
   animation-duration: 5s;
@@ -462,8 +462,8 @@ body {
   box-sizing: content-box;
   --selector-elems-width: 150%;
   position: absolute;
-  left: 50%;
-  width: calc(50vw + var(--selector-elems-width));
+  left: calc(50% + 3px);
+  width: calc(50vw  + var(--selector-elems-width));
   height: 100%;
   background-color: black;
   display: flex;
@@ -490,22 +490,10 @@ body {
 #selector-end {
   position: absolute;
   text-align: right;
-  width: 50vw;
-  height: 100%;
   right:0;
+  width: calc(50vw - 4 * 3px);
+  height: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
-}
-
-.selector-end-layer {
-  width: 100%;
-  height: 20%;
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  animation-name: rainbow, rainbowborder;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
