@@ -430,10 +430,12 @@ body {
   text-overflow: clip;
   display: flex;
   justify-content: flex-end;
-  flex-shrink: 0;
 }
 
 #selector-start {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 50%;
   height: 100%;
   background-color: black;
@@ -454,26 +456,17 @@ body {
 }
 
 #selector-elems {
-  width: 100%;
-  height: 100%;
-  background-color: gray;
-}
-
-.element-video {
-  color: white;
-  border: blue solid 5vh;
-}
-
-#selector-end {
-  width: 50%;
+  --selector-elems-width: 150%;
+  position: absolute;
+  left: 50%;
+  width: var(--selector-elems-width);
   height: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
 }
 
-.selector-end-layer {
-  text-align: right;
+.selector-elems-layer {
   width: 100%;
   height: 20%;
   background-color: black;
@@ -483,4 +476,9 @@ body {
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.element-video {
+  color: white;
+  border: blue solid 5vh;
 }
