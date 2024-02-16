@@ -455,11 +455,11 @@ body {
   animation-iteration-count: infinite;
 }
 
-#selector-elems {
+#selector-main {
   --selector-elems-width: 150%;
   position: absolute;
   left: 50%;
-  width: var(--selector-elems-width);
+  width: calc(50vw + var(--selector-elems-width));
   height: 100%;
   background-color: black;
   display: flex;
@@ -481,4 +481,27 @@ body {
 .element-video {
   color: white;
   border: blue solid 5vh;
+}
+
+#selector-end {
+  position: absolute;
+  text-align: right;
+  width: 50vw;
+  height: 100%;
+  right:0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.selector-end-layer {
+  width: 100%;
+  height: 20%;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  animation-name: rainbow, rainbowborder;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
