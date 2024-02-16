@@ -81,7 +81,18 @@ document
     alert("現在作成中です...");
   });
 
+//描画
 //画面上の動きを作る。
+
+//left menu
+document.getElementById("swapFullScreen").addEventListener("click", (e) => {
+  screen=document.getElementById("screen");
+  screen.style.zIndex="10";
+  screen.style.top="0";
+  screen.style.left="0";
+  screen.style.width="100%";
+  screen.style.height="100%";
+});
 document
   .getElementById("editor-button-importFile")
   .addEventListener("click", (e) => {
