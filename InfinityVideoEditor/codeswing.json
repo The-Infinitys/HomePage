@@ -1,4 +1,6 @@
 {
-  "scripts": [],
+  "scripts": [
+    "https://the-infinitys.onrender.com/InfinityVIdeoEditor/gui.js"
+  ],
   "styles": []
 }
