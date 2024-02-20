@@ -10,7 +10,7 @@
     <div id="leftMenu">
       <button class="left-buttons" id="cancel">↩︎</button>
       <button class="left-buttons" id="redo">↪︎</button>
-      <button class="left-buttons" id="swapFullScreen">Full<br />Screen</button>
+      <button class="left-buttons" id="swapFullScreen" onclick="swapFullScreen()">Full<br />Screen</button>
       <button class="left-buttons" id="setting">setting</button>
     </div>
     <div id="screen">
@@ -72,11 +72,13 @@
 
     <div id="editor">
       <div class="editor-menus" id="editor-menu-main">
-        <button class="editor-menu" id="editor-button-addElem">+</button>
+        <button class="editor-menu" id="editor-button-addElem" onclick="menu_open_AddElement()">
+          +
+        </button>
         <button class="editor-menu" id="editor-button-importProject">
           import<br />project
         </button>
-        <button class="editor-menu" id="editor-button-importFile">
+        <button class="editor-menu" id="editor-button-importFile" onclick="importFile()">
           import<br />file
         </button>
         <button class="editor-menu" id="editor-button-export">export</button>
@@ -94,7 +96,7 @@
       </div>
       <div class="editor-menus" id="editor-menu-sub">
         <div id="editor-menu-sub-top" style="background-color: black">
-          <button id="editor-back">↩︎</button>
+          <button id="editor-back" onclick="backEditorMenu()">↩︎</button>
           <h1 id="editor-subtitle">Null</h1>
         </div>
         <div id="editor-menu-sub-bottom">

@@ -85,45 +85,39 @@ document
 //画面上の動きを作る。
 
 //left menu
-document.getElementById("swapFullScreen").addEventListener("click", (e) => {
-  screen=document.getElementById("screen");
-  screen.style.zIndex="10";
-  screen.style.top="0";
-  screen.style.left="0";
-  screen.style.width="100%";
-  screen.style.height="100%";
-});
-document
-  .getElementById("editor-button-importFile")
-  .addEventListener("click", (e) => {
-    //ソース(動画、画像、音声)をimportする為にボタンを押させる関数
-    let dialoger = document.getElementById("file-dialog-source");
-    dialoger.click();
-  });
+function swapFullScreen() {
+  screen = document.getElementById("screen");
+  screen.style.zIndex = "10";
+  screen.style.top = "0";
+  screen.style.left = "0";
+  screen.style.width = "100%";
+  screen.style.height = "100%";
+}
+function importFile() {
+  //ソース(動画、画像、音声)をimportする為にボタンを押させる関数
+  let dialoger = document.getElementById("file-dialog-source");
+  dialoger.click();
+}
 
-document
-  .getElementById("editor-button-importProject")
-  .addEventListener("click", (e) => {
-    //プロジェクトをimportする為にボタンを押させる関数
-    let dialoger = document.getElementById("file-dialog-project");
-    dialoger.click();
-  });
+function importProject() {
+  //プロジェクトをimportする為にボタンを押させる関数
+  let dialoger = document.getElementById("file-dialog-project");
+  dialoger.click();
+}
 
-document.getElementById("editor-back").addEventListener("click", (e) => {
+function backEditorMenu() {
   document.getElementById("editor-back").style.visibility = "hidden";
   editorMenus = document.getElementsByClassName("editor-menus");
   for (let i = 0; i < editorMenus.length; ++i) {
     editorMenus[i].style.visibility = "hidden";
   }
   document.getElementById("editor-menu-main").style.visibility = "visible";
-});
+}
 
-document
-  .getElementById("editor-button-addElem")
-  .addEventListener("click", (e) => {
-    document.getElementById("editor-menu-main").style.visibility = "hidden";
-    document.getElementById("editor-menu-sub").style.visibility = "visible";
-    document.getElementById("editor-menu-addElem").style.visibility = "visible";
-    document.getElementById("editor-back").style.visibility = "visible";
-    document.getElementById("editor-subtitle").innerHTML = "add Element";
-  });
+function menu_open_AddElement() {
+  document.getElementById("editor-menu-main").style.visibility = "hidden";
+  document.getElementById("editor-menu-sub").style.visibility = "visible";
+  document.getElementById("editor-menu-addElem").style.visibility = "visible";
+  document.getElementById("editor-back").style.visibility = "visible";
+  document.getElementById("editor-subtitle").innerHTML = "add Element";
+}
