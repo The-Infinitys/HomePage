@@ -22,7 +22,6 @@
     <p>C言語,C++,C#,JavaScript,あとPythonを趣味でやっています！</p>
   </section>
   <section class="HyperLinks">
-    <div style="display: flex; justify-content: space-around;">
       <div class="HyperLinkBox" style="background-color: #24acf0;">
         <a href="https://scratch.mit.edu/users/The_Infinitys/">
           <img src="https://scratch.mit.edu/images/scratch-og.png" alt="Scratch" width="10%" height="auto"
@@ -41,7 +40,6 @@
           <p style="color: white;">The Infinity'sのブログ</p>
         </a>
       </div>
-    </div>
   </section>
   <footer>
     <h1>&copy;The Infinity's</h1>
