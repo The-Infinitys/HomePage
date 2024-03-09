@@ -1,3 +1,11 @@
+/* Define variables for colors */
+:root {
+    --background-light: white;
+    --background-dark: black;
+    --text-light: black;
+    --text-dark: white;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,12 +25,27 @@ header {
     width: 100%;
     height: 60px;
     font-size: 15%;
-    color: black;
-    background-color: white;
     display: flex;
     font-size: 20px;
 }
 
+/* Use prefers-color-scheme media query for dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: none;
+        /* Optional: Remove background image in dark mode */
+    }
+
+    header,
+    section.News,
+    section.HyperLinks,
+    footer {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+    }
+}
+
+/* Light mode styles are the default styles */
 p {
     font-size: 20px;
 }
@@ -32,28 +55,15 @@ section.Title {
     text-align: center;
     font-size: 100px;
     background-color: transparent;
-    color: white;
+    color: var(--text-light);
     text-align: center;
     padding-top: 80px;
 }
 
-section.News {
-    text-align: right;
-    background-color: black;
-    color: white;
-}
-
 section.introduce {
     text-align: left;
-    background-color: white;
-    color: black;
-    background-size: cover;
-}
-
-section.HyperLinks {
-    text-align: center;
-    background-color: black;
-    color: white;
+    background-color: var(--background-light);
+    color: var(--text-light);
     background-size: cover;
 }
 
@@ -63,12 +73,11 @@ h1.bigger {
 
 footer {
     text-align: center;
-    background-image: url("images/The Infinity(White).png");
     background-size: cover;
     width: 100%;
     height: 50px;
-    color: black;
-    background-color: white;
+    color: var(--text-light);
+    background-color: var(--background-light);
 }
 
 .HyperLinkBox {
