@@ -1,7 +1,10 @@
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const darkModeOn = darkModeMediaQuery.matches;
-if(darkModeOn){
 
+const startLogo=document.querySelector("startLogo");
+const logo=document.querySelector("logo");
+if(darkModeOn){
 }else{
-  
+  startLogo.src="/images/TheInfinitys(White).png";
+  logo.src="/images/Infinity Light.svg";
 }
