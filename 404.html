@@ -1,32 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Infinity's</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>The Infinity's</title>
-  <link rel="stylesheet" href="/404.css">
-</head>
-
-<body>
-  <canvas id="RainbowHoneycomb"></canvas>
-  <header>
-    <a href="/"><img src="/images/TheInfinitys(White).jpeg" width="80px" height="60px" alt=""></a>
-    <h1>The Infinity's</h1>
-  </header>
-  <!-- Title -->
-  <section class="Title">
-    <h5>404 The page was not found</h5>
-    <img id="character" src="/images/InfinityKirby.svg" width="auto" height="60%" alt="">
-  </section>
-  <section class="HyperLinks">
-    <a href="/">
-      <h1 style="color:white;">Go to Home</h1>
-    </a>
-  </section>
-  <footer>
-    <h1>&copy;The Infinity's</h1>
-  </footer>
-</body>
-<script src="/Rainbowhoneycomb.js"></script>
-
+  <body>
+    <style>
+      #character{
+        width: auto;
+        height: 60%;
+      }
+      @media screen and (max-aspect-ratio:35/47) {
+        #character{
+          width: 100%;
+          height: auto;
+        }
+        }
+    </style>
+    <canvas id="RainbowHoneycomb"></canvas>
+    <header>
+      <a href="/"
+        ><img
+          src="/images/TheInfinitys(White).jpeg"
+          width="80px"
+          height="60px"
+          alt=""
+      /></a>
+      <h1>The Infinity's</h1>
+    </header>
+    <!-- Title -->
+    <section class="Title">
+      <h5 style="font-size:7vw;">404 The page was not found</h5>
+      <img
+        id="character"
+        src="/images/InfinityKirby.svg"
+        width="auto"
+        height="60%"
+        alt="" />
+    </section>
+    <section class="HyperLinks">
+      <a href="/">
+        <h1 style="color:white;">Go to Home</h1>
+      </a>
+    </section>
+    <footer>
+      <h1>&copy;The Infinity's</h1>
+    </footer>
+  </body>
+  <script src="/Rainbowhoneycomb.js"></script>
 </html>

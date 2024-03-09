@@ -23,16 +23,18 @@ header {
     font-size: 20px;
 }
 
-#icon{
-    position:absolute;
-    top:0;
-    left:0;
+#icon {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-#TheInfinitys{
-    position:absolute;
-    top:0;
-    left:8vh;
+
+#TheInfinitys {
+    position: absolute;
+    top: 0;
+    left: 8vh;
 }
+
 p {
     font-size: 20px;
 }
@@ -49,24 +51,14 @@ section.Title {
     text-align: center;
 }
 
-#character {
-    width: auto;
-    height: 60%;
-}
 
-@media screen and (max-aspect-ratio:35/47) {
-    #character {
-        width: 100%;
-        height: auto;
-    }
-}
 
 section.HyperLinks {
-    position:fixed;
+    position: fixed;
     width: 100%;
-    height:10%;
-    bottom:10%;
-    left:0;
+    height: 10%;
+    bottom: 10%;
+    left: 0;
     text-align: center;
     background-color: black;
     color: white;
