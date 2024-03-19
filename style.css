@@ -1,6 +1,8 @@
-/* Define variables for colors */
+:root {
+    --background: white;
+    --text: black;
+}
 
-/* Use prefers-color-scheme media query for dark mode */
 @media (prefers-color-scheme: dark) {
     :root {
         --background: black;
@@ -8,21 +10,14 @@
     }
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --background: white;
-        --text: black;
-    }
+body {
+    background-color: var(--background);
 }
 
 * {
     padding: 0;
     margin: 0;
     font-family: serif;
-}
-
-body {
-    background-image: url("images/RainbowHoneycomb.png");
 }
 
 header {
@@ -56,7 +51,7 @@ section.Title {
     padding-top: 80px;
 }
 
-section.news{
+section.news {
     text-align: right;
     background-color: var(--background);
     color: var(--text);
@@ -86,5 +81,5 @@ footer {
 .HyperLinkBox {
     width: 33%;
     height: 100%;
-    color:var(--text);
+    color: var(--text);
 }
