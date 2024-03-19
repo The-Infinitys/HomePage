@@ -5,8 +5,8 @@ setInterval(() => {
   const darkModeOn = darkModeMediaQuery.matches;
 
   if (darkModeOn) {
-    startLogo.src = "./images/TheInfinitys(Black).png";
+    startLogo.src = "/images/TheInfinitys(Black).png";
   } else {
-    startLogo.src = "./images/TheInfinitys(White).jpeg";
+    startLogo.src = "/images/TheInfinitys(White).jpeg";
   }
 }, 100);
