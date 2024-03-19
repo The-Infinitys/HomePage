@@ -82,4 +82,5 @@ footer {
     width: 33%;
     height: 100%;
     color: var(--text);
+    background-color: var(--background);
 }
