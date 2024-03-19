@@ -7,6 +7,6 @@ setInterval(() => {
   if (darkModeOn) {
     startLogo.src = "./images/TheInfinitys(Black).png";
   } else {
-    startLogo.src = "./images/TheInfinitys(White).png";
+    startLogo.src = "./images/TheInfinitys(White).jpeg";
   }
-}, 1000);
+}, 100);
