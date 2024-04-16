@@ -39,7 +39,7 @@ header>a>img{
     top:0;
     left:0;
     width:auto;
-    height:10vh;
+    height:100%;
 }
 header>h1{
     position:absolute;
@@ -79,7 +79,7 @@ section.introduce {
 }
 
 h1.bigger {
-    font-size: 100px;
+    font-size: 10vw;
 }
 
 footer {
