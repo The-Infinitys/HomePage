@@ -1,12 +1,13 @@
-const startLogo = document.querySelector("#startLogo");
-const logo = document.querySelector("#logo");
+const white = document.querySelector("#headerLogo-white");
+const black = document.querySelector("#headerLogo-black");
 setInterval(() => {
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const darkModeOn = darkModeMediaQuery.matches;
-
   if (darkModeOn) {
-    startLogo.src = "/images/TheInfinitys(Black).png";
+    black.style.visibility="visible";
+    white.style.visibility="hidden";
   } else {
-    startLogo.src = "/images/TheInfinitys(White).jpeg";
+    black.style.visibility="hidden";
+    white.style.visibility="visible";
   }
 }, 100);

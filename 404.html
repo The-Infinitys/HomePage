@@ -3,291 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <title>The Infinity's</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <!--for Google Search Engine-->
+    <!--for github.io-->
+    <meta
+      name="google-site-verification"
+      content="LtRm_2vDTX-S_HrofbTE7Qdt4-4apgxy4mQuhWPIggc" />
+    <!--for onrender.com-->
+    <meta
+      name="google-site-verification"
+      content="ljFMTkOWAOP0tA2Xw6EukkQL5or93CKbJICn75d879I" />
   </head>
-  <style>
-        :root {
-        --background: white;
-        --text: black;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --background: black;
-            --text: white;
-        }
-    }
-
-    body {
-        background-color: var(--background);
-    }
-
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: serif;
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        margin-top: 0px;
-        text-align: center;
-        width: 100%;
-        height: 60px;
-        font-size: 15%;
-        display: flex;
-        font-size: 20px;
-        color: var(--text);
-        background-color: var(--background);
-    }
-
-
-    /* Light mode styles are the default styles */
-    p {
-        font-size: 20px;
-    }
-
-    section.Title {
-        margin-top: 0;
-        text-align: center;
-        font-size: 100px;
-        background-color: transparent;
-        color: var(--text);
-        text-align: center;
-        padding-top: 80px;
-    }
-
-    section.news {
-        text-align: right;
-        background-color: var(--background);
-        color: var(--text);
-        background-size: cover;
-    }
-
-    section.introduce {
-        text-align: left;
-        background-color: var(--background);
-        color: var(--text);
-        background-size: cover;
-    }
-
-    h1.bigger {
-        font-size: 100px;
-    }
-
-    footer {
-        text-align: center;
-        background-size: cover;
-        width: 100%;
-        height: 50px;
-        color: var(--text);
-        background-color: var(--background);
-    }
-
-    .HyperLinkBox {
-        width: 33%;
-        height: 100%;
-        color: var(--text);
-        background-color: var(--background);
-    }
-  </style>
   <body>
-    <style>
-      #character{
-        width: auto;
-        height: 60%;
-      }
-      @media screen and (max-aspect-ratio:35/47) {
-        #character{
-          width: 100%;
-          height: auto;
-        }
-        }
-    </style>
     <canvas id="RainbowHoneycomb"></canvas>
     <header>
       <a href="/"
         ><img
           id="startLogo"
-          src="/images/TheInfinitys(White).jpeg"
+          src="/image/TheInfinitys(White).jpeg"
           width="80px"
           height="60px"
-          alt=""
-      /></a>
+          alt="" />
+      </a>
       <h1>The Infinity's</h1>
     </header>
     <!-- Title -->
     <section class="Title">
-      <h5 style="font-size:7vw;">404 The page was not found</h5>
+      <h1>The Infinity's</h1>
       <img
-        id="character"
-        src="/images/InfinityKirby.svg"
-        width="auto"
-        height="60%"
+        id="logo"
+        src="/image/Infinity Ball.svg"
+        width="400"
+        height="400"
         alt="" />
     </section>
-    <section
-      class="HyperLinkBox"
-      style="position:fixed;width:100%;height:10%;bottom:10%;">
-      <a href="/">
-        <h1 style="color:var(--text);">Go to Home</h1>
-      </a>
+    <!-- About News -->
+    <section class="news">
+      <h1 class="bigger">News</h1>
+      <p>2023/6/24(Sat)ページ開設</p>
     </section>
-    <footer style="position:fixed;width:100%;height:10%;bottom:0;">
+    <!--introduce myself-->
+    <section class="introduce">
+      <h1 class="bigger">Introduction</h1>
+      <p>Hello! Welcome to The Infinity's!</p>
+      <p>こんにちは！The Infinity'sです！</p>
+      <p>
+        主にゲームやプログラミングに関する情報を掲載していこうと思っています！
+      </p>
+      <p>(サボり癖があるのでまともに更新できない可能性あり)</p>
+      <p>C言語,C++,C#,JavaScript,あとPythonを趣味でやっています！</p>
+    </section>
+    <section class="HyperLinks">
+      <div style="display: flex; justify-content: space-around;">
+        <div class="HyperLinkBox" style="background-color: #24acf0;">
+          <a href="https://scratch.mit.edu/users/The_Infinitys/">
+            <img
+              src="https://scratch.mit.edu/images/scratch-og.png"
+              alt="Scratch"
+              width="100%"
+              height="auto"
+              style="padding-top: 0 auto;" />
+          </a>
+        </div>
+        <div class="HyperLinkBox">
+          <a href="https://github.com/The-Infinitys/">
+            <img
+              src="https://github.com/fluidicon.png"
+              alt="https://github.com/The-Infinitys/"
+              width="100%"
+              height="auto" />
+          </a>
+        </div>
+        <div class="HyperLinkBox">
+          <a href="/blog/">
+            <img src="/image/InfinityKirby.svg" width="100%" height="auto" />
+            <p style="color:var(--text)">The Infinity'sのブログ(現在停止中...)</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
       <h1>&copy;The Infinity's</h1>
     </footer>
   </body>
-  <script>
-    //ダークモード・ライトモード対応
-
-    const root3 = 1.7320508;
-    const RainbowHoneycomb = document.getElementById("RainbowHoneycomb");
-    function resizeCanvas() {
-      RainbowHoneycomb.width = window.innerWidth.toString();
-      RainbowHoneycomb.height = window.innerHeight.toString();
-    }
-    resizeCanvas();
-    window.onresize = resizeCanvas;
-    RainbowHoneycomb.style =
-      "position:fixed;width:100%;height:100%;top:0;left:0;z-index:-100;";
-    const draw = RainbowHoneycomb.getContext("2d");
-    function honeycomb(x, y, r) {
-      const darkModeMediaQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      );
-      const darkModeOn = darkModeMediaQuery.matches;
-      if (darkModeOn) {
-        draw.fillStyle = "black";
-      } else {
-        draw.fillStyle = "white";
-      }
-      draw.beginPath();
-      draw.moveTo(x, y - r);
-      draw.lineTo(x + (root3 / 2) * r, y - r / 2);
-      draw.lineTo(x + (root3 / 2) * r, y + r / 2);
-      draw.lineTo(x, y + r);
-      draw.lineTo(x - (root3 / 2) * r, y + r / 2);
-      draw.lineTo(x - (root3 / 2) * r, y - r / 2);
-      draw.fill();
-    }
-    const radius = 50;
-    var hsvToRgb16 = function (hue, saturation, value) {
-      var result = false;
-      if (
-        (saturation || saturation === 0) &&
-        saturation <= 100 &&
-        (value || value === 0) &&
-        value <= 100
-      ) {
-        var red = 0,
-          green = 0,
-          blue = 0,
-          i = 0,
-          f = 0,
-          q = 0,
-          p = 0,
-          t = 0;
-        hue = Number(hue % 360) / 60;
-        saturation = Number(saturation) / 100;
-        value = Number(value) / 100;
-        if (saturation === 0) {
-          red = value;
-          green = value;
-          blue = value;
-        } else {
-          i = Math.floor(hue);
-          f = hue - i;
-          p = value * (1 - saturation);
-          q = value * (1 - saturation * f);
-          t = value * (1 - saturation * (1 - f));
-          switch (i) {
-            case 0:
-              red = value;
-              green = t;
-              blue = p;
-              break;
-            case 1:
-              red = q;
-              green = value;
-              blue = p;
-              break;
-            case 2:
-              red = p;
-              green = value;
-              blue = t;
-              break;
-            case 3:
-              red = p;
-              green = q;
-              blue = value;
-              break;
-            case 4:
-              red = t;
-              green = p;
-              blue = value;
-              break;
-            case 5:
-              red = value;
-              green = p;
-              blue = q;
-              break;
-          }
-        }
-        result = {
-          red: Math.round(red * 255).toString(),
-          green: Math.round(green * 255).toString(),
-          blue: Math.round(blue * 255).toString(),
-        };
-      }
-      return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
-    };
-    var tickcount = 0;
-    function drawhoneycomb() {
-      for (let i = 0; i < RainbowHoneycomb.width; ++i) {
-        draw.fillStyle = hsvToRgb16(
-          (i * 360) / RainbowHoneycomb.width + tickcount,
-          100,
-          100
-        );
-        draw.fillRect(i, 0, 1, RainbowHoneycomb.height);
-      }
-      for (
-        let i = 0;
-        i < Math.round(RainbowHoneycomb.width / radius) + 2;
-        ++i
-      ) {
-        for (
-          let j = 0;
-          j < Math.round(RainbowHoneycomb.height / radius) + 2;
-          ++j
-        ) {
-          honeycomb(
-            radius * 2 * i + (j % 2) * radius,
-            ((radius * 2 * root3) / 2) * j,
-            radius
-          );
-        }
-      }
-      tickcount += 1;
-    }
-    var framelate = 60;
-    setInterval(drawhoneycomb, 1 / framelate);
-  </script>
-  <script>
-    const startLogo = document.querySelector("#startLogo");
-    const logo = document.querySelector("#logo");
-    setInterval(() => {
-      const darkModeMediaQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      );
-      const darkModeOn = darkModeMediaQuery.matches;
-
-      if (darkModeOn) {
-        startLogo.src = "/images/TheInfinitys(Black).png";
-      } else {
-        startLogo.src = "/images/TheInfinitys(White).jpeg";
-      }
-    }, 100);
-  </script>
+  <script src="/Rainbowhoneycomb.js"></script>
+  <script src="/script.js"></script>
 </html>
