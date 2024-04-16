@@ -44,8 +44,8 @@ header>a>img{
 header>h1{
     position:absolute;
     top:0;
-    left:calc(10 * 4 / 3vh);
-    font-size: 10vw;
+    left:calc(4 / 3 * 10vh);
+    font-size: min(9vw,7vh);
 }
 
 
