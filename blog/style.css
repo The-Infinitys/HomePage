@@ -17,7 +17,7 @@ body {
 * {
   padding: 0;
   margin: 0;
-  font-family: serif;
+  font-family:  arial;
 }
 
 header {
@@ -45,6 +45,7 @@ header>a>img {
 
 header>h1 {
   position: absolute;
+  font-family: selif;
   top: 0;
   left: calc(4 / 3 * 10vh);
   font-size: min(9vw, 7vh);
@@ -82,29 +83,27 @@ section.list {
 }
 #blog{
   position: fixed;
-  width:100%;
+  width:100vw;
   height:80%;
   top:10%;
   visibility: hidden;
 }
 #blog-view {
   position: absolute;
-  width: 90%;
+  width: 100%;
   height: 90%;
   top: 10%;
-  background-color: #ffffff;
-  color:#888888;
-  @media (prefers-color-scheme: dark) {
-    background-color: #000000;
-    color:#777777;
-  }
 }
 #blog-title{
   position: absolute;
   width: 80%;
+  height: 10%;
   left:20%;
+  font-size: 7vh;
+  overflow: hidden;
   background-color: #ffffff;
-  color:#888888;
+  color:#999999;
+  border: 2px solid #888888;
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color:#777777;
@@ -114,6 +113,7 @@ section.list {
   position: absolute;
   width: 20%;
   height: 10%;
+  font-size:7vh;
   background-color: #ffffff;
   color:#888888;
   @media (prefers-color-scheme: dark) {

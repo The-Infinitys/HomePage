@@ -8,6 +8,7 @@ const getData = function (count) {
         const box = document.createElement("button");
         box.className = "blog-button";
         box.onclick = () => {
+          document.querySelector("#blog-title").innerHTML=info.title;
           blog_open("https://the-infinitys.f5.si/BLOG" + info.html);
         }
         const thumbnail = document.createElement("img");
@@ -22,11 +23,7 @@ const getData = function (count) {
 };
 function blog_open(url) {
   document.querySelector("#blog").style.visibility = "visible";
-  fetch(url)
-    .then((res) => res.text())
-    .then((text) => {
-      document.querySelector("#blog-view").innerHTML = text;
-    }).catch((err) => console.log(`データが取得できませんでした：${err}`));
+  document.querySelector("#blog-view").src = url;
 }
 function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
