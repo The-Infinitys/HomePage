@@ -21,16 +21,14 @@ const getData = function (count) {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 function blog_open(url) {
-  document.querySelector(".view").style.visibility = "visible";
-  document.querySelector("#close").style.visibility = "visible";
+  document.querySelector("#blog").style.visibility = "visible";
   fetch(url)
     .then((res) => res.text())
     .then((text) => {
-      document.querySelector(".view").innerHTML = text;
+      document.querySelector("#blog-view").innerHTML = text;
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 }
 function blog_close() {
-  document.querySelector(".view").style.visibility = "hidden";
-  document.querySelector("#close").style.visibility = "hidden";
+  document.querySelector("#blog").style.visibility = "hidden";
 }
 getData(1);
