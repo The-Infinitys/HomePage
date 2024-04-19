@@ -1,5 +1,5 @@
 const getData = function () {
-  fetch("https://the-infinitys.f5.si/blog/list/1.json")
+  fetch("https://the-infinitys.f5.si/blog-data/list/1.json")
     .then((res) => res.json())
     .then((apiData) => {
       alert(apiData);
