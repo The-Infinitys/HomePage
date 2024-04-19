@@ -1,4 +1,8 @@
-window.onload=load_blogs();
-function load_blogs(){
-  
-}
+const getData = function () {
+  fetch("https://the-infinitys.f5.si/blog/list/1.json")
+    .then((res) => res.json())
+    .then((apiData) => {
+      alert(apiData);
+    }).catch((err) => console.error(`データが取得できませんでした：${err}`));
+};
+getData();
