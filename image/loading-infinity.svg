@@ -1,0 +1,30 @@
+<svg
+  class="loading-infinity"
+  viewBox="-60 -60 120 120"
+  fill="none"
+  stroke="#777">
+  <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
+  <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
+  <circle cx="0" cy="0" r="50" stroke-width="4" />
+  <style>
+    .loading-infinity{
+      animation-name: rotation,rainbow-stroke;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    @keyframes rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes rainbow-stroke {
+      0% { stroke: #ff0000; }
+      17% { stroke: #ffff00; }
+      33% { stroke: #00ff00; }
+      50% { stroke: #00ffff; }
+      67% { stroke: #0000ff; }
+      83% { stroke: #ff00ff; }
+      100% { stroke: #ff0000; }
+    }
+  </style>
+</svg>
