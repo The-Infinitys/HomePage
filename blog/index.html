@@ -30,10 +30,10 @@
     <div id="blog">
       <button id="blog-close" onclick="blog_close()">↩︎</button>
       <div id="blog-title"></div>
-      <iframe class="blog-view" onshow="document.querySelector('#loading-infinity_blog-view').style.visibility='visible';" onload="document.querySelector('#loading-infinity_blog-view').style.visibility='hidden';"></iframe>
+      <iframe id="blog-view" class="blog-view" onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';" onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
       <svg
         class="loading-infinity blog-view"
-        id="loading-infinity_blog-view"
+        id="loading-infinity-blog-view"
         viewBox="-60 -60 120 120"
         fill="none"
         stroke="#777">
