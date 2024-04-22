@@ -13,26 +13,17 @@ setInterval(() => {
 }, 100);
 
 let is_opened_hamburgerMenu = false;
-let hamburger_menu_width=50;
-function delay(ms) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve,ms);
-  });
-}
+
 async function hamburger_menu(){
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   if (is_opened_hamburgerMenu) {
-    for (let i=0;i<25;++i){
-      const num=hamburger_menu_width*(i/25)**2
-      menu.style.width=num.toString()+"%";
-      await delay(5);
-    }
+    menu.classList.add("hamburger-open");
+    menu.classList.remove("hamburger-close");
+    menu.style.width="35%";
   } else {
-    for (let i=25;i>0;--i){
-      const num=hamburger_menu_width*(i/25)**2
-      menu.style.width=num.toString()+"%";
-      await delay(5);
-    }
+    menu.classList.add("hamburger-close");
+    menu.classList.remove("hamburger-open");
+    menu.style.width="0";
   }
 }

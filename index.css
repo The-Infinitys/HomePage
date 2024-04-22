@@ -103,11 +103,34 @@ header>button {
     top: 10%;
     width: 0;
     height: 90%;
+    overflow:hidden;
+    text-overflow:clip;
     background-color: #ffffff77;
     @media (prefers-color-scheme: dark) {
         background-color: #00000077;
     }
     z-index:17;
+}
+@keyframes hamburger-open-animation {
+    from {width:0;}
+    to {width: 35%;}
+}
+
+@keyframes hamburger-close-animation {
+    from {width:35%;}
+    to {width: 0;}
+}
+.hamburger-open{
+    animation-name: hamburger-open-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count:initial;
+}
+.hamburger-close{
+    animation-name: hamburger-close-animation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count:initial;
 }
 
 /* Light mode styles are the default styles */
