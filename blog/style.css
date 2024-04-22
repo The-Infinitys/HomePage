@@ -17,7 +17,7 @@ body {
 * {
   padding: 0;
   margin: 0;
-  font-family:  arial;
+  font-family: arial;
 }
 
 header {
@@ -70,9 +70,9 @@ section.Title {
 .list {
   position: fixed;
   width: 90vw;
-  height:60vh;
+  height: 60vh;
   left: 5vw;
-  top:25vh;
+  top: 25vh;
   background-color: #ffffff55;
   border-color: #00000055;
   color: var(--text);
@@ -81,16 +81,19 @@ section.Title {
     background-color: #00000055;
     border-color: #ffffff55;
   }
+
   overflow: scroll;
   border: 2px solid;
 }
-#blog{
+
+#blog {
   position: fixed;
-  width:100%;
-  height:90%;
-  top:10%;
+  width: 100%;
+  height: 90%;
+  top: 10%;
   visibility: hidden;
 }
+
 .blog-view {
   position: absolute;
   width: 100%;
@@ -99,40 +102,55 @@ section.Title {
   background-color: var(--background);
   background-image: url("../image/loading-infinity.svg");
 }
-#blog-title{
+
+#blog-title {
   position: absolute;
   width: 80%;
   height: 10%;
-  left:20%;
+  left: 20%;
   font-size: 7vh;
   text-overflow: ellipsis;
   overflow: hidden;
   background-color: #ffffff;
-  color:#999999;
+  color: #999999;
   border: 2px solid #888888;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
-    color:#777777;
+    color: #777777;
   }
 }
+
 #blog-close {
   position: absolute;
   width: 20%;
   height: 10%;
-  font-size:7vh;
+  font-size: 7vh;
   background-color: #ffffff;
-  color:#888888;
+  color: #888888;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
-    color:#777777;
+    color: #777777;
   }
 }
 
 .blog-button {
   border: 0px;
-  background-color: var(--background);
-  width: 100%;
   aspect-ratio: calc(4/3);
+  background-color: #ffffff55;
+  color:#888888;
+  @media (prefers-color-scheme: dark) {
+    background-color: #00000055;
+    color: #777777;
+  }
+  @media (max-aspect-ratio:3/4) {
+    width: 90vw;
+  }
+  width:calc(90vw / 2);
+  @media (min-aspect-ratio:4/3) {
+    width:calc(90vw / 4);
+  }
 }
 
 .blog-button img {
@@ -152,6 +170,7 @@ section.Title {
   background-color: #ffffff55;
   color: var(--text);
   font-size: 5vh;
+
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
   }
@@ -161,7 +180,7 @@ footer {
   position: fixed;
   width: 100%;
   height: 10%;
-  bottom:0;
+  bottom: 0;
   text-align: center;
   background-size: cover;
   width: 100%;
