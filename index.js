@@ -1,6 +1,6 @@
 //headerの初期化
 const initheader = function (count) {
-  fetch("/templete/header.json" + count.toString() + ".json")
+  fetch("/templete/header.html")
     .then((res) => res.text())
     .then((header) => {
       document.querySelector("header").innerHTML=header;
