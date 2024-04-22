@@ -6,6 +6,7 @@ const initheader = function (count) {
       document.querySelector("header").innerHTML=header;
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
+window.onload=initheader();
 //ダークモードとライトモード
 const white = document.querySelector("#headerLogo-white");
 const black = document.querySelector("#headerLogo-black");
