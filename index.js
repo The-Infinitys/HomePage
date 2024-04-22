@@ -1,3 +1,12 @@
+//headerの初期化
+const initheader = function (count) {
+  fetch("/templete/header.json" + count.toString() + ".json")
+    .then((res) => res.text())
+    .then((header) => {
+      document.querySelector("header").innerHTML=header;
+    }).catch((err) => console.log(`データが取得できませんでした：${err}`));
+};
+//ダークモードとライトモード
 const white = document.querySelector("#headerLogo-white");
 const black = document.querySelector("#headerLogo-black");
 setInterval(() => {
@@ -12,8 +21,8 @@ setInterval(() => {
   }
 }, 100);
 
+//ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
-
 async function hamburger_menu(){
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
