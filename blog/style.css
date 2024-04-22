@@ -117,3 +117,7 @@
     background-color: #00000055;
   }
 }
+footer{
+  position:fixed;
+  bottom:0;
+}
