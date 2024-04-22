@@ -6,11 +6,14 @@ const init_header = function () {
       document.querySelector("header").innerHTML=header;
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-window.onload=init_header();
+window.onload= () =>{
+  init_header();
+  setInterval(dark_right,100);
+}
 //ダークモードとライトモード
 const white = document.querySelector("#headerLogo-white");
 const black = document.querySelector("#headerLogo-black");
-setInterval(() => {
+const dark_light = () => {
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const darkModeOn = darkModeMediaQuery.matches;
   if (darkModeOn) {
@@ -20,11 +23,11 @@ setInterval(() => {
     black.style.visibility = "hidden";
     white.style.visibility = "visible";
   }
-}, 100);
+};
 
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
-async function hamburger_menu(){
+function hamburger_menu(){
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   if (is_opened_hamburgerMenu) {
