@@ -1,12 +1,12 @@
 //headerの初期化
-const initheader = function (count) {
+const init_header = function () {
   fetch("/templete/header.html")
     .then((res) => res.text())
     .then((header) => {
       document.querySelector("header").innerHTML=header;
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-window.onload=initheader();
+window.onload=init_header();
 //ダークモードとライトモード
 const white = document.querySelector("#headerLogo-white");
 const black = document.querySelector("#headerLogo-black");
