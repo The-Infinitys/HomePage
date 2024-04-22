@@ -103,22 +103,38 @@ header>button {
     top: 10%;
     width: 0;
     height: 90%;
+    text-align: left;
     overflow:hidden;
     text-overflow:clip;
     background-color: #ffffff77;
+    border: 1px solid var(--text);
+    color: var(--text);
     @media (prefers-color-scheme: dark) {
         background-color: #00000077;
     }
     z-index:17;
+    opacity: 0;
 }
+#hamburger_menus div{
+    padding:0;
+    margin:0;
+    width:100%;
+    border: 1px solid var(--text);
+}
+#hamburger_menus div a{
+    color:var(--text);
+    text-decoration: none;
+}
+
+
 @keyframes hamburger-open-animation {
-    from {width:0;}
-    to {width: 35%;}
+    from {width: 0;opacity: 0;}
+    to {width:35%;opacity: 1;}
 }
 
 @keyframes hamburger-close-animation {
-    from {width:35%;}
-    to {width: 0;}
+    from {width:35%;opacity: 1;}
+    to {width: 0;opacity: 0;}
 }
 .hamburger-open{
     animation-name: hamburger-open-animation;

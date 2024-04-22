@@ -21,9 +21,11 @@ async function hamburger_menu(){
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
     menu.style.width="35%";
+    menu.style.opacity="1";
   } else {
     menu.classList.add("hamburger-close");
     menu.classList.remove("hamburger-open");
     menu.style.width="0";
+    menu.style.opacity="0";
   }
 }
