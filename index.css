@@ -34,20 +34,79 @@ header {
     color: var(--text);
     background-color: var(--background);
 }
-header>a>img{
-    position:absolute;
-    top:0;
-    left:0;
-    width:auto;
-    height:100%;
-}
-header>h1{
-    position:absolute;
-    top:0;
-    left:calc(4 / 3 * 10vh);
-    font-size: min(9vw,7vh);
+
+header>a>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
 }
 
+header>h1 {
+    position: absolute;
+    top: 0;
+    left: calc(4 / 3 * 10vh);
+    font-size: min(9vw, 7vh);
+}
+
+header>button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10vh;
+    height: 10vh;
+    background-color: transparent;
+    border: none;
+}
+
+@keyframes rainbow-stroke {
+    0% {
+        stroke: #ff0000;
+    }
+
+    17% {
+        stroke: #ffff00;
+    }
+
+    33% {
+        stroke: #00ff00;
+    }
+
+    50% {
+        stroke: #00ffff;
+    }
+
+    67% {
+        stroke: #0000ff;
+    }
+
+    83% {
+        stroke: #ff00ff;
+    }
+
+    100% {
+        stroke: #ff0000;
+    }
+}
+
+#hamburger_menu_icon {
+    animation-name: rainbow-stroke;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+#hamburger_menus{
+    position: fixed;
+    right:0;
+    top:10%;
+    width:25%;
+    height:80%;
+    background-color: var(--background);
+    z-index:17;
+    visibility: hidden;
+}
 
 /* Light mode styles are the default styles */
 p {
@@ -63,6 +122,7 @@ section.Title {
     text-align: center;
     padding-top: 80px;
 }
+
 section {
     background-color: var(--background);
     color: var(--text);
