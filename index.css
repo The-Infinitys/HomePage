@@ -97,15 +97,17 @@ header>button {
     animation-iteration-count: infinite;
 }
 
-#hamburger_menus{
+#hamburger_menus {
     position: fixed;
-    right:0;
-    top:10%;
-    width:25%;
-    height:80%;
-    background-color: var(--background);
+    right: 0;
+    top: 10%;
+    width: 0;
+    height: 90%;
+    background-color: #ffffff77;
+    @media (prefers-color-scheme: dark) {
+        background-color: #00000077;
+    }
     z-index:17;
-    visibility: hidden;
 }
 
 /* Light mode styles are the default styles */

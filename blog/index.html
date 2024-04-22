@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>The Infinity's</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../index.css" />
   </head>
   <body>
     <canvas id="RainbowHoneycomb"></canvas>
@@ -20,6 +20,20 @@
           alt="" />
       </a>
       <h1>The Infinity's</h1>
+      <button id="hamburger_menu_button" onclick="hamburger_menu()">
+        <svg
+          id="hamburger_menu_icon"
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="var(--text)"
+          stroke-width="10">
+          <line x1="10" y1="20" x2="90" y2="20" />
+          <line x1="10" y1="50" x2="90" y2="50" />
+          <line x1="10" y1="80" x2="90" y2="80" />
+        </svg>
+      </button>
+      <!--hamburger menu-->
+      <div id="hamburger_menus"></div>
     </header>
     <!-- Title -->
     <section class="Title">
@@ -31,7 +45,11 @@
     <div id="blog">
       <button id="blog-close" onclick="blog_close()">↩︎</button>
       <div id="blog-title"></div>
-      <iframe id="blog-view" class="blog-view" onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';" onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
+      <iframe
+        id="blog-view"
+        class="blog-view"
+        onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';"
+        onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
       <svg
         class="loading-infinity blog-view"
         id="loading-infinity-blog-view"

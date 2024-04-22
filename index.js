@@ -13,12 +13,26 @@ setInterval(() => {
 }, 100);
 
 let is_opened_hamburgerMenu = false;
-let hamburger_menu = () => {
+let hamburger_menu_width=50;
+function delay(ms) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve,ms);
+  });
+}
+async function hamburger_menu(){
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   if (is_opened_hamburgerMenu) {
-    menu.style.visibility = "visible";
+    for (let i=0;i<25;++i){
+      const num=hamburger_menu_width*(i/25)**2
+      menu.style.width=num.toString()+"%";
+      await delay(5);
+    }
   } else {
-    menu.style.visibility = "hidden";
+    for (let i=25;i>0;--i){
+      const num=hamburger_menu_width*(i/25)**2
+      menu.style.width=num.toString()+"%";
+      await delay(5);
+    }
   }
-};
+}
