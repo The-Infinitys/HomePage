@@ -9,16 +9,17 @@
     <meta
       name="google-site-verification"
       content="LtRm_2vDTX-S_HrofbTE7Qdt4-4apgxy4mQuhWPIggc" />
-    <!--for onrender.com-->
-    <meta
-      name="google-site-verification"
-      content="ljFMTkOWAOP0tA2Xw6EukkQL5or93CKbJICn75d879I" />
+    <!--サービスワーカーの登録-->
+    <link rel="manifest" href="./PWA/manifest.json">
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./PWA/sw.js");
+      }
+    </script>
   </head>
   <body>
     <canvas id="RainbowHoneycomb"></canvas>
-    <header>
-      
-    </header>
+    <header></header>
     <!-- Title -->
     <section class="Title">
       <h1>The Infinity's</h1>
