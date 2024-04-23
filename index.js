@@ -6,10 +6,7 @@ const init_header = function () {
       document.querySelector("header").innerHTML=header;
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-window.onload= () =>{
-  init_header();
-  setInterval(dark_right,100);
-}
+
 //ダークモードとライトモード
 const white = document.querySelector("#headerLogo-white");
 const black = document.querySelector("#headerLogo-black");
@@ -24,6 +21,11 @@ const dark_light = () => {
     white.style.visibility = "visible";
   }
 };
+
+window.onload= () =>{
+  init_header();
+  setInterval(dark_right,100);
+}
 
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
