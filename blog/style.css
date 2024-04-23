@@ -34,7 +34,7 @@
 #blog {
   position: fixed;
   width: 100%;
-  height: 80%;
+  height: 85%;
   top: 10%;
   visibility: hidden;
 }
@@ -52,7 +52,7 @@
   width: 80%;
   height: 10%;
   left: 20%;
-  font-size: 7vh;
+  font-size: 5vh;
   text-overflow: ellipsis;
   overflow: hidden;
   background-color: #ffffff;
