@@ -112,7 +112,7 @@ header>button {
     @media (prefers-color-scheme: dark) {
         background-color: #00000077;
     }
-    z-index:17;
+    z-index:777;
     opacity: 0;
 }
 #hamburger_menus div{
