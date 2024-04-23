@@ -9,7 +9,9 @@
     --text: white;
   }
 }
-
+.Title h1{
+  font-size:min(10vh,10vw);
+}
 .list {
   position: fixed;
   width: 90vw;
@@ -43,7 +45,6 @@
   height: 90%;
   top: 10%;
   background-color: var(--background);
-  background-image: url("../image/loading-infinity.svg");
 }
 
 #blog-title {
@@ -71,7 +72,6 @@
   font-size: 7vh;
   background-color: #ffffff;
   color: #888888;
-
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;
@@ -79,22 +79,21 @@
 }
 
 .blog-button {
-  border: 0px;
+  overflow:hidden;
+  position: relative;
   background-color: #ffffff55;
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
   }
-  width:calc(90 / 2 vw);
-  height: calc(90 / 2 / 4 * 3vw);
-  @media (max-aspect-ratio:3/4) {
-    width: 90vw;
-    height: calc(90 / 4 * 3vw);
+  width:calc(90vw / 2);
+  aspect-ratio: 4/3;
+  @media (max-aspect-ratio: 3/4){
+    width:calc(90vw / 1);
   }
-  @media (min-aspect-ratio:4/3) {
-    width: calc(90 / 4 vw);
-    height: calc(90 / 4 / 4 * 3vw);
+
+  @media (min-aspect-ratio: 4/3){
+    width:calc(90vw / 4);
   }
-  overflow: hidden;
 }
 
 .blog-button img {
@@ -111,12 +110,8 @@
   width: 100%;
   height: 10%;
   bottom: 0;
-  background-color: #ffffff55;
   color: var(--text);
-  font-size: 5vh;
-  @media (prefers-color-scheme: dark) {
-    background-color: #00000055;
-  }
+  font-size: auto;
 }
 
 footer {

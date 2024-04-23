@@ -1,4 +1,6 @@
-result = {};
+//data_list_lengthを動的に変えること。
+const data_list_length = 1;
+
 const getData = function (count) {
   fetch("https://the-infinitys.f5.si/BLOG/list/" + count.toString() + ".json")
     .then((res) => res.json())
@@ -8,7 +10,7 @@ const getData = function (count) {
         const box = document.createElement("button");
         box.classList.add("blog-button");
         box.onclick = () => {
-          document.querySelector("#blog-title").innerHTML=info.title;
+          document.querySelector("#blog-title").innerHTML = info.title;
           blog_open("https://the-infinitys.f5.si/BLOG" + info.html);
         }
         const thumbnail = document.createElement("img");
@@ -28,4 +30,6 @@ function blog_open(url) {
 function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
-getData(1);
+for (let i=data_list_length;i>0;++i){
+  getData(i);
+}
