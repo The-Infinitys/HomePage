@@ -35,6 +35,18 @@ header {
     background-color: var(--background);
 }
 
+@media (prefers-color-scheme: dark) {
+    #headerlogo-light {
+        visibility: hidden;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #headerlogo-dark {
+        visibility: hidden;
+    }
+}
+
 header>a>img {
     position: absolute;
     top: 0;
@@ -104,49 +116,68 @@ header>button {
     width: 0;
     height: 90%;
     text-align: left;
-    overflow:hidden;
-    text-overflow:clip;
+    overflow: hidden;
+    text-overflow: clip;
     border: 1px solid var(--text);
     color: var(--text);
-    z-index:777;
+    z-index: 777;
     opacity: 0;
     background-color: #ffffff77;
+
     @media (prefers-color-scheme: dark) {
         background-color: #00000077;
     }
 }
-#hamburger_menus div{
-    padding:0;
-    margin:0;
-    width:100%;
+
+#hamburger_menus div {
+    padding: 0;
+    margin: 0;
+    width: 100%;
     border: 1px solid var(--text);
 }
-#hamburger_menus div a{
-    color:var(--text);
+
+#hamburger_menus div a {
+    color: var(--text);
     text-decoration: none;
 }
 
 
 @keyframes hamburger-open-animation {
-    from {width: 0;opacity: 0;}
-    to {width:35%;opacity: 1;}
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 35%;
+        opacity: 1;
+    }
 }
 
 @keyframes hamburger-close-animation {
-    from {width:35%;opacity: 1;}
-    to {width: 0;opacity: 0;}
+    from {
+        width: 35%;
+        opacity: 1;
+    }
+
+    to {
+        width: 0;
+        opacity: 0;
+    }
 }
-.hamburger-open{
+
+.hamburger-open {
     animation-name: hamburger-open-animation;
     animation-duration: 1s;
     animation-timing-function: ease;
-    animation-iteration-count:initial;
+    animation-iteration-count: initial;
 }
-.hamburger-close{
+
+.hamburger-close {
     animation-name: hamburger-close-animation;
     animation-duration: 1s;
     animation-timing-function: ease;
-    animation-iteration-count:initial;
+    animation-iteration-count: initial;
 }
 
 /* Light mode styles are the default styles */

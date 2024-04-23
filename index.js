@@ -7,24 +7,8 @@ const init_header = function () {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 
-//ダークモードとライトモード
-const white = document.querySelector("#headerLogo-white");
-const black = document.querySelector("#headerLogo-black");
-const dark_light = () => {
-  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const darkModeOn = darkModeMediaQuery.matches;
-  if (darkModeOn) {
-    black.style.visibility = "visible";
-    white.style.visibility = "hidden";
-  } else {
-    black.style.visibility = "hidden";
-    white.style.visibility = "visible";
-  }
-};
-
 window.onload= () =>{
   init_header();
-  setInterval(dark_right,100);
 }
 
 //ハンバーガーメニューの設定
