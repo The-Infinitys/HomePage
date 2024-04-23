@@ -106,14 +106,14 @@ header>button {
     text-align: left;
     overflow:hidden;
     text-overflow:clip;
-    background-color: #ffffff77;
     border: 1px solid var(--text);
     color: var(--text);
+    z-index:777;
+    opacity: 0;
+    background-color: #ffffff77;
     @media (prefers-color-scheme: dark) {
         background-color: #00000077;
     }
-    z-index:777;
-    opacity: 0;
 }
 #hamburger_menus div{
     padding:0;
