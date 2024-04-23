@@ -7,11 +7,6 @@
   "description": "The Infinitysのホームページ兼ブログ兼アプリケーション兼...(以後無限に続く)",
   "icons": [
     {
-      "src": "/image/ICON.big.jpeg",
-      "sizes": "1448x1448",
-      "type": "image/jpeg"
-    },
-    {
       "src": "/image/icon.webp",
       "sizes": "500x500",
       "type": "image/webp"
