@@ -9,6 +9,12 @@
     --text: white;
   }
 }
+.Title{
+  position: fixed;
+  width:100%;
+  height: 20%;
+  top:0;
+}
 .Title h1{
   font-size:min(10vh,10vw);
 }
