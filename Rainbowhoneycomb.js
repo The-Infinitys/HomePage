@@ -1,7 +1,8 @@
 //ダークモード・ライトモード対応
 
 const root3 = 1.7320508;
-const RainbowHoneycomb = document.getElementById("RainbowHoneycomb");
+const RainbowHoneycomb = document.createElement("canvas");
+RainbowHoneycomb.id="RainbowHoneycomb"
 function resizeCanvas() {
   RainbowHoneycomb.width = window.innerWidth.toString();
   RainbowHoneycomb.height = window.innerHeight.toString();
@@ -9,7 +10,26 @@ function resizeCanvas() {
 resizeCanvas();
 window.onresize = resizeCanvas;
 RainbowHoneycomb.style =
-  "position:fixed;width:100%;height:100%;top:0;left:0;z-index:-100;";
+  `
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-100;
+  animation-name: show;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial;
+  `;
+document.body.appendChild(RainbowHoneycomb);
+const show_rainbowhoneycomb=document.createElement("style");
+show_rainbowhoneycomb.innerHTML=`
+@keyframes show{
+  from {opacity:0;}
+  to {opacity:1;}
+}`;
+document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r) {
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
