@@ -1,8 +1,9 @@
 //data_list_lengthを動的に変えること。
 const data_list_length = 1;
+const domain=new url(window.location.href).hostname;
 
-const getData = function (count) {
-  fetch("https://the-infinitys.f5.si/BLOG/list/" + count.toString() + ".json")
+const getData = function (name) {
+  fetch("https://" + domain + name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
       const infos = apiData.info;
@@ -11,10 +12,10 @@ const getData = function (count) {
         box.classList.add("blog-button");
         box.onclick = () => {
           document.querySelector("#blog-title").innerHTML = info.title;
-          blog_open("https://the-infinitys.f5.si/BLOG" + info.html);
+          blog_open("https://"+ domain + info.html);
         }
         const thumbnail = document.createElement("img");
-        thumbnail.src = "https://the-infinitys.f5.si/BLOG" + info.thumbnail;
+        thumbnail.src = "https://" + domain + info.thumbnail;
         thumbnail.alt = info.name;
         const title = document.createElement("div");
         title.innerHTML = info.title;
@@ -31,5 +32,5 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData(i);
+  getData("/BLOG/"+i.toString());
 }
