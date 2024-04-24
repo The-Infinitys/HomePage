@@ -36,13 +36,13 @@ header {
 }
 
 @media (prefers-color-scheme: dark) {
-    #headerlogo-light {
+    #headerLogo-light {
         visibility: hidden;
     }
 }
 
 @media (prefers-color-scheme: light) {
-    #headerlogo-dark {
+    #headerLogo-dark {
         visibility: hidden;
     }
 }
