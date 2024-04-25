@@ -35,5 +35,5 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData("/BLOG/list/"+i.toString());
+  getData("/blog-data/list/"+i.toString());
 }
