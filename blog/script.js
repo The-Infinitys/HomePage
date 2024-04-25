@@ -1,9 +1,12 @@
+
 //data_list_lengthを動的に変えること。
 const data_list_length = 1;
-const domain=new url(window.location.href).hostname;
+const domain=new URL(window.location.href);
+const blog_domain=domain.hostname;
 
 const getData = function (name) {
-  fetch("https://" + domain + name + ".json")
+  console.log("https://" + blog_domain + name + ".json");
+  fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
       const infos = apiData.info;
@@ -12,10 +15,10 @@ const getData = function (name) {
         box.classList.add("blog-button");
         box.onclick = () => {
           document.querySelector("#blog-title").innerHTML = info.title;
-          blog_open("https://"+ domain + info.html);
+          blog_open("https://"+ blog_domain + info.html);
         }
         const thumbnail = document.createElement("img");
-        thumbnail.src = "https://" + domain + info.thumbnail;
+        thumbnail.src = "https://" + blog_domain + info.thumbnail;
         thumbnail.alt = info.name;
         const title = document.createElement("div");
         title.innerHTML = info.title;
@@ -32,5 +35,5 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData("/BLOG/"+i.toString());
+  getData("/BLOG/list/"+i.toString());
 }
