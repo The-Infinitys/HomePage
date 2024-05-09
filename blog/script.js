@@ -5,7 +5,6 @@ const domain=new URL(window.location.href);
 const blog_domain=domain.hostname;
 
 const getData = function (name) {
-  console.log("https://" + blog_domain + name + ".json");
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
@@ -35,5 +34,5 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData("/blog-data/list/"+i.toString());
+  getData("/api/blog/"+i.toString());
 }
