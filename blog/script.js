@@ -35,6 +35,7 @@ const getData = function (name) {
 };
 function blog_open(url) {
   document.querySelector("#blog").style.visibility = "visible";
+  document.querySelector("#loading-infinity-blog-view").style.visibility = "visible";
   document.querySelector("#blog-view").src = url;
 }
 function blog_close() {
