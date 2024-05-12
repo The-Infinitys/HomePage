@@ -1,6 +1,6 @@
-
-//data_list_lengthを動的に変えること。
-const data_list_length = 1;
+const blog_start={year:2024,month:4}
+const today=new Date();
+const data_list_length = 1+12*(today.getFullYear()-blog_start.year)+today.getMonth()-blog_start.month;
 const domain=new URL(window.location.href);
 const blog_domain=domain.hostname;
 
@@ -34,5 +34,5 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData("/api/blog/"+i.toString());
+  getData("/api/blog/"+(blog_start.year+~~((blog_start.month+i-1)/12)).toString()+"-"+((blog_start.month+i-1)%12+1).toString());
 }
