@@ -22,8 +22,8 @@ const header = `
 <!--hamburger menu-->
 <div id="hamburger_menus">
   <div><a href="/blog">Blog</a></div>
-  <div><a href="https://scratch.mit.edu/users/The-Infinitys">Scratch</a></div>
-  <div><a href="https://github.com/The_Infinitys">GitHub</a></div>
+  <div><a href="https://scratch.mit.edu/users/The_Infinitys">Scratch</a></div>
+  <div><a href="https://github.com/The-Infinitys">GitHub</a></div>
   <div><a href="/">Home</a></div>
 </div>
 `;
