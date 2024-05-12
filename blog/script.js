@@ -1,6 +1,10 @@
 const blog_start={year:2024,month:4}
-const today=new Date();
-const data_list_length = 1+12*(today.getFullYear()-blog_start.year)+today.getMonth()+1-blog_start.month;
+let today=new Date();
+today={
+  year:today.getFullYear(),
+  month:today.getMonth()+1
+}
+const data_list_length = 1+12*(today.year-blog_start.year)+today.month-blog_start.month;
 const domain=new URL(window.location.href);
 const blog_domain=domain.hostname;
 
@@ -34,5 +38,7 @@ function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
 for (let i=data_list_length;i>0;--i){
-  getData("/api/blog/"+(blog_start.year+~~((blog_start.month+i)/12)).toString()+"-"+((blog_start.month+i-2)%12+1).toString());
+  const pathname="/api/blog/"+(blog_start.year+~~((blog_start.month+i)/12)).toString()+"-"+((blog_start.month+i-2)%12+1).toString()
+  console.log(pathname)
+  getData(pathname);
 }
