@@ -1,12 +1,15 @@
-const blog_start={year:2024,month:4}
-let today=new Date();
-today={
-  year:today.getFullYear(),
-  month:today.getMonth()+1
+const blog_start = {
+  year: 2024,
+  month: 4
 }
-const data_list_length = 1+12*(today.year-blog_start.year)+today.month-blog_start.month;
-const domain=new URL(window.location.href);
-const blog_domain=domain.hostname;
+let today = new Date();
+today = {
+  year: today.getFullYear(),
+  month: today.getMonth() + 1
+}
+const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month - blog_start.month;
+const domain = new URL(window.location.href);
+const blog_domain = domain.hostname;
 
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
@@ -18,7 +21,7 @@ const getData = function (name) {
         box.classList.add("blog-button");
         box.onclick = () => {
           document.querySelector("#blog-title").innerHTML = info.title;
-          blog_open("https://"+ blog_domain + info.index);
+          blog_open("https://" + blog_domain + info.index);
         }
         const thumbnail = document.createElement("img");
         thumbnail.src = "https://" + blog_domain + info.thumbnail;
@@ -37,8 +40,7 @@ function blog_open(url) {
 function blog_close() {
   document.querySelector("#blog").style.visibility = "hidden";
 }
-for (let i=data_list_length;i>0;--i){
-  const pathname="/api/blog/"+(blog_start.year+~~((blog_start.month+i)/12)).toString()+"-"+((blog_start.month+i-2)%12+1).toString()
-  console.log(pathname)
+for (let i = data_list_length; i > 0; i--) {
+  const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
   getData(pathname);
 }
