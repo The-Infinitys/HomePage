@@ -18,7 +18,7 @@ const getData = function (name) {
         box.classList.add("blog-button");
         box.onclick = () => {
           document.querySelector("#blog-title").innerHTML = info.title;
-          blog_open("https://"+ blog_domain + info.html);
+          blog_open("https://"+ blog_domain + info.index);
         }
         const thumbnail = document.createElement("img");
         thumbnail.src = "https://" + blog_domain + info.thumbnail;
