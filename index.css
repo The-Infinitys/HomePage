@@ -150,14 +150,20 @@ header>button {
     }
 
     to {
-        width: 35%;
+        width: 100%;
+        @media (min-aspect-ratio: 1/1) {
+            width: 35%;
+        }
         opacity: 1;
     }
 }
 
 @keyframes hamburger-close-animation {
     from {
-        width: 35%;
+        width: 100%;
+        @media (min-aspect-ratio: 1/1) {
+            width: 35%;
+        }
         opacity: 1;
     }
 

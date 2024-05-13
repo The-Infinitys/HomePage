@@ -1,74 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="”width"
-      ="device-width,initial-scale"
-      ="1″" />
-    <title>The Infinity's</title>
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="/image/favicon/apple-touch-icon-180x180.png" />
-    <link rel="icon" type="image/png" href="/image/favicon/icon-192x192.png" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6F5Z0EB6JE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-6F5Z0EB6JE");
-    </script>
-    <!--サービスワーカーの登録-->
-    <link rel="manifest" href="./PWA/manifest.json" />
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./PWA/sw.js");
-      }
-    </script>
-  </head>
-  <body>
-    <header></header>
-    <!-- Title -->
-    <section class="Title">
-      <h1>The Infinity's</h1>
-      <img
-        id="logo"
-        src="./image/The-Infinitys.webp"
-        width="400"
-        height="400"
-        alt="" />
-    </section>
-    <!-- About News -->
-    <section class="whoami">
-      <h1 class="bigger">Who is The Infinity's?</h1>
-      <p>私はThe-Infinitysです。</p>
-      <p>何処にでも居るただの無限です。</p>
-      <p>٩( ᐛ )و</p>
-    </section>
-    <!--introduce myself-->
-    <section class="introduce">
-      <h1 class="bigger">Introduction</h1>
-      <p>Hello! Welcome to The Infinity's!</p>
-      <p>こんにちは！The Infinity'sです！</p>
-      <p>
-        主にゲームやプログラミングに関する情報を掲載していこうと思っています！
-      </p>
-      <p>(サボり癖があるのでまともに更新できない可能性あり)</p>
-      <p>C言語,C++,C#,JavaScript,あとPythonを趣味でやっています！</p>
-    </section>
-    <footer>
-      <h1>&copy;The Infinity's</h1>
-    </footer>
-  </body>
-  <script src="./Rainbowhoneycomb.js"></script>
-  <script src="./index.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <title>The Infinity's</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="apple-touch-icon" type="image/png" href="/image/favicon/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" href="/image/favicon/icon-192x192.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F5Z0EB6JE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-6F5Z0EB6JE");
+  </script>
+  <!--サービスワーカーの登録-->
+  <link rel="manifest" href="./PWA/manifest.json" />
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./PWA/sw.js");
+    }
+  </script>
+</head>
+
+<body>
+  <header></header>
+  <!-- Title -->
+  <section class="Title">
+    <h1>The Infinity's</h1>
+    <img id="logo" src="./image/The-Infinitys.webp" width="400" height="400" alt="" />
+  </section>
+  <!-- About News -->
+  <section class="whoami">
+    <h1 class="bigger">Who is The Infinity's?</h1>
+    <p>私はThe-Infinitysです。</p>
+    <p>何処にでも居るただの無限です。</p>
+    <p>٩( ᐛ )و</p>
+  </section>
+  <!--introduce myself-->
+  <section class="introduce">
+    <h1 class="bigger">Introduction</h1>
+    <p>Hello! Welcome to The Infinity's!</p>
+    <p>こんにちは！The Infinity'sです！</p>
+    <p>
+      主にゲームやプログラミングに関する情報を掲載していこうと思っています！
+    </p>
+    <p>(サボり癖があるのでまともに更新できない可能性あり)</p>
+    <p>C言語,C++,C#,JavaScript,あとPythonを趣味でやっています！</p>
+  </section>
+  <footer>
+    <h1>&copy;The Infinity's</h1>
+  </footer>
+</body>
+<script src="./Rainbowhoneycomb.js"></script>
+<script src="./index.js"></script>
+
 </html>
