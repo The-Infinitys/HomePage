@@ -56,6 +56,14 @@ for (let i = data_list_length; i > 0; i--) {
   getData(pathname);
 }
 document.querySelector("#blog-copy").addEventListener("click",e=>{
-  navigator.clipboard.write("https://"+blog_domain+"/blog?name="+param_open);
-  console.log("copied!");
+  copyToClipboard("https://"+blog_domain+"/blog?name="+param_open);
 });
+function copyToClipboard (text) {
+  if (navigator.clipboard) {
+    return navigator.clipboard.writeText(text).then(function () {
+      alert("copied!")
+    })
+  } else {
+    alert(text)
+  }
+}
