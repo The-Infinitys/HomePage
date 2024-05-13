@@ -10,14 +10,22 @@ today = {
 const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month - blog_start.month;
 const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
-let blog_indexes={};
+const blog_params = new URL(window.location.href).searchParams;
+let param_open = ""
+if (blog_params.has("name")) {
+  param_open = blog_params.get("name");
+}
+
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
       const infos = apiData.info;
       infos.forEach(info => {
-        blog_indexes[info.name]={index:"https://" + blog_domain + info.index};
+        if (param_open == info.name) {
+          document.querySelector("#blog-title").innerHTML = info.title;
+          blog_open("https://" + blog_domain + info.index);
+        };
         const box = document.createElement("button");
         box.classList.add("blog-button");
         box.onclick = () => {
@@ -45,9 +53,4 @@ function blog_close() {
 for (let i = data_list_length; i > 0; i--) {
   const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
   getData(pathname);
-}
-
-const blog_params=new URL(window.location.href).searchParams;
-if (blog_params.has("name")){
-  blog_open(blog_indexes[blog_params.get("name")])
 }
