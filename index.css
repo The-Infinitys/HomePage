@@ -157,7 +157,7 @@ header>button {
     }
 
     to {
-        width: var(--hamburgerwidth);
+        width: var(--hamburger-width);
         opacity: 1;
     }
 }
