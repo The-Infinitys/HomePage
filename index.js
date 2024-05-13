@@ -42,7 +42,7 @@ function hamburger_menu() {
   if (is_opened_hamburgerMenu) {
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
-    menu.style.width = "var(--hamburgerwidth)";
+    menu.style.width = "var(--hamburger-width)";
     menu.style.opacity = "1";
   } else {
     menu.classList.add("hamburger-close");
