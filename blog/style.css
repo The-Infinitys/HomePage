@@ -55,7 +55,7 @@
 
 #blog-title {
   position: absolute;
-  width: 80%;
+  width: 70%;
   height: 10%;
   left: 20%;
   font-size: 5vh;
@@ -65,6 +65,20 @@
   color: #999999;
   border: 2px solid #888888;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: #000000;
+    color: #777777;
+  }
+}
+#blog-copy{
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  left: 90%;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #999999;
+  border: 2px solid #888888;
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;

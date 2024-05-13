@@ -29,6 +29,7 @@ const getData = function (name) {
         const box = document.createElement("button");
         box.classList.add("blog-button");
         box.onclick = () => {
+          param_open=info.name;
           document.querySelector("#blog-title").innerHTML = info.title;
           blog_open("https://" + blog_domain + info.index);
         }
@@ -54,3 +55,7 @@ for (let i = data_list_length; i > 0; i--) {
   const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
   getData(pathname);
 }
+document.querySelector("#blog-copy").addEventListener("click",e=>{
+  navigator.clipboard.write("https://"+blog_domain+"/blog?name="+param_open);
+  console.log("copied!");
+});
