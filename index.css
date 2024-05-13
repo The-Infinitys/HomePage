@@ -1,12 +1,19 @@
 :root {
     --background: white;
     --text: black;
+    --hamburger-width: 35%;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: black;
         --text: white;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    :root {
+        --hamburger-width: 100%;
     }
 }
 
@@ -150,20 +157,14 @@ header>button {
     }
 
     to {
-        width: 100%;
-        @media (min-aspect-ratio: 1/1) {
-            width: 35%;
-        }
+        width: var(--hamburgerwidth);
         opacity: 1;
     }
 }
 
 @keyframes hamburger-close-animation {
     from {
-        width: 100%;
-        @media (min-aspect-ratio: 1/1) {
-            width: 35%;
-        }
+        width: var(--hamburger-width);
         opacity: 1;
     }
 
