@@ -1,49 +1,447 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
-    <title>The Infinity's</title>
-    <link rel="stylesheet" href="/index.css" />
-    <!--for Google Search Engine-->
-    <!--for github.io-->
-    <meta
-      name="google-site-verification"
-      content="LtRm_2vDTX-S_HrofbTE7Qdt4-4apgxy4mQuhWPIggc" />
-    <!--for onrender.com-->
-    <meta
-      name="google-site-verification"
-      content="ljFMTkOWAOP0tA2Xw6EukkQL5or93CKbJICn75d879I" />
-  </head>
-  <body>
-    <canvas id="RainbowHoneycomb"></canvas>
-    <header>
-      <a href="/"
-        ><img
-          id="headerLogo-white"
-          src="/image/TheInfinitys_Light.webp"
-          alt="" />
-          <img
-          id="headerLogo-black"
-          src="/image/TheInfinitys_Dark.webp"
-          alt="" />
-      </a>
-      <h1>The Infinity's</h1>
-    </header>
-    <!-- Title -->
-    <section class="Title">
-      <h1>404 not found</h1>
-      <img
-        id="logo"
-        src="/image/The-Infinitys.webp"
-        width="400"
-        height="400"
-        alt="" />
-    </section>
-    <footer style="position:fixed;width:100%;height:10%;top:90%;">
-      <h1>&copy;The Infinity's</h1>
-    </footer>
-  </body>
-  <script src="/Rainbowhoneycomb.js"></script>
-  <script src="/index.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+  <title>The Infinity's</title>
+  <!--/style.css-->
+  <style>
+    :root {
+      --background: white;
+      --text: black;
+      --hamburger-width: 35%;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: black;
+        --text: white;
+      }
+    }
+
+    @media (max-aspect-ratio: 1/1) {
+      :root {
+        --hamburger-width: 100%;
+      }
+    }
+
+    body {
+      background-color: var(--background);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: serif;
+    }
+
+    header {
+      z-index: 777;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin-top: 0px;
+      text-align: center;
+      width: 100%;
+      height: 10%;
+      font-size: 15%;
+      display: flex;
+      font-size: 20px;
+      color: var(--text);
+      background-color: var(--background);
+    }
+
+    header>a>img {
+      position: absolute;
+      top: 0;
+      left: 5%;
+      width: auto;
+      height: 100%;
+    }
+
+    header>h1 {
+      position: absolute;
+      top: 0;
+      left: calc(4 / 3 * 10vh);
+      font-size: min(9vw, 7vh);
+    }
+
+    header>button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10vh;
+      height: 10vh;
+      background-color: transparent;
+      border: none;
+    }
+
+    @keyframes rainbow-stroke {
+      0% {
+        stroke: #ff0000;
+      }
+
+      17% {
+        stroke: #ffff00;
+      }
+
+      33% {
+        stroke: #00ff00;
+      }
+
+      50% {
+        stroke: #00ffff;
+      }
+
+      67% {
+        stroke: #0000ff;
+      }
+
+      83% {
+        stroke: #ff00ff;
+      }
+
+      100% {
+        stroke: #ff0000;
+      }
+    }
+
+    #hamburger_menu_icon {
+      animation-name: rainbow-stroke;
+      animation-duration: 5s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+    }
+
+    #hamburger_menus {
+      position: fixed;
+      right: 0;
+      top: 10%;
+      width: 0;
+      height: 90%;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: clip;
+      border: 1px solid var(--text);
+      color: var(--text);
+      z-index: 777;
+      opacity: 0;
+      background-color: #ffffff77;
+
+      @media (prefers-color-scheme: dark) {
+        background-color: #00000077;
+      }
+    }
+
+    #hamburger_menus div {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      border: 1px solid var(--text);
+    }
+
+    #hamburger_menus div a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+
+    @keyframes hamburger-open-animation {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+
+      to {
+        width: var(--hamburger-width);
+        opacity: 1;
+      }
+    }
+
+    @keyframes hamburger-close-animation {
+      from {
+        width: var(--hamburger-width);
+        opacity: 1;
+      }
+
+      to {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    .hamburger-open {
+      animation-name: hamburger-open-animation;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: initial;
+    }
+
+    .hamburger-close {
+      animation-name: hamburger-close-animation;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: initial;
+    }
+
+    /* Light mode styles are the default styles */
+    p {
+      font-size: 20px;
+    }
+
+    section.Title {
+      margin-top: 0;
+      text-align: center;
+      font-size: 100px;
+      background-color: transparent;
+      color: var(--text);
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    section {
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    h1.bigger {
+      font-size: 7vw;
+    }
+
+    footer {
+      text-align: center;
+      background-size: cover;
+      width: 100%;
+      height: 50px;
+      color: var(--text);
+      background-color: var(--background);
+      opacity: 0.75;
+    }
+
+    .HyperLinkBox {
+      width: 33%;
+      height: 100%;
+      color: var(--text);
+      background-color: var(--background);
+    }
+  </style>
+  <!--for Google Search Engine-->
+  <!--for github.io-->
+  <meta name="google-site-verification" content="LtRm_2vDTX-S_HrofbTE7Qdt4-4apgxy4mQuhWPIggc" />
+  <!--for onrender.com-->
+  <meta name="google-site-verification" content="ljFMTkOWAOP0tA2Xw6EukkQL5or93CKbJICn75d879I" />
+</head>
+
+<body>
+  <canvas id="RainbowHoneycomb"></canvas>
+  <header></header>
+  <!-- Title -->
+  <section class="Title">
+    <h1>404 not found</h1>
+    <img id="logo" src="/image/The-Infinitys.webp" width="400" height="400" alt="" />
+  </section>
+  <footer style="position:fixed;width:100%;height:10%;top:90%;">
+    <h1>&copy;The Infinity's</h1>
+  </footer>
+</body>
+<!-- src="/Rainbowhoneycomb.js"-->
+<script>
+  const root3 = 1.7320508;
+  const RainbowHoneycomb = document.createElement("canvas");
+  RainbowHoneycomb.id = "RainbowHoneycomb"
+  function resizeCanvas() {
+    RainbowHoneycomb.width = window.innerWidth.toString();
+    RainbowHoneycomb.height = window.innerHeight.toString();
+  }
+  resizeCanvas();
+  window.onresize = resizeCanvas;
+  RainbowHoneycomb.style = `
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-100;
+  animation-name: show;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial;
+  `;
+  document.body.appendChild(RainbowHoneycomb);
+  const show_rainbowhoneycomb = document.createElement("style");
+  show_rainbowhoneycomb.innerHTML = `
+@keyframes show{
+  from {opacity:0;}
+  to {opacity:1;}
+}`;
+  document.body.appendChild(show_rainbowhoneycomb);
+  const draw = RainbowHoneycomb.getContext("2d");
+  function honeycomb(x, y, r) {
+    const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const darkModeOn = darkModeMediaQuery.matches;
+    if (darkModeOn) {
+      draw.fillStyle = "black";
+    } else {
+      draw.fillStyle = "white";
+    }
+    draw.beginPath();
+    draw.moveTo(x, y - r);
+    draw.lineTo(x + (root3 / 2) * r, y - r / 2);
+    draw.lineTo(x + (root3 / 2) * r, y + r / 2);
+    draw.lineTo(x, y + r);
+    draw.lineTo(x - (root3 / 2) * r, y + r / 2);
+    draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+    draw.fill();
+  }
+  const radius = 50;
+  var hsvToRgb16 = function (hue, saturation, value) {
+    var result = false;
+    if (
+      (saturation || saturation === 0) &&
+      saturation <= 100 &&
+      (value || value === 0) &&
+      value <= 100
+    ) {
+      var red = 0,
+        green = 0,
+        blue = 0,
+        i = 0,
+        f = 0,
+        q = 0,
+        p = 0,
+        t = 0;
+      hue = Number(hue % 360) / 60;
+      saturation = Number(saturation) / 100;
+      value = Number(value) / 100;
+      if (saturation === 0) {
+        red = value;
+        green = value;
+        blue = value;
+      } else {
+        i = Math.floor(hue);
+        f = hue - i;
+        p = value * (1 - saturation);
+        q = value * (1 - saturation * f);
+        t = value * (1 - saturation * (1 - f));
+        switch (i) {
+          case 0:
+            red = value;
+            green = t;
+            blue = p;
+            break;
+          case 1:
+            red = q;
+            green = value;
+            blue = p;
+            break;
+          case 2:
+            red = p;
+            green = value;
+            blue = t;
+            break;
+          case 3:
+            red = p;
+            green = q;
+            blue = value;
+            break;
+          case 4:
+            red = t;
+            green = p;
+            blue = value;
+            break;
+          case 5:
+            red = value;
+            green = p;
+            blue = q;
+            break;
+        }
+      }
+      result = {
+        red: Math.round(red * 255).toString(),
+        green: Math.round(green * 255).toString(),
+        blue: Math.round(blue * 255).toString(),
+      };
+    }
+    return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
+  };
+  var tickcount = 0;
+  function drawhoneycomb() {
+    for (let i = 0; i < RainbowHoneycomb.width; ++i) {
+      draw.fillStyle = hsvToRgb16(
+        (i * 360) / RainbowHoneycomb.width + tickcount,
+        100,
+        100
+      );
+      draw.fillRect(i, 0, 1, RainbowHoneycomb.height);
+    }
+    for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
+      for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
+        honeycomb(
+          radius * 2 * i + (j % 2) * radius,
+          ((radius * 2 * root3) / 2) * j,
+          radius
+        );
+      }
+    }
+    tickcount += 1;
+  }
+  var framelate = 60;
+  setInterval(drawhoneycomb, 1 / framelate);
+</script>
+<!-- src="/index.js"-->
+<script>
+  //headerの初期化
+  const header = `
+<a href="/"
+  ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
+</a>
+<h1>The Infinity's</h1>
+<button
+  id="hamburger_menu_button"
+  aria-label="hamburger_menu_button"
+  onclick="hamburger_menu()">
+  <svg
+    id="hamburger_menu_icon"
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke-width="10">
+    <line x1="10" y1="20" x2="90" y2="20" />
+    <line x1="10" y1="50" x2="90" y2="50" />
+    <line x1="10" y1="80" x2="90" y2="80" />
+  </svg>
+</button>
+<!--hamburger menu-->
+<div id="hamburger_menus">
+  <div><a href="/">Home</a></div>
+  <div><a href="/blog">Blog</a></div>
+  <div><a href="https://scratch.mit.edu/users/The_Infinitys">Scratch</a></div>
+  <div><a href="https://github.com/The-Infinitys">GitHub</a></div>
+</div>
+`;
+  const init_header = function () {
+    document.querySelector("header").innerHTML = header;
+  };
+
+  window.onload = () => {
+    init_header();
+  }
+  //ハンバーガーメニューの設定
+  let is_opened_hamburgerMenu = false;
+  function hamburger_menu() {
+    is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
+    const menu = document.querySelector("#hamburger_menus");
+    if (is_opened_hamburgerMenu) {
+      menu.classList.add("hamburger-open");
+      menu.classList.remove("hamburger-close");
+      menu.style.width = "var(--hamburger-width)";
+      menu.style.opacity = "1";
+    } else {
+      menu.classList.add("hamburger-close");
+      menu.classList.remove("hamburger-open");
+      menu.style.width = "0";
+      menu.style.opacity = "0";
+    }
+  }
+</script>
 </html>

@@ -9,8 +9,7 @@ function resizeCanvas() {
 }
 resizeCanvas();
 window.onresize = resizeCanvas;
-RainbowHoneycomb.style =
-  `
+RainbowHoneycomb.style =`
   position:fixed;
   width:100%;
   height:100%;
