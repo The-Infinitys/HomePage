@@ -1,6 +1,6 @@
 //headerの初期化
 const header = `
-<a href="/"
+<a href="/" arial-label="Home"
   ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
@@ -20,7 +20,7 @@ const header = `
 </button>
 <!--hamburger menu-->
 <div id="hamburger_menus">
-  <div><a href="/">Home</a></div>
+  <div><a aria-label="Home" href="/">Home</a></div>
   <div><a href="/blog">Blog</a></div>
   <div><a href="https://scratch.mit.edu/users/The_Infinitys">Scratch</a></div>
   <div><a href="https://github.com/The-Infinitys">GitHub</a></div>
