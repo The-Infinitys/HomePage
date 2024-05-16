@@ -43,22 +43,10 @@ header {
     background-color: var(--background);
 }
 
-@media (prefers-color-scheme: dark) {
-    #headerLogo-light {
-        visibility: hidden;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    #headerLogo-dark {
-        visibility: hidden;
-    }
-}
-
 header>a>img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5%;
     width: auto;
     height: 100%;
 }
