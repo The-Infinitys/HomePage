@@ -53,16 +53,17 @@ header a img {
 }
 
 header h1 {
-    top: 0;
-    font-size: min(15vw, 10vh);
+    position: relative;
+    top: 0%;
+    font-size: min(100vw, 10vh);
 }
 
 header button {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
-    height: 100%;
+    right: 0%;
+    top: 0%;
+    width: 10vh;
+    height: 10vh;
     background-color: transparent;
     border: none;
 }
