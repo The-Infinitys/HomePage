@@ -44,7 +44,7 @@ header {
     background-color: var(--background);
 }
 
-header>a>img {
+header a img {
     position: relative;
     top: 0;
     left: 1%;
@@ -52,13 +52,13 @@ header>a>img {
     height: 100%;
 }
 
-header>h1 {
+header h1 {
     position: relative;
     top: 0;
     font-size: min(15vw, 10vh);
 }
 
-header>button {
+header button {
     position: absolute;
     right: 0;
     top: 0;
