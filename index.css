@@ -53,7 +53,6 @@ header a img {
 }
 
 header h1 {
-    position: relative;
     top: 0;
     font-size: min(15vw, 10vh);
 }
