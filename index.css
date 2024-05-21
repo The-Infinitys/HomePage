@@ -61,8 +61,8 @@ header>button {
     position: absolute;
     right: 0;
     top: 0;
-    width: 10vh;
-    height: 10vh;
+    width: auto;
+    height: 100%;
     background-color: transparent;
     border: none;
 }
