@@ -40,6 +40,7 @@ header {
     display: flex;
     font-size: 20px;
     color: var(--text);
+    opacity: 0.777;
     background-color: var(--background);
 }
 
@@ -187,10 +188,11 @@ section.Title {
     background-color: transparent;
     color: var(--text);
     text-align: center;
-    padding-top: 80px;
+    padding-top: 10%;
 }
 
 section {
+    width: 100%;
     background-color: var(--background);
     color: var(--text);
 }
