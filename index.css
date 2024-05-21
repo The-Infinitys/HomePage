@@ -15,6 +15,9 @@
     :root {
         --hamburger-width: 100%;
     }
+    header h1{
+        visibility:hidden;
+    }
 }
 
 body {
@@ -53,9 +56,10 @@ header a img {
 }
 
 header h1 {
-    position: relative;
+    position: absolute;
     top: 0%;
-    font-size: min(100vw, 10vh);
+    left:12vw;
+    font-size: 10vh;
 }
 
 header button {
