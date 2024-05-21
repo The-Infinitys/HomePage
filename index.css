@@ -54,7 +54,7 @@ header>a>img {
 header>h1 {
     position: relative;
     top: 0;
-    font-size: min(7vw, 7vh);
+    font-size: min(15vw, 7vh);
 }
 
 header>button {
