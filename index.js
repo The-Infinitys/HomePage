@@ -1,6 +1,6 @@
 //headerの初期化
 const header = `
-<a href="/" arial-label="Home"
+<a href="/" aria-label="Home"
   ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
