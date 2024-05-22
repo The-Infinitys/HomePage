@@ -1,7 +1,7 @@
 //headerの初期化
 const header = `
 <a href="/" aria-label="Home"
-  ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
+  ><img id="headerLogo" src="/image/The-Infinitys-min.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
 <button

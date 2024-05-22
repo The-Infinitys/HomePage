@@ -9,15 +9,18 @@
     --text: white;
   }
 }
-.Title{
+
+.Title {
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 20%;
-  top:0;
+  top: 0;
 }
-.Title h1{
-  font-size:min(10vh,10vw);
+
+.Title h1 {
+  font-size: min(10vh, 10vw);
 }
+
 .list {
   position: fixed;
   width: 90vw;
@@ -70,7 +73,8 @@
     color: #777777;
   }
 }
-#blog-copy{
+
+#blog-copy {
   position: absolute;
   width: 10%;
   height: 10%;
@@ -79,11 +83,13 @@
   background-color: #ffffff;
   color: #999999;
   border: 2px solid #888888;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;
   }
 }
+
 #blog-close {
   position: absolute;
   width: 20%;
@@ -91,6 +97,7 @@
   font-size: 7vh;
   background-color: #ffffff;
   color: #888888;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;
@@ -98,20 +105,23 @@
 }
 
 .blog-button {
-  overflow:hidden;
+  overflow: hidden;
   position: relative;
   background-color: #ffffff55;
+
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
   }
+
   width:calc(90vw / 2);
   aspect-ratio: 4/3;
-  @media (max-aspect-ratio: 3/4){
-    width:calc(90vw / 1);
+
+  @media (max-aspect-ratio: 3/4) {
+    width: calc(90vw / 1);
   }
 
-  @media (min-aspect-ratio: 4/3){
-    width:calc(90vw / 4);
+  @media (min-aspect-ratio: 4/3) {
+    width: calc(90vw / 4);
   }
 }
 
