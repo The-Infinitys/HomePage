@@ -57,9 +57,9 @@ header a img {
 
 header h1 {
     position: absolute;
-    top: -2vw;
+    top: 0;
     left:12vw;
-    font-size: 10vh;
+    font-size: 7vh;
 }
 
 header button {
