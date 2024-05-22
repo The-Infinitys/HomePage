@@ -137,7 +137,7 @@ header button {
 
 #hamburger_menus div a {
     color: var(--text);
-    font-size: large;
+    font-size: 6vh;
     text-decoration: none;
 }
 
@@ -186,7 +186,7 @@ p {
 }
 
 section.Title {
-    margin-top: 0;
+    margin-top: 10vh;
     text-align: center;
     font-size: 7vw;
     background-color: transparent;
