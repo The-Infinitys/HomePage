@@ -15,8 +15,8 @@ const RainbowHoneycomb_img_dark=new Image();
 RainbowHoneycomb_img_dark.id="RainbowHoneycomb-dark";
 RainbowHoneycomb_img_dark.style =`
   position:fixed;
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:100vh;
   top:0;
   left:0;
   z-index:-100;
@@ -31,8 +31,8 @@ const RainbowHoneycomb_img_light=new Image();
 RainbowHoneycomb_img_light.id="RainbowHoneycomb-light";
 RainbowHoneycomb_img_light.style =`
   position:fixed;
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:100vh;
   top:0;
   left:0;
   z-index:-100;
@@ -150,8 +150,8 @@ function drawhoneycomb(color) {
 }
 
 function renewCanvas() {
-  RainbowHoneycomb.width = window.innerWidth*1.2;
-  RainbowHoneycomb.height = window.innerHeight*1.2;
+  RainbowHoneycomb.width = window.innerWidth;
+  RainbowHoneycomb.height = window.innerHeight;
   drawhoneycomb("#000");
   RainbowHoneycomb_img_dark.src=RainbowHoneycomb.toDataURL("image/webp",1);
   drawhoneycomb("#fff");
