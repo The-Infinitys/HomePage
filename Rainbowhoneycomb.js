@@ -3,13 +3,9 @@
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.createElement("canvas");
 RainbowHoneycomb.id="RainbowHoneycomb"
-function resizeCanvas() {
-  RainbowHoneycomb.width = window.innerWidth.toString();
-  RainbowHoneycomb.height = window.innerHeight.toString();
-}
-resizeCanvas();
 window.onresize = resizeCanvas;
-RainbowHoneycomb.style =`
+const RainbowHoneycomb_img=Image();
+RainbowHoneycomb_img.style =`
   position:fixed;
   width:100%;
   height:100%;
@@ -20,8 +16,9 @@ RainbowHoneycomb.style =`
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
+  background-color:var(--background);
   `;
-document.body.appendChild(RainbowHoneycomb);
+document.body.appendChild(RainbowHoneycomb_img);
 const show_rainbowhoneycomb=document.createElement("style");
 show_rainbowhoneycomb.innerHTML=`
 @keyframes show{
@@ -30,14 +27,18 @@ show_rainbowhoneycomb.innerHTML=`
 }`;
 document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
+function renewCanvas() {
+  RainbowHoneycomb.width = screen.width;
+  RainbowHoneycomb.height = screen.height;
+  drawhoneycomb();
+  RainbowHoneycomb_img.src=RainbowHoneycomb.toDataURL("image/webp",0);
+}
+renewCanvas();
 function honeycomb(x, y, r) {
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const darkModeOn = darkModeMediaQuery.matches;
-  if (darkModeOn) {
-    draw.fillStyle = "black";
-  } else {
-    draw.fillStyle = "white";
-  }
+  draw.globalCompositeOperation="destination-out";
+  draw.fillStyle="transparent";
   draw.beginPath();
   draw.moveTo(x, y - r);
   draw.lineTo(x + (root3 / 2) * r, y - r / 2);
@@ -118,7 +119,7 @@ var hsvToRgb16 = function (hue, saturation, value) {
   }
   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
 };
-var tickcount = 0;
+let tickcount = 0;
 function drawhoneycomb() {
   for (let i = 0; i < RainbowHoneycomb.width; ++i) {
     draw.fillStyle = hsvToRgb16(
@@ -139,5 +140,3 @@ function drawhoneycomb() {
   }
   tickcount += 1;
 }
-var framelate = 60;
-setInterval(drawhoneycomb, 1 / framelate);
