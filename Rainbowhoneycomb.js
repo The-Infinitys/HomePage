@@ -27,13 +27,6 @@ show_rainbowhoneycomb.innerHTML=`
 }`;
 document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
-function renewCanvas() {
-  RainbowHoneycomb.width = screen.width;
-  RainbowHoneycomb.height = screen.height;
-  drawhoneycomb();
-  RainbowHoneycomb_img.src=RainbowHoneycomb.toDataURL("image/webp",0);
-}
-renewCanvas();
 function honeycomb(x, y, r) {
   const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const darkModeOn = darkModeMediaQuery.matches;
@@ -119,6 +112,7 @@ var hsvToRgb16 = function (hue, saturation, value) {
   }
   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
 };
+
 let tickcount = 0;
 function drawhoneycomb() {
   for (let i = 0; i < RainbowHoneycomb.width; ++i) {
@@ -140,3 +134,11 @@ function drawhoneycomb() {
   }
   tickcount += 1;
 }
+
+function renewCanvas() {
+  RainbowHoneycomb.width = screen.width;
+  RainbowHoneycomb.height = screen.height;
+  drawhoneycomb();
+  RainbowHoneycomb_img.src=RainbowHoneycomb.toDataURL("image/webp",0);
+}
+renewCanvas();
