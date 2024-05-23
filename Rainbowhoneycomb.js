@@ -150,8 +150,8 @@ function drawhoneycomb(color) {
 }
 
 function renewCanvas() {
-  RainbowHoneycomb.width = window.innerWidth;
-  RainbowHoneycomb.height = window.innerHeight;
+  RainbowHoneycomb.width = window.innerWidth*1.1;
+  RainbowHoneycomb.height = window.innerHeight*1.1;
   drawhoneycomb("#000");
   RainbowHoneycomb_img_dark.src=RainbowHoneycomb.toDataURL("image/webp",1);
   drawhoneycomb("#fff");

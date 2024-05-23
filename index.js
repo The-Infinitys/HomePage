@@ -1,7 +1,7 @@
 //headerの初期化
-const header = `
+const header_text = `
 <a href="/" aria-label="Home">
-  <img id="headerLogo" src="./image/The-Infinitys.webp" alt="" />
+  <img id="headerLogo" src="./image/The-Infinitys-min.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
 <button
@@ -27,7 +27,14 @@ const header = `
 </div>
 `;
 const init_header = function () {
-  document.querySelector("header").innerHTML = header;
+  const header = document.querySelector("header");
+  header.style=`
+  animation-name: show;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial;
+  `;
+  header.innerHTML = header_text;
 };
 const is_phone = () => {
   const ua = navigator.userAgent;
@@ -43,9 +50,10 @@ const is_phone = () => {
   return false;
 };
 const generate_Infinitys = function () {
-  const the_infinitys_image = The_Infinitys(Math.floor(window.innerWidth/2), 2);
-  document.querySelector("#headerLogo").src = the_infinitys_image;
-  document.querySelector("#logo").src = the_infinitys_image;
+  document.querySelector("#headerLogo").src =
+    The_Infinitys(Math.floor(window.innerWidth / 10), 5);
+  document.querySelector("#logo").src =
+    The_Infinitys(Math.floor(window.innerWidth / 2), 1);
 };
 
 //generate Infinity
@@ -180,7 +188,7 @@ function The_Infinitys(size, quality) {
       before_data = data;
     }
   }
-  return canvas.toDataURL("image/webp",0);
+  return canvas.toDataURL("image/webp", 1);
 }
 //
 window.onload = () => {
