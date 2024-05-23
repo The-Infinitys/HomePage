@@ -30,7 +30,8 @@ const init_header = function () {
   document.querySelector("header").innerHTML = header;
 };
 const generate_Infinitys = function(){
-  const the_infinitys_image = The_Infinitys(window.innerWidth,2);
+  if (256>window.innerWidth){return null;}
+  const the_infinitys_image = The_Infinitys(window.innerWidth,1);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
 };
