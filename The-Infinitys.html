@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>The Infinity</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>The Infinity</title>
 </head>
+
 <body>
-    <script type="text/javascript" charset="utf-8">
-        const canvas = document.createElement("canvas");
-        canvas.id = "canvas"
-        canvas.style = `
+  <script type="text/javascript" charset="utf-8">
+    const canvas = document.createElement("canvas");
+    canvas.id = "canvas"
+    canvas.style = `
         top:0;
         left:0;
         width;auto;
@@ -17,148 +19,150 @@
         border:2px solid white;
         background-color:transparent;
         `;
-        canvas.width = 4096;
-        canvas.height = 4096;
-        document.body.appendChild(canvas);
-        const graphics = canvas.getContext("2d");
-        var hsvToRgb16 = function (hue, saturation, value) {
-            var result = false;
-            if (
-                (saturation || saturation === 0) &&
-                saturation <= 100 &&
-                (value || value === 0) &&
-                value <= 100
-            ) {
-                var red = 0,
-                green = 0,
-                blue = 0,
-                i = 0,
-                f = 0,
-                q = 0,
-                p = 0,
-                t = 0;
-                hue = Number(hue % 360) / 60;
-                saturation = Number(saturation) / 100;
-                value = Number(value) / 100;
-                if (saturation === 0) {
-                    red = value;
-                    green = value;
-                    blue = value;
-                } else {
-                    i = Math.floor(hue);
-                    f = hue - i;
-                    p = value * (1 - saturation);
-                    q = value * (1 - saturation * f);
-                    t = value * (1 - saturation * (1 - f));
-                    switch (i) {
-                        case 0:
-                            red = value;
-                            green = t;
-                            blue = p;
-                            break;
-                        case 1:
-                            red = q;
-                            green = value;
-                            blue = p;
-                            break;
-                        case 2:
-                            red = p;
-                            green = value;
-                            blue = t;
-                            break;
-                        case 3:
-                            red = p;
-                            green = q;
-                            blue = value;
-                            break;
-                        case 4:
-                            red = t;
-                            green = p;
-                            blue = value;
-                            break;
-                        case 5:
-                            red = value;
-                            green = p;
-                            blue = q;
-                            break;
-                    }
-                }
-                result = {
-                    red: Math.round(red * 255).toString(),
-                    green: Math.round(green * 255).toString(),
-                    blue: Math.round(blue * 255).toString(),
-                };
-            }
-            return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
+    canvas.width = 4096;
+    canvas.height = 4096;
+    document.body.appendChild(canvas);
+    const graphics = canvas.getContext("2d");
+    var hsvToRgb16 = function (hue, saturation, value) {
+      var result = false;
+      if (
+        (saturation || saturation === 0) &&
+        saturation <= 100 &&
+        (value || value === 0) &&
+        value <= 100
+      ) {
+        var red = 0,
+          green = 0,
+          blue = 0,
+          i = 0,
+          f = 0,
+          q = 0,
+          p = 0,
+          t = 0;
+        hue = Number(hue % 360) / 60;
+        saturation = Number(saturation) / 100;
+        value = Number(value) / 100;
+        if (saturation === 0) {
+          red = value;
+          green = value;
+          blue = value;
+        } else {
+          i = Math.floor(hue);
+          f = hue - i;
+          p = value * (1 - saturation);
+          q = value * (1 - saturation * f);
+          t = value * (1 - saturation * (1 - f));
+          switch (i) {
+            case 0:
+              red = value;
+              green = t;
+              blue = p;
+              break;
+            case 1:
+              red = q;
+              green = value;
+              blue = p;
+              break;
+            case 2:
+              red = p;
+              green = value;
+              blue = t;
+              break;
+            case 3:
+              red = p;
+              green = q;
+              blue = value;
+              break;
+            case 4:
+              red = t;
+              green = p;
+              blue = value;
+              break;
+            case 5:
+              red = value;
+              green = p;
+              blue = q;
+              break;
+          }
+        }
+        result = {
+          red: Math.round(red * 255).toString(),
+          green: Math.round(green * 255).toString(),
+          blue: Math.round(blue * 255).toString(),
         };
-        function inf(t) {
-            if (t < 0 || 720 < t) {
-                return inf(t%720);
-            }
-            const r = t * (Math.PI/180);
-            if (t < 360) {
-                return {
-                    x: 100*(Math.cos(r)-1),
-                    y: Math.sin(r)*80
-                }
-            } else {
-                return {
-                    x: -100*(Math.cos(r)-1),
-                    y: Math.sin(r)*80
-                }
-            }
+      }
+      return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
+    };
+    function inf(t) {
+      if (t < 0 || 720 < t) {
+        return inf(t % 720);
+      }
+      const r = t * (Math.PI / 180);
+      if (t < 360) {
+        return {
+          x: 100 * (Math.cos(r) - 1),
+          y: Math.sin(r) * 80
         }
-        function circle(t) {
-            if (t < 0 || 360 < t) {
-                return circle(t%360);
-            }
-            const r = t * (Math.PI/180);
-            return {
-                x: Math.cos(r),
-                y: Math.sin(r)}
+      } else {
+        return {
+          x: -100 * (Math.cos(r) - 1),
+          y: Math.sin(r) * 80
         }
-        function addlog(data) {
-            const log = document.createElement("p");
-            log.innerHTML = data;
-            log.style = "color:blue;";
-            document.body.appendChild(log);
+      }
+    }
+    function circle(t) {
+      if (t < 0 || 360 < t) {
+        return circle(t % 360);
+      }
+      const r = t * (Math.PI / 180);
+      return {
+        x: Math.cos(r),
+        y: Math.sin(r)
+      }
+    }
+    function addlog(data) {
+      const log = document.createElement("p");
+      log.innerHTML = data;
+      log.style = "color:blue;";
+      document.body.appendChild(log);
+    }
+    function The_Infinitys() {
+      graphics.clearRect(0, 0, canvas.width, canvas.height)
+      graphics.fillStyle = "#ff0000"
+      let before_data = inf(0);
+      graphics.lineWidth = canvas.width / 57;
+      for (let i = 0; i <= 720; i += 0.1) {
+        const data = inf(i);
+        graphics.beginPath();
+        graphics.moveTo(before_data.x * canvas.width / 500 + canvas.width / 2, before_data.y * canvas.height / 500 + canvas.height / 2);
+        graphics.lineTo(data.x * canvas.width / 500 + canvas.width / 2, data.y * canvas.height / 500 + canvas.height / 2);
+        graphics.closePath();
+        graphics.strokeStyle = hsvToRgb16((data.x + 200) / 400 * 360, 100, 100);
+        graphics.stroke();
+        before_data = data;
+      }
+      before_data = circle(0);
+      graphics.lineWidth = canvas.width / 777;
+      for (let count = 0; count < 777; ++count) {
+        for (let t = 0; t <= 360; t += 0.1) {
+          let data = circle(t);
+          data.x *= 1 - count / 7777
+          data.y *= 1 - count / 7777
+          graphics.beginPath();
+          graphics.moveTo(before_data.x * canvas.width / 2.22 + canvas.width / 2, before_data.y * canvas.height / 2.22 + canvas.height / 2);
+          graphics.lineTo(data.x * canvas.width / 2.22 + canvas.width / 2, data.y * canvas.height / 2.22 + canvas.height / 2);
+          graphics.closePath();
+          graphics.strokeStyle = hsvToRgb16((t + 360 + count / 7.7) % 360, 100, 100);
+          graphics.stroke();
+          before_data = data;
         }
-        function The_Infinitys() {
-            graphics.clearRect(0, 0, canvas.width, canvas.height)
-            graphics.fillStyle = "#ff0000"
-            let before_data = inf(0);
-            graphics.lineWidth = canvas.width/57;
-            for (let i = 0; i <= 720; i += 0.1) {
-                const data = inf(i);
-                graphics.beginPath();
-                graphics.moveTo(before_data.x*canvas.width/500+canvas.width/2, before_data.y*canvas.height/500+canvas.height/2);
-                graphics.lineTo(data.x*canvas.width/500+canvas.width/2, data.y*canvas.height/500+canvas.height/2);
-                graphics.closePath();
-                graphics.strokeStyle = hsvToRgb16((data.x+200)/400*360, 100, 100);
-                graphics.stroke();
-                before_data = data;
-            }
-            before_data = circle(0);
-            graphics.lineWidth = canvas.width/777;
-            for (let count = 0; count < 777; ++count) {
-                for (let t = 0; t <= 360; t += 0.1) {
-                    let data = circle(t);
-                    data.x*=1-count/7777
-                    data.y*=1-count/7777
-                    graphics.beginPath();
-                    graphics.moveTo(before_data.x*canvas.width/2.22+canvas.width/2, before_data.y*canvas.height/2.22+canvas.height/2);
-                    graphics.lineTo(data.x*canvas.width/2.22+canvas.width/2, data.y*canvas.height/2.22+canvas.height/2);
-                    graphics.closePath();
-                    graphics.strokeStyle = hsvToRgb16((t+360+count/7.7)%360, 100, 100);
-                    graphics.stroke();
-                    before_data = data;
-                }
-            }
-        }
-        The_Infinitys();
-        const image=document.createElement("img");
-        image.src=canvas.toDataURL();
-        document.body.appendChild(image)
-    </script>
+      }
+    }
+    The_Infinitys();
+    const image = document.createElement("img");
+    image.src = canvas.toDataURL();
+    document.body.appendChild(image)
+  </script>
 </body>
+
 </html>
