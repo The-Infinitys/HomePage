@@ -186,13 +186,12 @@ p {
 }
 
 section.Title {
-    margin-top: 10vh;
+    margin-top: 12vh;
     text-align: center;
     font-size: 7vw;
     background-color: transparent;
     color: var(--text);
     text-align: center;
-    padding-top: 10%;
 }
 
 section {
