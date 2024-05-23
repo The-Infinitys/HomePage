@@ -1,7 +1,7 @@
 //headerの初期化
 const header = `
 <a href="/" aria-label="Home"
-  ><img id="headerLogo" src="" alt="" />
+  ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
 <button
@@ -26,15 +26,15 @@ const header = `
   <div><a href="https://github.com/The-Infinitys">GitHub</a></div>
 </div>
 `;
-const init_header = function () {
+const init_page = async function () {
   document.querySelector("header").innerHTML = header;
-  const the_infinitys_image = The_Infinitys(512);
+  const the_infinitys_image = await The_Infinitys(512);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
 };
 
 //generate Infinity
-function The_Infinitys(size) {
+async function The_Infinitys(size) {
   const hsvToRgb16 = function (hue, saturation, value) {
     var result = false;
     if (
@@ -165,13 +165,13 @@ function The_Infinitys(size) {
       before_data = data;
     }
   }
-  return canvas.toDataURL();
+  return await canvas.toDataURL();
 }
 The_Infinitys();
 //
 
-window.onload = () => {
-  init_header();
+window.onload = async () => {
+  await init_page();
 }
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
