@@ -36,19 +36,6 @@ const init_header = function () {
   `;
   header.innerHTML = header_text;
 };
-const is_phone = () => {
-  const ua = navigator.userAgent;
-  if (ua.indexOf("iPhone") >= 0) {
-    return true;
-  }
-  if (ua.indexOf("iPad") >= 0) {
-    return true;
-  }
-  if (ua.indexOf("Android") >= 0) {
-    return true;
-  }
-  return false;
-};
 const generate_Infinitys = function () {
   document.querySelector("#headerLogo").src =
     The_Infinitys(Math.floor(window.innerWidth / 10), 5);
