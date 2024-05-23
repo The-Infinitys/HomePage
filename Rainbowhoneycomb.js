@@ -2,10 +2,9 @@
 
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.createElement("canvas");
-RainbowHoneycomb.id="RainbowHoneycomb"
-window.onresize = renewCanvas;
+RainbowHoneycomb.id="RainbowHoneycomb";
 const RainbowHoneycomb_img_dark=new Image();
-RainbowHoneycomb_img_light.id="RainbowHoneycomb-dark";
+RainbowHoneycomb_img_dark.id="RainbowHoneycomb-dark";
 RainbowHoneycomb_img_dark.style =`
   position:fixed;
   width:100%;
@@ -169,3 +168,4 @@ function renewCanvas() {
   RainbowHoneycomb_img_light.src=RainbowHoneycomb.toDataURL("image/webp",1);
 }
 renewCanvas();
+window.onresize = renewCanvas;
