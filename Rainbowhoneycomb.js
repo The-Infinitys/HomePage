@@ -5,6 +5,7 @@ const RainbowHoneycomb = document.createElement("canvas");
 RainbowHoneycomb.id="RainbowHoneycomb"
 window.onresize = renewCanvas;
 const RainbowHoneycomb_img_dark=new Image();
+RainbowHoneycomb_img_light.id="RainbowHoneycomb-dark";
 RainbowHoneycomb_img_dark.style =`
   position:fixed;
   width:100%;
@@ -16,15 +17,12 @@ RainbowHoneycomb_img_dark.style =`
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
-  background-color: var(--background);
   visibility: hidden;
-  @media (prefers-color-scheme: dark){
-    visibility:visible;
-  }
   `;
 RainbowHoneycomb_img_dark.alt="";
 document.body.appendChild(RainbowHoneycomb_img_dark);
 const RainbowHoneycomb_img_light=new Image();
+RainbowHoneycomb_img_light.id="RainbowHoneycomb-light";
 RainbowHoneycomb_img_light.style =`
   position:fixed;
   width:100%;
@@ -36,11 +34,7 @@ RainbowHoneycomb_img_light.style =`
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
-  background-color: var(--background);
   visibility: visible;
-  @media (prefers-color-scheme: dark){
-    visibility:hidden;
-  }
   `;
 RainbowHoneycomb_img_light.alt="";
 document.body.appendChild(RainbowHoneycomb_img_light);
@@ -49,7 +43,16 @@ show_rainbowhoneycomb.innerHTML=`
 @keyframes show{
   from {opacity:0;}
   to {opacity:1;}
-}`;
+}
+@media (prefers-color-scheme: dark) {
+  #RainbowHoneycomb-dark{
+    visibility:visible;
+  }
+  #RainbowHoneycomb-light{
+    visibility:hidden;
+  }
+}
+`;
 document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r,color) {
