@@ -183,7 +183,7 @@ function The_Infinitys(size, quality) {
       before_data = data;
     }
   }
-  return canvas.toDataURL();
+  return canvas.toDataURL("image/webp",0);
 }
 //
 window.onload = () => {
