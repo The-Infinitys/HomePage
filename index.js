@@ -2,7 +2,7 @@
 const header = `
 <a href="/" aria-label="Home"
   ><img id="headerLogo"
-  srcset="./image/The-Infinitys-min.webp 700px, ./image/The-Infinitys.webp 1x, ./image/The-Infinitys-full.webp 2x"
+  srcset="/image/The-Infinitys-min.webp 512px, /image/The-Infinitys.webp 1024px, /image/The-Infinitys-full.webp 2048px"
   src="./image/The-Infinitys.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>

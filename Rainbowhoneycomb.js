@@ -3,6 +3,22 @@
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.createElement("canvas");
 RainbowHoneycomb.id="RainbowHoneycomb";
+const show_rainbowhoneycomb=document.createElement("style");
+show_rainbowhoneycomb.innerHTML=`
+@keyframes show{
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@media (prefers-color-scheme: dark) {
+  #RainbowHoneycomb-dark{
+    visibility:visible;
+  }
+  #RainbowHoneycomb-light{
+    visibility:hidden;
+  }
+}
+`;
+document.body.appendChild(show_rainbowhoneycomb);
 const RainbowHoneycomb_img_dark=new Image();
 RainbowHoneycomb_img_dark.id="RainbowHoneycomb-dark";
 RainbowHoneycomb_img_dark.style =`
@@ -37,22 +53,6 @@ RainbowHoneycomb_img_light.style =`
   `;
 RainbowHoneycomb_img_light.alt="";
 document.body.appendChild(RainbowHoneycomb_img_light);
-const show_rainbowhoneycomb=document.createElement("style");
-show_rainbowhoneycomb.innerHTML=`
-@keyframes show{
-  from {opacity:0;}
-  to {opacity:1;}
-}
-@media (prefers-color-scheme: dark) {
-  #RainbowHoneycomb-dark{
-    visibility:visible;
-  }
-  #RainbowHoneycomb-light{
-    visibility:hidden;
-  }
-}
-`;
-document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r,color) {
   draw.fillStyle=color;
