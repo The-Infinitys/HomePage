@@ -29,14 +29,14 @@ const header = `
 const init_header = function () {
   document.querySelector("header").innerHTML = header;
 };
-const generate_Infinitys = async function(){
-  const the_infinitys_image = await The_Infinitys(512);
+const generate_Infinitys = function(){
+  const the_infinitys_image = The_Infinitys(512,1);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
 };
 
 //generate Infinity
-async function The_Infinitys(size) {
+function The_Infinitys(size,quality) {
   const hsvToRgb16 = function (hue, saturation, value) {
     var result = false;
     if (
@@ -141,7 +141,7 @@ async function The_Infinitys(size) {
   graphics.clearRect(0, 0, canvas.width, canvas.height)
   let before_data = inf(0);
   graphics.lineWidth = canvas.width / 57;
-  for (let i = 0; i <= 720; i += 0.1) {
+  for (let i = 0; i <= 720; i += quality) {
     const data = inf(i);
     graphics.beginPath();
     graphics.moveTo(before_data.x * canvas.width / 500 + canvas.width / 2, before_data.y * canvas.height / 500 + canvas.height / 2);
@@ -153,8 +153,8 @@ async function The_Infinitys(size) {
   }
   before_data = circle(0);
   graphics.lineWidth = canvas.width / 777;
-  for (let count = 0; count < 777; ++count) {
-    for (let t = 0; t <= 360; t += 0.1) {
+  for (let count = 0; count < 777; count+=quality*10) {
+    for (let t = 0; t <= 360; t += quality) {
       let data = circle(t);
       data.x *= 1 - count / 7777
       data.y *= 1 - count / 7777
@@ -167,14 +167,12 @@ async function The_Infinitys(size) {
       before_data = data;
     }
   }
-  return await canvas.toDataURL();
+  return canvas.toDataURL();
 }
-The_Infinitys();
 //
-
-window.onload = async () => {
+window.onload = () => {
   init_header();
-  await generate_Infinitys();
+  generate_Infinitys();
 }
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
