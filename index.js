@@ -1,7 +1,9 @@
 //headerの初期化
 const header = `
 <a href="/" aria-label="Home"
-  ><img id="headerLogo" src="/image/The-Infinitys.webp" alt="" />
+  ><img id="headerLogo" src="./image/The-Infinitys.webp"
+  srcset="./image/The-Infinitys-min.webp 512px, ./images/The-Infinitys.webp 1024px, ./images/The-Infinitys-full.webp 2048px"
+  alt="" />
 </a>
 <h1>The Infinity's</h1>
 <button
@@ -44,7 +46,7 @@ const is_phone = () => {
 };
 const generate_Infinitys = function () {
   if (256 > window.innerWidth || is_phone()) { return null; }
-  const the_infinitys_image = The_Infinitys(Math.floor(window.innerWidth / 3), 1);
+  const the_infinitys_image = The_Infinitys(Math.floor(window.innerWidth), 1);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
 };
