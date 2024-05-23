@@ -18,6 +18,7 @@ RainbowHoneycomb_img.style =`
   animation-iteration-count: initial;
   background-color:var(--background);
   `;
+RainbowHoneycomb_img.alt="";
 document.body.appendChild(RainbowHoneycomb_img);
 const show_rainbowhoneycomb=document.createElement("style");
 show_rainbowhoneycomb.innerHTML=`
@@ -28,9 +29,7 @@ show_rainbowhoneycomb.innerHTML=`
 document.body.appendChild(show_rainbowhoneycomb);
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r) {
-  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const darkModeOn = darkModeMediaQuery.matches;
-  draw.globalCompositeOperation="destination-out";
+  draw.globalCompositeOperation="copy";
   draw.fillStyle="transparent";
   draw.beginPath();
   draw.moveTo(x, y - r);
@@ -40,6 +39,7 @@ function honeycomb(x, y, r) {
   draw.lineTo(x - (root3 / 2) * r, y + r / 2);
   draw.lineTo(x - (root3 / 2) * r, y - r / 2);
   draw.fill();
+  draw.globalCompositeOperation="source-over";
 }
 const radius = 50;
 var hsvToRgb16 = function (hue, saturation, value) {
@@ -136,8 +136,8 @@ function drawhoneycomb() {
 }
 
 function renewCanvas() {
-  RainbowHoneycomb.width = screen.width;
-  RainbowHoneycomb.height = screen.height;
+  RainbowHoneycomb.width = window.innerWidth;
+  RainbowHoneycomb.height = window.innerHeight;
   drawhoneycomb();
   RainbowHoneycomb_img.src=RainbowHoneycomb.toDataURL("image/webp",0);
 }
