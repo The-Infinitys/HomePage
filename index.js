@@ -26,8 +26,10 @@ const header = `
   <div><a href="https://github.com/The-Infinitys">GitHub</a></div>
 </div>
 `;
-const init_page = async function () {
+const init_header = function () {
   document.querySelector("header").innerHTML = header;
+};
+const generate_Infinitys = async function(){
   const the_infinitys_image = await The_Infinitys(512);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
@@ -171,7 +173,8 @@ The_Infinitys();
 //
 
 window.onload = async () => {
-  await init_page();
+  init_header();
+  await generate_Infinitys();
 }
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
