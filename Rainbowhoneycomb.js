@@ -9,14 +9,6 @@ show_rainbowhoneycomb.innerHTML=`
   from {opacity:0;}
   to {opacity:1;}
 }
-@media (prefers-color-scheme: dark) {
-  #RainbowHoneycomb-dark{
-    visibility:visible;
-  }
-  #RainbowHoneycomb-light{
-    visibility:hidden;
-  }
-}
 `;
 document.body.appendChild(show_rainbowhoneycomb);
 const RainbowHoneycomb_img_dark=new Image();

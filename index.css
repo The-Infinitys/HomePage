@@ -1,215 +1,224 @@
 :root {
-    --background: white;
-    --text: black;
-    --hamburger-width: 35%;
+  --background: white;
+  --text: black;
+  --hamburger-width: 35%;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background: black;
-        --text: white;
-    }
+  :root {
+    --background: black;
+    --text: white;
+  }
+
+  #RainbowHoneycomb-dark {
+    visibility: visible;
+  }
+
+  #RainbowHoneycomb-light {
+    visibility: hidden;
+  }
 }
 
 @media (max-aspect-ratio: 1/1) {
-    :root {
-        --hamburger-width: 100%;
-    }
-    header h1{
-        visibility:hidden;
-    }
+  :root {
+    --hamburger-width: 100%;
+  }
+
+  header h1 {
+    visibility: hidden;
+  }
 }
 
 body {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    font-family: serif;
+  padding: 0;
+  margin: 0;
+  font-family: serif;
 }
 
 header {
-    z-index: 777;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-top: 0;
-    text-align: left;
-    width: 100%;
-    height: 10%;
-    font-size: 15%;
-    display: flex;
-    font-size: 20px;
-    color: var(--text);
-    opacity: 0.777;
-    background-color: var(--background);
+  z-index: 777;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  text-align: left;
+  width: 100%;
+  height: 10%;
+  font-size: 15%;
+  display: flex;
+  font-size: 20px;
+  color: var(--text);
+  opacity: 0.777;
+  background-color: var(--background);
 }
 
 header a img {
-    position: relative;
-    top: 0;
-    left: 1%;
-    width: auto;
-    height: 100%;
+  position: relative;
+  top: 0;
+  left: 1%;
+  width: auto;
+  height: 100%;
 }
 
 header h1 {
-    position: absolute;
-    top: 0;
-    left:12vw;
-    font-size: 7vh;
+  position: absolute;
+  top: 0;
+  left: 12vw;
+  font-size: 7vh;
 }
 
 header button {
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    width: 10vh;
-    height: 10vh;
-    background-color: transparent;
-    border: none;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  width: 10vh;
+  height: 10vh;
+  background-color: transparent;
+  border: none;
 }
 
 @keyframes rainbow-stroke {
-    0% {
-        stroke: #ff0000;
-    }
+  0% {
+    stroke: #ff0000;
+  }
 
-    17% {
-        stroke: #ffff00;
-    }
+  17% {
+    stroke: #ffff00;
+  }
 
-    33% {
-        stroke: #00ff00;
-    }
+  33% {
+    stroke: #00ff00;
+  }
 
-    50% {
-        stroke: #00ffff;
-    }
+  50% {
+    stroke: #00ffff;
+  }
 
-    67% {
-        stroke: #0000ff;
-    }
+  67% {
+    stroke: #0000ff;
+  }
 
-    83% {
-        stroke: #ff00ff;
-    }
+  83% {
+    stroke: #ff00ff;
+  }
 
-    100% {
-        stroke: #ff0000;
-    }
+  100% {
+    stroke: #ff0000;
+  }
 }
 
 #hamburger_menu_icon {
-    animation-name: rainbow-stroke;
-    animation-duration: 5s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
+  animation-name: rainbow-stroke;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
 }
 
 #hamburger_menus {
-    position: fixed;
-    right: 0;
-    top: 10%;
-    width: 0;
-    height: 90%;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: clip;
-    border: 1px solid var(--text);
-    color: var(--text);
-    z-index: 777;
-    opacity: 0;
-    background-color: #ffffff77;
+  position: fixed;
+  right: 0;
+  top: 10%;
+  width: 0;
+  height: 90%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: clip;
+  border: 1px solid var(--text);
+  color: var(--text);
+  z-index: 777;
+  opacity: 0;
+  background-color: #ffffff77;
 
-    @media (prefers-color-scheme: dark) {
-        background-color: #00000077;
-    }
+  @media (prefers-color-scheme: dark) {
+    background-color: #00000077;
+  }
 }
 
 #hamburger_menus div {
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 #hamburger_menus div a {
-    color: var(--text);
-    font-size: 6vh;
-    text-decoration: none;
+  color: var(--text);
+  font-size: 6vh;
+  text-decoration: none;
 }
 
 
 @keyframes hamburger-open-animation {
-    from {
-        width: 0;
-        opacity: 0;
-    }
+  from {
+    width: 0;
+    opacity: 0;
+  }
 
-    to {
-        width: var(--hamburger-width);
-        opacity: 1;
-    }
+  to {
+    width: var(--hamburger-width);
+    opacity: 1;
+  }
 }
 
 @keyframes hamburger-close-animation {
-    from {
-        width: var(--hamburger-width);
-        opacity: 1;
-    }
+  from {
+    width: var(--hamburger-width);
+    opacity: 1;
+  }
 
-    to {
-        width: 0;
-        opacity: 0;
-    }
+  to {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 .hamburger-open {
-    animation-name: hamburger-open-animation;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-iteration-count: initial;
+  animation-name: hamburger-open-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
 }
 
 .hamburger-close {
-    animation-name: hamburger-close-animation;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-iteration-count: initial;
+  animation-name: hamburger-close-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
 }
 
 /* Light mode styles are the default styles */
 p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 section.Title {
-    margin-top: 12vh;
-    text-align: center;
-    font-size: 7vw;
-    background-color: transparent;
-    color: var(--text);
-    text-align: center;
+  margin-top: 12vh;
+  text-align: center;
+  font-size: 7vw;
+  background-color: transparent;
+  color: var(--text);
+  text-align: center;
 }
 
 section {
-    width: 100%;
-    background-color: var(--background);
-    color: var(--text);
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
 }
 
 h1.bigger {
-    font-size: 7vw;
+  font-size: 7vw;
 }
 
 footer {
-    text-align: center;
-    background-size: cover;
-    width: 100%;
-    height: 50px;
-    color: var(--text);
-    background-color: var(--background);
-    opacity: 0.75;
+  text-align: center;
+  background-size: cover;
+  width: 100%;
+  height: 50px;
+  color: var(--text);
+  background-color: var(--background);
+  opacity: 0.75;
 }
