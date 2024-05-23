@@ -29,15 +29,28 @@ const header = `
 const init_header = function () {
   document.querySelector("header").innerHTML = header;
 };
-const generate_Infinitys = function(){
-  if (256>window.innerWidth){return null;}
-  const the_infinitys_image = The_Infinitys(window.innerWidth,1);
+const is_phone = () => {
+  const ua = navigator.userAgent;
+  if (ua.indexOf("iPhone") >= 0) {
+    return true;
+  }
+  if (ua.indexOf("iPad") >= 0) {
+    return true;
+  }
+  if (ua.indexOf("Android") >= 0) {
+    return true;
+  }
+  return false;
+};
+const generate_Infinitys = function () {
+  if (256 > window.innerWidth || is_phone()) { return null; }
+  const the_infinitys_image = The_Infinitys(Math.floor(window.innerWidth / 3), 1);
   document.querySelector("#headerLogo").src = the_infinitys_image;
   document.querySelector("#logo").src = the_infinitys_image;
 };
 
 //generate Infinity
-function The_Infinitys(size,quality) {
+function The_Infinitys(size, quality) {
   const hsvToRgb16 = function (hue, saturation, value) {
     var result = false;
     if (
@@ -154,7 +167,7 @@ function The_Infinitys(size,quality) {
   }
   before_data = circle(0);
   graphics.lineWidth = canvas.width / 777;
-  for (let count = 0; count < 777; count+=quality*10) {
+  for (let count = 0; count < 777; count += quality * 10) {
     for (let t = 0; t <= 360; t += quality) {
       let data = circle(t);
       data.x *= 1 - count / 7777
