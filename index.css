@@ -68,9 +68,9 @@ header {
 header a img {
   position: relative;
   top: 0;
-  left: 1%;
-  width: auto;
-  height: 100%;
+  left: 1vw;
+  width: 10vh;
+  height: 10vh;
 }
 
 header h1 {
