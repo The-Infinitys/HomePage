@@ -3,7 +3,7 @@
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.createElement("canvas");
 RainbowHoneycomb.id="RainbowHoneycomb"
-window.onresize = resizeCanvas;
+window.onresize = renewCanvas;
 const RainbowHoneycomb_img=Image();
 RainbowHoneycomb_img.style =`
   position:fixed;
