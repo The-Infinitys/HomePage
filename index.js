@@ -1,7 +1,7 @@
 //headerの初期化
 const header_text = `
 <a href="/" aria-label="Home">
-  <img id="headerLogo" src="./image/The-Infinitys-min.webp" alt="" />
+  <img id="headerLogo" src="./image/The-Infinitys.webp" alt="" />
 </a>
 <h1>The Infinity's</h1>
 <button
@@ -193,7 +193,6 @@ function The_Infinitys(size, quality) {
 //
 window.onload = () => {
   init_header();
-  generate_Infinitys();
 }
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;

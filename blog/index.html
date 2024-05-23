@@ -1,77 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>The Infinity's</title>
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="/image/favicon/apple-touch-icon-180x180.png" />
-    <link rel="icon" type="image/png" href="/image/favicon/icon-192x192.png" />
-    <link rel="stylesheet" href="../index.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2045274771035552"
-     crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-    </header>
-    <!-- Title -->
-    <section class="Title">
-      <h1>The Infinity's blog</h1>
-    </section>
-    <section class="list">
-      <h1>Blog List</h1>
-    </section>
-    <div id="blog">
-      <button id="blog-close" onclick="blog_close()">↩︎</button>
-      <div id="blog-title"></div>
-      <button id="blog-copy"><img src="/image/clipboard-infinity.svg" alt="copy" ></button>
-      <iframe
-        id="blog-view"
-        class="blog-view"
-        onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';"
-        onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
-      <svg
-        class="loading-infinity blog-view"
-        id="loading-infinity-blog-view"
-        viewBox="-60 -60 120 120"
-        fill="none"
-        stroke="#777">
-        <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
-        <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
-        <circle cx="0" cy="0" r="50" stroke-width="4" />
-        <style>
-          .loading-infinity{
-            animation-name: rotation,rainbow-stroke;
-            animation-duration: 2s,5s;
-            animation-timing-function: ease-in-out,linear;
-            animation-iteration-count: infinite,infinite;
-            z-index: 100;
-            background-color: transparent;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Infinity's</title>
+  <link rel="apple-touch-icon" type="image/png" href="/image/favicon/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" href="/image/favicon/icon-192x192.png" />
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2045274771035552"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <script src="../index.js"></script>
+  </header>
+  <!-- Title -->
+  <section class="Title">
+    <h1>The Infinity's blog</h1>
+  </section>
+  <section class="list">
+    <h1>Blog List</h1>
+  </section>
+  <div id="blog">
+    <button id="blog-close" onclick="blog_close()">↩︎</button>
+    <div id="blog-title"></div>
+    <button id="blog-copy"><img src="/image/clipboard-infinity.svg" alt="copy"></button>
+    <iframe id="blog-view" class="blog-view"
+      onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';"
+      onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
+    <svg class="loading-infinity blog-view" id="loading-infinity-blog-view" viewBox="-60 -60 120 120" fill="none"
+      stroke="#777">
+      <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
+      <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
+      <circle cx="0" cy="0" r="50" stroke-width="4" />
+      <style>
+        .loading-infinity {
+          animation-name: rotation, rainbow-stroke;
+          animation-duration: 2s, 5s;
+          animation-timing-function: ease-in-out, linear;
+          animation-iteration-count: infinite, infinite;
+          z-index: 100;
+          background-color: transparent;
+        }
+
+        @keyframes rotation {
+          0% {
+            transform: rotate(0deg);
           }
-          @keyframes rotation {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+          100% {
+            transform: rotate(360deg);
           }
-          @keyframes rainbow-stroke {
-            0% { stroke: #ff0000; }
-            17% { stroke: #ffff00; }
-            33% { stroke: #00ff00; }
-            50% { stroke: #00ffff; }
-            67% { stroke: #0000ff; }
-            83% { stroke: #ff00ff; }
-            100% { stroke: #ff0000; }
+        }
+
+        @keyframes rainbow-stroke {
+          0% {
+            stroke: #ff0000;
           }
-        </style>
-      </svg>
-    </div>
-    <footer>
-      <h1>&copy;The Infinity's</h1>
-    </footer>
-  </body>
-  <script src="../index.js"></script>
-  <script src="../Rainbowhoneycomb.js"></script>
-  <script src="./script.js"></script>
+
+          17% {
+            stroke: #ffff00;
+          }
+
+          33% {
+            stroke: #00ff00;
+          }
+
+          50% {
+            stroke: #00ffff;
+          }
+
+          67% {
+            stroke: #0000ff;
+          }
+
+          83% {
+            stroke: #ff00ff;
+          }
+
+          100% {
+            stroke: #ff0000;
+          }
+        }
+      </style>
+    </svg>
+  </div>
+  <footer>
+    <h1>&copy;The Infinity's</h1>
+  </footer>
+</body>
+<script src="../Rainbowhoneycomb.js"></script>
+<script src="./script.js"></script>
+
 </html>
