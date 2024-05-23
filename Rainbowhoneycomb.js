@@ -24,7 +24,6 @@ RainbowHoneycomb_img_dark.style =`
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
-  visibility: hidden;
   `;
 RainbowHoneycomb_img_dark.alt="";
 document.body.appendChild(RainbowHoneycomb_img_dark);
@@ -41,7 +40,6 @@ RainbowHoneycomb_img_light.style =`
   animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
-  visibility: visible;
   `;
 RainbowHoneycomb_img_light.alt="";
 document.body.appendChild(RainbowHoneycomb_img_light);

@@ -4,6 +4,14 @@
   --hamburger-width: 35%;
 }
 
+#RainbowHoneycomb-dark {
+  visibility: hidden;
+}
+
+#RainbowHoneycomb-light {
+  visibility: visible;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: black;
@@ -18,6 +26,7 @@
     visibility: hidden;
   }
 }
+
 
 @media (max-aspect-ratio: 1/1) {
   :root {
