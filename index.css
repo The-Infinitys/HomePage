@@ -4,11 +4,11 @@
   --hamburger-width: 35%;
 }
 
-#RainbowHoneycomb-dark {
+#Honeycomb-dark {
   visibility: hidden;
 }
 
-#RainbowHoneycomb-light {
+#Honeycomb-light {
   visibility: visible;
 }
 
@@ -18,11 +18,11 @@
     --text: white;
   }
 
-  #RainbowHoneycomb-dark {
+  #Honeycomb-dark {
     visibility: visible;
   }
 
-  #RainbowHoneycomb-light {
+  #Honeycomb-light {
     visibility: hidden;
   }
 }

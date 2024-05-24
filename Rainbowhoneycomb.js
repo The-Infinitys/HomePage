@@ -10,9 +10,124 @@ show_rainbowhoneycomb.innerHTML = `
 }
 `;
 document.body.appendChild(show_rainbowhoneycomb);
-const RainbowHoneycomb_img_dark = new Image();
-RainbowHoneycomb_img_dark.id = "RainbowHoneycomb-dark";
-RainbowHoneycomb_img_dark.style = `
+const rainbow_svg=new Image();
+rainbow_svg.src=`
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="480"
+  height="360"
+  viewBox="0,0,480,360">
+  <defs>
+    <linearGradient
+      x1="0"
+      y1="180"
+      x2="80"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-1">
+      <stop offset="0" stop-color="#ff0000" />
+      <stop offset="1" stop-color="#ffff00" />
+    </linearGradient>
+    <linearGradient
+      x1="80"
+      y1="180"
+      x2="160"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-2">
+      <stop offset="0" stop-color="#ffff00" />
+      <stop offset="1" stop-color="#00ff00" />
+    </linearGradient>
+    <linearGradient
+      x1="160"
+      y1="180"
+      x2="240"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-3">
+      <stop offset="0" stop-color="#00ff00" />
+      <stop offset="1" stop-color="#00ffff" />
+    </linearGradient>
+    <linearGradient
+      x1="240"
+      y1="180"
+      x2="320"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-4">
+      <stop offset="0" stop-color="#00ffff" />
+      <stop offset="1" stop-color="#0000ff" />
+    </linearGradient>
+    <linearGradient
+      x1="320"
+      y1="180"
+      x2="400"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-5">
+      <stop offset="0" stop-color="#0000ff" />
+      <stop offset="1" stop-color="#ff00ff" />
+    </linearGradient>
+    <linearGradient
+      x1="400"
+      y1="180"
+      x2="480"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-6">
+      <stop offset="0" stop-color="#ff00ff" />
+      <stop offset="1" stop-color="#ff0000" />
+    </linearGradient>
+  </defs>
+  <g transform="">
+    <g
+      data-paper-data='{"isPaintingLayer":true}'
+      fill-rule="nonzero"
+      stroke="#000000"
+      stroke-width="0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      stroke-dasharray=""
+      stroke-dashoffset="0"
+      style="mix-blend-mode: normal">
+      <path d="M0,360v-360h80v360z" fill="url(#color-1)" />
+      <path
+        d="M80,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-2)" />
+      <path d="M160,360v-360h80v360z" fill="url(#color-3)" />
+      <path
+        d="M240,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-4)" />
+      <path d="M320,360v-360h80v360z" fill="url(#color-5)" />
+      <path
+        d="M400,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-6)" />
+    </g>
+  </g></svg><!--rotationCenter:240:180-->
+
+`;
+rainbow_svg.style=`
+position:fixed;
+width:100vw;
+height:100vh;
+top:0;
+left:0;
+z-index:-1000;
+animation-name: show;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-iteration-count: initial;
+`;
+document.body.appendChild(rainbow_svg);
+const Honeycomb_img_dark = new Image();
+Honeycomb_img_dark.id = "Honeycomb-dark";
+Honeycomb_img_dark.style = `
   position:fixed;
   width:100vw;
   height:100vh;
@@ -24,11 +139,11 @@ RainbowHoneycomb_img_dark.style = `
   animation-timing-function: linear;
   animation-iteration-count: initial;
   `;
-RainbowHoneycomb_img_dark.alt = "";
-document.body.appendChild(RainbowHoneycomb_img_dark);
-const RainbowHoneycomb_img_light = new Image();
-RainbowHoneycomb_img_light.id = "RainbowHoneycomb-light";
-RainbowHoneycomb_img_light.style = `
+Honeycomb_img_dark.alt = "";
+document.body.appendChild(Honeycomb_img_dark);
+const Honeycomb_img_light = new Image();
+Honeycomb_img_light.id = "Honeycomb-light";
+Honeycomb_img_light.style = `
   position:fixed;
   width:100vw;
   height:100vh;
@@ -40,8 +155,8 @@ RainbowHoneycomb_img_light.style = `
   animation-timing-function: linear;
   animation-iteration-count: initial;
   `;
-RainbowHoneycomb_img_light.alt = "";
-document.body.appendChild(RainbowHoneycomb_img_light);
+Honeycomb_img_light.alt = "";
+document.body.appendChild(Honeycomb_img_light);
 const draw = RainbowHoneycomb.getContext("2d");
 function honeycomb(x, y, r, color) {
   draw.fillStyle = color;
@@ -125,17 +240,7 @@ var hsvToRgb16 = function (hue, saturation, value) {
   }
   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
 };
-
-let tickcount = 0;
 function drawhoneycomb(color) {
-  for (let i = 0; i < RainbowHoneycomb.width; ++i) {
-    draw.fillStyle = hsvToRgb16(
-      (i * 360) / RainbowHoneycomb.width + tickcount,
-      100,
-      100
-    );
-    draw.fillRect(i, 0, 1, RainbowHoneycomb.height);
-  }
   for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
     for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
       honeycomb(
@@ -145,7 +250,6 @@ function drawhoneycomb(color) {
       );
     }
   }
-  tickcount += 1;
 }
 
 const is_phone = () => {
@@ -166,9 +270,9 @@ function renewCanvas() {
   RainbowHoneycomb.width = (window.innerWidth * window.devicePixelRatio);
   RainbowHoneycomb.height = (window.innerHeight * window.devicePixelRatio);
   drawhoneycomb("#000");
-  RainbowHoneycomb_img_dark.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
+  Honeycomb_img_dark.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
   drawhoneycomb("#fff");
-  RainbowHoneycomb_img_light.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
+  Honeycomb_img_light.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
 }
 renewCanvas();
 window.onresize = renewCanvas;
