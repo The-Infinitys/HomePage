@@ -150,10 +150,9 @@ header button {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 6vh;
 }
 
-#hamburger_menus tr a th {
+#hamburger_menus tr th a {
   color: var(--text);
   font-size: 6vh;
   text-decoration: none;
