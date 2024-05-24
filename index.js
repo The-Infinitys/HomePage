@@ -21,8 +21,17 @@ const header_text = `
 <!--hamburger menu-->
 <table id="hamburger_menus">
   <tr>
+    <th scope="col">
+      <!--icon-->
+    </th>
+      <!--name-->
+    <th scope="col">
+    </th>
+  </tr>
+  <tr>
     <th>
       <img
+        alt=""
         class="hamburger_menus-contents-icons"
         src="/image/header/infinity.svg" />
     </th>
@@ -31,6 +40,7 @@ const header_text = `
   <tr>
     <th>
       <img
+        alt=""
         class="hamburger_menus-contents-icons"
         src="/image/header/blog.svg" />
     </th>
@@ -41,6 +51,7 @@ const header_text = `
   <tr>
     <th>
       <img
+        alt=""
         class="hamburger_menus-contents-icons"
         src="/image/header/scratch.svg" />
     </th>
@@ -51,6 +62,7 @@ const header_text = `
   <tr>
     <th>
       <img
+        alt=""
         class="hamburger_menus-contents-icons"
         src="/image/header/github.svg" />
     </th>
