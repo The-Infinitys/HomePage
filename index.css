@@ -139,10 +139,10 @@ header button {
   color: var(--text);
   z-index: 777;
   opacity: 0;
-  background-color: #ffffff77;
+  background-color: #ffffffcc;
 
   @media (prefers-color-scheme: dark) {
-    background-color: #00000077;
+    background-color: #000000cc;
   }
 }
 
