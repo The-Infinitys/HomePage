@@ -153,14 +153,14 @@ header button {
   height: 6vh;
 }
 
-#hamburger_menus tr a {
+#hamburger_menus tr a th {
   color: var(--text);
   font-size: 6vh;
   text-decoration: none;
 }
 #hamburger_menus tr a th img{
   width:auto;
-  height:100%;
+  height:6vh;
 }
 
 
