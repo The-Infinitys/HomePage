@@ -146,19 +146,19 @@ header button {
   }
 }
 
-#hamburger_menus div {
+#hamburger_menus table {
   padding: 0;
   margin: 0;
   width: 100%;
   height: 6vh;
 }
 
-#hamburger_menus div a {
+#hamburger_menus table tr a {
   color: var(--text);
   font-size: 6vh;
   text-decoration: none;
 }
-#hamburger_menus div a img{
+#hamburger_menus table tr a th img{
   width:auto;
   height:100%;
 }

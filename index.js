@@ -19,12 +19,34 @@ const header_text = `
   </svg>
 </button>
 <!--hamburger menu-->
-<div id="hamburger_menus">
-  <div><a aria-label="Home" href="/"><img src="/image/header/infinity.svg">Home</a></div>
-  <div><a href="/blog"><img src="/image/header/blog.svg">Blog</a></div>
-  <div><a href="https://scratch.mit.edu/users/The_Infinitys"><img src="/image/header/scratch.svg">Scratch</a></div>
-  <div><a href="https://github.com/The-Infinitys"><img src="/image/header/github.svg">GitHub</a></div>
-</div>
+<table id="hamburger_menus">
+  <tr>
+    <a aria-label="Home" href="/">
+      <th>
+        <img src="/image/header/infinity.svg" />
+      </th>
+      <th>Home</th>
+    </a>
+  </tr>
+  <tr>
+    <a href="/blog">
+      <th><img src="/image/header/blog.svg" /></th>
+      <th>Blog</th>
+    </a>
+  </tr>
+  <tr>
+    <a href="https://scratch.mit.edu/users/The_Infinitys">
+      <th><img src="/image/header/scratch.svg" /></th>
+      <th>Scratch</th>
+    </a>
+  </tr>
+  <tr>
+    <a href="https://github.com/The-Infinitys">
+      <th><img src="/image/header/github.svg" /></th>
+      <th>GitHub</th>
+    </a>
+  </tr>
+</table>
 `;
 const init_header = function () {
   const header = document.createElement("header");
