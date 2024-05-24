@@ -23,26 +23,26 @@ const header_text = `
   <tr>
     <a aria-label="Home" href="/">
       <th>
-        <img src="/image/header/infinity.svg" />
+        <img class="hamburger_menus-contents-icons" src="/image/header/infinity.svg" />
       </th>
       <th>Home</th>
     </a>
   </tr>
   <tr>
     <a href="/blog">
-      <th><img src="/image/header/blog.svg" /></th>
+      <th><img class="hamburger_menus-contents-icons" src="/image/header/blog.svg" /></th>
       <th>Blog</th>
     </a>
   </tr>
   <tr>
     <a href="https://scratch.mit.edu/users/The_Infinitys">
-      <th><img src="/image/header/scratch.svg" /></th>
+      <th><img class="hamburger_menus-contents-icons" src="/image/header/scratch.svg" /></th>
       <th>Scratch</th>
     </a>
   </tr>
   <tr>
     <a href="https://github.com/The-Infinitys">
-      <th><img src="/image/header/github.svg" /></th>
+      <th><img class="hamburger_menus-contents-icons" src="/image/header/github.svg" /></th>
       <th>GitHub</th>
     </a>
   </tr>

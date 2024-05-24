@@ -158,7 +158,7 @@ header button {
   font-size: 6vh;
   text-decoration: none;
 }
-#hamburger_menus tr a th img{
+.hamburger_menus-contents-icons{
   width:auto;
   height:6vh;
 }
