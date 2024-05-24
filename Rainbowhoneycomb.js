@@ -25,6 +25,7 @@ animation-duration: 5s;
 animation-timing-function: linear;
 animation-iteration-count: initial;
 `;
+rainbow_svg.alt="";
 document.body.appendChild(rainbow_svg);
 const Honeycomb_img_dark = new Image();
 Honeycomb_img_dark.id = "Honeycomb-dark";
