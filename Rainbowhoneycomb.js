@@ -1,5 +1,4 @@
 //ダークモード・ライトモード対応
-
 const root3 = 1.7320508;
 const RainbowHoneycomb = document.createElement("canvas");
 RainbowHoneycomb.id = "RainbowHoneycomb";
@@ -164,13 +163,8 @@ const is_phone = () => {
 };
 
 function renewCanvas() {
-  if (is_phone()) {
-    RainbowHoneycomb.width = window.innerWidth * 1.1;
-    RainbowHoneycomb.height = window.innerHeight * 1.1;
-  } else {
-    RainbowHoneycomb.width = window.innerWidth;
-    RainbowHoneycomb.height = window.innerHeight;
-  }
+  RainbowHoneycomb.width = (window.innerWidth * window.devicePixelRatio);
+  RainbowHoneycomb.height = (window.innerHeight * window.devicePixelRatio);
   drawhoneycomb("#000");
   RainbowHoneycomb_img_dark.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
   drawhoneycomb("#fff");

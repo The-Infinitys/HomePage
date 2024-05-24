@@ -27,14 +27,15 @@ const header_text = `
 </div>
 `;
 const init_header = function () {
-  const header = document.querySelector("header");
-  header.style=`
+  const header = document.createElement("header");
+  header.style = `
   animation-name: show;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
   `;
   header.innerHTML = header_text;
+  document.body.prepend(header);
 };
 const generate_Infinitys = function () {
   document.querySelector("#headerLogo").src =
