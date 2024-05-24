@@ -10,8 +10,108 @@ show_rainbowhoneycomb.innerHTML = `
 }
 `;
 document.body.appendChild(show_rainbowhoneycomb);
-const rainbow_svg=new Image();
-rainbow_svg.src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI0ODAiIGhlaWdodD0iMzYwIiB2aWV3Qm94PSIwLDAsNDgwLDM2MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmYwMDAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmZjAwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjgwIiB5MT0iMTgwIiB4Mj0iMTYwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTIiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmYwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IHgxPSIxNjAiIHkxPSIxODAiIHgyPSIyNDAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItMyI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBmZjAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDBmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjI0MCIgeTE9IjE4MCIgeDI9IjMyMCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci00Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDAwZmYiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iMzIwIiB5MT0iMTgwIiB4Mj0iNDAwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmMDBmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IHgxPSI0MDAiIHkxPSIxODAiIHgyPSI0ODAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItNiI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmYwMDAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PGcgdHJhbnNmb3JtPSIiPjxnIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2lzUGFpbnRpbmdMYXllciZxdW90Ozp0cnVlfSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDM2MHYtMzYwaDgwdjM2MHoiIGZpbGw9InVybCgjY29sb3ItMSkiLz48cGF0aCBkPSJNODAsMzYwdi0zNjBoODB2MzYweiIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aW5kZXgmcXVvdDs6bnVsbH0iIGZpbGw9InVybCgjY29sb3ItMikiLz48cGF0aCBkPSJNMTYwLDM2MHYtMzYwaDgwdjM2MHoiIGZpbGw9InVybCgjY29sb3ItMykiLz48cGF0aCBkPSJNMjQwLDM2MHYtMzYwaDgwdjM2MHoiIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2luZGV4JnF1b3Q7Om51bGx9IiBmaWxsPSJ1cmwoI2NvbG9yLTQpIi8+PHBhdGggZD0iTTMyMCwzNjB2LTM2MGg4MHYzNjB6IiBmaWxsPSJ1cmwoI2NvbG9yLTUpIi8+PHBhdGggZD0iTTQwMCwzNjB2LTM2MGg4MHYzNjB6IiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpbmRleCZxdW90OzpudWxsfSIgZmlsbD0idXJsKCNjb2xvci02KSIvPjwvZz48L2c+PC9zdmc+PCEtLXJvdGF0aW9uQ2VudGVyOjI0MDoxODAtLT4=";
+const rainbow_svg=document.createElement("svg");
+rainbow_svg.outerHTML=`
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="480"
+  height="360"
+  viewport="0,0,480,360">
+  <defs>
+    <linearGradient
+      x1="0"
+      y1="180"
+      x2="80"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-1">
+      <stop offset="0" stop-color="#ff0000" />
+      <stop offset="1" stop-color="#ffff00" />
+    </linearGradient>
+    <linearGradient
+      x1="80"
+      y1="180"
+      x2="160"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-2">
+      <stop offset="0" stop-color="#ffff00" />
+      <stop offset="1" stop-color="#00ff00" />
+    </linearGradient>
+    <linearGradient
+      x1="160"
+      y1="180"
+      x2="240"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-3">
+      <stop offset="0" stop-color="#00ff00" />
+      <stop offset="1" stop-color="#00ffff" />
+    </linearGradient>
+    <linearGradient
+      x1="240"
+      y1="180"
+      x2="320"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-4">
+      <stop offset="0" stop-color="#00ffff" />
+      <stop offset="1" stop-color="#0000ff" />
+    </linearGradient>
+    <linearGradient
+      x1="320"
+      y1="180"
+      x2="400"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-5">
+      <stop offset="0" stop-color="#0000ff" />
+      <stop offset="1" stop-color="#ff00ff" />
+    </linearGradient>
+    <linearGradient
+      x1="400"
+      y1="180"
+      x2="480"
+      y2="180"
+      gradientUnits="userSpaceOnUse"
+      id="color-6">
+      <stop offset="0" stop-color="#ff00ff" />
+      <stop offset="1" stop-color="#ff0000" />
+    </linearGradient>
+  </defs>
+  <g transform="">
+    <g
+      data-paper-data='{"isPaintingLayer":true}'
+      fill-rule="nonzero"
+      stroke="#000000"
+      stroke-width="0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      stroke-dasharray=""
+      stroke-dashoffset="0"
+      style="mix-blend-mode: normal">
+      <path d="M0,360v-360h80v360z" fill="url(#color-1)" />
+      <path
+        d="M80,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-2)" />
+      <path d="M160,360v-360h80v360z" fill="url(#color-3)" />
+      <path
+        d="M240,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-4)" />
+      <path d="M320,360v-360h80v360z" fill="url(#color-5)" />
+      <path
+        d="M400,360v-360h80v360z"
+        data-paper-data='{"index":null}'
+        fill="url(#color-6)" />
+    </g>
+  </g></svg
+><!--rotationCenter:240:180-->
+`;
 rainbow_svg.style=`
 position:fixed;
 width:100vw;
