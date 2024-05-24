@@ -11,14 +11,10 @@ show_rainbowhoneycomb.innerHTML = `
 `;
 document.body.appendChild(show_rainbowhoneycomb);
 const rainbow_svg=document.createElement("svg");
-rainbow_svg.outerHTML=`
-<svg
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="480"
-  height="360"
-  viewport="0,0,480,360">
+rainbow_svg.versions="1.1";
+rainbow_svg.xmlns="https://www.w3.org/2000/svg";
+rainbow_svg.viewport="0,0,480,360";
+rainbow_svg.innerHTML=`
   <defs>
     <linearGradient
       x1="0"
@@ -109,8 +105,7 @@ rainbow_svg.outerHTML=`
         data-paper-data='{"index":null}'
         fill="url(#color-6)" />
     </g>
-  </g></svg
-><!--rotationCenter:240:180-->
+  </g>
 `;
 rainbow_svg.style=`
 position:fixed;
