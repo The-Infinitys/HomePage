@@ -39,7 +39,7 @@
 }
 
 body {
-  background-color: var(--background);
+  background-color: #888;
 }
 
 * {
