@@ -10,103 +10,8 @@ show_rainbowhoneycomb.innerHTML = `
 }
 `;
 document.body.appendChild(show_rainbowhoneycomb);
-const rainbow_svg=document.createElement("svg");
-rainbow_svg.versions="1.1";
-rainbow_svg.xmlns="https://www.w3.org/2000/svg";
-rainbow_svg.viewport="0,0,480,360";
-rainbow_svg.innerHTML=`
-  <defs>
-    <linearGradient
-      x1="0"
-      y1="180"
-      x2="80"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-1">
-      <stop offset="0" stop-color="#ff0000" />
-      <stop offset="1" stop-color="#ffff00" />
-    </linearGradient>
-    <linearGradient
-      x1="80"
-      y1="180"
-      x2="160"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-2">
-      <stop offset="0" stop-color="#ffff00" />
-      <stop offset="1" stop-color="#00ff00" />
-    </linearGradient>
-    <linearGradient
-      x1="160"
-      y1="180"
-      x2="240"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-3">
-      <stop offset="0" stop-color="#00ff00" />
-      <stop offset="1" stop-color="#00ffff" />
-    </linearGradient>
-    <linearGradient
-      x1="240"
-      y1="180"
-      x2="320"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-4">
-      <stop offset="0" stop-color="#00ffff" />
-      <stop offset="1" stop-color="#0000ff" />
-    </linearGradient>
-    <linearGradient
-      x1="320"
-      y1="180"
-      x2="400"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-5">
-      <stop offset="0" stop-color="#0000ff" />
-      <stop offset="1" stop-color="#ff00ff" />
-    </linearGradient>
-    <linearGradient
-      x1="400"
-      y1="180"
-      x2="480"
-      y2="180"
-      gradientUnits="userSpaceOnUse"
-      id="color-6">
-      <stop offset="0" stop-color="#ff00ff" />
-      <stop offset="1" stop-color="#ff0000" />
-    </linearGradient>
-  </defs>
-  <g transform="">
-    <g
-      data-paper-data='{"isPaintingLayer":true}'
-      fill-rule="nonzero"
-      stroke="#000000"
-      stroke-width="0"
-      stroke-linecap="butt"
-      stroke-linejoin="miter"
-      stroke-miterlimit="10"
-      stroke-dasharray=""
-      stroke-dashoffset="0"
-      style="mix-blend-mode: normal">
-      <path d="M0,360v-360h80v360z" fill="url(#color-1)" />
-      <path
-        d="M80,360v-360h80v360z"
-        data-paper-data='{"index":null}'
-        fill="url(#color-2)" />
-      <path d="M160,360v-360h80v360z" fill="url(#color-3)" />
-      <path
-        d="M240,360v-360h80v360z"
-        data-paper-data='{"index":null}'
-        fill="url(#color-4)" />
-      <path d="M320,360v-360h80v360z" fill="url(#color-5)" />
-      <path
-        d="M400,360v-360h80v360z"
-        data-paper-data='{"index":null}'
-        fill="url(#color-6)" />
-    </g>
-  </g>
-`;
+const rainbow_svg=document.createElement("img");
+rainbow_svg.src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAsMCw0ODAsMzYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgeDE9IjAiIHkxPSIxODAiIHgyPSI4MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci0xIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmZmMDAiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iODAiIHkxPSIxODAiIHgyPSIxNjAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItMiI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmZjAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDBmZjAwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjE2MCIgeTE9IjE4MCIgeDI9IjI0MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci0zIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMGZmZmYiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iMjQwIiB5MT0iMTgwIiB4Mj0iMzIwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTQiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwZmZmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IHgxPSIzMjAiIHkxPSIxODAiIHgyPSI0MDAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItNSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDAwMGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjQwMCIgeTE9IjE4MCIgeDI9IjQ4MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci02Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAwZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyB0cmFuc2Zvcm09IiI+PGcgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aXNQYWludGluZ0xheWVyJnF1b3Q7OnRydWV9IiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMzYwdi0zNjBoODB2MzYweiIgZmlsbD0idXJsKCNjb2xvci0xKSIvPjxwYXRoIGQ9Ik04MCwzNjB2LTM2MGg4MHYzNjB6IiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpbmRleCZxdW90OzpudWxsfSIgZmlsbD0idXJsKCNjb2xvci0yKSIvPjxwYXRoIGQ9Ik0xNjAsMzYwdi0zNjBoODB2MzYweiIgZmlsbD0idXJsKCNjb2xvci0zKSIvPjxwYXRoIGQ9Ik0yNDAsMzYwdi0zNjBoODB2MzYweiIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aW5kZXgmcXVvdDs6bnVsbH0iIGZpbGw9InVybCgjY29sb3ItNCkiLz48cGF0aCBkPSJNMzIwLDM2MHYtMzYwaDgwdjM2MHoiIGZpbGw9InVybCgjY29sb3ItNSkiLz48cGF0aCBkPSJNNDAwLDM2MHYtMzYwaDgwdjM2MHoiIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2luZGV4JnF1b3Q7Om51bGx9IiBmaWxsPSJ1cmwoI2NvbG9yLTYpIi8+PC9nPjwvZz48L3N2Zz48IS0tcm90YXRpb25DZW50ZXI6MjQwOjE4MC0tPg==";
 rainbow_svg.style=`
 position:fixed;
 width:100vw;
@@ -114,6 +19,7 @@ height:100vh;
 top:0;
 left:0;
 z-index:-1000;
+object-fit:fill;
 animation-name: show;
 animation-duration: 5s;
 animation-timing-function: linear;
