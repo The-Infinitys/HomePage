@@ -20,7 +20,7 @@ const header_text = `
 </button>
 <!--hamburger menu-->
 <div id="hamburger_menus">
-  <div><a aria-label="Home" href="/"><img src="/image/header/home.svg">Home</a></div>
+  <div><a aria-label="Home" href="/"><img src="/image/header/infinity.svg">Home</a></div>
   <div><a href="/blog"><img src="/image/header/blog.svg">Blog</a></div>
   <div><a href="https://scratch.mit.edu/users/The_Infinitys"><img src="/image/header/scratch.svg">Scratch</a></div>
   <div><a href="https://github.com/The-Infinitys"><img src="/image/header/github.svg">GitHub</a></div>
