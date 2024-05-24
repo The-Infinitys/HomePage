@@ -11,7 +11,7 @@ show_rainbowhoneycomb.innerHTML = `
 `;
 document.body.appendChild(show_rainbowhoneycomb);
 const rainbow_svg=new Image();
-rainbow_svg.src=`
+rainbow_svg.src=`data:image/svg+xml,
 <svg
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
