@@ -128,9 +128,9 @@ header button {
 
 #hamburger_menus {
   position: fixed;
-  right: 0;
+  left:100vw;
   top: 10%;
-  width: 0;
+  width: var(--hamburger-width);
   height: 90%;
   text-align: left;
   overflow: hidden;
@@ -157,34 +157,36 @@ header button {
   font-size: 6vh;
   text-decoration: none;
 }
-.hamburger_menus-contents-icons{
-  width:auto;
-  height:6vh;
+
+.hamburger_menus-contents-icons {
+  width: auto;
+  height: 6vh;
 }
 
 
 @keyframes hamburger-open-animation {
   from {
-    width: 0;
+    left: 100vw;
     opacity: 0;
   }
 
   to {
-    width: var(--hamburger-width);
+    left: calc(100vw - var(--hamburger-width));
     opacity: 1;
   }
 }
 
 @keyframes hamburger-close-animation {
   from {
-    width: var(--hamburger-width);
+    left: calc(100vw - var(--hamburger-width));
     opacity: 1;
   }
 
   to {
-    width: 0;
+    left: 100vw;
     opacity: 0;
   }
+
 }
 
 .hamburger-open {
