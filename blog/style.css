@@ -23,8 +23,8 @@
 
 .list {
   width: 90vw;
-  padding-left: 5vw;
-  padding-top: 25vh;
+  margin-left: 5vw;
+  margin-top: 25vh;
   background-color: #ffffff55;
   border-color: #00000055;
   color: var(--text);
