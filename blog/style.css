@@ -24,19 +24,16 @@
 .list {
   position: fixed;
   width: 90vw;
-  height: 60vh;
+  height: auto;
   left: 5vw;
   top: 25vh;
   background-color: #ffffff55;
   border-color: #00000055;
   color: var(--text);
-
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
     border-color: #ffffff55;
   }
-
-  overflow: scroll;
   border: 2px solid;
 }
 
