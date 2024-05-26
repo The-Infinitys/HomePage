@@ -22,11 +22,9 @@
 }
 
 .list {
-  position: relative;
   width: 90vw;
-  height: auto;
-  left: 5vw;
-  top: 25vh;
+  padding-left: 5vw;
+  padding-top: 25vh;
   background-color: #ffffff55;
   border-color: #00000055;
   color: var(--text);
