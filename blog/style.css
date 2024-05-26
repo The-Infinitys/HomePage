@@ -139,8 +139,3 @@
   color: var(--text);
   font-size: auto;
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-}
