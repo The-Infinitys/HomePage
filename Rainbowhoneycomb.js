@@ -170,7 +170,7 @@ animation-iteration-count: initial;
   //   return false;
   // };
 
-  const renewCanvas = () => {
+  const renewHoneycombCanvas = () => {
     RainbowHoneycomb.width = (window.innerWidth * window.devicePixelRatio);
     RainbowHoneycomb.height = (window.innerHeight * window.devicePixelRatio);
     drawhoneycomb("#000");
@@ -178,6 +178,6 @@ animation-iteration-count: initial;
     drawhoneycomb("#fff");
     Honeycomb_img_light.src = RainbowHoneycomb.toDataURL("image/webp", 0.75);
   }
-  renewCanvas();
-  window.onresize = renewCanvas;
+  renewHoneycombCanvas();
+  window.onresize = renewHoneycombCanvas;
 }
