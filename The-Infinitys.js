@@ -460,13 +460,6 @@ const generate_Infinitys = function () {
   document.querySelector("#logo").src =
     The_Infinitys(Math.floor(window.innerWidth / 2), 1);
 };
-//
-window.onload = () => {
-  init_style();
-  init_header();
-  init_footer();
-  generate_honeycomb();
-}
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
 function hamburger_menu() {
@@ -665,3 +658,10 @@ const generate_honeycomb = () => {
   };
   mediaQueryList.addEventListener("change", listener_honeycomb);
 }
+const The_Infinitys_main = () => {
+  init_style();
+  init_header();
+  init_footer();
+  generate_honeycomb();
+}
+The_Infinitys_main();
