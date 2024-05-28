@@ -1,18 +1,19 @@
 <svg
-  class="loading-infinity"
   viewBox="-60 -60 120 120"
   fill="none"
   stroke="#777">
   <g>
-  <animate
-    attributeName="transform"
-    values="rotate(0,0,0);rotate(360,0,0)"
+  <animateTransform 
+  attributeName="transform"
+    attributeType="XML"
+    type="rotate"
+    from="0 0 0"
+    to="360 0 0"
     keyTimes="0; 1"
     keySplines="0.5, 0.23, 0.5, 0.77"
     calcMode="spline"
     dur="2s"
-    repeatCount="indefinite"
-    />
+    repeatCount="indefinite"/>
   <animate
       attributeName="stroke"
       values="#f00;#ff0;#0f0;#0ff;#00f;#f0f;#f00"
