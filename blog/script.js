@@ -15,7 +15,6 @@ let param_open = ""
 if (blog_params.has("name")) {
   param_open = blog_params.get("name");
 }
-
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
@@ -29,13 +28,14 @@ const getData = function (name) {
         const box = document.createElement("button");
         box.classList.add("blog-button");
         box.onclick = () => {
-          param_open=info.name;
+          param_open = info.name;
           document.querySelector("#blog-title").innerHTML = info.title;
           blog_open("https://" + blog_domain + info.index);
         }
         const thumbnail = document.createElement("img");
         thumbnail.src = "https://" + blog_domain + info.thumbnail;
         thumbnail.alt = info.name;
+        thumbnail.loading="lazy";
         const title = document.createElement("div");
         title.innerHTML = info.title;
         box.innerHTML = thumbnail.outerHTML + title.outerHTML;
@@ -55,10 +55,10 @@ for (let i = data_list_length; i > 0; i--) {
   const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
   getData(pathname);
 }
-document.querySelector("#blog-copy").addEventListener("click",e=>{
-  copyToClipboard("https://"+blog_domain+"/blog?name="+param_open);
+document.querySelector("#blog-copy").addEventListener("click", () => {
+  copyToClipboard("https://" + blog_domain + "/blog?name=" + param_open);
 });
-function copyToClipboard (text) {
+function copyToClipboard(text) {
   if (navigator.clipboard) {
     return navigator.clipboard.writeText(text).then(function () {
       alert("copied!")
