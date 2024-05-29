@@ -79,14 +79,14 @@
 }
 
 .blog-window-show {
-  animation-name: hamburger-open-animation;
+  animation-name: blog-window-show-animation;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
 }
 
 .blog-window-hide {
-  animation-name: hamburger-close-animation;
+  animation-name: blog-window-hide-animation;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
