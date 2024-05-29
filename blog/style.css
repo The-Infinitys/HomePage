@@ -43,6 +43,7 @@
   height: 90vh;
   top: 100vw;
   opacity: 0;
+  z-index: 100;
 }
 
 .blog-view {
