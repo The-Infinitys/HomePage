@@ -28,10 +28,12 @@
   background-color: #ffffff55;
   border-color: #00000055;
   color: var(--text);
+
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
     border-color: #ffffff55;
   }
+
   border: 2px solid;
 }
 
@@ -85,6 +87,36 @@
   }
 }
 
+@keyframes rainbow-border {
+  0% {
+    border-color: #f00;
+  }
+
+  17% {
+    border-color: #ff0;
+  }
+
+  33% {
+    border-color: #0f0;
+  }
+
+  50% {
+    border-color: #0ff;
+  }
+
+  67% {
+    border-color: #00f;
+  }
+
+  83% {
+    border-color: #f0f;
+  }
+
+  100% {
+    border-color: #f00;
+  }
+}
+
 #blog-close {
   position: absolute;
   width: 20%;
@@ -92,7 +124,9 @@
   font-size: 7vh;
   background-color: #ffffff;
   color: #888888;
-
+  border: 2px solid #888888;
+  animation: rainbow-border infinite 5s linear;
+  border-radius: 100%;
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;
