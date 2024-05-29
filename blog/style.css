@@ -41,8 +41,8 @@
   position: fixed;
   width: 100vw;
   height: 90vh;
-  top: 10%;
-  visibility: hidden;
+  top: 100vw;
+  opacity: 0;
 }
 
 .blog-view {
