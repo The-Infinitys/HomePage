@@ -55,24 +55,24 @@
 
 @keyframes blog-window-show-animation {
   from {
-    left: 100vw;
+    top: 100vh;
     opacity: 0;
   }
 
   to {
-    left: calc(100vw - var(--hamburger-width));
+    top: 10vh;
     opacity: 1;
   }
 }
 
 @keyframes blog-window-hide-animation {
   from {
-    left: calc(100vw - var(--hamburger-width));
+    top: 10vh;
     opacity: 1;
   }
 
   to {
-    left: 100vw;
+    top: 100vh;
     opacity: 0;
   }
 

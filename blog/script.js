@@ -49,12 +49,12 @@ function blog_open(url) {
   document.querySelector("#loading-infinity-blog-view").style.visibility = "visible";
   document.querySelector("#blog-view").src = url;
   blog_window.classList.remove("blog-window-hide");
-  blog_window.classList.add("blog-window-open");
+  blog_window.classList.add("blog-window-show");
 }
 function blog_close() {
   const blog_window = document.querySelector("#blog");
-  blog_window.classList.remove("blog-window-open");
   blog_window.classList.add("blog-window-hide");
+  blog_window.classList.remove("blog-window-show");
   blog_window.style.visibility = "hidden";
 }
 for (let i = data_list_length; i > 0; i--) {

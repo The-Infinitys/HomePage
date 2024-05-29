@@ -149,24 +149,24 @@ header button {
 
 @keyframes hamburger-open-animation {
   from {
-    top: 100vw;
+    left: 100vw;
     opacity: 0;
   }
 
   to {
-    top: 10vw;
+    left: calc(100vw - var(--hamburger-width));
     opacity: 1;
   }
 }
 
 @keyframes hamburger-close-animation {
   from {
-    top: 10vw;
+    left: calc(100vw - var(--hamburger-width));
     opacity: 1;
   }
 
   to {
-    top: 100vw;
+    left: 100vw;
     opacity: 0;
   }
 
