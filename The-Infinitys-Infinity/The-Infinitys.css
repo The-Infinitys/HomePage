@@ -171,20 +171,20 @@ header button {
   }
 
 }
-
-.blog-window-show {
+.hamburger-open {
   animation-name: hamburger-open-animation;
   animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   animation-iteration-count: initial;
 }
 
-.blog-window-hide {
+.hamburger-close {
   animation-name: hamburger-close-animation;
   animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   animation-iteration-count: initial;
 }
+
 
 footer {
   text-align: center;
