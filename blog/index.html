@@ -28,16 +28,18 @@
     <section class="list">
       <h1>Blog List</h1>
     </section>
-    <div id="blog">
-      <button id="blog-close" onclick="blog_close()">↩︎</button>
-      <div id="blog-title"></div>
-      <button id="blog-copy">
+    <div id="blog" class="rainbow-border">
+      <button id="blog-close" class="rainbow-border" onclick="blog_close()">
+        ↩︎
+      </button>
+      <div id="blog-title" class="rainbow-border"></div>
+      <button id="blog-copy" class="rainbow-border">
         <img src="/image/clipboard-infinity.svg" alt="copy" />
       </button>
       <iframe
         title="blog-view"
         id="blog-view"
-        class="blog-view"
+        class="blog-view rainbow-border"
         onshow="document.querySelector('#loading-infinity-blog-view').style.visibility='visible';"
         onload="document.querySelector('#loading-infinity-blog-view').style.visibility='hidden';"></iframe>
       <img
