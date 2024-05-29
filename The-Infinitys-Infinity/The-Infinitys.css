@@ -147,43 +147,42 @@ header button {
   height: 6vh;
 }
 
-
 @keyframes hamburger-open-animation {
   from {
-    left: 100vw;
+    top: 100vw;
     opacity: 0;
   }
 
   to {
-    left: calc(100vw - var(--hamburger-width));
+    top: 10vw;
     opacity: 1;
   }
 }
 
 @keyframes hamburger-close-animation {
   from {
-    left: calc(100vw - var(--hamburger-width));
+    top: 10vw;
     opacity: 1;
   }
 
   to {
-    left: 100vw;
+    top: 100vw;
     opacity: 0;
   }
 
 }
 
-.hamburger-open {
+.blog-window-show {
   animation-name: hamburger-open-animation;
   animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
 }
 
-.hamburger-close {
+.blog-window-hide {
   animation-name: hamburger-close-animation;
   animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
 }
 

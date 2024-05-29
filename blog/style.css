@@ -53,11 +53,50 @@
   background-color: var(--background);
 }
 
+@keyframes blog-window-show-animation {
+  from {
+    left: 100vw;
+    opacity: 0;
+  }
+
+  to {
+    left: calc(100vw - var(--hamburger-width));
+    opacity: 1;
+  }
+}
+
+@keyframes blog-window-hide-animation {
+  from {
+    left: calc(100vw - var(--hamburger-width));
+    opacity: 1;
+  }
+
+  to {
+    left: 100vw;
+    opacity: 0;
+  }
+
+}
+
+.blog-window-show {
+  animation-name: blog-window-show-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
+}
+
+.blog-window-hide {
+  animation-name: blog-window-hide-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
+}
+
 #blog-title {
   position: absolute;
-  width: 70%;
+  width: 80%;
   height: 10%;
-  left: 20%;
+  left: 10%;
   font-size: 5vh;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -119,14 +158,14 @@
 
 #blog-close {
   position: absolute;
-  width: 20%;
+  width: 10%;
   height: 10%;
   font-size: 7vh;
   background-color: #ffffff;
   color: #888888;
   border: 2px solid #888888;
   animation: rainbow-border infinite 5s linear;
-  border-radius: 100%;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;

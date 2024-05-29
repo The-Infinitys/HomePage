@@ -35,7 +35,7 @@ const getData = function (name) {
         const thumbnail = document.createElement("img");
         thumbnail.src = "https://" + blog_domain + info.thumbnail;
         thumbnail.alt = info.name;
-        thumbnail.loading="lazy";
+        thumbnail.loading = "lazy";
         const title = document.createElement("div");
         title.innerHTML = info.title;
         box.innerHTML = thumbnail.outerHTML + title.outerHTML;
@@ -44,12 +44,18 @@ const getData = function (name) {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 function blog_open(url) {
-  document.querySelector("#blog").style.visibility = "visible";
+  const blog_window = document.querySelector("#blog");
+  blog_window.style.visibility = "visible";
   document.querySelector("#loading-infinity-blog-view").style.visibility = "visible";
   document.querySelector("#blog-view").src = url;
+  blog_window.classList.remove("blog-window-hide");
+  blog_window.classList.add("blog-window-open");
 }
 function blog_close() {
-  document.querySelector("#blog").style.visibility = "hidden";
+  const blog_window = document.querySelector("#blog");
+  blog_window.classList.remove("blog-window-open");
+  blog_window.classList.add("blog-window-hide");
+  blog_window.style.visibility = "hidden";
 }
 for (let i = data_list_length; i > 0; i--) {
   const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
