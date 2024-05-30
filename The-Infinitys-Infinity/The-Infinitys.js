@@ -90,10 +90,10 @@ const init_footer = function () {
   const footer_text = `
     <div>
       <div>
-        <a href="/contact/">Contact to The Infinity's</a>
-        <a href="/blog/">Watch The Infinity's Blog</a>
-        <a href="https://scratch.mit.edu/users/The_Infinitys/">Go to Scratch profile</a>
-        <a href="https://github.com/The_Infinitys/">Go to GitHub profile</a>
+        <p><a href="/contact/">Contact to The Infinity's</a></p>
+        <p><a href="/blog/">Watch The Infinity's Blog</a></p>
+        <p><a href="https://scratch.mit.edu/users/The_Infinitys/">Go to Scratch profile</a></p>
+        <p><a href="https://github.com/The_Infinitys/">Go to GitHub profile</a></p>
       </div>
     </div>
     <h1>&copy; 2024 The Infinity's</h1>
