@@ -197,10 +197,13 @@ footer {
   width: 100%;
   height: 50px;
   color: var(--text);
-  background-color: var(--background);
+  background-color: color-mix(in srgb, var(--background), #888888 77%);
   font-size: 10vh;
 }
-
+footer h1{
+  background-color: color-mix(in srgb, var(--background), transparent 77%);
+  font-size: 10vh;
+}
 footer div {
   display: flex;
   width: 100vw;
