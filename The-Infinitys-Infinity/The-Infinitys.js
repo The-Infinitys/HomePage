@@ -89,7 +89,12 @@ const init_footer = function () {
   //headerの初期化
   const footer_text = `
     <div>
-      <a href="/contact/">Contact to The Infinity's</a>
+      <div>
+        <a href="/contact/">Contact to The Infinity's</a>
+        <a href="/blog/">Watch The Infinity's Blog</a>
+        <a href="https://scratch.mit.edu/users/The_Infinitys/">Go to Scratch profile</a>
+        <a href="https://github.com/The_Infinitys/">Go to GitHub profile</a>
+      </div>
     </div>
     <h1>&copy; 2024 The Infinity's</h1>
   `;

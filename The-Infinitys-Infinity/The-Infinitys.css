@@ -206,3 +206,6 @@ footer div {
   height: auto;
   background-color: color-mix(in srgb, var(--background), #888888 77%);
 }
+footer div div{
+  width: auto;
+}
