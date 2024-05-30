@@ -204,7 +204,7 @@ footer div {
   display: flex;
   width: 100vw;
   height: auto;
-  background-color: color-mix(in srgb, var(--background), #888888 17%);
+  background-color: color-mix(in srgb, var(--background), transparent 17%);
 }
 footer div div{
   width: auto;
