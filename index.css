@@ -1,4 +1,6 @@
-/* Light mode styles are the default styles */
+*{
+  font-family:selif;
+}
 p {
   font-size: 20px;
 }
