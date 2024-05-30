@@ -1,3 +1,13 @@
+:root {
+  --background: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: black;
+  }
+}
+
 #google-form{
   width:100vw;
   height: 1100px;
@@ -5,25 +15,25 @@
 }
 @keyframes rainbow-background{
   0%{
-    background-color:#f00;
+    background-color:color-mix(in srgb, #f00, var(--background) 90%);
   }
   17%{
-    background-color:#ff0;
+    background-color:color-mix(in srgb, #ff0, var(--background) 90%);
   }
   33%{
-    background-color:#0f0;
+    background-color:color-mix(in srgb, #0f0, var(--background) 90%);
   }
   50%{
-    background-color:#0ff;
+    background-color:color-mix(in srgb, #0ff, var(--background) 90%);
   }
   67%{
-    background-color:#00f;
+    background-color:color-mix(in srgb, #00f, var(--background) 90%);
   }
   83%{
-    background-color:#f0f;
+    background-color:color-mix(in srgb, #f0f, var(--background) 90%);
   }
   100%{
-    background-color:#f00;
+    background-color:color-mix(in srgb, #f00, var(--background) 90%);
   }
 }
 section.main-form{
