@@ -197,16 +197,23 @@ footer {
   height: 50px;
   color: var(--text);
 }
-footer h1{
+
+footer h1 {
   background-color: color-mix(in srgb, var(--background), transparent 77%);
 }
+
 footer div {
   display: flex;
   width: 100vw;
   height: auto;
   background-color: color-mix(in srgb, var(--background), transparent 17%);
 }
-footer div div{
+
+footer div div {
   width: auto;
   display: block;
+}
+
+footer div div p {
+  font-size: 24px;
 }
