@@ -262,20 +262,20 @@ let is_opened_hamburgerMenu = false;
 function hamburger_menu() {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
-  const open_button=document.querySelector("open_hamburger_menu");
-  const close_button=document.querySelector("close_hamburger_menu");
+  const open_button=document.querySelector("#open_hamburger_menu");
+  const close_button=document.querySelector("#close_hamburger_menu");
   if (is_opened_hamburgerMenu) {
+    open_button.style.visibility="hidden";
+    close_button.style.visibility="visible";
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
-    open_button.style.visibility="hidden";
-    open_button.style.visibility="visible";
     menu.style.left = "calc(100vw - var(--hamburger-width))";
     menu.style.opacity = "1";
   } else {
+    open_button.style.visibility="visible";
+    close_button.style.visibility="hidden";
     menu.classList.add("hamburger-close");
     menu.classList.remove("hamburger-open");
-    open_button.style.visibility="visible";
-    open_button.style.visibility="hidden";
     menu.style.left = "100vw";
     menu.style.opacity = "0";
   }
