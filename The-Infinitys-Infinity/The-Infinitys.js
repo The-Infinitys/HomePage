@@ -259,21 +259,30 @@ const generate_Infinitys = function () {
 };
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
+document.querySelector("#close_hamburger_menu").style.visibility="hidden";
 function hamburger_menu() {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   const open_button=document.querySelector("#open_hamburger_menu");
   const close_button=document.querySelector("#close_hamburger_menu");
   if (is_opened_hamburgerMenu) {
-    open_button.style.visibility="hidden";
-    close_button.style.visibility="visible";
+    open_button.style.opacity="0";
+    close_button.style.opacity="1";
+    open_button.classList.add("hamburger_menu_icon_show");
+    open_button.classList.remove("hamburger_menu_icon_hide");
+    close_button.classList.add("hamburger_menu_icon_hide");
+    close_button.classList.remove("hamburger_menu_icon_show");
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
     menu.style.left = "calc(100vw - var(--hamburger-width))";
     menu.style.opacity = "1";
   } else {
-    open_button.style.visibility="visible";
-    close_button.style.visibility="hidden";
+    open_button.style.opacity="1";
+    close_button.style.opacity="0";
+    open_button.classList.remove("hamburger_menu_icon_show");
+    open_button.classList.add("hamburger_menu_icon_hide");
+    close_button.classList.remove("hamburger_menu_icon_hide");
+    close_button.classList.add("hamburger_menu_icon_show");
     menu.classList.add("hamburger-close");
     menu.classList.remove("hamburger-open");
     menu.style.left = "100vw";
@@ -299,14 +308,6 @@ const generate_honeycomb = () => {
   `;
   document.body.appendChild(RainbowHoneycomb);
   const draw = RainbowHoneycomb.getContext("2d");
-  const show_rainbowhoneycomb = document.createElement("style");
-  show_rainbowhoneycomb.innerHTML = `
-    @keyframes show{
-      from {opacity:0;}
-      to {opacity:1;}
-    }
-  `;
-  document.body.appendChild(show_rainbowhoneycomb);
   const rainbow_svg = document.createElement("img");
   rainbow_svg.src = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZpZXdCb3g9IjAsMCw0ODAsMzYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgeDE9IjAiIHkxPSIxODAiIHgyPSI4MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci0xIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmZmMDAiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iODAiIHkxPSIxODAiIHgyPSIxNjAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItMiI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmZjAwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDBmZjAwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjE2MCIgeTE9IjE4MCIgeDI9IjI0MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci0zIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmMDAiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMGZmZmYiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iMjQwIiB5MT0iMTgwIiB4Mj0iMzIwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTQiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwZmZmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IHgxPSIzMjAiIHkxPSIxODAiIHgyPSI0MDAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBpZD0iY29sb3ItNSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDAwMGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjQwMCIgeTE9IjE4MCIgeDI9IjQ4MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci02Ij48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAwZmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyB0cmFuc2Zvcm09IiI+PGcgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aXNQYWludGluZ0xheWVyJnF1b3Q7OnRydWV9IiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIwIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMzYwdi0zNjBoODB2MzYweiIgZmlsbD0idXJsKCNjb2xvci0xKSIvPjxwYXRoIGQ9Ik04MCwzNjB2LTM2MGg4MHYzNjB6IiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpbmRleCZxdW90OzpudWxsfSIgZmlsbD0idXJsKCNjb2xvci0yKSIvPjxwYXRoIGQ9Ik0xNjAsMzYwdi0zNjBoODB2MzYweiIgZmlsbD0idXJsKCNjb2xvci0zKSIvPjxwYXRoIGQ9Ik0yNDAsMzYwdi0zNjBoODB2MzYweiIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aW5kZXgmcXVvdDs6bnVsbH0iIGZpbGw9InVybCgjY29sb3ItNCkiLz48cGF0aCBkPSJNMzIwLDM2MHYtMzYwaDgwdjM2MHoiIGZpbGw9InVybCgjY29sb3ItNSkiLz48cGF0aCBkPSJNNDAwLDM2MHYtMzYwaDgwdjM2MHoiIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2luZGV4JnF1b3Q7Om51bGx9IiBmaWxsPSJ1cmwoI2NvbG9yLTYpIi8+PC9nPjwvZz48L3N2Zz48IS0tcm90YXRpb25DZW50ZXI6MjQwOjE4MC0tPg==";
   rainbow_svg.style = `

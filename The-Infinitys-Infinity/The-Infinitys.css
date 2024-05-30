@@ -114,6 +114,27 @@ header button svg{
   }
 }
 
+@keyframes show{
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes hide{
+  from {opacity:1;}
+  to {opacity:0;}
+}
+.hamburger_menu_icon_show {
+  animation-name: show;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial;
+}
+.hamburger_menu_icon_hide {
+  animation-name: hide;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial;
+}
 .hamburger_menu_icon {
   animation-name: rainbow-stroke;
   animation-duration: 5s;
