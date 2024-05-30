@@ -88,6 +88,9 @@ const init_header = function () {
 const init_footer = function () {
   //headerの初期化
   const footer_text = `
+    <div>
+      <a href="/contact/">Contact to The Infinity's</a>
+    </div>
     <h1>&copy; 2024 The Infinity's</h1>
   `;
   const footer = document.createElement("footer");

@@ -10,7 +10,7 @@
 
 #google-form{
   width:100vw;
-  height: 1100px;
+  height: 790px;
   animation: rainbow-background infinite 5s linear;
 }
 @keyframes rainbow-background{
