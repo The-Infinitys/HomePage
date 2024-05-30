@@ -259,30 +259,32 @@ const generate_Infinitys = function () {
 };
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
-document.querySelector("#close_hamburger_menu").style.visibility="hidden";
+document.querySelector("#close_hamburger_menu").style.opacity="0";
 function hamburger_menu() {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   const open_button=document.querySelector("#open_hamburger_menu");
   const close_button=document.querySelector("#close_hamburger_menu");
   if (is_opened_hamburgerMenu) {
+    //open the menu
     open_button.style.opacity="0";
     close_button.style.opacity="1";
-    open_button.classList.add("hamburger_menu_icon_show");
-    open_button.classList.remove("hamburger_menu_icon_hide");
-    close_button.classList.add("hamburger_menu_icon_hide");
-    close_button.classList.remove("hamburger_menu_icon_show");
+    open_button.classList.remove("hamburger_menu_icon_show");
+    open_button.classList.add("hamburger_menu_icon_hide");
+    close_button.classList.remove("hamburger_menu_icon_hide");
+    close_button.classList.add("hamburger_menu_icon_show");
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
     menu.style.left = "calc(100vw - var(--hamburger-width))";
     menu.style.opacity = "1";
   } else {
+    //close the menu
     open_button.style.opacity="1";
     close_button.style.opacity="0";
-    open_button.classList.remove("hamburger_menu_icon_show");
-    open_button.classList.add("hamburger_menu_icon_hide");
-    close_button.classList.remove("hamburger_menu_icon_hide");
-    close_button.classList.add("hamburger_menu_icon_show");
+    open_button.classList.add("hamburger_menu_icon_show");
+    open_button.classList.remove("hamburger_menu_icon_hide");
+    close_button.classList.add("hamburger_menu_icon_hide");
+    close_button.classList.remove("hamburger_menu_icon_show");
     menu.classList.add("hamburger-close");
     menu.classList.remove("hamburger-open");
     menu.style.left = "100vw";
