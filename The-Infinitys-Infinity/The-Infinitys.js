@@ -11,13 +11,23 @@ const init_header = function () {
       aria-label="hamburger_menu_button"
       onclick="hamburger_menu()">
       <svg
-        id="hamburger_menu_icon"
+        class="hamburger_menu_icon"
+        id="open_hamburger_menu"
         viewBox="0 0 100 100"
         fill="none"
         stroke-width="10">
         <line x1="10" y1="20" x2="90" y2="20" />
         <line x1="10" y1="50" x2="90" y2="50" />
         <line x1="10" y1="80" x2="90" y2="80" />
+      </svg>
+      <svg
+        class="hamburger_menu_icon"
+        id="close_hamburger_menu"
+        viewBox="-60 -60 120 120"
+        fill="none">
+        <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
+        <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
+        <circle cx="0" cy="0" r="50" stroke-width="4" />
       </svg>
     </button>
     <!--hamburger menu-->
@@ -252,14 +262,20 @@ let is_opened_hamburgerMenu = false;
 function hamburger_menu() {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
+  const open_button=document.querySelector("open_hamburger_menu");
+  const close_button=document.querySelector("close_hamburger_menu");
   if (is_opened_hamburgerMenu) {
     menu.classList.add("hamburger-open");
     menu.classList.remove("hamburger-close");
+    open_button.style.visibility="hidden";
+    open_button.style.visibility="visible";
     menu.style.left = "calc(100vw - var(--hamburger-width))";
     menu.style.opacity = "1";
   } else {
     menu.classList.add("hamburger-close");
     menu.classList.remove("hamburger-open");
+    open_button.style.visibility="visible";
+    open_button.style.visibility="hidden";
     menu.style.left = "100vw";
     menu.style.opacity = "0";
   }

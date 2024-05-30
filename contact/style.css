@@ -8,34 +8,42 @@
   }
 }
 
-#google-form{
-  width:100vw;
+#google-form {
+  width: 100vw;
   height: 790px;
   animation: rainbow-background infinite 5s linear;
 }
-@keyframes rainbow-background{
-  0%{
-    background-color:color-mix(in srgb, #f00, var(--background) 77%);
+
+@keyframes rainbow-background {
+  0% {
+    background-color: color-mix(in srgb, #f00, var(--background) 77%);
   }
-  17%{
-    background-color:color-mix(in srgb, #ff0, var(--background) 77%);
+
+  17% {
+    background-color: color-mix(in srgb, #ff0, var(--background) 77%);
   }
-  33%{
-    background-color:color-mix(in srgb, #0f0, var(--background) 77%);
+
+  33% {
+    background-color: color-mix(in srgb, #0f0, var(--background) 77%);
   }
-  50%{
-    background-color:color-mix(in srgb, #0ff, var(--background) 77%);
+
+  50% {
+    background-color: color-mix(in srgb, #0ff, var(--background) 77%);
   }
-  67%{
-    background-color:color-mix(in srgb, #00f, var(--background) 77%);
+
+  67% {
+    background-color: color-mix(in srgb, #00f, var(--background) 77%);
   }
-  83%{
-    background-color:color-mix(in srgb, #f0f, var(--background) 77%);
+
+  83% {
+    background-color: color-mix(in srgb, #f0f, var(--background) 77%);
   }
-  100%{
-    background-color:color-mix(in srgb, #f00, var(--background) 77%);
+
+  100% {
+    background-color: color-mix(in srgb, #f00, var(--background) 77%);
   }
 }
-section.main-form{
+
+section.main-form {
   text-align: center;
 }

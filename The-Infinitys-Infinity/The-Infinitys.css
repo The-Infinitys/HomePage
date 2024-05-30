@@ -107,7 +107,7 @@ header button {
   }
 }
 
-#hamburger_menu_icon {
+.hamburger_menu_icon {
   animation-name: rainbow-stroke;
   animation-duration: 5s;
   animation-timing-function: ease;
