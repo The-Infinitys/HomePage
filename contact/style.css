@@ -1,7 +1,30 @@
 #google-form{
   width:100vw;
   height: 1100px;
-  background-color: #888;
+  animation: rainbow-background indefinite 5s linear;
+}
+@keyframe rainbow-background{
+  0%{
+    background-color:#f00;
+  }
+  17%{
+    background-color:#ff0;
+  }
+  33%{
+    background-color:#0f0;
+  }
+  50%{
+    background-color:#0ff;
+  }
+  67%{
+    background-color:#00f;
+  }
+  83%{
+    background-color:#f0f;
+  }
+  100%{
+    background-color:#f00;
+  }
 }
 section.main-form{
   text-align: center;
