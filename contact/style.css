@@ -1,9 +1,9 @@
 #google-form{
   width:100vw;
   height: 1100px;
-  animation: rainbow-background indefinite 5s linear;
+  animation: rainbow-background infinite 5s linear;
 }
-@keyframe rainbow-background{
+@keyframes rainbow-background{
   0%{
     background-color:#f00;
   }
