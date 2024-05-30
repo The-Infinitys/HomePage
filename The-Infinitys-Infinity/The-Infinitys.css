@@ -76,6 +76,9 @@ header button {
   background-color: transparent;
   border: none;
 }
+header button svg{
+  position:absolute;
+}
 
 @keyframes rainbow-stroke {
   0% {
