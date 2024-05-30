@@ -1,5 +1,7 @@
 #google-form{
   width:100vw;
+  height: 1100px;
+  background-color: #888;
 }
 section.main-form{
   text-align: center;
