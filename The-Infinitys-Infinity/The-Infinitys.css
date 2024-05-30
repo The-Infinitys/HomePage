@@ -208,4 +208,5 @@ footer div {
 }
 footer div div{
   width: auto;
+  display: block;
 }
