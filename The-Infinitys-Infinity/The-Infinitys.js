@@ -24,7 +24,10 @@ const init_header = function () {
         class="hamburger_menu_icon"
         id="close_hamburger_menu"
         viewBox="-60 -60 120 120"
-        fill="none">
+        fill="none"
+        
+        style="opacity:0;"
+        >
         <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
         <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
         <circle cx="0" cy="0" r="50" stroke-width="4" />
@@ -259,7 +262,6 @@ const generate_Infinitys = function () {
 };
 //ハンバーガーメニューの設定
 let is_opened_hamburgerMenu = false;
-document.querySelector("#close_hamburger_menu").style.opacity="0";
 function hamburger_menu() {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
