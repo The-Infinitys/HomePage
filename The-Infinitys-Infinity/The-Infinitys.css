@@ -49,7 +49,7 @@ header {
   display: flex;
   font-size: 20px;
   color: var(--text);
-  background-color: var(--background);
+  background-color: color-mix(in srgb, transparent, var(--background) 77%)
 }
 
 header a img {
@@ -204,7 +204,7 @@ footer div {
   display: flex;
   width: 100vw;
   height: auto;
-  background-color: color-mix(in srgb, var(--background), #888888 77%);
+  background-color: color-mix(in srgb, var(--background), #888888 17%);
 }
 footer div div{
   width: auto;
