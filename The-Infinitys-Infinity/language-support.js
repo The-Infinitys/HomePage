@@ -15,7 +15,9 @@ const main = () => {
   if (params.has("lang")){
     language=params.get("lang");
   }
-  const data_path = (window.location.href + "/language.json").replace("//", "/").replace("https:/", "https://");
+  const location=new URL(window.location.href);
+  const data_path="https://"+URL.hostname+URL.pathname+"/language.json"
+  
   fetch(data_path)
     .then(res => res.json())
     .then(data => translate_Infinitys(language, data))
