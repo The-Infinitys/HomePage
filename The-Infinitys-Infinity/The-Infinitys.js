@@ -345,77 +345,79 @@ const generate_honeycomb = () => {
     draw.fill();
   }
   const radius = 50;
-  const hsvToRgb16 = function (hue, saturation, value) {
-    var result = false;
-    if (
-      (saturation || saturation === 0) &&
-      saturation <= 100 &&
-      (value || value === 0) &&
-      value <= 100
-    ) {
-      var red = 0,
-        green = 0,
-        blue = 0,
-        i = 0,
-        f = 0,
-        q = 0,
-        p = 0,
-        t = 0;
-      hue = Number(hue % 360) / 60;
-      saturation = Number(saturation) / 100;
-      value = Number(value) / 100;
-      if (saturation === 0) {
-        red = value;
-        green = value;
-        blue = value;
-      } else {
-        i = Math.floor(hue);
-        f = hue - i;
-        p = value * (1 - saturation);
-        q = value * (1 - saturation * f);
-        t = value * (1 - saturation * (1 - f));
-        switch (i) {
-          case 0:
-            red = value;
-            green = t;
-            blue = p;
-            break;
-          case 1:
-            red = q;
-            green = value;
-            blue = p;
-            break;
-          case 2:
-            red = p;
-            green = value;
-            blue = t;
-            break;
-          case 3:
-            red = p;
-            green = q;
-            blue = value;
-            break;
-          case 4:
-            red = t;
-            green = p;
-            blue = value;
-            break;
-          case 5:
-            red = value;
-            green = p;
-            blue = q;
-            break;
-        }
-      }
-      result = {
-        red: Math.round(red * 255).toString(),
-        green: Math.round(green * 255).toString(),
-        blue: Math.round(blue * 255).toString(),
-      };
-    }
-    return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
-  };
+  // const hsvToRgb16 = function (hue, saturation, value) {
+  //   var result = false;
+  //   if (
+  //     (saturation || saturation === 0) &&
+  //     saturation <= 100 &&
+  //     (value || value === 0) &&
+  //     value <= 100
+  //   ) {
+  //     var red = 0,
+  //       green = 0,
+  //       blue = 0,
+  //       i = 0,
+  //       f = 0,
+  //       q = 0,
+  //       p = 0,
+  //       t = 0;
+  //     hue = Number(hue % 360) / 60;
+  //     saturation = Number(saturation) / 100;
+  //     value = Number(value) / 100;
+  //     if (saturation === 0) {
+  //       red = value;
+  //       green = value;
+  //       blue = value;
+  //     } else {
+  //       i = Math.floor(hue);
+  //       f = hue - i;
+  //       p = value * (1 - saturation);
+  //       q = value * (1 - saturation * f);
+  //       t = value * (1 - saturation * (1 - f));
+  //       switch (i) {
+  //         case 0:
+  //           red = value;
+  //           green = t;
+  //           blue = p;
+  //           break;
+  //         case 1:
+  //           red = q;
+  //           green = value;
+  //           blue = p;
+  //           break;
+  //         case 2:
+  //           red = p;
+  //           green = value;
+  //           blue = t;
+  //           break;
+  //         case 3:
+  //           red = p;
+  //           green = q;
+  //           blue = value;
+  //           break;
+  //         case 4:
+  //           red = t;
+  //           green = p;
+  //           blue = value;
+  //           break;
+  //         case 5:
+  //           red = value;
+  //           green = p;
+  //           blue = q;
+  //           break;
+  //       }
+  //     }
+  //     result = {
+  //       red: Math.round(red * 255).toString(),
+  //       green: Math.round(green * 255).toString(),
+  //       blue: Math.round(blue * 255).toString(),
+  //     };
+  //   }
+  //   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
+  // };
   const drawhoneycomb = (color) => {
+    draw.fillStyle="color-mix(in srgb,"+color+" 77%,transparent)";
+    draw.fillRect(0,0,RainbowHoneycomb.width,RainbowHoneycomb.height);
     for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
       for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
         honeycomb(
