@@ -463,6 +463,7 @@ const generate_style = () => {
   const dark_back = document.createElement("img");
   dark_back.src = "/image/dark-mobile.svg";
   dark_back.id="dark-mobile";
+  dark_back.alt="";
   dark_back.style = `
     position:fixed;
     width:100vw;
@@ -479,6 +480,7 @@ const generate_style = () => {
   const light_back = document.createElement("img");
   light_back.src = "/image/light-mobile.svg";
   light_back.id="light-mobile";
+  light_back.alt="";
   light_back.style = `
     position:fixed;
     width:100vw;
@@ -494,6 +496,7 @@ const generate_style = () => {
   document.body.appendChild(light_back);
   const center_inf = document.createElement("img");
   center_inf.src = "/image/center-inf.svg";
+  center_inf.alt="";
   center_inf.style = `
     position:fixed;
     width:50vw;
