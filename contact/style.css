@@ -1,35 +1,47 @@
 :root {
-  --text:black;
+  --text: black;
   --background: white;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text:white;
+    --text: white;
     --background: black;
   }
 }
 
 .Infinity-form {
   width: 100vw;
-  margin:auto;
+  margin: auto;
   animation: rainbow-background infinite 5s linear;
 }
-.Infinity-form input{
-  width:100vw;
+
+.Infinity-form input {
+  width: 50vw;
   border: none;
   border-radius: 0;
-  color:var(--text);
-  background-color:var(--background);
+  color: var(--text);
+  background-color: var(--background);
 }
-.Infinity-form textarea{
-  width:100vw;
+
+.Infinity-form textarea {
+  width: 50vw;
   height: 50vh;
   border: none;
   border-radius: 0;
-  color:var(--text);
-  background-color:var(--background);
+  color: var(--text);
+  background-color: var(--background);
 }
+
+@media (max-aspect-ratio: 1/1) {
+  .Infinity-form input {
+    width: 90vw;
+  }
+  .Infinity-form textarea {
+    width: 90vw;
+  }
+}
+
 @keyframes rainbow-background {
   0% {
     background-color: color-mix(in srgb, #f00, var(--background) 77%);
