@@ -1,0 +1,14 @@
+{
+  "en":[
+    {
+      "elem":".description",
+      "text":"<p>Here you can see the blog (mystery document) written by me (The Infinity's). </p> <p>I don't know if it will be useful or not, but I will be posting more and more, so I would be happy if you could take a look. </p> <p>Oh, I'd be happy if you could <a href=\"https://www.google.com/search?q=The+Infinity%27s\">search for The Infinity's on Google</a>. !</p>"
+    }
+  ],
+  "en-US":[
+    {
+      "elem":".description",
+      "text":"<p>Here you can see the blog (mystery document) written by me (The Infinity's). </p> <p>I don't know if it will be useful or not, but I will be posting more and more, so I would be happy if you could take a look. </p> <p>Oh, I'd be happy if you could <a href=\"https://www.google.com/search?q=The+Infinity%27s\">search for The Infinity's on Google</a>. !</p>"
+    }
+  ]
+}
