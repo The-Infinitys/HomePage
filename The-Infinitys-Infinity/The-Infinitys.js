@@ -25,12 +25,11 @@ const init_header = function () {
       <div
       class="hamburger_menu_icon"
       id="close_hamburger_menu"
+      style="opacity:0;"
       >
         <svg
           viewBox="-60 -60 120 120"
           fill="none"
-          
-          style="opacity:0;"
           >
           <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
           <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
