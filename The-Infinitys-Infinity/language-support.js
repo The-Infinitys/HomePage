@@ -1,9 +1,9 @@
 const translate_Infinitys = (lang, data) => {
   if (lang in data) {
-    translate_info = data[lang];
+    const translate_info = data[lang];
     for (let i = 0; i < data.length; ++i) {
-      const elem = document.querySelector(translate_info[i].elem);
-      elem.innerHTML = translate_info[i].text;
+      const elem = document.querySelector(translate_info[i]["elem"]);
+      elem.innerHTML = translate_info[i]["text"];
     }
   }
 };
