@@ -461,7 +461,7 @@ const generate_honeycomb = () => {
 }
 const generate_style = () => {
   const dark_back = document.createElement("img");
-  dark_back.src="/image/dark-mobile.svg";
+  dark_back.src = "/image/dark-mobile.svg";
   dark_back.style = `
     position:fixed;
     width:100vw;
@@ -476,7 +476,7 @@ const generate_style = () => {
   `;
   document.body.appendChild(dark_back);
   const light_back = document.createElement("img");
-  light_back.src="/image/light-mobile.svg";
+  light_back.src = "/image/light-mobile.svg";
   light_back.style = `
     position:fixed;
     width:100vw;
@@ -491,7 +491,7 @@ const generate_style = () => {
   `;
   document.body.appendChild(light_back);
   const center_inf = document.createElement("img");
-  center_inf.src="/image/center-inf.svg";
+  center_inf.src = "/image/center-inf.svg";
   light_back.style = `
     position:fixed;
     width:50vw;
@@ -525,7 +525,7 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random()<5) {
+  if (Math.random() < 0.5) {
     generate_style();
   } else {
     generate_honeycomb();
