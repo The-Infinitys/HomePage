@@ -416,7 +416,7 @@ const generate_honeycomb = () => {
   //   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
   // };
   const drawhoneycomb = (color) => {
-    draw.fillStyle="color-mix(in srgb,"+color+" 77%,transparent)";
+    draw.fillStyle=color+"77";
     draw.fillRect(0,0,RainbowHoneycomb.width,RainbowHoneycomb.height);
     for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
       for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
