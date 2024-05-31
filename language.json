@@ -1,0 +1,13 @@
+{
+  "en": [
+    {
+      "elem": ".whoami",
+      "text": "<h1 class=\"bigger\">Who is The Infinity's?</h1> <p>I'm The-Infinity. </p> <p>It's just an infinity that is everywhere. </p> <p>٩( ᐛ )و</p>"
+    },
+    {
+      "elem":".introduce",
+      "text":"<h1 class=\"bigger\">Introduction</h1> <p>Hello! Welcome to The Infinity's!</p> <p>This is The Infinity's!</p> <p>Active on Scratch and GitHub!</p> <p>I'm mainly going to post information about programming!</p> <p>(I have a habit of slacking off so I may not be able to update properly)</p> <p>I use C language, C++, C#, JavaScript, and Python as a hobby!</p>"
+    }
+  ],
+  "en-US": []
+}

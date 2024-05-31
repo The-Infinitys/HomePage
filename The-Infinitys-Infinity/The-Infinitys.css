@@ -9,7 +9,9 @@
     --background: black;
     --text: white;
   }
-
+  #light-mobile {
+    visibility: hidden;
+  }
   a {
     color: aqua;
   }
@@ -20,7 +22,6 @@
   :root {
     --hamburger-width: 100%;
   }
-
   header h1 {
     visibility: hidden;
   }

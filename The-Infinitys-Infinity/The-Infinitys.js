@@ -462,6 +462,7 @@ const generate_honeycomb = () => {
 const generate_style = () => {
   const dark_back = document.createElement("img");
   dark_back.src = "/image/dark-mobile.svg";
+  dark_back.id="dark-mobile";
   dark_back.style = `
     position:fixed;
     width:100vw;
@@ -477,13 +478,14 @@ const generate_style = () => {
   document.body.appendChild(dark_back);
   const light_back = document.createElement("img");
   light_back.src = "/image/light-mobile.svg";
+  light_back.id="light-mobile";
   light_back.style = `
     position:fixed;
     width:100vw;
     height:100vh;
     top:0;
     left:0;
-    z-index:-1000;
+    z-index:-999;
     animation-name: show;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -492,7 +494,7 @@ const generate_style = () => {
   document.body.appendChild(light_back);
   const center_inf = document.createElement("img");
   center_inf.src = "/image/center-inf.svg";
-  light_back.style = `
+  center_inf.style = `
     position:fixed;
     width:50vw;
     height:50vw;
