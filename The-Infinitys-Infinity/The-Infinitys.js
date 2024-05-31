@@ -416,9 +416,9 @@ const generate_honeycomb = () => {
   //   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
   // };
   const drawhoneycomb = (color) => {
-    draw.clearRect(0,0,RainbowHoneycomb.width,RainbowHoneycomb.height);
-    draw.fillStyle=color+"b";
-    draw.fillRect(0,0,RainbowHoneycomb.width,RainbowHoneycomb.height);
+    draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
+    draw.fillStyle = color + "b";
+    draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
     for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
       for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
         honeycomb(
@@ -439,20 +439,6 @@ const generate_honeycomb = () => {
       drawhoneycomb("#fff");
     }
   }
-
-  // const is_phone = () => {
-  //   const ua = navigator.userAgent;
-  //   if (ua.indexOf("iPhone") >= 0) {
-  //     return true;
-  //   }
-  //   if (ua.indexOf("iPad") >= 0) {
-  //     return true;
-  //   }
-  //   if (ua.indexOf("Android") >= 0) {
-  //     return true;
-  //   }
-  //   return false;
-  // };
   renewHoneycombCanvas();
   window.onresize = renewHoneycombCanvas;
   const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
@@ -473,9 +459,76 @@ const generate_honeycomb = () => {
   };
   mediaQueryList.addEventListener("change", listener_honeycomb);
 }
+const generate_style = () => {
+  const dark_back = document.createElement("img");
+  dark_back.src="/image/dark-mobile.svg";
+  dark_back.style = `
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    z-index:-1000;
+    animation-name: show;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: initial;
+  `;
+  document.body.appendChild(dark_back);
+  const light_back = document.createElement("img");
+  light_back.src="/image/light-mobile.svg";
+  light_back.style = `
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    z-index:-1000;
+    animation-name: show;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: initial;
+  `;
+  document.body.appendChild(light_back);
+  const center_inf = document.createElement("img");
+  center_inf.src="/image/center-inf.svg";
+  light_back.style = `
+    position:fixed;
+    width:50vw;
+    height:50vw;
+    transform: translate(-50%,-50%);
+    top:50vh;
+    left:50vw;
+    z-index:-100;
+    animation-name: show;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: initial;
+  `;
+  document.body.appendChild(center_inf);
+};
+
+const is_phone = () => {
+  const ua = navigator.userAgent;
+  if (ua.indexOf("iPhone") >= 0) {
+    return true;
+  }
+  if (ua.indexOf("iPad") >= 0) {
+    return true;
+  }
+  if (ua.indexOf("Android") >= 0) {
+    return true;
+  }
+  return false;
+};
+
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  generate_honeycomb();
+  if (Math.random()<5) {
+    generate_style();
+  } else {
+    generate_honeycomb();
+  }
 }
 The_Infinitys_main();
