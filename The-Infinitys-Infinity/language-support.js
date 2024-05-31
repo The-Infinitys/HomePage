@@ -19,6 +19,6 @@ const main = () => {
   fetch(data_path)
     .then(res => res.json())
     .then(data => translate_Infinitys(language, data))
-    .catch(err => alert("Translation programs was failed. Please reload the page. error: ", err))
+    .catch(err => alert("Translation programs was failed. Please reload the page. path: ",data_path," error: ", err))
 };
 main();
