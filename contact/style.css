@@ -1,20 +1,36 @@
 :root {
+  --text:black;
   --background: white;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --text:white;
     --background: black;
   }
 }
 
-#google-form {
+.Infinity-form {
   width: min(649px,100vw);
   aspect-ratio:calc(649/719);
   margin:auto;
   animation: rainbow-background infinite 5s linear;
 }
-
+.Infinity-form input{
+  width:100vw;
+  border: none;
+  border-radius: 0;
+  color:var(--text);
+  background-color:var(--background);
+}
+.Infinity-form textarea{
+  width:100vw;
+  height: 50vh;
+  border: none;
+  border-radius: 0;
+  color:var(--text);
+  background-color:var(--background);
+}
 @keyframes rainbow-background {
   0% {
     background-color: color-mix(in srgb, #f00, var(--background) 77%);
