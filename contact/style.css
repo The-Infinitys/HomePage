@@ -9,8 +9,9 @@
 }
 
 #google-form {
-  width: 100vw;
-  height: 790px;
+  width: min(649px,100vw);
+  aspect-ratio:calc(649/719);
+  margin:auto;
   animation: rainbow-background infinite 5s linear;
 }
 
