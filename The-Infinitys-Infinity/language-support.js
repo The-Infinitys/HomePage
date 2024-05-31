@@ -16,7 +16,7 @@ const main = () => {
     language=params.get("lang");
   }
   const location=new URL(window.location.href);
-  const data_path="https://"+URL.hostname+URL.pathname+"/language.json"
+  const data_path="https://"+location.hostname+location.pathname+"/language.json"
   
   fetch(data_path)
     .then(res => res.json())
