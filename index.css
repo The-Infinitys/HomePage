@@ -16,7 +16,7 @@ section.Title {
 
 section {
   width: 100%;
-  background-color: var(--background);
+  background-color: color-mix(in srgb, var(--background) 77%,#888);
   color: var(--text);
 }
 
