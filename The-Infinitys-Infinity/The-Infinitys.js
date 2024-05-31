@@ -10,28 +10,33 @@ const init_header = function () {
       id="hamburger_menu_button"
       aria-label="hamburger_menu_button"
       onclick="hamburger_menu()">
-      <svg
-        class="hamburger_menu_icon"
-        id="open_hamburger_menu"
-        viewBox="0 0 100 100"
-        fill="none"
-        stroke-width="10">
-        <line x1="10" y1="20" x2="90" y2="20" />
-        <line x1="10" y1="50" x2="90" y2="50" />
-        <line x1="10" y1="80" x2="90" y2="80" />
-      </svg>
-      <svg
-        class="hamburger_menu_icon"
-        id="close_hamburger_menu"
-        viewBox="-60 -60 120 120"
-        fill="none"
-        
-        style="opacity:0;"
-        >
-        <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
-        <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
-        <circle cx="0" cy="0" r="50" stroke-width="4" />
-      </svg>
+      <div
+      class="hamburger_menu_icon"
+      id="open_hamburger_menu">
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke-width="10">
+          <line x1="10" y1="20" x2="90" y2="20" />
+          <line x1="10" y1="50" x2="90" y2="50" />
+          <line x1="10" y1="80" x2="90" y2="80" />
+        </svg>
+      </div>
+      <div
+      class="hamburger_menu_icon"
+      id="close_hamburger_menu"
+      >
+        <svg
+          viewBox="-60 -60 120 120"
+          fill="none"
+          
+          style="opacity:0;"
+          >
+          <ellipse cx="-25" cy="0" rx="25" ry="20" stroke-width="2" />
+          <ellipse cx="25" cy="0" rx="25" ry="20" stroke-width="2" />
+          <circle cx="0" cy="0" r="50" stroke-width="4" />
+        </svg>
+      </div>
     </button>
     <!--hamburger menu-->
     <table id="hamburger_menus">

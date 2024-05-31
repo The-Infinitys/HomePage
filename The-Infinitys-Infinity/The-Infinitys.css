@@ -76,7 +76,7 @@ header button {
   background-color: transparent;
   border: none;
 }
-header button svg{
+header button div{
   position:absolute;
   width: 100%;
   height: 100%;
@@ -135,7 +135,7 @@ header button svg{
   animation-timing-function: linear;
   animation-iteration-count: initial;
 }
-.hamburger_menu_icon {
+.hamburger_menu_icon svg {
   animation-name: rainbow-stroke;
   animation-duration: 5s;
   animation-timing-function: ease;
