@@ -11,8 +11,7 @@
 }
 
 .Infinity-form {
-  width: min(649px,100vw);
-  aspect-ratio:calc(649/719);
+  width: 100vw;
   margin:auto;
   animation: rainbow-background infinite 5s linear;
 }
