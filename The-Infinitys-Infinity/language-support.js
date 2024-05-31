@@ -10,7 +10,11 @@ const translate_Infinitys = (lang, data) => {
 
 const main = () => {
   //get information
-  const language = navigator.language;
+  let language = navigator.language;
+  const params=new URL(window.location.href).searchParams;
+  if (params.has("lang")){
+    language=params.get("lang");
+  }
   const data_path = (window.location.href + "/language.json").replace("//", "/").replace("https:/", "https://");
   fetch(data_path)
     .then(res => res.json())
