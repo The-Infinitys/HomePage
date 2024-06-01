@@ -9,9 +9,11 @@
     --background: black;
     --text: white;
   }
+
   #light-mobile {
     visibility: hidden;
   }
+
   a {
     color: aqua;
   }
@@ -22,6 +24,7 @@
   :root {
     --hamburger-width: 100%;
   }
+
   header h1 {
     visibility: hidden;
   }
@@ -77,12 +80,13 @@ header button {
   background-color: transparent;
   border: none;
 }
-header button div{
-  position:absolute;
+
+header button div {
+  position: absolute;
   width: 100%;
   height: 100%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 
 @keyframes rainbow-stroke {
@@ -114,35 +118,51 @@ header button div{
     stroke: #ff0000;
   }
 }
+
 @keyframes hue-rotation {
-  from{
-    filter:hue-rotate(0deg);
+  from {
+    filter: hue-rotate(0deg);
   }
-  to{
+
+  to {
     filter: hue-rotate(360deg);
   }
 }
-@keyframes show{
-  from {opacity:0;}
-  to {opacity:1;}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes hide{
-  from {opacity:1;}
-  to {opacity:0;}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
+
 .hamburger_menu_icon_show {
   animation-name: show;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
 }
+
 .hamburger_menu_icon_hide {
   animation-name: hide;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
 }
+
 .hamburger_menu_icon svg {
   animation-name: rainbow-stroke;
   animation-duration: 5s;
@@ -213,11 +233,17 @@ header button div{
 }
 
 .hamburger-open {
-  animation: hamburger-open-animation 1s ease initial;
+  animation-name: hamburger-open-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
 }
 
 .hamburger-close {
-  animation: hamburger-close-animation 1s ease initial;
+  animation-name: hamburger-close-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
 }
 
 

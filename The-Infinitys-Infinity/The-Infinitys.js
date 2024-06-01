@@ -326,10 +326,7 @@ const generate_honeycomb = () => {
     left:0;
     z-index:-1000;
     object-fit:fill;
-    animation-name: show, hue-rotation;
-    animation-duration: 5s, 5s;
-    animation-timing-function: linear, linear;
-    animation-iteration-count: initial, infinite;
+    animation: show 5s linear initial, hue-rotation 5s linear infinite;
   `;
   rainbow_svg.alt = "";
   document.body.appendChild(rainbow_svg);
