@@ -64,7 +64,7 @@ const init_header = function () {
             src="/image/header/blog.svg" />
         </th>
         <th>
-          <a href="/blog">Blog </a>
+          <a href="/blog/">Blog </a>
         </th>
       </tr>
       <tr>
