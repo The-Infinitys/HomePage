@@ -114,7 +114,14 @@ header button div{
     stroke: #ff0000;
   }
 }
-
+@keyframes hue-rotation {
+  from{
+    filter:hue-rotate(0deg);
+  }
+  to{
+    filter: hue-rotate(360deg);
+  }
+}
 @keyframes show{
   from {opacity:0;}
   to {opacity:1;}
@@ -206,17 +213,11 @@ header button div{
 }
 
 .hamburger-open {
-  animation-name: hamburger-open-animation;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-iteration-count: initial;
+  animation: hamburger-open-animation 1s ease initial;
 }
 
 .hamburger-close {
-  animation-name: hamburger-close-animation;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-iteration-count: initial;
+  animation: hamburger-close-animation 1s ease initial;
 }
 
 
