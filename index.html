@@ -9,10 +9,10 @@
         if (now.hostname == "the-infinitys.f5.si") {
           return true;
         }
-        if (confirm("This domain(the-infinitys.onrender.com) will redirect you to the-infinitys.f5.si. Are you ready?")){
+        if (confirm("This domain("+now.hostname+") will redirect you to the-infinitys.f5.si. Are you ready?")){
         window.location.href = "https://the-infinitys.f5.si" + now.pathname;
         }else{
-          alert("(´・ω・)")
+          alert("(´・ω・)");
         }
       };
       redirect_check();
