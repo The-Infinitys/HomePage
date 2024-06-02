@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/api/:match*",
-      "destination": "https://the-infinitys-repos-api/:match*"
+      "destination": "https://the-infinitys-repos-api.vercel.app/:match*"
     },
     {
       "source": "/blog-data/:match*",
-      "destination": "https://the-infinitys-repos-blog-data/:match*"
+      "destination": "https://the-infinitys-repos-blog-data.vercel.app/:match*"
     },
     {
       "source": "/contact/:match*",
-      "destination": "https://the-infinitys-repos-contact/:match*"
+      "destination": "https://the-infinitys-repos-contact.vercel.app/:match*"
     }
   ]
 }
