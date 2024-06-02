@@ -1,16 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/api/match:*",
-      "destination": "https://the-infinitys-repos-api/match:*"
+      "source": "/api/:match*",
+      "destination": "https://the-infinitys-repos-api/:match*"
     },
     {
-      "source": "/blog-data/match:*",
-      "destination": "https://the-infinitys-repos-blog-data/match:*"
+      "source": "/blog-data/:match*",
+      "destination": "https://the-infinitys-repos-blog-data/:match*"
     },
     {
-      "source": "/contact/match:*",
-      "destination": "https://the-infinitys-repos-contact/match:*"
+      "source": "/contact/:match*",
+      "destination": "https://the-infinitys-repos-contact/:match*"
     }
   ]
 }
