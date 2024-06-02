@@ -139,25 +139,39 @@ header button div {
   }
 }
 
-@keyframes hide {
+@keyframes hamburger-icon-show {
   from {
+    right: -10vw;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-icon-hide {
+  from {
+    right:0;
     opacity: 1;
   }
 
   to {
+    right: 10vw;
     opacity: 0;
   }
 }
 
 .hamburger_menu_icon_show {
-  animation-name: show;
+  animation-name: hamburger-icon-show;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
 }
 
 .hamburger_menu_icon_hide {
-  animation-name: hide;
+  animation-name: hamburger-icon-hide;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: initial;
