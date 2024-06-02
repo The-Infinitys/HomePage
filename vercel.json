@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/*",
+      "destination": "https://the-infinitys-repos-api/*"
+    },
+    {
+      "source": "/blog-data/*",
+      "destination": "https://the-infinitys-repos-blog-data/*"
+    },
+    {
+      "source": "/contact/*",
+      "destination": "https://the-infinitys-repos-contact/*"
+    }
+  ]
+}
