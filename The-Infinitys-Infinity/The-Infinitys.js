@@ -1,4 +1,3 @@
-//redirect pages
 const redirect_check=()=>{
   const now=new URL(window.location.href);
   if (now.hostname=="the-infinitys.f5.si"){
@@ -6,6 +5,7 @@ const redirect_check=()=>{
   }
   window.location.href="https://the-infinitys.f5.si"+now.pathname;
 };
+redirect_check();
 
 const init_header = function () {
   //headerの初期化
