@@ -326,7 +326,7 @@ const generate_honeycomb = () => {
     left:0;
     z-index:-1000;
     object-fit:fill;
-    opacity:0.5;
+    opacity:0.17;
     animation: hue-rotation 5s linear infinite;
   `;
   rainbow_svg.alt = "";
@@ -415,8 +415,6 @@ const generate_honeycomb = () => {
   // };
   const drawhoneycomb = (color) => {
     draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
-    draw.fillStyle = color + "7";
-    draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
     for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
       for (let j = 0; j < Math.round(RainbowHoneycomb.height / radius) + 2; ++j) {
         honeycomb(
