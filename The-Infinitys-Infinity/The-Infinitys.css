@@ -141,24 +141,20 @@ header button div {
 
 @keyframes hamburger-icon-show {
   from {
-    left: 100vw;
     opacity: 0;
   }
 
   to {
-    left: calc(100vw - 10vh);
     opacity: 1;
   }
 }
 
 @keyframes hamburger-icon-hide {
   from {
-    left: calc(100vw - 10vh);
     opacity: 1;
   }
 
   to {
-    left: calc(100vw - 20vh);
     opacity: 0;
   }
 }
