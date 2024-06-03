@@ -73,7 +73,7 @@ header h1 {
 
 header button {
   position: absolute;
-  right: 0%;
+  left: calc(100vw - 10vh);
   top: 0%;
   width: 10vh;
   height: 10vh;
@@ -167,14 +167,14 @@ header button div {
   animation-name: hamburger-icon-show;
   animation-duration: 1s;
   animation-timing-function: linear;
-  animation-iteration-count: initial;
+  animation-iteration-count: 1;
 }
 
 .hamburger_menu_icon_hide {
   animation-name: hamburger-icon-hide;
   animation-duration: 1s;
   animation-timing-function: linear;
-  animation-iteration-count: initial;
+  animation-iteration-count: 1;
 }
 
 .hamburger_menu_icon svg {
