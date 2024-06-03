@@ -141,7 +141,7 @@ header button div {
 
 @keyframes hamburger-icon-show {
   from {
-    left: 110vw;
+    left: 100vw;
     opacity: 0;
   }
 
