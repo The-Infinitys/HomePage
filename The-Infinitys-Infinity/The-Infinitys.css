@@ -130,11 +130,11 @@ header button div {
 }
 @keyframes rainbow-move-2 {
   from {
-    left:200vw;
+    right:0;
   }
 
   to {
-    left:100vw;
+    right:100vw;
   }
 }
 @keyframes show {
