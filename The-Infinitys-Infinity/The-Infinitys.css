@@ -118,25 +118,6 @@ header button div {
     stroke: #ff0000;
   }
 }
-
-@keyframes rainbow-move-a {
-  from {
-    left:100vw;
-  }
-
-  to {
-    left:0;
-  }
-}
-@keyframes rainbow-move-b {
-  from {
-    right:0;
-  }
-
-  to {
-    right:100vw;
-  }
-}
 @keyframes show {
   from {
     opacity: 0;
