@@ -310,7 +310,7 @@ const generate_honeycomb = () => {
     left:0;
     z-index:-100;
     animation-name: show;
-    animation-duration: 5s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: initial;
   `;
@@ -468,7 +468,7 @@ const generate_style = () => {
     left:0;
     z-index:-1000;
     animation-name: show;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: initial;
   `;
@@ -485,7 +485,7 @@ const generate_style = () => {
     left:0;
     z-index:-999;
     animation-name: show;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: initial;
   `;
@@ -502,7 +502,7 @@ const generate_style = () => {
     left:50vw;
     z-index:-100;
     animation-name: show;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: initial;
   `;
