@@ -326,7 +326,7 @@ const generate_honeycomb = () => {
     left:0;
     z-index:-1000;
     object-fit:fill;
-    animation: rainbow-move-1 5s linear infinite,show 5s linear 1;
+    animation: rainbow-move-a 5s linear infinite,show 5s linear 1;
   `;
   rainbow_svg_1.alt = "";
   document.body.appendChild(rainbow_svg_1);
@@ -337,10 +337,10 @@ const generate_honeycomb = () => {
     width:100vw;
     height:100vh;
     top:0;
-    left:0;
+    right:0;
     z-index:-1000;
     object-fit:fill;
-    animation: rainbow-move-2 5s linear infinite,show 5s linear 1;
+    animation: rainbow-move-b 5s linear infinite,show 5s linear 1;
   `;
   rainbow_svg_2.alt = "";
   document.body.appendChild(rainbow_svg_2);

@@ -119,7 +119,7 @@ header button div {
   }
 }
 
-@keyframes rainbow-move-1 {
+@keyframes rainbow-move-a {
   from {
     left:100vw;
   }
@@ -128,7 +128,7 @@ header button div {
     left:0;
   }
 }
-@keyframes rainbow-move-2 {
+@keyframes rainbow-move-b {
   from {
     right:0;
   }
