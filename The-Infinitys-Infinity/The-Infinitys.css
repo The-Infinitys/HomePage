@@ -158,12 +158,6 @@ header button div {
     opacity: 0;
   }
 }
-.The-Infinitys{
-  animation-name:hue-rotation;
-  animation-duration: 1.7s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
 .hamburger_menu_icon_show {
   animation-name: hamburger-icon-show;
   animation-duration: 1s;
