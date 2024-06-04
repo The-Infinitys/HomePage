@@ -326,8 +326,7 @@ const generate_honeycomb = () => {
     left:0;
     z-index:-1000;
     object-fit:fill;
-    opacity:0.17;
-    animation: hue-rotation 5s linear infinite;
+    animation: hue-rotation 5s linear infinite,show 5s linear 1;
   `;
   rainbow_svg.alt = "";
   document.body.appendChild(rainbow_svg);
@@ -343,6 +342,7 @@ const generate_honeycomb = () => {
     draw.fill();
   }
   const radius = 50;
+  const radius_percent = 1.12;
   // const hsvToRgb16 = function (hue, saturation, value) {
   //   var result = false;
   //   if (
@@ -420,7 +420,7 @@ const generate_honeycomb = () => {
         honeycomb(
           radius * 2 * i + (j % 2) * radius,
           ((radius * 2 * root3) / 2) * j,
-          radius, color
+          radius*radius_percent, color
         );
       }
     }
