@@ -48,16 +48,16 @@
 
 .blog-view {
   position: absolute;
-  width: 80vw;
+  width: calc(100vw - 20vh);
   height: 90vh;
   top: 10vh;
-  left: 10vw;
+  left: 10vh;
   background-color: transparent;
 }
 
 @keyframes blog-window-show-animation {
   from {
-    top: 100vh;
+    top: 100%;
     opacity: 0;
   }
 
@@ -74,7 +74,7 @@
   }
 
   to {
-    top: 100vh;
+    top: 100%;
     opacity: 0;
   }
 
