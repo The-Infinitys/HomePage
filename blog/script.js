@@ -46,7 +46,7 @@ const getData = function (name) {
 function blog_open(url) {
   const blog_window = document.querySelector("#blog");
   blog_window.style.opacity = "1";
-  blog_window.style.top="10vh";
+  blog_window.style.top="0";
   document.querySelector("#loading-infinity-blog-view").style.visibility = "visible";
   document.querySelector("#blog-view").src = url;
   blog_window.classList.remove("blog-window-hide");

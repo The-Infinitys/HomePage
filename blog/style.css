@@ -39,18 +39,20 @@
 #blog {
   position: fixed;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   top: 100vw;
   opacity: 0;
   z-index: 100;
+  background-color: var(--background);
 }
 
 .blog-view {
   position: absolute;
-  width: 100%;
-  height: 90%;
-  top: 10%;
-  background-color: var(--background);
+  width: 80vw;
+  height: 90vh;
+  top: 10vh;
+  left: 10vw;
+  background-color: transparent;
 }
 
 @keyframes blog-window-show-animation {
@@ -60,14 +62,14 @@
   }
 
   to {
-    top: 10vh;
+    top: 0;
     opacity: 1;
   }
 }
 
 @keyframes blog-window-hide-animation {
   from {
-    top: 10vh;
+    top: 0;
     opacity: 1;
   }
 
@@ -94,9 +96,9 @@
 
 #blog-title {
   position: absolute;
-  width: 80%;
-  height: 10%;
-  left: 10%;
+  width: calc(100vw - 20vh);
+  height: 10vh;
+  left: 10vh;
   font-size: 5vh;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -112,8 +114,8 @@
 
 #blog-copy {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 10vh;
+  height: 10vh;
   left: 90%;
   overflow: hidden;
   background-color: #ffffff;
@@ -156,17 +158,19 @@
   }
 }
 
-.rainbow-border{
-border: 2px solid #888888;
-animation: rainbow-border-animation infinite 5s linear;
+.rainbow-border {
+  border: 2px solid #888888;
+  animation: rainbow-border-animation infinite 5s linear;
 }
+
 #blog-close {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 10vh;
+  height: 10vh;
   font-size: 7vh;
   background-color: #ffffff;
   color: #888888;
+
   @media (prefers-color-scheme: dark) {
     background-color: #000000;
     color: #777777;
