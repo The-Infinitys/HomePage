@@ -40,7 +40,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: 100vw;
+  top: 100vh;
   opacity: 0;
   z-index: 10000;
   background-color: var(--background);
