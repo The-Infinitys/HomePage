@@ -466,11 +466,8 @@ const generate_style = () => {
     height:100vh;
     top:0;
     left:0;
+    opcacity:0.5;
     z-index:-1000;
-    animation-name: show;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: initial;
   `;
   document.body.appendChild(dark_back);
   const light_back = document.createElement("img");
@@ -483,11 +480,8 @@ const generate_style = () => {
     height:100vh;
     top:0;
     left:0;
+    opacity:0.5;
     z-index:-999;
-    animation-name: show;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: initial;
   `;
   document.body.appendChild(light_back);
   const center_inf = document.createElement("img");

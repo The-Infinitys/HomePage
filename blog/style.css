@@ -42,7 +42,7 @@
   height: 100vh;
   top: 100vw;
   opacity: 0;
-  z-index: 100;
+  z-index: 10000;
   background-color: var(--background);
 }
 
@@ -116,7 +116,7 @@
   position: absolute;
   width: 10vh;
   height: 10vh;
-  left: 90%;
+  left: calc(100vw - 10vh);
   overflow: hidden;
   background-color: #ffffff;
   color: #999999;
