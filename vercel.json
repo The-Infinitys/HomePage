@@ -13,8 +13,8 @@
       "destination": "https://the-infinitys-repos-contact.vercel.app/index.html"
     },
     {
-      "source": "/blog-data/:match*",
-      "destination": "https://the-infinitys-repos-blog-data.vercel.app/:match*"
+      "source": "/article/:match*",
+      "destination": "https://the-infinitys-repos-article.vercel.app/:match*"
     }
   ]
 }
