@@ -57,7 +57,7 @@
 
 @keyframes blog-window-show-animation {
   from {
-    top: 100%;
+    top: 100vh;
     opacity: 0;
   }
 
@@ -74,7 +74,7 @@
   }
 
   to {
-    top: 100%;
+    top: 100vh;
     opacity: 0;
   }
 

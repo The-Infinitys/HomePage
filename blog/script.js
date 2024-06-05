@@ -46,7 +46,7 @@ const getData = function (name) {
 function blog_open(url) {
   const blog_window = document.querySelector("#blog");
   blog_window.style.opacity = "1";
-  blog_window.style.top="0%";
+  blog_window.style.top="0";
   document.querySelector("#loading-infinity-blog-view").style.visibility = "visible";
   document.querySelector("#blog-view").src = url;
   blog_window.classList.remove("blog-window-hide");
@@ -57,7 +57,7 @@ function blog_close() {
   blog_window.classList.add("blog-window-hide");
   blog_window.classList.remove("blog-window-show");
   blog_window.style.opacity = "0";
-  blog_window.style.top="100%";
+  blog_window.style.top="100vh";
 }
 for (let i = data_list_length; i > 0; i--) {
   const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
