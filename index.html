@@ -5,6 +5,7 @@
     <title>The Infinity's - Believe The Infinity Possibility</title>
     <script>
       const redirect_check = () => {
+        console.log(window.location.href);
         const now = new URL(window.location.href);
         if (now.hostname == "the-infinitys.f5.si") {
           return true;
