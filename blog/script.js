@@ -40,7 +40,7 @@ const getData = function (name) {
         loading.className="loading-infinity";
         const title = document.createElement("div");
         title.innerHTML = info.title;
-        box.innerHTML = +loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
+        box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
         document.querySelector(".list").appendChild(box); 
       });
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
