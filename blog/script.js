@@ -41,7 +41,7 @@ const getData = function (name) {
         const title = document.createElement("div");
         title.innerHTML = info.title;
         box.innerHTML = +loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
-        document.querySelector(".list").appendChild(box);
+        document.querySelector(".list").appendChild(box); 
       });
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
