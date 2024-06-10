@@ -84,6 +84,26 @@
   animation: show 1s linear 1;
 }
 
+@keyframes blog-button-show {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+
+  to {
+    opacity: 1;
+    width: calc(90vw / 2);
+
+    @media (max-aspect-ratio: 3/4) {
+      width: calc(90vw / 1);
+    }
+
+    @media (min-aspect-ratio: 4/3) {
+      width: calc(90vw / 4);
+    }
+  }
+}
+
 .blog-button {
   overflow: hidden;
   position: relative;
@@ -93,8 +113,8 @@
     background-color: #00000055;
   }
 
-  width:calc(90vw / 2);
   aspect-ratio: 4/3;
+  width:calc(90vw / 2);
 
   @media (max-aspect-ratio: 3/4) {
     width: calc(90vw / 1);
@@ -104,7 +124,7 @@
     width: calc(90vw / 4);
   }
 
-  animation:show 1s linear 1;
+  animation:blog-button-show 1s linear 1;
 }
 
 #load-more {
