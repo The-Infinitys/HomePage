@@ -117,6 +117,7 @@
   background-color: var(--background);
   color: var(--color);
   font-size: calc(20vw / 2);
+  aspect-ratio: 4/3;
 
   @media (max-aspect-ratio: 3/4) {
     font-size: calc(20vw / 1);
