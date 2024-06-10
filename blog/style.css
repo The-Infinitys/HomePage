@@ -95,7 +95,7 @@
 }
 
 .hide-animation {
-  animation: show 1s linear 1;
+  animation: hide 1s linear 1;
 }
 
 @keyframes blog-button-show {
