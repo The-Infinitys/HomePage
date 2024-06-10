@@ -52,7 +52,8 @@ load_more.onclick = () => {
     const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
     load_count--;
-  } else {
-    load_more.style.display = "none";
+    if (load_count <= 0) {
+      load_more.style.display = "none";
+    }
   }
 }
