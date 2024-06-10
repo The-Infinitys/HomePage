@@ -1,6 +1,20 @@
 :root {
   --background: white;
   --text: black;
+  --blog-button-width: calc(90vw / 2);
+
+}
+
+@media (max-aspect-ratio: 3/4) {
+  :root {
+    --blog-button-width: calc(90vw / 1);
+  }
+}
+
+@media (min-aspect-ratio: 4/3) {
+  :root {
+    --blog-button-width: calc(90vw / 4);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,15 +106,7 @@
 
   to {
     opacity: 1;
-    width: calc(90vw / 2);
-
-    @media (max-aspect-ratio: 3/4) {
-      width: calc(90vw / 1);
-    }
-
-    @media (min-aspect-ratio: 4/3) {
-      width: calc(90vw / 4);
-    }
+    width: var(--blog-button-width)
   }
 }
 
@@ -114,15 +120,7 @@
   }
 
   aspect-ratio: 4/3;
-  width:calc(90vw / 2);
-
-  @media (max-aspect-ratio: 3/4) {
-    width: calc(90vw / 1);
-  }
-
-  @media (min-aspect-ratio: 4/3) {
-    width: calc(90vw / 4);
-  }
+  width:var(--blog-button-width);
 
   animation:blog-button-show 1s linear 1;
 }
