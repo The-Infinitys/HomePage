@@ -55,26 +55,12 @@
   background-color: transparent;
 }
 
-@keyframes blog-window-show-animation {
+@keyframes hide {
   from {
-    top: 100vh;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes blog-window-hide-animation {
-  from {
-    top: 0;
     opacity: 1;
   }
 
   to {
-    top: 100vh;
     opacity: 0;
   }
 
@@ -88,6 +74,14 @@
   to {
     opacity: 1;
   }
+}
+
+.show-animation {
+  animation: show 1s linear 1;
+}
+
+.hide-animation {
+  animation: show 1s linear 1;
 }
 
 .blog-button {
