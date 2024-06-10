@@ -113,6 +113,20 @@
   animation:show 1s linear 1;
 }
 
+#load-more {
+  background-color: var(--background);
+  color: var(--color);
+  font-size: calc(20vw / 2);
+
+  @media (max-aspect-ratio: 3/4) {
+    font-size: calc(20vw / 1);
+  }
+
+  @media (min-aspect-ratio: 4/3) {
+    font-size: calc(20vw / 4);
+  }
+}
+
 .blog-button img {
   position: absolute;
   top: 0;

@@ -15,6 +15,7 @@ let param_open = ""
 if (blog_params.has("name")) {
   param_open = blog_params.get("name");
 }
+const load_more = document.querySelector("#load-more");
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
@@ -41,11 +42,15 @@ const getData = function (name) {
         const title = document.createElement("div");
         title.innerHTML = info.title;
         box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
-        document.querySelector(".list").appendChild(box);
+        document.querySelector(".list").insertBefore(box, load_more);
       });
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-for (let i = data_list_length; i > 0; i--) {
-  const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + i - 1) / 12)).toString() + "-" + ((blog_start.month + i - 2) % 12 + 1).toString()
-  getData(pathname);
+let load_count = data_list_length;
+load_more.onclick = () => {
+  if (i > 0) {
+    const pathname = "/api/blog/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
+    getData(pathname);
+    load_count--;
+  }
 }
