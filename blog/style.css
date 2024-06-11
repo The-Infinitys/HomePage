@@ -118,26 +118,16 @@
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
   }
-
-  aspect-ratio: 4/3;
   width:var(--blog-button-width);
-
+  height:calc(var(--blog-button-width) / 4 * 3);
   animation:blog-button-show 1s linear 1;
 }
 
 #load-more {
   background-color: var(--background);
   color: var(--color);
-  font-size: calc(20vw / 2);
-  aspect-ratio: 4/3;
+  font-size: calc(var(--blog-button-width) / 9 * 2);
 
-  @media (max-aspect-ratio: 3/4) {
-    font-size: calc(20vw / 1);
-  }
-
-  @media (min-aspect-ratio: 4/3) {
-    font-size: calc(20vw / 4);
-  }
 }
 
 .blog-button img {
