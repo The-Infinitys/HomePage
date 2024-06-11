@@ -21,7 +21,8 @@ const getData = function (name) {
     .then((res) => res.json())
     .then((apiData) => {
       const infos = apiData.info;
-      infos.forEach(info => {
+      for (let i = 0; i < infos.length; i++) {
+        const info = infos[i];
         if (param_open == info.name) {
           document.querySelector("#blog-title").innerHTML = info.title;
           blog_open("https://" + blog_domain + info.index);
@@ -42,8 +43,11 @@ const getData = function (name) {
         const title = document.createElement("div");
         title.innerHTML = info.title;
         box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
-        document.querySelector(".list").insertBefore(box, load_more);
-      });
+        const insert_button = () => {
+          document.querySelector(".list").insertBefore(box, load_more);
+        }
+        setTimeout(insert_button, i * 500);
+      }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 let load_count = data_list_length;
