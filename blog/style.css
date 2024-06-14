@@ -120,14 +120,13 @@
   }
   width:var(--blog-button-width);
   height:calc(var(--blog-button-width) / 4 * 3);
-  animation:blog-button-show 1s linear 1;
+  animation:blog-button-show 100ms linear 1;
 }
 
 #load-more {
   background-color: var(--background);
   color: var(--color);
   font-size: calc(var(--blog-button-width) / 9 * 2);
-
 }
 
 .blog-button img {

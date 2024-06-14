@@ -46,7 +46,7 @@ const getData = function (name) {
         const insert_button = () => {
           document.querySelector(".list").insertBefore(box, load_more);
         }
-        setTimeout(insert_button, i * 500);
+        insert_button();
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
@@ -57,9 +57,7 @@ load_more.onclick = () => {
     getData(pathname);
     load_count--;
     if (load_count <= 0) {
-      load_more.style.opacity = 0;
-      load_more.classList.remove("show-animation");
-      load_more.classList.add("hide-animation");
+      load_more.style.display = "none";
     }
   }
 }
