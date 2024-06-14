@@ -46,7 +46,7 @@ const getData = function (name) {
         const insert_button = () => {
           document.querySelector(".list").insertBefore(box, load_more);
         }
-        insert_button();
+        setTimeout(insert_button,200);
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };

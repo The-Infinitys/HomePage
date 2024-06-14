@@ -1,5 +1,5 @@
 :root {
-  --background: white;
+--background: white;
   --text: black;
   --blog-button-width: calc(90vw / 2);
 
@@ -50,54 +50,6 @@
   border: 2px solid;
 }
 
-#blog {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 100vh;
-  opacity: 0;
-  z-index: 10000;
-  background-color: var(--background);
-}
-
-.blog-view {
-  position: absolute;
-  width: calc(100vw - 20vh);
-  height: 90vh;
-  top: 10vh;
-  left: 10vh;
-  background-color: transparent;
-}
-
-@keyframes hide {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.show-animation {
-  animation: show 1s linear 1;
-}
-
-.hide-animation {
-  animation: hide 1s linear 1;
-}
-
 @keyframes blog-button-show {
   from {
     opacity: 0;
@@ -118,6 +70,7 @@
   @media (prefers-color-scheme: dark) {
     background-color: #00000055;
   }
+
   width:var(--blog-button-width);
   height:calc(var(--blog-button-width) / 4 * 3);
   animation:blog-button-show 100ms linear 1;
