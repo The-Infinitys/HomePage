@@ -51,17 +51,12 @@
   }
 }
 
-/*スクロールバーによるバグを解消*/
-.scrollbar_hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .scrollbar_hidden::-webkit-scrollbar {
   display: none;
 }
 
 body {
+  overflow-x: visible;
   padding-top: 10vh;
   color: var(--text);
   background-color: var(--background);
