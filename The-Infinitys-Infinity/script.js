@@ -466,7 +466,6 @@ const generate_style = () => {
     height:100vh;
     top:0;
     left:0;
-    opcacity:0.5;
     z-index:-1000;
   `;
   document.body.appendChild(dark_back);
@@ -480,7 +479,6 @@ const generate_style = () => {
     height:100vh;
     top:0;
     left:0;
-    opacity:0.5;
     z-index:-999;
   `;
   document.body.appendChild(light_back);
@@ -520,10 +518,10 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 0.5) {
+  // if (Math.random() < 0.5) {
     generate_style();
-  } else {
-    generate_honeycomb();
-  }
+  // } else {
+  //   generate_honeycomb();
+  // }
 }
 The_Infinitys_main();

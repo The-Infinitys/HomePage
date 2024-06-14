@@ -1,3 +1,10 @@
+/*色・デザインの設定*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: serif;
+}
+
 :root {
   --background: white;
   --text: black;
@@ -5,10 +12,12 @@
 }
 
 #light-mobile {
+  opacity: 0.3;
   visibility: visible;
 }
 
 #dark-mobile {
+  opacity: 0.3;
   visibility: hidden;
 }
 
@@ -42,17 +51,22 @@
   }
 }
 
+/*スクロールバーによるバグを解消*/
+.scrollbar_hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar_hidden::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   padding-top: 10vh;
   color: var(--text);
   background-color: var(--background);
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: serif;
-}
 
 header {
   z-index: 777;
