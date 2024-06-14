@@ -518,10 +518,10 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  // if (Math.random() < 0.5) {
+  if (Math.random() < 0.3) {
     generate_style();
-  // } else {
-  //   generate_honeycomb();
-  // }
+  } else {
+    generate_honeycomb();
+  }
 }
 The_Infinitys_main();
