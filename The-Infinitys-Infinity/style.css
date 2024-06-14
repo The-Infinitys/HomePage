@@ -43,6 +43,8 @@
 }
 
 body {
+  padding-top: 10vh;
+  color: var(--text);
   background-color: var(--background);
 }
 
@@ -130,6 +132,7 @@ header button div {
     stroke: #ff0000;
   }
 }
+
 @keyframes show {
   from {
     opacity: 0;
@@ -159,6 +162,7 @@ header button div {
     opacity: 0;
   }
 }
+
 .hamburger_menu_icon_show {
   animation-name: hamburger-icon-show;
   animation-duration: 1s;
@@ -258,6 +262,8 @@ header button div {
 
 
 footer {
+  position: sticky;
+  top: calc(90vh - 50px);
   text-align: center;
   width: 100%;
   height: 50px;
