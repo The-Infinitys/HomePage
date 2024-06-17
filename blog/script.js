@@ -10,11 +10,6 @@ today = {
 const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month - blog_start.month;
 const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
-const blog_params = new URL(window.location.href).searchParams;
-let param_open = ""
-if (blog_params.has("name")) {
-  param_open = blog_params.get("name");
-}
 const load_more = document.querySelector("#load-more");
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
@@ -23,10 +18,6 @@ const getData = function (name) {
       const infos = apiData.info;
       for (let i = 0; i < infos.length; i++) {
         const info = infos[i];
-        if (param_open == info.name) {
-          document.querySelector("#blog-title").innerHTML = info.title;
-          blog_open("https://" + blog_domain + info.index);
-        };
         const box = document.createElement("button");
         box.classList.add("blog-button");
         box.onclick = () => {

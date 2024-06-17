@@ -77,7 +77,6 @@
 #load-more {
   background-color: var(--background);
   color: var(--text);
-  font-size: 1.5em;
 }
 
 .blog-button img {
