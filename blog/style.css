@@ -47,13 +47,13 @@
 
   to {
     opacity: 1;
-    width: var(--blog-button-width)
+    width: var(--blog-button-width);
   }
 }
 
 .blog-button {
   box-sizing:border-box;
-  margin:3%;
+  margin:calc(var(--blog-button-width)*0.01);
   border:1px sold #888;
   border-radius: 3%;
   overflow: hidden;
@@ -64,7 +64,7 @@
     background-color: #00000055;
   }
 
-  width:calc(var(--blog-button-width) / 1.06);
+  width:calc(var(--blog-button-width)*0.98);
   aspect-ratio: 4/3;
   animation:blog-button-show 100ms linear 1;
 }
