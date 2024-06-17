@@ -39,6 +39,11 @@
   background-color: color-mix(in srgb, var(--background), transparent 80%);
 }
 
+.list h1{
+  text-align: center;
+  font-size:10vw;
+}
+
 @keyframes blog-button-show {
   from {
     opacity: 0;
