@@ -51,17 +51,9 @@
   }
 }
 
-body::-webkit-scrollbar {
-  /*Google Chrome and Safari*/
-  display: none;
-}
 
 body {
-  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
-  -ms-overflow-style: none;
-  /*Firefoxへの対応*/
-  scrollbar-width: none;
-  overflow-x: visible;
+  overflow-x: hidden;
   padding-top: 10vh;
   color: var(--text);
   background-color: var(--background);
