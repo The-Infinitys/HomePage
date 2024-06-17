@@ -64,8 +64,8 @@
     background-color: #00000055;
   }
 
-  width:var(--blog-button-width);
-  height:calc(var(--blog-button-width) / 4 * 3);
+  width:calc(var(--blog-button-width) / 1.06);
+  aspect-ratio: 4/3;
   animation:blog-button-show 100ms linear 1;
 }
 
