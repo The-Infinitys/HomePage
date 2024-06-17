@@ -26,7 +26,7 @@
   margin: auto;
   font-size: 150%;
   border: 2px solid var(--text);
-  border-radius: 7%;
+  border-radius: 2%;
   color: var(--text);
   background-color: var(--background);
 }
@@ -35,7 +35,7 @@
   width: 50%;
   margin: auto;
   color: var(--text);
-  border-radius: 7%;
+  border-radius: 2%;
   background-color: var(--background);
   text-align: left;
 }
@@ -45,7 +45,7 @@
   margin: auto;
   height: 50vh;
   border: 2px solid var(--text);
-  border-radius: 7%;
+  border-radius: 2%;
   color: var(--text);
   background-color: var(--background);
 }
