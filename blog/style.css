@@ -52,6 +52,8 @@
 }
 
 .blog-button {
+  box-sizing:border-box;
+  padding:3%;
   border:1px sold #888;
   border-radius: 3%;
   overflow: hidden;
