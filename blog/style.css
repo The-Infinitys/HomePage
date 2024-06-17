@@ -39,9 +39,9 @@
   background-color: color-mix(in srgb, var(--background), transparent 80%);
 }
 
-.list h1{
+.list h1 {
   text-align: center;
-  font-size:10vw;
+  font-size: 10vw;
 }
 
 @keyframes blog-button-show {
@@ -57,9 +57,9 @@
 }
 
 .blog-button {
-  box-sizing:border-box;
-  margin:2%;
-  border:1px sold #888;
+  box-sizing: border-box;
+  margin: 2%;
+  border: 1px sold #888;
   border-radius: 3%;
   overflow: hidden;
   position: relative;
@@ -76,8 +76,8 @@
 
 #load-more {
   background-color: var(--background);
-  color: var(--color);
-  font-size: calc(var(--blog-button-width) / 9 * 2);
+  color: var(--text);
+  font-size: 1.5em;
 }
 
 .blog-button img {
