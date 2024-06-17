@@ -1,18 +1,18 @@
 :root {
   --background: white;
   --text: black;
-  --blog-button-width: calc(90vw / 2);
+  --blog-button-width: 50%;
 }
 
 @media (max-aspect-ratio: 3/4) {
   :root {
-    --blog-button-width: calc(90vw / 1);
+    --blog-button-width: 100%;
   }
 }
 
 @media (min-aspect-ratio: 4/3) {
   :root {
-    --blog-button-width: calc(90vw / 4);
+    --blog-button-width: 25%;
   }
 }
 
@@ -58,7 +58,7 @@
 
 .blog-button {
   box-sizing:border-box;
-  margin:calc(var(--blog-button-width)*0.01);
+  margin:2%;
   border:1px sold #888;
   border-radius: 3%;
   overflow: hidden;
@@ -69,7 +69,7 @@
     background-color: #00000055;
   }
 
-  width:calc(var(--blog-button-width)*0.98);
+  width:calc(var(--blog-button-width) - 2 * 2%);
   aspect-ratio: 4/3;
   animation:blog-button-show 100ms linear 1;
 }
