@@ -1,8 +1,7 @@
 :root {
---background: white;
+  --background: white;
   --text: black;
   --blog-button-width: calc(90vw / 2);
-
 }
 
 @media (max-aspect-ratio: 3/4) {
@@ -37,15 +36,7 @@
 .list {
   width: 90vw;
   margin-left: 5vw;
-  background-color: #ffffff55;
-  border-color: #00000055;
-  color: var(--text);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #00000055;
-    border-color: #ffffff55;
-  }
-
+  background-color: color-mix(in srgb, var(--background), transparent 80%);
   border: 2px solid;
 }
 
@@ -63,6 +54,7 @@
 
 .blog-button {
   border:1px sold #888;
+  border-radius: 3%;
   overflow: hidden;
   position: relative;
   background-color: #ffffff55;
