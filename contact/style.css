@@ -15,49 +15,52 @@
   margin: auto;
 }
 
-.Infinity-form dt{
+.Infinity-form dt {
   color: var(--text);
   font-size: 150%;
+  margin: auto;
 }
 
 .Infinity-form dd input {
-  width: 50vw;
+  width: 50%;
+  margin: auto;
   font-size: 150%;
   border: 2px solid var(--text);
-  border-radius: 0;
+  border-radius: 7%;
   color: var(--text);
   background-color: var(--background);
 }
 
 .Infinity-form fieldset {
-  width: 50vw;
-  margin-left: 25vw;
+  width: 50%;
+  margin: auto;
   color: var(--text);
+  border-radius: 7%;
   background-color: var(--background);
   text-align: left;
 }
 
 .Infinity-form dd textarea {
-  width: 50vw;
+  width: 50%;
+  margin: auto;
   height: 50vh;
   border: 2px solid var(--text);
-  border-radius: 0;
+  border-radius: 7%;
   color: var(--text);
   background-color: var(--background);
 }
 
 @media (max-aspect-ratio: 1/1) {
   .Infinity-form dd input {
-    width: 90vw;
+    width: 90%;
   }
 
   .Infinity-form fieldset {
-    width: 90vw;
-    margin-left: 5vw;
+    width: 90%;
   }
 
   .Infinity-form dd textarea {
-    width: 90vw;
+    width: 90%;
   }
 }
 
@@ -117,7 +120,7 @@
   }
 
   100% {
-    color:#f00;
+    color: #f00;
   }
 }
 
