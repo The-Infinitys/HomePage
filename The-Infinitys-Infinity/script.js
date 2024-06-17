@@ -89,6 +89,17 @@ const init_header = function () {
           <a href="https://github.com/The-Infinitys">GitHub </a>
         </th>
       </tr>
+      <tr>
+        <th>
+          <img
+            alt=""
+            class="hamburger_menus-contents-icons"
+            src="/image/header/x-logo.svg" />
+        </th>
+        <th>
+          <a href="https://x.com/Mugen_Infinitys/">X </a>
+        </th>
+      </tr>
     </table>
 `;
   const header = document.createElement("header");
