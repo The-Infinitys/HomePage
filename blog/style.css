@@ -59,7 +59,7 @@
 .blog-button {
   box-sizing: border-box;
   margin: 2%;
-  border: 1px sold #888;
+  border: 1px solid var(--text);
   border-radius: 3%;
   overflow: hidden;
   position: relative;
