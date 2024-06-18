@@ -18,11 +18,11 @@ const getData = function (name) {
       const infos = apiData.info;
       for (let i = 0; i < infos.length; i++) {
         const info = infos[i];
-        const box = document.createElement("button");
-        box.classList.add("blog-button");
-        box.onclick = () => {
-          window.location.href = "https://" + blog_domain + info.index;
-        }
+        const box_outer = document.createElement("div");
+        box_outer.classList.add("blog-button");
+        const box = document.createElement("a");
+        box_outer.append(box);
+        box.href = "https://" + blog_domain + info.index;
         const thumbnail = document.createElement("img");
         thumbnail.src = "https://" + blog_domain + info.thumbnail;
         thumbnail.alt = info.name;
@@ -37,7 +37,7 @@ const getData = function (name) {
         const insert_button = () => {
           document.querySelector(".list").insertBefore(box, load_more);
         }
-        setTimeout(insert_button,200);
+        setTimeout(insert_button, 200);
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
