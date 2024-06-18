@@ -17,14 +17,14 @@
 
 .Infinity-form dt {
   color: var(--text);
-  font-size: 150%;
+  font-size: 24px;
   margin: auto;
 }
 
 .Infinity-form dd input {
   width: 50%;
   margin: auto;
-  font-size: 150%;
+  font-size: 30px;
   border: 2px solid var(--text);
   border-radius: 2%;
   color: var(--text);
@@ -35,6 +35,7 @@
   width: 50%;
   margin: auto;
   color: var(--text);
+  font-size: 24px;
   border-radius: 2%;
   background-color: var(--background);
   text-align: left;
@@ -44,6 +45,7 @@
   width: 50%;
   margin: auto;
   height: 50vh;
+  font-size:24px;
   border: 2px solid var(--text);
   border-radius: 2%;
   color: var(--text);
