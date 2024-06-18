@@ -45,11 +45,19 @@
   width: 50%;
   margin: auto;
   height: 50vh;
-  font-size:24px;
+  font-size: 24px;
   border: 2px solid var(--text);
   border-radius: 2%;
   color: var(--text);
   background-color: var(--background);
+}
+
+#Infinity-form-submit {
+  animation: rainbow-color infinite 5s linear;
+  border: var(--text) 2px solid;
+  background-color: var(--background);
+  font-size: 150%;
+  width: 50vw;
 }
 
 @media (max-aspect-ratio: 1/1) {
