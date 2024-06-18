@@ -48,7 +48,8 @@ load_more.onclick = () => {
     getData(pathname);
     load_count--;
     if (load_count <= 0) {
-      load_more.style.display = "none";
+      load_more.style.opacity = "0";
+      load_more.classList.add("hide-blog-button")
     }
   }
 }

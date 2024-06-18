@@ -56,6 +56,20 @@
   }
 }
 
+@keyframes blog-button-hide {
+  from {
+    opacity: 1;
+    width: var(--blog-button-width);
+  }
+
+  to {
+    opacity: 0;
+    width: 0;
+  }
+}
+.hide-blog-button {
+  animation: blog-button-hide 1s linear 1;
+}
 .blog-button {
   box-sizing: border-box;
   margin: 1%;
