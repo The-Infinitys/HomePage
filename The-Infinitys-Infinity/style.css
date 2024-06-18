@@ -21,6 +21,28 @@
   visibility: hidden;
 }
 
+@keyframes rainbow-back-animate {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 200%;
+  }
+}
+
+#rainbow-back {
+  position: fixed;
+  background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00) 0/200%;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  object-fit: fill;
+  animation: show 5s linear 1, rainbow-back-animate 10s linear infinite;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: black;

@@ -51,6 +51,7 @@ const init_header = function () {
         <th>
           <img
             alt=""
+            loading="lazy"
             class="hamburger_menus-contents-icons"
             src="/image/header/infinity.svg" />
         </th>
@@ -60,6 +61,7 @@ const init_header = function () {
         <th>
           <img
             alt=""
+            loading="lazy"
             class="hamburger_menus-contents-icons"
             src="/image/header/blog.svg" />
         </th>
@@ -71,6 +73,7 @@ const init_header = function () {
         <th>
           <img
             alt=""
+            loading="lazy"
             class="hamburger_menus-contents-icons"
             src="/image/header/scratch.svg" />
         </th>
@@ -82,6 +85,7 @@ const init_header = function () {
         <th>
           <img
             alt=""
+            loading="lazy"
             class="hamburger_menus-contents-icons"
             src="/image/header/github.svg" />
         </th>
@@ -93,6 +97,7 @@ const init_header = function () {
         <th>
           <img
             alt=""
+            loading="lazy"
             class="hamburger_menus-contents-icons"
             src="/image/header/x-logo.svg" />
         </th>
@@ -327,19 +332,8 @@ const generate_honeycomb = () => {
   `;
   document.body.appendChild(RainbowHoneycomb);
   const draw = RainbowHoneycomb.getContext("2d");
-  const rainbow_svg = document.createElement("img");
-  rainbow_svg.src = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCiAgICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB2aWV3Qm94PSIwLDAsNDgwLDM2MCI+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgeDE9IjAiIHkxPSIxODAiIHgyPSI4MCIgeTI9IjE4MCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGlkPSJjb2xvci0xIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmYwMDAwIiAvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmZmMDAiIC8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgICAgICA8bGluZWFyR3JhZGllbnQgeDE9IjgwIiB5MT0iMTgwIiB4Mj0iMTYwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTIiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmZmMDAiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMTYwIiB5MT0iMTgwIiB4Mj0iMjQwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTMiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmMDAiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwZmZmZiIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMjQwIiB5MT0iMTgwIiB4Mj0iMzIwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTQiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmZmYiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iMzIwIiB5MT0iMTgwIiB4Mj0iNDAwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMDAwZmYiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmMDBmZiIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgIDxsaW5lYXJHcmFkaWVudCB4MT0iNDAwIiB5MT0iMTgwIiB4Mj0iNDgwIiB5Mj0iMTgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTYiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAwZmYiIC8+CiAgICAgICAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPGcgdHJhbnNmb3JtPSIiPgogICAgICAgIDxnIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2lzUGFpbnRpbmdMYXllciZxdW90Ozp0cnVlfSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMCIKICAgICAgICAgICAgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIgogICAgICAgICAgICBzdHJva2UtZGFzaG9mZnNldD0iMCIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCwzNjB2LTM2MWg4MHYzNjF6IiBmaWxsPSJ1cmwoI2NvbG9yLTEpIiAvPgogICAgICAgICAgICA8cGF0aCBkPSJNODAsMzYwdi0zNjFoODB2MzYxeiIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aW5kZXgmcXVvdDs6bnVsbH0iIGZpbGw9InVybCgjY29sb3ItMikiIC8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNjAsMzYwdi0zNjFoODB2MzYxeiIgZmlsbD0idXJsKCNjb2xvci0zKSIgLz4KICAgICAgICAgICAgPHBhdGggZD0iTTI0MCwzNjB2LTM2MWg4MHYzNjF6IiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpbmRleCZxdW90OzpudWxsfSIgZmlsbD0idXJsKCNjb2xvci00KSIgLz4KICAgICAgICAgICAgPHBhdGggZD0iTTMyMCwzNjB2LTM2MWg4MHYzNjF6IiBmaWxsPSJ1cmwoI2NvbG9yLTUpIiAvPgogICAgICAgICAgICA8cGF0aCBkPSJNNDAwLDM2MHYtMzYxaDgwdjM2MXoiIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2luZGV4JnF1b3Q7Om51bGx9IiBmaWxsPSJ1cmwoI2NvbG9yLTYpIiAvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+PCEtLXJvdGF0aW9uQ2VudGVyOjI0MDoxODAtLT4=";
-  rainbow_svg.style = `
-    position:fixed;
-    width:100vw;
-    height:100vh;
-    top:0;
-    left:0;
-    z-index:-1000;
-    object-fit:fill;
-    animation: show 5s linear 1;
-  `;
-  rainbow_svg.alt = "";
+  const rainbow_svg = document.createElement("div");
+  rainbow_svg.id = "rainbow-back";
   document.body.appendChild(rainbow_svg);
   const honeycomb = (x, y, r, color) => {
     draw.fillStyle = color;
@@ -529,7 +523,7 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 0.3) {
+  if (Math.random() < 0) {
     generate_style();
   } else {
     generate_honeycomb();
