@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/:match*",
-      "destination": "https://the-infinitys-repos-api.vercel.app/:match*"
-    },
-    {
       "source": "/article-2024/:match*",
       "destination": "https://the-infinitys-repos-article-2024.vercel.app/:match*"
     }
