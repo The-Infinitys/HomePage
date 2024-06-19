@@ -55,7 +55,7 @@
 }
 #list-head div{
   background-color: var(--background);
-  display: flex 1 auto;;
+  display: flex 1 auto;
 }
 #list-head div img {
   width: auto;
@@ -66,6 +66,7 @@
   width:50%;
   height: 5vh;
   font-size:4vh;
+  background-color: var(--background);
   color: var(--text);
 }
 
