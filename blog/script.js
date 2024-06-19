@@ -49,7 +49,7 @@ const load_articles = () => {
   if (load_articles_done) {
     return null;
   }
-  let load_articles_done = true;
+  load_articles_done = true;
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
