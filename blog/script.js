@@ -45,14 +45,13 @@ const getData = (name) => {
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策で実装しました。
 const load_articles = () => {
-  // const old_buttons = document.querySelector("#blog-button-section").children;
-  // for (let i = 0; i < old_buttons.length; i++) {
-  //   const old_button = old_buttons[i];
-  //   if (old_button.id != "start-loading") {
-  //     old_button.removeChild();
-  //   }
-  // }
-  document.querySelector("#blog-button-section").innerHTML = default_blog_button_section_inner;
+  const old_buttons = document.querySelector("#blog-button-section").children;
+  for (let i = 0; i < old_buttons.length; i++) {
+    const old_button = old_buttons[i];
+    if (old_button.id != "start-loading") {
+      old_button.removeChild();
+    }
+  }
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
