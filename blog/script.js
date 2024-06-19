@@ -44,19 +44,19 @@ const getData = (name) => {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策で実装しました。
+let load_articles_done = false;
 const load_articles = () => {
-  const old_buttons = document.querySelector("#blog-button-section").children;
-  for (let i = 0; i < old_buttons.length; i++) {
-    const old_button = old_buttons[i];
-    if (old_button.id != "start-loading") {
-      old_button.removeChild();
-    }
+  if (load_articles_done) {
+    return null;
   }
+  let load_articles_done = true;
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
     if (load_count <= 1) {
-      document.querySelector("#start-loading div").innerHTML = "Reload";
+      start_loading_button.style.opacity = 0;
+      start_loading_button.classList.add("hide-blog-button");
+      start_loading_button.classList.remove("show-blog-button");
     }
   }
 }
