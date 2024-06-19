@@ -39,10 +39,17 @@
   background-color: color-mix(in srgb, var(--background), transparent 80%);
 }
 
-.list h1 {
-  text-align: center;
-  font-size: 10vw;
+#list-head {
+  width: 100%;
+  height: auto;
+  display: flex;
 }
+
+#list-head h1 {
+  position: relative;
+  font-size: 5vw;
+}
+
 
 @keyframes blog-button-show {
   from {
@@ -67,9 +74,15 @@
     width: 0;
   }
 }
+
 .hide-blog-button {
-  animation: blog-button-hide 1s linear 1;
+  animation: blog-button-hide 0.5s linear 1;
 }
+
+.show-blog-button {
+  animation: blog-button-show 0.5s linear 1;
+}
+
 .blog-button {
   box-sizing: border-box;
   margin: 1%;
@@ -85,10 +98,9 @@
 
   width:calc(var(--blog-button-width) - 2 * 1%);
   aspect-ratio: 4/3;
-  animation:blog-button-show 100ms linear 1;
 }
 
-#load-more {
+#start-loading {
   background-color: var(--background);
   color: var(--text);
 }
@@ -117,5 +129,5 @@
   height: 20%;
   bottom: 0;
   color: var(--text);
-  font-size: max(auto, 12px);
+  font-size: max(auto, 24px);
 }

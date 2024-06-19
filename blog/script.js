@@ -10,7 +10,7 @@ today = {
 const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month - blog_start.month;
 const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
-const load_more = document.querySelector("#load-more");
+const start_loading_button = document.querySelector("#start-loading");
 const getData = function (name) {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
@@ -19,7 +19,7 @@ const getData = function (name) {
       for (let i = 0; i < infos.length; i++) {
         const info = infos[i];
         const box = document.createElement("button");
-        box.classList.add("blog-button");
+        box.className="blog-button show-blog-button";
         box.onclick = () => {
           window.location.href = "https://" + blog_domain + info.index;
         }
@@ -35,21 +35,20 @@ const getData = function (name) {
         title.innerHTML = info.title;
         box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
         const insert_button = () => {
-          document.querySelector(".list").insertBefore(box, load_more);
+          document.querySelector("#blog-button-section").insertBefore(box, start_loading_button);
         }
-        setTimeout(insert_button,200);
+        setTimeout(insert_button, 200);
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-let load_count = data_list_length;
-load_more.onclick = () => {
-  if (load_count > 0) {
+start_loading_button.onclick = () => {
+  for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
-    load_count--;
-    if (load_count <= 0) {
-      load_more.style.opacity = "0";
-      load_more.classList.add("hide-blog-button")
+    if (load_count <= 1) {
+      start_loading_button.style.opacity = 0;
+      start_loading_button.classList.remove("show-blog-button");
+      start_loading_button.classList.add("hide-blog-button");
     }
   }
 }
