@@ -44,14 +44,20 @@ const getData = (name) => {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策で実装しました。
-const default_blog_button_sectio_inner = document.querySelector("#blog-button-section").innerHTML;
 const load_articles = () => {
-  document.querySelector("#blog-button-section").innerHTML = default_blog_button_sectio_inner;
+  const blog_buttons = document.querySelector("#blog-button-section").children;
+  for (let i = 0; i < blog_buttons.length; i++) {
+    const blog_button = blog_buttons[i];
+    if (blog_button.id != "start-loading") {
+      blog_button.removeChild();
+    }
+  }
+  document.querySelector("#blog-button-section").innerHTML = default_blog_button_section_inner;
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
     if (load_count <= 1) {
-      document.querySelector("#start-loading div").innerHTML="Reload";
+      document.querySelector("#start-loading div").innerHTML = "Reload";
     }
   }
 }
@@ -74,7 +80,6 @@ const search_articles = () => {
     const blog_button = blog_buttons[i];
     const button_inner = blog_button.innerHTML;
     const title = button_inner.substring(button_inner.indexOf("<div>") + 5, button_inner.indexOf("</div>")).toLowerCase();
-    console.log(blog_button.style.display);
     blog_button.style.display = "";
     for (let j = 0; j < search_querys.length; ++j) {
       if (-1 == title.indexOf(search_querys[j])) {
