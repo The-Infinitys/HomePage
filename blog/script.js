@@ -1,4 +1,4 @@
-
+//日付の設定
 const blog_start = {
   year: 2024,
   month: 4
@@ -9,10 +9,11 @@ today = {
   month: today.getMonth() + 1
 }
 const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month - blog_start.month;
+//ドメイン等の設定
 const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
 const start_loading_button = document.querySelector("#start-loading");
-const getData = function (name) {
+const getData = (name) => {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
@@ -42,6 +43,7 @@ const getData = function (name) {
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
+//loading buttonが押されたのをキーに一気に読み込む。これはSEO対策ように実装しました。
 start_loading_button.onclick = () => {
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
@@ -53,10 +55,10 @@ start_loading_button.onclick = () => {
     }
   }
 }
-//検索機能の導入
+//検索機能
 const article_search_input = document.querySelector("#list-head div input");
 const search_articles = () => {
-  const search_query = article_search_input.value.toLowerCase();
+  const search_query = article_search_input.value.replace("　"," ").toLowerCase();
   const blog_buttons = document.querySelector("#blog-button-section").children;
   if (search_query == "") {
     for (let i = 0; i < blog_buttons.length; i++) {
