@@ -62,10 +62,11 @@
 #list-head div img {
   width: 10%;
   height: 100%;
+  margin-right:auto;
 }
 
 #list-head div input {
-  width:90%;
+  width:85%;
   height: 100%;
   font-size:4vh;
   background-color: var(--background);
