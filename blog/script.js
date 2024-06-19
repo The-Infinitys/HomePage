@@ -34,7 +34,7 @@ const getData = (name) => {
         loading.alt = "loading...";
         loading.className = "loading-infinity";
         const title = document.createElement("div");
-        title.innerHTML = info.title;
+        title.innerHTML = info.title + "(" + info.date + ")";
         box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
         const insert_button = () => {
           document.querySelector("#blog-button-section").insertBefore(box, start_loading_button);
