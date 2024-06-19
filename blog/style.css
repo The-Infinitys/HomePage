@@ -43,25 +43,29 @@
   width: 100%;
   height: auto;
   display: flex;
+  @media (max-aspect-ratio:1/1) {
+    display: block;
+  }
 }
 
 #list-head h1 {
   position: relative;
   font-size: 4vh;
 }
-
-#list-head img {
+#list-head div{
+  background-color: var(--background);
+  display: flex 1 auto;;
+}
+#list-head div img {
   margin-left:auto;
   width: auto;
   height: 5vh;
-  background-color: var(--background);
 }
 
-#list-head input {
+#list-head div input {
   width:50%;
   height: 5vh;
   font-size:4vh;
-  background-color: var(--background);
   color: var(--text);
 }
 

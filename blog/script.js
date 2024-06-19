@@ -54,7 +54,7 @@ start_loading_button.onclick = () => {
   }
 }
 //検索機能の導入
-const article_search_input = document.querySelector("#list-head input");
+const article_search_input = document.querySelector("#list-head div input");
 const search_articles = () => {
   const search_query = article_search_input.value.toLowerCase();
   const blog_buttons = document.querySelector("#blog-button-section").children;
