@@ -2,7 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: serif;
+  font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
 }
 
 :root {
@@ -288,6 +288,27 @@ header button div {
   animation-iteration-count: initial;
 }
 
+
+
+section.Title {
+  margin-top: 12vh;
+  text-align: center;
+  font-size: 7vw;
+  background-color: transparent;
+  color: var(--text);
+  text-align: center;
+}
+
+section {
+  width: 100%;
+  padding: 5%;
+  background-color: color-mix(in srgb, var(--background) 87%, #888);
+  color: var(--text);
+}
+
+h1.bigger {
+  font-size: 7vw;
+}
 
 footer {
   position: sticky;
