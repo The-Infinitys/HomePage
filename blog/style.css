@@ -43,32 +43,35 @@
   width: 100%;
   height: auto;
   display: flex;
+
   @media (max-aspect-ratio:1/1) {
     display: block;
   }
 }
 
 #list-head h1 {
-  margin-right:auto;
+  margin-right: auto;
   position: relative;
   font-size: 4vh;
 }
-#list-head div{
-  width:40vh;
-  height:4vh;
+
+#list-head div {
+  width: 40vh;
+  height: 4vh;
   background-color: var(--background);
   display: flex 1 auto;
 }
+
 #list-head div img {
   width: 10%;
   height: 100%;
-  margin-right:auto;
+  margin-right: auto;
 }
 
 #list-head div input {
-  width:85%;
+  width: 85%;
   height: 100%;
-  font-size:4vh;
+  font-size: 4vh;
   background-color: var(--background);
   color: var(--text);
 }
