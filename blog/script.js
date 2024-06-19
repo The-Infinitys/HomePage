@@ -45,6 +45,7 @@ const getData = (name) => {
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策ように実装しました。
 const load_articles = () => {
+  document.querySelector("#blog-button-section").innerHTML="";
   for (let load_count = data_list_length; load_count > 0; load_count--) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
@@ -55,8 +56,8 @@ const load_articles = () => {
     // }
   }
 }
-window.onload = () => {
-  setTimeout(load_articles,1000);
+document.body.onclick = () => {
+  load_articles();
 }
 //検索機能
 const article_search_input = document.querySelector("#list-head div input");
