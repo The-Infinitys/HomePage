@@ -54,6 +54,7 @@
   margin-left:auto;
   width: auto;
   height: 5vh;
+  background-color: var(--background);
 }
 
 #list-head input {

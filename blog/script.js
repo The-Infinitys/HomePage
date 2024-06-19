@@ -56,7 +56,7 @@ start_loading_button.onclick = () => {
 //検索機能の導入
 const article_search_input = document.querySelector("#list-head input");
 const search_articles = () => {
-  const search_query = article_search_input.value;
+  const search_query = article_search_input.value.toLowerCase();
   const blog_buttons = document.querySelector("#blog-button-section").children;
   if (search_query == "") {
     for (let i = 0; i < blog_buttons.length; i++) {
@@ -68,7 +68,7 @@ const search_articles = () => {
   for (let i = 0; i < blog_buttons.length; i++) {
     const blog_button = blog_buttons[i];
     const button_inner = blog_button.innerHTML;
-    const title = button_inner.substring(button_inner.indexOf("<div>") + 5, button_inner.indexOf("</div>"));
+    const title = button_inner.substring(button_inner.indexOf("<div>") + 5, button_inner.indexOf("</div>")).toLowerCase();
     console.log(blog_button.style.display);
     blog_button.style.display = "";
     for (let j = 0; j < search_querys.length; ++j) {
