@@ -54,17 +54,19 @@
   font-size: 4vh;
 }
 #list-head div{
+  width:40vh;
+  height:4vh;
   background-color: var(--background);
   display: flex 1 auto;
 }
 #list-head div img {
-  width: auto;
-  height: 5vh;
+  width: 10%;
+  height: 100%;
 }
 
 #list-head div input {
-  width:50%;
-  height: 5vh;
+  width:90%;
+  height: 100%;
   font-size:4vh;
   background-color: var(--background);
   color: var(--text);
