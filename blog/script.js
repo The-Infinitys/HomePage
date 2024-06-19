@@ -1,3 +1,4 @@
+
 const blog_start = {
   year: 2024,
   month: 4
@@ -19,7 +20,7 @@ const getData = function (name) {
       for (let i = 0; i < infos.length; i++) {
         const info = infos[i];
         const box = document.createElement("button");
-        box.className="blog-button show-blog-button";
+        box.className = "blog-button show-blog-button";
         box.onclick = () => {
           window.location.href = "https://" + blog_domain + info.index;
         }
@@ -50,5 +51,33 @@ start_loading_button.onclick = () => {
       start_loading_button.classList.remove("show-blog-button");
       start_loading_button.classList.add("hide-blog-button");
     }
+  }
+}
+//検索機能の導入
+const article_search_input = document.querySelector("#list-head input");
+const search_article = () => {
+  const get_querySelector = e => {
+    let names = [];
+    if (!(el instanceof Element)) { return names; }
+    while (el.nodeType === Node.ELEMENT_NODE) {
+      let name = el.nodeName.toLowerCase();
+      if (e.id) {
+        name += '#' + e.id;
+        names.unshift(name);
+        break;
+      }
+      let index = getSiblingElemetsIndex(e, name);
+      if (1 < index) {
+        name += ':nth-of-type(' + index + ')';
+      }
+      names.unshift(name);
+      e = e.parentNode;
+    }
+    return names;
+  };
+  const search_query = article_search_input.value;
+  const blog_buttons = document.querySelector("#blog-button-section").children;
+  for (let i = 0; i < blog_buttons.length; i++) {
+
   }
 }
