@@ -44,20 +44,19 @@ const getData = (name) => {
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策ように実装しました。
-let load_done = false;
-document.body.onclick = () => {
-  if (!load_done) {
-    load_done = true;
-    for (let load_count = data_list_length; load_count > 0; load_count--) {
-      const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
-      getData(pathname);
-      // if (load_count <= 1) {
-      //   start_loading_button.style.opacity = 0;
-      //   start_loading_button.classList.remove("show-blog-button");
-      //   start_loading_button.classList.add("hide-blog-button");
-      // }
-    }
+const load_articles = () => {
+  for (let load_count = data_list_length; load_count > 0; load_count--) {
+    const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
+    getData(pathname);
+    // if (load_count <= 1) {
+    //   start_loading_button.style.opacity = 0;
+    //   start_loading_button.classList.remove("show-blog-button");
+    //   start_loading_button.classList.add("hide-blog-button");
+    // }
   }
+}
+window.onload = () => {
+  setTimeout(1000, load_articles);
 }
 //検索機能
 const article_search_input = document.querySelector("#list-head div input");
