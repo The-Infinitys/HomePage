@@ -55,29 +55,19 @@ start_loading_button.onclick = () => {
 }
 //検索機能の導入
 const article_search_input = document.querySelector("#list-head input");
-const search_article = () => {
-  const get_querySelector = e => {
-    let names = [];
-    if (!(el instanceof Element)) { return names; }
-    while (el.nodeType === Node.ELEMENT_NODE) {
-      let name = el.nodeName.toLowerCase();
-      if (e.id) {
-        name += '#' + e.id;
-        names.unshift(name);
-        break;
-      }
-      let index = getSiblingElemetsIndex(e, name);
-      if (1 < index) {
-        name += ':nth-of-type(' + index + ')';
-      }
-      names.unshift(name);
-      e = e.parentNode;
-    }
-    return names;
-  };
-  const search_query = article_search_input.value;
+const search_articles = () => {
+  const search_querys = article_search_input.value.split(" ");
   const blog_buttons = document.querySelector("#blog-button-section").children;
   for (let i = 0; i < blog_buttons.length; i++) {
-
+    const blog_button = blog_buttons[i];
+    const button_inner = blog_button.innerHTML;
+    const title = button_inner.substring(button_inner.indexOf("<div>") + 5, button_inner.indexOf("</div>"));
+    alert(title);
+    blog_button.style.display="block";
+    for (let j = 0; j < search_querys.length; ++j) {
+      if (-1==title.indexOf(search_querys[j])){
+        blog_button.style.display="none";
+      }
+    }
   }
 }
