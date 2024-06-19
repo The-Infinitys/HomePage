@@ -45,11 +45,11 @@ const getData = (name) => {
 };
 //loading buttonが押されたのをキーに一気に読み込む。これはSEO対策で実装しました。
 const load_articles = () => {
-  const blog_buttons = document.querySelector("#blog-button-section").children;
-  for (let i = 0; i < blog_buttons.length; i++) {
-    const blog_button = blog_buttons[i];
-    if (blog_button.id != "start-loading") {
-      blog_button.removeChild();
+  const old_buttons = document.querySelector("#blog-button-section").children;
+  for (let i = 0; i < old_buttons.length; i++) {
+    const old_button = old_buttons[i];
+    if (old_button.id != "start-loading") {
+      old_button.removeChild();
     }
   }
   document.querySelector("#blog-button-section").innerHTML = default_blog_button_section_inner;
@@ -60,9 +60,6 @@ const load_articles = () => {
       document.querySelector("#start-loading div").innerHTML = "Reload";
     }
   }
-}
-start_loading_button.onclick = () => {
-  load_articles();
 }
 //検索機能
 const article_search_input = document.querySelector("#list-head div input");
