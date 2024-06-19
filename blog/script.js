@@ -62,8 +62,7 @@ const search_articles = () => {
     const blog_button = blog_buttons[i];
     const button_inner = blog_button.innerHTML;
     const title = button_inner.substring(button_inner.indexOf("<div>") + 5, button_inner.indexOf("</div>"));
-    alert(title);
-    blog_button.style.display="block";
+    blog_button.style.display="flex";
     for (let j = 0; j < search_querys.length; ++j) {
       if (-1==title.indexOf(search_querys[j])){
         blog_button.style.display="none";
