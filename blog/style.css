@@ -50,6 +50,16 @@
   font-size: 5vw;
 }
 
+#list-head img {
+  width: auto;
+  height: 100%;
+}
+
+#list-head input {
+  width:50%;
+  background-color: var(--background);
+  color: var(--text);
+}
 
 @keyframes blog-button-show {
   from {

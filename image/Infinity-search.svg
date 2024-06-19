@@ -1,0 +1,19 @@
+<svg
+  viewBox="0 0 100 100"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  fill="none"
+  stroke="#888">
+  <g>
+    <circle cx="40" cy="40" r="35" stroke-width="5" />
+    <ellipse cx="22.5" cy="40" rx="17.5" ry="13" stroke-width="2" />
+    <ellipse cx="57.5" cy="40" rx="17.5" ry="13" stroke-width="2" />
+    <path d="M 65 65 L 90 90 Z" stroke-width="5" />
+    <animate
+      attributeName="stroke"
+      values="#f00;#ff0;#0f0;#0ff;#00f;#f0f;#f00"
+      dur="5s"
+      repeatCount="indefinite" />
+  </g>
+</svg>
