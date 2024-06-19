@@ -56,7 +56,7 @@ const load_articles = () => {
   }
 }
 window.onload = () => {
-  setTimeout(1000, load_articles);
+  setTimeout(load_articles,1000);
 }
 //検索機能
 const article_search_input = document.querySelector("#list-head div input");

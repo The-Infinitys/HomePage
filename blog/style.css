@@ -43,7 +43,6 @@
   width: 100%;
   height: auto;
   display: flex;
-
   @media (max-aspect-ratio:1/1) {
     display: block;
   }
@@ -99,7 +98,9 @@
     width: 0;
   }
 }
-
+#blog-button-section{
+  background-color: transparent;
+}
 .hide-blog-button {
   animation: blog-button-hide 0.5s linear 1;
 }
