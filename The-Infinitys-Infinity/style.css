@@ -217,9 +217,9 @@ header button div {
 #hamburger_menus {
   position: fixed;
   left: 100vw;
-  top: 10%;
+  top: 10vh;
   width: var(--hamburger-width);
-  height: 90%;
+  height: 90vh;
   text-align: left;
   overflow: hidden;
   text-overflow: clip;
