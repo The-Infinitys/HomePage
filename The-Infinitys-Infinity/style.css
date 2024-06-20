@@ -297,11 +297,13 @@ section.Title {
   background-color: transparent;
   color: var(--text);
   text-align: center;
+  padding: 0;
 }
 
 section {
   width: 100%;
   padding: 5%;
+  box-sizing:border-box;
   background-color: color-mix(in srgb, var(--background) 87%, #888);
   color: var(--text);
 }
