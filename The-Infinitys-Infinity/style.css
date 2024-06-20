@@ -291,7 +291,9 @@ header button div {
 }
 
 section.Title {
-  margin-top: 12vh;
+  margin-top: 10vh;
+  margin-bottom:10vh;
+  box-sizing:border-box;
   text-align: center;
   font-size: 7vw;
   background-color: transparent;
