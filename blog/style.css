@@ -2,18 +2,20 @@
   --background: white;
   --text: black;
   --blog-button-width: 50%;
-  --blog-font-size:calc((var(--blog-button-width) - 2 * 1%) / 4 * 3 * 2);
+  --blog-font-size: calc((90vw / 2 - 2 * 1%) / 4 * 3 / 16);
 }
 
 @media (max-aspect-ratio: 3/4) {
   :root {
     --blog-button-width: 100%;
+    --blog-font-size: calc((90vw / 1 - 2 * 1%) / 4 * 3 / 16);
   }
 }
 
 @media (min-aspect-ratio: 4/3) {
   :root {
     --blog-button-width: 25%;
+    --blog-font-size: calc((90vw / 4 - 2 * 1%) / 4 * 3 / 20);
   }
 }
 
