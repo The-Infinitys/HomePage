@@ -160,10 +160,10 @@
 }
 .blog-button div h1{
   font-size: 2em;
+  text-wrap:nowrap;
   text-overflow: ellipsis;
 }
 .blog-button div p {
   font-size: 2em;
   text-overflow: ellipsis;
-
 }
