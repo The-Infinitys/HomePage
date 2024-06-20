@@ -83,6 +83,8 @@ body {
 
 
 header {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   z-index: 777;
   position: fixed;
   top: 0;
@@ -288,8 +290,6 @@ header button div {
   animation-iteration-count: initial;
 }
 
-
-
 section.Title {
   margin-top: 12vh;
   text-align: center;
@@ -303,8 +303,10 @@ section.Title {
 section {
   width: 100%;
   padding: 5%;
-  box-sizing:border-box;
-  background-color: color-mix(in srgb, var(--background) 87%, #888);
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--background) 87%, transparent);
+  border-bottom: 2px solid #888;
+  line-height: 200%;
   color: var(--text);
 }
 
@@ -322,7 +324,8 @@ footer {
 }
 
 footer h1 {
-  background-color: color-mix(in srgb, var(--background), transparent 77%);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 footer div {
