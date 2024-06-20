@@ -157,5 +157,13 @@
   height: 25%;
   bottom: 0;
   color: var(--text);
+}
+.blog-button div h1{
   font-size: 2em;
+  text-overflow: ellipsis;
+}
+.blog-button div p {
+  font-size: 2em;
+  text-overflow: ellipsis;
+
 }
