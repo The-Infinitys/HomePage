@@ -34,8 +34,8 @@
 }
 
 .list {
+  box-sizing: border-box;
   width: 100%;
-  margin-left: 5vw;
   background-color: color-mix(in srgb, var(--background), transparent 80%);
 }
 
