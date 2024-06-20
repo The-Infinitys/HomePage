@@ -43,14 +43,9 @@ const getData = (name) => {
       }
     }).catch((err) => console.log(`データが取得できませんでした：${err}`));
 };
-//loading buttonが押されたのをキーに一気に読み込む。これはSEO対策で実装しました。
-let load_articles_done = false;
+let load_count = data_list_length;
 const load_articles = () => {
-  if (load_articles_done) {
-    return null;
-  }
-  load_articles_done = true;
-  for (let load_count = data_list_length; load_count > 0; load_count--) {
+  if (load_count > 0) {
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
     getData(pathname);
     if (load_count <= 1) {
@@ -58,8 +53,10 @@ const load_articles = () => {
       start_loading_button.classList.add("hide-blog-button");
       start_loading_button.classList.remove("show-blog-button");
     }
+    load_count--;
   }
 }
+load_articles();
 //検索機能
 const article_search_input = document.querySelector("#list-head div input");
 const search_articles = () => {
