@@ -291,8 +291,8 @@ header button div {
 }
 
 section.Title {
-  margin-top: 10vh;
-  margin-bottom:10vh;
+  margin-top: 5vh;
+  padding-bottom:10vh;
   box-sizing:border-box;
   text-align: center;
   font-size: 7vw;
