@@ -306,7 +306,7 @@ section {
   box-sizing: border-box;
   background-color: color-mix(in srgb, var(--background) 87%, transparent);
   border-bottom: 2px solid #888;
-  line-height: 200%;
+  line-height: 2em;
   color: var(--text);
 }
 
