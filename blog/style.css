@@ -2,6 +2,7 @@
   --background: white;
   --text: black;
   --blog-button-width: 50%;
+  --blog-font-size:calc((var(--blog-button-width) - 2 * 1%) / 4 * 3 * 2);
 }
 
 @media (max-aspect-ratio: 3/4) {
@@ -128,7 +129,7 @@
   aspect-ratio: 4/3;
 }
 
-#start-loading {
+#load-more {
   background-color: var(--background);
   color: var(--text);
 }
@@ -157,13 +158,17 @@
   height: 25%;
   bottom: 0;
   color: var(--text);
+  line-height: 0.9em;
+  text-align: left;
 }
-.blog-button div h1{
-  font-size: 2em;
-  text-wrap:nowrap;
+
+.blog-button div h1 {
+  font-size: var(--blog-font-size);
+  text-wrap: nowrap;
   text-overflow: ellipsis;
 }
+
 .blog-button div p {
-  font-size: 2em;
+  font-size: var(--blog-font-size);
   text-overflow: ellipsis;
 }

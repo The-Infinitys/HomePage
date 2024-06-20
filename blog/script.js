@@ -12,7 +12,7 @@ const data_list_length = 1 + 12 * (today.year - blog_start.year) + today.month -
 //ドメイン等の設定
 const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
-const start_loading_button = document.querySelector("#start-loading");
+const load_more_button = document.querySelector("#load-more");
 const getData = (name) => {
   fetch("https://" + blog_domain + name + ".json")
     .then((res) => res.json())
@@ -37,7 +37,7 @@ const getData = (name) => {
         title.innerHTML = "<h1>" + info.title + "</h1><p>date: " + info.date + "</p>";
         box.innerHTML = loading.outerHTML + thumbnail.outerHTML + title.outerHTML;
         const insert_button = () => {
-          document.querySelector("#blog-button-section").insertBefore(box, start_loading_button);
+          document.querySelector("#blog-button-section").insertBefore(box, load_more_button);
         }
         setTimeout(insert_button, 200);
       }
@@ -46,12 +46,14 @@ const getData = (name) => {
 let load_count = data_list_length;
 const load_articles = () => {
   if (load_count > 0) {
-    const pathname = "/article-" + blog_start.year.toString() + "/index/" + (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString()
+    const year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString();
+    document.querySelector("#load-more div p").innerHTML=year_and_month;
+    const pathname = "/article-" + blog_start.year.toString() + "/index/" + year_and_month;
     getData(pathname);
     if (load_count <= 1) {
-      start_loading_button.style.opacity = 0;
-      start_loading_button.classList.add("hide-blog-button");
-      start_loading_button.classList.remove("show-blog-button");
+      load_more_button.style.opacity = 0;
+      load_more_button.classList.add("hide-blog-button");
+      load_more_button.classList.remove("show-blog-button");
     }
     load_count--;
   }
