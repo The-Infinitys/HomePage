@@ -1,8 +1,30 @@
 {
   "en": [
     {
+      "elem":"#jp-title-font-size-changer",
+      "text":""
+    },
+    {
       "elem": ".Title",
       "text": "<h1>Privacy Policy</h1>"
+    },
+    {
+      "elem":"#privacy-policy",
+      "text":"<section id=\"privacy-policy\">\r\n<h2>Privacy Policy<\/h2>\r\n<section>\r\n<h3>1. Introduction<\/h3>\r\n<p>\r\nThis privacy policy stipulates how personal information is handled on websites owned by The Infinity's, such as <a href=\"https:\/\/the-infinitys.f5.si\/\"\r\n>https:\/\/the-infinitys.f5.si, https:\/\/the-infinitys.infinityon.com,\r\nhttps:\/\/the-infinitys.onrender.com<\/a\r\n> (hereinafter referred to as \"this site\"). Users of this site (hereinafter referred to as \"users\") must fully understand the contents of this privacy policy before using this site.\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>2. How to obtain personal information<\/h3>\r\n<p>\r\nThis site obtains the following personal information from users through the <a href=\"..\/contact\/\"\r\n>contact page using Google Form<\/a\r\n>.\r\n<\/p>\r\n<ul>\r\n<li>Email address<\/li>\r\n<li>User name for SNS, etc.<\/li>\r\n<\/ul>\r\n<\/section>\r\n<section>\r\n<h3>3. Purpose of use of personal information<\/h3>\r\n<p>Personal information acquired on this site will be used for the following purposes. <\/p>\r\n<ul>\r\n<li>Replying to questions received from users<\/li>\r\n<li>Requests for review of web pages<\/li>\r\n<\/ul>\r\n<\/section>\r\n<section>\r\n<h3>4. Provision of personal information to third parties<\/h3>\r\n<p>This site will not provide acquired personal information to third parties. <\/p>\r\n<\/section>\r\n<section>\r\n<h3>5. Scope of responsibility<\/h3>\r\n<p>\r\n<strong>\r\n<u>This site bears no responsibility whatsoever to users of this site. <\/u>\r\n<\/strong>\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>6. Changes to the Privacy Policy<\/h3>\r\n<p>\r\nThis website may change this privacy policy without notice. The changed privacy policy will take effect when it is posted on this website.\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>7. Contact us<\/h3>\r\n<p>\r\nFor inquiries regarding this privacy policy, please contact us at the following URL.\r\n<\/p>\r\n<p>\r\n<a href=\"..\/contact\/\"> The Infinity's contact <\/a>\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>Date of enactment: June 21, 2024<\/h3>\r\n<h3>Date of revision: June 21, 2024<\/h3>\r\n<\/section>\r\n<\/section>"
+    }
+  ],
+  "en-US": [
+    {
+      "elem":"#jp-title-font-size-changer",
+      "text":""
+    },
+    {
+      "elem": ".Title",
+      "text": "<h1>Privacy Policy</h1>"
+    },
+    {
+      "elem":"#privacy-policy",
+      "text":"<section id=\"privacy-policy\">\r\n<h2>Privacy Policy<\/h2>\r\n<section>\r\n<h3>1. Introduction<\/h3>\r\n<p>\r\nThis privacy policy stipulates how personal information is handled on websites owned by The Infinity's, such as <a href=\"https:\/\/the-infinitys.f5.si\/\"\r\n>https:\/\/the-infinitys.f5.si, https:\/\/the-infinitys.infinityon.com,\r\nhttps:\/\/the-infinitys.onrender.com<\/a\r\n> (hereinafter referred to as \"this site\"). Users of this site (hereinafter referred to as \"users\") must fully understand the contents of this privacy policy before using this site.\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>2. How to obtain personal information<\/h3>\r\n<p>\r\nThis site obtains the following personal information from users through the <a href=\"..\/contact\/\"\r\n>contact page using Google Form<\/a\r\n>.\r\n<\/p>\r\n<ul>\r\n<li>Email address<\/li>\r\n<li>User name for SNS, etc.<\/li>\r\n<\/ul>\r\n<\/section>\r\n<section>\r\n<h3>3. Purpose of use of personal information<\/h3>\r\n<p>Personal information acquired on this site will be used for the following purposes. <\/p>\r\n<ul>\r\n<li>Replying to questions received from users<\/li>\r\n<li>Requests for review of web pages<\/li>\r\n<\/ul>\r\n<\/section>\r\n<section>\r\n<h3>4. Provision of personal information to third parties<\/h3>\r\n<p>This site will not provide acquired personal information to third parties. <\/p>\r\n<\/section>\r\n<section>\r\n<h3>5. Scope of responsibility<\/h3>\r\n<p>\r\n<strong>\r\n<u>This site bears no responsibility whatsoever to users of this site. <\/u>\r\n<\/strong>\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>6. Changes to the Privacy Policy<\/h3>\r\n<p>\r\nThis website may change this privacy policy without notice. The changed privacy policy will take effect when it is posted on this website.\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>7. Contact us<\/h3>\r\n<p>\r\nFor inquiries regarding this privacy policy, please contact us at the following URL.\r\n<\/p>\r\n<p>\r\n<a href=\"..\/contact\/\"> The Infinity's contact <\/a>\r\n<\/p>\r\n<\/section>\r\n<section>\r\n<h3>Date of enactment: June 21, 2024<\/h3>\r\n<h3>Date of revision: June 21, 2024<\/h3>\r\n<\/section>\r\n<\/section>"
     }
   ]
 }
