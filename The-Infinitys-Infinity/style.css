@@ -2,8 +2,6 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: sans-selif;
-  font-weight: 400;
 }
 
 :root {
@@ -78,6 +76,8 @@
 body {
   overflow-x: hidden;
   padding-top: 10vh;
+  font-family: sans-selif;
+  font-weight: 400;
   color: var(--text);
   background-color: var(--background);
 }
@@ -296,6 +296,7 @@ section.Title {
   padding-bottom:10vh;
   box-sizing:border-box;
   text-align: center;
+  font-family: selif;
   font-size: 7vw;
   background-color: transparent;
   color: var(--text);
