@@ -76,7 +76,7 @@
 body {
   overflow-x: hidden;
   padding-top: 10vh;
-  font-family: "helvetica neue", arial, sans-serif;
+  font-family: "noto sans", "helvetica neue", arial, sans-serif;
   font-weight: 400;
   color: var(--text);
   background-color: var(--background);
@@ -113,7 +113,7 @@ header h1 {
   position: absolute;
   top: 0;
   left: 12vw;
-  font-family: selif;
+  font-family: "noto selif", selif;
   font-size: 7vh;
 }
 
@@ -297,7 +297,7 @@ section.Title {
   padding-bottom:10vh;
   box-sizing:border-box;
   text-align: center;
-  font-family: selif;
+  font-family: "noto selif", selif;
   font-size: 7vw;
   background-color: transparent;
   color: var(--text);
