@@ -58,7 +58,6 @@ const load_articles = () => {
     const next_year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString();
     document.querySelector("#load-more div p").innerHTML = next_year_and_month;
   }
-  search_articles();
 }
 load_articles();
 //検索機能
