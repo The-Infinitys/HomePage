@@ -76,7 +76,7 @@
 body {
   overflow-x: hidden;
   padding-top: 10vh;
-  font-family: "noto sans", "helvetica neue", arial, sans-serif;
+  font-family: "roboto", "noto sans", "helvetica neue", arial, sans-serif;
   font-weight: 400;
   color: var(--text);
   background-color: var(--background);
