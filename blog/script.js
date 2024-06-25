@@ -56,8 +56,9 @@ const load_articles = () => {
     }
     load_count--;
     const next_year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString();
-    document.querySelector("#load-more div p").innerHTML=next_year_and_month;
+    document.querySelector("#load-more div p").innerHTML = next_year_and_month;
   }
+  search_articles();
 }
 load_articles();
 //検索機能
@@ -82,6 +83,9 @@ const search_articles = () => {
         blog_button.style.display = "none";
       }
     }
+  }
+  if (load_count > 0) {
+    load_more_button.style.display = "";
   }
   return search_query;
 }
