@@ -16,9 +16,8 @@ const main = () => {
     language=params.get("lang");
   }
   const location=new URL(window.location.href);
-  const data_path="https://"+location.hostname+location.pathname+"/language.json"
   
-  fetch(data_path)
+  fetch("./language.json")
     .then(res => res.json())
     .then(data => translate_Infinitys(language, data))
     .catch(err => alert("Translation programs was failed. Please reload the page. path: "+data_path+" error: "+err))
