@@ -46,7 +46,7 @@ const getData = (name) => {
 let load_count = data_list_length;
 const load_articles = () => {
   if (load_count > 0) {
-    const year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString();
+    const year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString().padStart(2,"0");
     const pathname = "/article-" + blog_start.year.toString() + "/index/" + year_and_month;
     getData(pathname);
     if (load_count <= 1) {
@@ -55,8 +55,8 @@ const load_articles = () => {
       load_more_button.classList.remove("show-blog-button");
     }
     load_count--;
-    const next_year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "-" + ((blog_start.month + load_count - 2) % 12 + 1).toString();
-    document.querySelector("#load-more div p").innerHTML = next_year_and_month;
+    const next_year_and_month = (blog_start.year + ~~((blog_start.month + load_count - 1) / 12)).toString() + "/" + ((blog_start.month + load_count - 2) % 12 + 1).toString().padStart(2,"0");
+    document.querySelector("#load-more div p").innerHTML = "next: "+next_year_and_month;
   }
 }
 load_articles();
