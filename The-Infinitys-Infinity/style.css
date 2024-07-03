@@ -39,7 +39,7 @@
   left: 0;
   z-index: -1000;
   object-fit: fill;
-  animation: show 5s linear 1, rainbow-back-animate 10s linear infinite;
+  animation: show 3s linear 1, rainbow-back-animate 10s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -324,7 +324,7 @@ function hamburger_menu() {
     menu.style.opacity = "0";
   }
 }
-const generate_honeycomb = (mode = "honeycomb") => {
+const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
   const root3 = 1.7320508;
   const RainbowHoneycomb = document.createElement("canvas");
@@ -346,8 +346,10 @@ const generate_honeycomb = (mode = "honeycomb") => {
   const rainbow_svg = document.createElement("div");
   rainbow_svg.id = "rainbow-back";
   document.body.appendChild(rainbow_svg);
+  console.log("draw-mode: " + mode);
   const honeycomb = (x, y, r, color, mode) => {
     if (mode == "honeycomb") {
+      draw.globalCompositeOperation = "source-over";
       draw.fillStyle = color;
       draw.beginPath();
       draw.moveTo(x, y - r);
@@ -358,7 +360,7 @@ const generate_honeycomb = (mode = "honeycomb") => {
       draw.lineTo(x - (root3 / 2) * r, y - r / 2);
       draw.fill();
     } else if (mode == "jp-spirit") {
-      draw.strokeStyle = "#fff0";
+      draw.strokeStyle = color;
       draw.lineWidth = 1;
       draw.globalCompositeOperation = "destination-out";
       draw.beginPath();
@@ -367,7 +369,7 @@ const generate_honeycomb = (mode = "honeycomb") => {
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
     } else {
-      alert("The Infinity's Infinity style: invalid back code error")
+      alert("The Infinity's Infinity style: invalid back code error");
     }
   };
   const radius = 50;
@@ -444,7 +446,7 @@ const generate_honeycomb = (mode = "honeycomb") => {
   // };
   const drawhoneycomb = (color) => {
     draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
-    if ((mode = "jp-spirit")) {
+    if (mode == "jp-spirit") {
       draw.fillStyle = color;
       draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
     }
@@ -560,12 +562,12 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 0.1) {
+  if (Math.random() < 1 / 3) {
     generate_style();
-  } else if (Math.random() < 0.5) {
-    generate_honeycomb((mode = "honeycomb"));
+  } else if (Math.random() < 1 / 2) {
+    generate_pattern((mode = "honeycomb"));
   } else {
-    generate_honeycomb((mode = "jp-spirit"));
+    generate_pattern((mode = "jp-spirit"));
   }
 };
 The_Infinitys_main();
