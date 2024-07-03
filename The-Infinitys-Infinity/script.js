@@ -324,7 +324,7 @@ function hamburger_menu() {
     menu.style.opacity = "0";
   }
 }
-const generate_honeycomb = () => {
+const generate_honeycomb = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
   const root3 = 1.7320508;
   const RainbowHoneycomb = document.createElement("canvas");
@@ -346,16 +346,27 @@ const generate_honeycomb = () => {
   const rainbow_svg = document.createElement("div");
   rainbow_svg.id = "rainbow-back";
   document.body.appendChild(rainbow_svg);
-  const honeycomb = (x, y, r, color) => {
-    draw.fillStyle = color;
-    draw.beginPath();
-    draw.moveTo(x, y - r);
-    draw.lineTo(x + (root3 / 2) * r, y - r / 2);
-    draw.lineTo(x + (root3 / 2) * r, y + r / 2);
-    draw.lineTo(x, y + r);
-    draw.lineTo(x - (root3 / 2) * r, y + r / 2);
-    draw.lineTo(x - (root3 / 2) * r, y - r / 2);
-    draw.fill();
+  const honeycomb = (x, y, r, color, mode) => {
+    if (mode == "honeycomb") {
+      draw.fillStyle = color;
+      draw.beginPath();
+      draw.moveTo(x, y - r);
+      draw.lineTo(x + (root3 / 2) * r, y - r / 2);
+      draw.lineTo(x + (root3 / 2) * r, y + r / 2);
+      draw.lineTo(x, y + r);
+      draw.lineTo(x - (root3 / 2) * r, y + r / 2);
+      draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+      draw.fill();
+    } else {
+      draw.strokeStyle = "#ff0";
+      draw.lineWidth = 1;
+      draw.globalCompositeOperation = "destination-out";
+      draw.beginPath();
+      draw.arc(x, y, r, 0, 2 * Math.PI, true);
+      draw.closePath();
+      draw.stroke();
+      draw.globalCompositeOperation = "source-over";
+    }
   };
   const radius = 50;
   const radius_percent = 1.12;
@@ -431,6 +442,10 @@ const generate_honeycomb = () => {
   // };
   const drawhoneycomb = (color) => {
     draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
+    if ((mode = "jp-spirit")) {
+      draw.fillStyle = color;
+      draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
+    }
     for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
       for (
         let j = 0;
@@ -441,7 +456,8 @@ const generate_honeycomb = () => {
           radius * 2 * i + (j % 2) * radius,
           ((radius * 2 * root3) / 2) * j,
           radius * radius_percent,
-          color
+          color,
+          mode
         );
       }
     }
@@ -542,10 +558,12 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 0) {
+  if (Math.random() < 0.1) {
     generate_style();
+  } else if (Math.random() < 0.5) {
+    generate_honeycomb((mode = "honeycomb"));
   } else {
-    generate_honeycomb();
+    generate_honeycomb((mode = "jp-spirit"));
   }
 };
 The_Infinitys_main();
