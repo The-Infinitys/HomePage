@@ -357,8 +357,8 @@ const generate_honeycomb = (mode = "honeycomb") => {
       draw.lineTo(x - (root3 / 2) * r, y + r / 2);
       draw.lineTo(x - (root3 / 2) * r, y - r / 2);
       draw.fill();
-    } else {
-      draw.strokeStyle = "#ff0";
+    } else if (mode == "jp-spirit") {
+      draw.strokeStyle = "#fff0";
       draw.lineWidth = 1;
       draw.globalCompositeOperation = "destination-out";
       draw.beginPath();
@@ -366,6 +366,8 @@ const generate_honeycomb = (mode = "honeycomb") => {
       draw.closePath();
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
+    } else {
+      alert("The Infinity's Infinity style: invalid back code error")
     }
   };
   const radius = 50;
