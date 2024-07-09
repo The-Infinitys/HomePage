@@ -14,7 +14,7 @@ const domain = new URL(window.location.href);
 const blog_domain = domain.hostname;
 const load_more_button = document.querySelector("#load-more");
 const getData = (name) => {
-  fetch("https://" + blog_domain + name + ".json")
+  fetch(name + ".json")
     .then((res) => res.json())
     .then((apiData) => {
       const infos = apiData.info;
@@ -23,10 +23,10 @@ const getData = (name) => {
         const box = document.createElement("button");
         box.className = "blog-button show-blog-button";
         box.onclick = () => {
-          window.location.href = "https://" + blog_domain + info.index;
+          window.location.href = info.index;
         }
         const thumbnail = document.createElement("img");
-        thumbnail.src = "https://" + blog_domain + info.thumbnail;
+        thumbnail.src = info.thumbnail;
         thumbnail.alt = info.name;
         thumbnail.loading = "lazy";
         const loading = document.createElement("img");
