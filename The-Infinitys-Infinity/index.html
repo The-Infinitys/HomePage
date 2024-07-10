@@ -12,8 +12,16 @@
     <section class="Title">
       <h1>The Infinity's</h1>
       <style>
+        .Title {
+          max-height: 90vh;
+          box-sizing: border-box;
+          padding: 0;
+        }
+        .Title > h1 {
+          font-size: min(10vw,10vh);
+        }
         #logo {
-          width: 40vw;
+          width: min(100vw,70vh);
           aspect-ratio: 1;
         }
       </style>
