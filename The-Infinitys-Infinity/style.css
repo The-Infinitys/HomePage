@@ -113,7 +113,7 @@ header h1 {
   position: absolute;
   top: 0;
   left: 12vw;
-  font-family: "noto serif", selif;
+  font-family: "noto serif", serif;
   font-weight:400;
   font-size: 7vh;
 }
@@ -298,7 +298,7 @@ section.Title {
   padding-bottom:10vh;
   box-sizing:border-box;
   text-align: center;
-  font-family: "noto selif", selif;
+  font-family: "noto serif", serif;
   font-size: 7vw;
   background-color: transparent;
   color: var(--text);
