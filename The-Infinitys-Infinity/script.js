@@ -368,6 +368,17 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.closePath();
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
+    } else if (mode == "triangle") {
+      draw.strokeStyle = color;
+      draw.lineWidth = 1;
+      draw.globalCompositeOperation = "destination-out";
+      draw.beginPath();
+      draw.lineTo(x + (root3 / 2) * r, y - r / 2);
+      draw.lineTo(x, y + r);
+      draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+      draw.closePath();
+      draw.stroke();
+      draw.globalCompositeOperation = "source-over";
     } else {
       alert("The Infinity's Infinity style: invalid back code error");
     }
@@ -446,7 +457,7 @@ const generate_pattern = (mode = "honeycomb") => {
   // };
   const drawhoneycomb = (color) => {
     draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
-    if (mode == "jp-spirit") {
+    if (mode == "jp-spirit" || mode == "triangle") {
       draw.fillStyle = color;
       draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
     }
@@ -562,7 +573,9 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 1 / 3) {
+  if (Math.random() < 1 / 4) {
+    generate_pattern((mode = "triangle"));
+  } else if (Math.random() < 1 / 3) {
     generate_style();
   } else if (Math.random() < 1 / 2) {
     generate_pattern((mode = "honeycomb"));
