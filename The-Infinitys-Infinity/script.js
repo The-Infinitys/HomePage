@@ -327,9 +327,9 @@ function hamburger_menu() {
 const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
   const root3 = 1.7320508;
-  const RainbowHoneycomb = document.createElement("canvas");
-  RainbowHoneycomb.id = "RainbowHoneycomb";
-  RainbowHoneycomb.style = `
+  const Rainbowpattern = document.createElement("canvas");
+  Rainbowpattern.id = "Rainbowpattern";
+  Rainbowpattern.style = `
     position:fixed;
     width:100vw;
     height:100vh;
@@ -341,14 +341,14 @@ const generate_pattern = (mode = "honeycomb") => {
     animation-timing-function: linear;
     animation-iteration-count: initial;
   `;
-  document.body.appendChild(RainbowHoneycomb);
-  const draw = RainbowHoneycomb.getContext("2d");
+  document.body.appendChild(Rainbowpattern);
+  const draw = Rainbowpattern.getContext("2d");
   const rainbow_svg = document.createElement("div");
   rainbow_svg.id = "rainbow-back";
   document.body.appendChild(rainbow_svg);
   console.log("draw-mode: " + mode);
-  const honeycomb = (x, y, r, color, mode) => {
-    if (mode == "honeycomb") {
+  const pattern = (x, y, r, color, mode) => {
+    if (mode.startsWith("honeycomb")) {
       draw.globalCompositeOperation = "source-over";
       draw.fillStyle = color;
       draw.beginPath();
@@ -359,7 +359,7 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.lineTo(x - (root3 / 2) * r, y + r / 2);
       draw.lineTo(x - (root3 / 2) * r, y - r / 2);
       draw.fill();
-    } else if (mode == "jp-spirit") {
+    } else if (mode.startsWith("jp-spirit")) {
       draw.strokeStyle = color;
       draw.lineWidth = 1;
       draw.globalCompositeOperation = "destination-out";
@@ -368,7 +368,7 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.closePath();
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
-    } else if (mode == "triangle") {
+    } else if (mode.startsWith("triangle")) {
       draw.strokeStyle = color;
       draw.lineWidth = 1;
       draw.globalCompositeOperation = "destination-out";
@@ -376,6 +376,27 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.lineTo(x + (root3 / 2) * r, y - r / 2);
       draw.lineTo(x, y + r);
       draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+      draw.closePath();
+      draw.stroke();
+      draw.globalCompositeOperation = "source-over";
+    } else if (mode.startsWith("isosceles-trapezoid")) {
+      draw.strokeStyle = color;
+      draw.lineWidth = 1;
+      draw.globalCompositeOperation = "destination-out";
+      draw.beginPath();
+      const trapizoid_width = r * 1.18;
+      const trapizoid_height = r * 1.55;
+      if (mode.endsWith(".0")) {
+        draw.moveTo(x + trapizoid_width / 2, y + trapizoid_height / 2);
+        draw.lineTo(x + trapizoid_width, y - trapizoid_height / 2);
+        draw.lineTo(x - trapizoid_width, y - trapizoid_height / 2);
+        draw.lineTo(x - trapizoid_width / 2, y + trapizoid_height / 2);
+      } else {
+        draw.moveTo(x + trapizoid_width, y + trapizoid_height / 2);
+        draw.lineTo(x + trapizoid_width / 2, y - trapizoid_height / 2);
+        draw.lineTo(x - trapizoid_width / 2, y - trapizoid_height / 2);
+        draw.lineTo(x - trapizoid_width, y + trapizoid_height / 2);
+      }
       draw.closePath();
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
@@ -455,40 +476,40 @@ const generate_pattern = (mode = "honeycomb") => {
   //   }
   //   return "rgb(" + result.red + "," + result.green + "," + result.blue + ")";
   // };
-  const drawhoneycomb = (color) => {
-    draw.clearRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
-    if (mode == "jp-spirit" || mode == "triangle") {
+  const drawpattern = (color) => {
+    draw.clearRect(0, 0, Rainbowpattern.width, Rainbowpattern.height);
+    if (
+      mode == "jp-spirit" ||
+      mode == "triangle" ||
+      mode == "isosceles-trapezoid"
+    ) {
       draw.fillStyle = color;
-      draw.fillRect(0, 0, RainbowHoneycomb.width, RainbowHoneycomb.height);
+      draw.fillRect(0, 0, Rainbowpattern.width, Rainbowpattern.height);
     }
-    for (let i = 0; i < Math.round(RainbowHoneycomb.width / radius) + 2; ++i) {
-      for (
-        let j = 0;
-        j < Math.round(RainbowHoneycomb.height / radius) + 2;
-        ++j
-      ) {
-        honeycomb(
+    for (let i = 0; i < Math.round(Rainbowpattern.width / radius) + 2; ++i) {
+      for (let j = 0; j < Math.round(Rainbowpattern.height / radius) + 2; ++j) {
+        pattern(
           radius * 2 * i + (j % 2) * radius,
           ((radius * 2 * root3) / 2) * j,
           radius * radius_percent,
           color,
-          mode
+          mode + "." + (i % 2).toString()
         );
       }
     }
   };
 
-  const renewHoneycombCanvas = () => {
-    RainbowHoneycomb.width = window.innerWidth * window.devicePixelRatio;
-    RainbowHoneycomb.height = window.innerHeight * window.devicePixelRatio;
+  const renewpatternCanvas = () => {
+    Rainbowpattern.width = window.innerWidth * window.devicePixelRatio;
+    Rainbowpattern.height = window.innerHeight * window.devicePixelRatio;
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      drawhoneycomb("#000");
+      drawpattern("#000");
     } else {
-      drawhoneycomb("#fff");
+      drawpattern("#fff");
     }
   };
-  renewHoneycombCanvas();
-  window.onresize = renewHoneycombCanvas;
+  renewpatternCanvas();
+  window.onresize = renewpatternCanvas;
   const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
   // 最初の判定
   if (mediaQueryList.matches) {
@@ -497,15 +518,15 @@ const generate_pattern = (mode = "honeycomb") => {
     console.log("light-mode is enabled");
   }
   // メディアクエリの変化を監視するリスナー関数を定義
-  const listener_honeycomb = function (event) {
+  const listener_pattern = function (event) {
     if (event.matches) {
       console.log("swaped to dark-mode");
     } else {
       console.log("swaped to light-mode");
     }
-    renewHoneycombCanvas();
+    renewpatternCanvas();
   };
-  mediaQueryList.addEventListener("change", listener_honeycomb);
+  mediaQueryList.addEventListener("change", listener_pattern);
 };
 const generate_style = () => {
   const dark_back = document.createElement("img");
@@ -573,14 +594,17 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  if (Math.random() < 1 / 4) {
-    generate_pattern((mode = "triangle"));
-  } else if (Math.random() < 1 / 3) {
+
+  if (Math.random() < 1 / 5) {
     generate_style();
-  } else if (Math.random() < 1 / 2) {
+  } else if (Math.random() < 1 / 4) {
     generate_pattern((mode = "honeycomb"));
-  } else {
+  } else if (Math.random() < 1 / 3) {
     generate_pattern((mode = "jp-spirit"));
+  } else if (Math.random() < 1 / 2) {
+    generate_pattern((mode = "triangle"));
+  } else {
+    generate_pattern((mode = "isosceles-trapezoid"));
   }
 };
 The_Infinitys_main();
