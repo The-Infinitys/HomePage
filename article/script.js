@@ -43,9 +43,7 @@ const recommendArticles = async () => {
         "../article-" +
         year_count.toString() +
         "/" +
-        (1 + ((12- month_count) % 12))
-          .toString()
-          .padStart(2, "0") +
+        (1 + ((12 - month_count) % 12)).toString().padStart(2, "0") +
         "/articles.json";
       await fetch(list_path)
         .then((res) => res.json())
@@ -61,3 +59,42 @@ const recommendArticles = async () => {
   }
 };
 recommendArticles();
+
+const searchArticles = (query) => {
+  const article_list = document.querySelector(".article-list-main");
+  const word_search = () => {
+    const words = query.toLowerCase().replace("　", " ").split(" ");
+    for (let i = 0; i < article_list.children.length; i++) {
+      const button = article_list.children[i];
+      const title = button.children[2].children[0].innerHTML.toLowerCase();
+      let contains = true;
+      words.forEach((word) => {
+        if (!title.includes(word)) {
+          contains = false;
+        }
+      });
+      if (contains) {
+        button.style.display = "";
+      } else {
+        button.style.display = "none";
+      }
+    }
+  };
+  const date_search = () => {
+    const date = query;
+    for (let i = 0; i < article_list.children.length; i++) {
+      const button = article_list.children[i];
+      const button_date = button.children[2].children[1].innerHTML;
+      if (button_date.startsWith(date)) {
+        button.style.display = "";
+      } else {
+        button.style.display = "none";
+      }
+    }
+  };
+  if (query.startsWith("date: ")) {
+    date_search();
+  } else {
+    word_search();
+  }
+};

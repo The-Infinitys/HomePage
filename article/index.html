@@ -26,13 +26,30 @@
 
 <body>
   <section class="Title">
+    <style>
+      .Title>h1 {
+        font-size: 7vw;
+      }
+    </style>
     <h1>The Infinity's Article!</h1>
   </section>
   <section class="description">
     <p>The Infinity'sが書いた記事を見ることができます!</p>
+    <h2>検索機能について</h2>
+    <p>検索クエリから、記事を検索することが出来ます！</p>
+    <p>検索窓に、"date: "で始まるように入力することで、日付検索が出来ます！</p>
+    <h3>例</h3>
+    <h4>2024年6月の記事を表示する場合</h4>
+    <p>date: 2024/06</p>
+    <h4>Scratchの記事を見る場合</h4>
+    <p>scratch</p>
   </section>
   <section class="article-list">
     <h1>The Infinity's Article List</h1>
+    <div class="search-query">
+      <img onclick="searchArticles(this.value)" src="../image/Infinity-search.svg" alt="" />
+      <input id="search" type="text" onchange="searchArticles(this.value)" />
+    </div>
     <div class="article-list-main">
     </div>
   </section>

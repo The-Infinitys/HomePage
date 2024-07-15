@@ -14,6 +14,25 @@
   }
 }
 
+.search-query {
+  width: 100%;
+  height: 7vh;
+  padding: 0;
+}
+
+.search-query>img {
+  width: 5vh;
+}
+
+.search-query>input {
+  height: 5vh;
+  font-size: 4vh;
+  background-color: var(--infinityspirit-back);
+  color: var(--infinityspirit-text);
+  border: 1px solid var(--infinityspirit-text);
+  border-radius: 2px;
+}
+
 .article-list-main {
   line-height: 2;
   display: flex;
