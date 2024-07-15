@@ -16,6 +16,7 @@ const recommendArticles = async () => {
       window.location.href = article_root_path;
     };
     const thumbnail = new Image();
+    thumbnail.alt = article_info.id;
     if (article_info.thumbnail == "") {
       thumbnail.src = "../image/loading-infinity.svg";
     } else {
@@ -23,6 +24,7 @@ const recommendArticles = async () => {
     }
     const loading = new Image();
     loading.src = "../image/loading-infinity.svg";
+    loading.alt = "";
     const title = document.createElement("div");
     title.innerHTML =
       "<h1>" + article_info.title + "</h1><p>date: " + article_info.date;

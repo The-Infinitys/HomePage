@@ -16,17 +16,20 @@
 
 .search-query {
   width: 100%;
-  height: 7vh;
+  height: max(24px, 7vh);
   padding: 0;
+  display: flex;
+  margin-bottom: 5vh;
 }
 
-.search-query>img {
-  width: 5vh;
+.search-query img {
+  width: max(24px, 7vh);
 }
 
-.search-query>input {
-  height: 5vh;
-  font-size: 4vh;
+.search-query>label>input {
+  width: min(50vh, 70vw);
+  height: max(24px, 7vh);
+  font-size: max(24px, 7vh);
   background-color: var(--infinityspirit-back);
   color: var(--infinityspirit-text);
   border: 1px solid var(--infinityspirit-text);
