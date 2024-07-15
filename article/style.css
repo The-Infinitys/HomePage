@@ -89,7 +89,7 @@
 }
 
 
-@media (max-aspect-ratio:4/3) {
+@media (max-aspect-ratio:2/3) {
   .article-list-main>button {
     --this-width: 100%;
   }
@@ -100,7 +100,7 @@
   }
 }
 
-@media (min-aspect-ratio:16/9) {
+@media (min-aspect-ratio:4/3) {
   .article-list-main>button {
     --this-width: 25%;
   }
