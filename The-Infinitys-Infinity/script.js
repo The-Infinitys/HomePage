@@ -119,7 +119,7 @@ const init_footer = function () {
     <div>
       <div>
         <p><a href="/contact/">Contact to The Infinity's</a></p>
-        <p><a href="/blog/">Watch The Infinity's Blog</a></p>
+        <p><a href="/article/">Watch The Infinity's Article</a></p>
         <p><a href="https://scratch.mit.edu/users/The_Infinitys/">Go to Scratch profile</a></p>
         <p><a href="https://github.com/The_Infinitys/">Go to GitHub profile</a></p>
       </div>
