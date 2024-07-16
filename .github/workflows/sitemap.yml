@@ -1,0 +1,11 @@
+run-name: ${{ github.actor }} site map
+on: [push]
+permissions:
+  contents: write
+  repository-projects: write
+jobs:
+  run-InfinitySpirit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python ./SEO/sitemap.py
