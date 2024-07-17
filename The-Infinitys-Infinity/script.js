@@ -326,7 +326,6 @@ function hamburger_menu() {
 }
 const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
-  const root3 = 1.7320508;
   const Rainbowpattern = document.createElement("canvas");
   Rainbowpattern.id = "Rainbowpattern";
   Rainbowpattern.style = `
@@ -353,11 +352,11 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.fillStyle = color;
       draw.beginPath();
       draw.moveTo(x, y - r);
-      draw.lineTo(x + (root3 / 2) * r, y - r / 2);
-      draw.lineTo(x + (root3 / 2) * r, y + r / 2);
+      draw.lineTo(x + (3 ** 0.5 / 2) * r, y - r / 2);
+      draw.lineTo(x + (3 ** 0.5 / 2) * r, y + r / 2);
       draw.lineTo(x, y + r);
-      draw.lineTo(x - (root3 / 2) * r, y + r / 2);
-      draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+      draw.lineTo(x - (3 ** 0.5 / 2) * r, y + r / 2);
+      draw.lineTo(x - (3 ** 0.5 / 2) * r, y - r / 2);
       draw.fill();
     } else if (mode.startsWith("jp-spirit")) {
       draw.strokeStyle = color;
@@ -373,9 +372,9 @@ const generate_pattern = (mode = "honeycomb") => {
       draw.lineWidth = 1;
       draw.globalCompositeOperation = "destination-out";
       draw.beginPath();
-      draw.lineTo(x + (root3 / 2) * r, y - r / 2);
+      draw.lineTo(x + (3 ** 0.5 / 2) * r, y - r / 2);
       draw.lineTo(x, y + r);
-      draw.lineTo(x - (root3 / 2) * r, y - r / 2);
+      draw.lineTo(x - (3 ** 0.5 / 2) * r, y - r / 2);
       draw.closePath();
       draw.stroke();
       draw.globalCompositeOperation = "source-over";
@@ -490,7 +489,7 @@ const generate_pattern = (mode = "honeycomb") => {
       for (let j = 0; j < Math.round(Rainbowpattern.height / radius) + 2; ++j) {
         pattern(
           radius * 2 * i + (j % 2) * radius,
-          ((radius * 2 * root3) / 2) * j,
+          ((radius * 2 * 3 ** 0.5) / 2) * j,
           radius * radius_percent,
           color,
           mode + "." + (i % 2).toString()
