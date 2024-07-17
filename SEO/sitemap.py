@@ -1,4 +1,3 @@
-import sys
 import os
 
 repos = ["article-2024", "Scratch"]
@@ -64,7 +63,16 @@ for index in indexes:
         .replace(">", "&gt;")
         .replace("<", "&lt;")
     )  # escaper
-    sitemap_content += 4 * " " + "<url>\n"+8 * " " + "<loc>" + index + "</loc>\n" + 4 * " " + "</url>\n"
+    sitemap_content += (
+        4 * " "
+        + "<url>\n"
+        + 8 * " "
+        + "<loc>"
+        + index
+        + "</loc>\n"
+        + 4 * " "
+        + "</url>\n"
+    )
 sitemap_content += "</urlset>"
 with open("./sitemap.xml", mode="w") as f:
     f.write(sitemap_content)
