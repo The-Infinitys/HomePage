@@ -5,21 +5,21 @@ for repo in repos:
     os.system("git clone https://github.com/The-Infinitys/" + repo + ".git")
 
 
-def folders(dir_path) -> list:
+def folders(dir_path) -> list[str]:
     result = [
         f for f in os.listdir(dir_path) if os.path.isdir(os.path.join(dir_path, f))
     ]
     return result
 
 
-def files(dir_path) -> list:
+def files(dir_path) -> list[str]:
     result = [
         f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))
     ]
     return result
 
 
-def all_files(dir_path, hide_file=False) -> list:
+def all_files(dir_path, hide_file=False) -> list[str]:
     result = []
     for file in files(dir_path):
         if not file.startswith(".") or hide_file:
