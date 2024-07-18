@@ -21,7 +21,7 @@
         `;
     canvas.width = 4096;
     canvas.height = 4096;
-    document.body.appendChild(canvas);
+    document.body.append(canvas);
     const graphics = canvas.getContext("2d");
     var hsvToRgb16 = function (hue, saturation, value) {
       var result = false;
@@ -124,7 +124,7 @@
       const log = document.createElement("p");
       log.innerHTML = data;
       log.style = "color:blue;";
-      document.body.appendChild(log);
+      document.body.append(log);
     }
     function The_Infinitys() {
       graphics.clearRect(0, 0, canvas.width, canvas.height)
@@ -161,7 +161,7 @@
     The_Infinitys();
     const image = document.createElement("img");
     image.src = canvas.toDataURL();
-    document.body.appendChild(image)
+    document.body.append(image)
   </script>
 </body>
 
