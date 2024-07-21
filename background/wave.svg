@@ -7,7 +7,7 @@
 >
   <g
     data-paper-data='{"isPaintingLayer":true}'
-    fill="#9966ff"
+    fill="#000000"
     fill-rule="nonzero"
     stroke="#000000"
     stroke-width="0"
@@ -18,16 +18,21 @@
     stroke-dashoffset="0"
     style="mix-blend-mode: normal"
   >
-    <animateTransform
-      attributeName="transform"
-      attributeType="XML"
-      type="translate"
-      values="-480 0;0 50;480 360;-400 480;-480 0"
-      keyTimes="0;0.4;0.9;0.95;1"
-      dur="10s"
-      repeatCount="indefinite"
-    />
     <g>
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="translate"
+        values="-480 0;0 50;480 360;-400 480;-480 0"
+        keyTimes="0;0.4;0.9;0.95;1"
+        dur="10s"
+        repeatCount="indefinite"
+      />
+      <animate attributeType="XML"
+        attributeName="fill"
+        values="#f00;#ff0;#0f0;#0ff;#00f;#f0f;#f00;"
+        dur="5s"
+        repeatCount="indefinite"/>
       <path
         d="M60,360c0,0 13.65027,-149.12916 40.85894,-208.98217c69.85527,-153.66601 115.14106,-151.01783 115.14106,-151.01783c0,0 -17.96573,23.23695 -19.79578,50.94863c-4.97966,75.40482 223.79578,309.05138 223.79578,309.05138z"
       />
