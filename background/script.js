@@ -459,6 +459,7 @@ const generate_style = (mode = "monochrome") => {
           drop();
         }, 2000);
       };
+      drop();
       break;
     default:
       break;
