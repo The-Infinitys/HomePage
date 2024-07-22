@@ -451,6 +451,7 @@ const generate_style = (mode = "monochrome") => {
           height:10vmin;
           z-index:-1000;
         `;
+        wave.style.fill="hsl("+Math.random().toString()+"turn 100% 50%);"
         wave.style.top = (100 * Math.random()).toString() + "vh";
         wave.style.left = (100 * Math.random()).toString() + "vw";
         document.body.append(wave);
