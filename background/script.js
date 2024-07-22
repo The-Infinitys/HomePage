@@ -452,7 +452,7 @@ const generate_style = (mode = "monochrome") => {
         left:0;
         z-index:-1000;
       `;
-      document.body.append(wave_back);
+      // document.body.append(wave_back);
       break;
     default:
       break;
