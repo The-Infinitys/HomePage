@@ -1,0 +1,67 @@
+<svg
+  viewBox="0 0 100 100"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <defs>
+    <style>
+      .drop{
+        fill:#000;
+        stroke:none;
+        fill-opacity: 0;
+      }
+      .wave{
+        fill:none;
+        stroke:#000;
+        stroke-width: 0;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle cx="50" cy="50" r="40" class="drop">
+      <animate
+        attributeType="XML"
+        attributeName="r"
+        calcMode="spline"
+        values="40; 0; 0"
+        keyTimes="0.0; 0.5; 1.0"
+        keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+        dur="2s"
+        repeatCount="1"
+      />
+      <animate
+        attributeType="XML"
+        attributeName="fill-opacity"
+        calcMode="spline"
+        values="0; 1; 0"
+        keyTimes="0.0; 0.5; 1.0"
+        keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+        dur="2s"
+        repeatCount="1"
+      />
+    </circle>
+    <circle cx="50" cy="50" r="40" class="wave">
+      <animate
+        attributeType="XML"
+        attributeName="r"
+        calcMode="spline"
+        values="0; 0; 40"
+        keyTimes="0.0; 0.5; 1.0"
+        keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+        dur="2s"
+        repeatCount="1"
+      />
+      <animate
+        attributeType="XML"
+        attributeName="stroke-width"
+        calcMode="spline"
+        values="0; 5; 0"
+        keyTimes="0.0; 0.5; 1.0"
+        keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+        dur="2s"
+        repeatCount="1"
+      />
+    </circle>
+  </g>
+</svg>
