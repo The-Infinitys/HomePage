@@ -458,8 +458,7 @@ const generate_style = (mode = "monochrome") => {
                   fill-opacity: 0;
                 }
                 .wave{
-                  fill:var(--color);
-                  stroke:#000;
+                  stroke:var(--color);
                   stroke-width: 0;
                 }
               </style>
@@ -527,7 +526,9 @@ const generate_style = (mode = "monochrome") => {
           drop();
         }, 2000);
       };
-      drop();
+      for (let drop_count = 0;drop_count<10;drop_count++){
+        drop();
+      }
       break;
     default:
       break;
