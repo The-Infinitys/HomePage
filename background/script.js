@@ -456,7 +456,7 @@ const generate_style = (mode = "monochrome") => {
         wave.style.left = (100 * Math.random()).toString() + "vw";
         document.body.append(wave);
         setTimeout(() => {
-          removeChild(wave);
+          wave.remove();
           drop();
         }, 2000);
       };
