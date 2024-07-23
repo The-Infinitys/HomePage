@@ -458,6 +458,7 @@ const generate_style = (mode = "monochrome") => {
                   fill-opacity: 0;
                 }
                 .wave{
+                  fill:none;
                   stroke:var(--color);
                   stroke-width: 0;
                 }
