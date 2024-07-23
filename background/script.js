@@ -513,10 +513,11 @@ const generate_style = (mode = "monochrome") => {
         `;
         wave.style = `
           position:fixed;
-          width:10vmin;
-          height:10vmin;
+          width:var(--size);
+          height:var(--size);
           z-index:-1000;
-          --color:`+"hsl("+Math.random().toString()+"turn 100% 50%);"+`
+          --color:` + "hsl(" + Math.random().toString() + `turn 100% 50%);
+          --size:` + (20 * (1 - 0.5 * Math.random())).toString() + `vmin;
         `;
         wave.style.top = (100 * Math.random()).toString() + "vh";
         wave.style.left = (100 * Math.random()).toString() + "vw";
