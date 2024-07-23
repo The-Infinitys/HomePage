@@ -511,13 +511,20 @@ const generate_style = (mode = "monochrome") => {
             </g>
           </svg>
         `;
-        wave.style = `
+        wave.style =
+          `
           position:fixed;
           width:var(--size);
           height:var(--size);
           z-index:-1000;
-          --color:` + "hsl(" + Math.random().toString() + `turn 100% 50%);
-          --size:` + (20 * (1 - 0.5 * Math.random())).toString() + `vmin;
+          transform:translate(-50%,-50%);
+          --color:` +
+          "hsl(" +
+          Math.random().toString() +
+          `turn 100% 50%);
+          --size:` +
+          (40 * (1 - 0.9 * Math.random())).toString() +
+          `vmin;
         `;
         wave.style.top = (100 * Math.random()).toString() + "vh";
         wave.style.left = (100 * Math.random()).toString() + "vw";
@@ -527,7 +534,7 @@ const generate_style = (mode = "monochrome") => {
           drop();
         }, 2000);
       };
-      for (let drop_count = 0;drop_count<10;drop_count++){
+      for (let drop_count = 0; drop_count < 10; drop_count++) {
         drop();
       }
       break;
@@ -551,17 +558,18 @@ const is_phone = () => {
 };
 
 const The_Infinitys_main = () => {
-  generate_style("wave");
-  // if (Math.random() < 1 / 5) {
-  //   generate_style((mode = "monochrome"));
-  // } else if (Math.random() < 1 / 4) {
-  //   generate_pattern((mode = "honeycomb"));
-  // } else if (Math.random() < 1 / 3) {
-  //   generate_pattern((mode = "jp-spirit"));
-  // } else if (Math.random() < 1 / 2) {
-  //   generate_pattern((mode = "triangle"));
-  // } else {
-  //   generate_pattern((mode = "isosceles-trapezoid"));
-  // }
+  if (Math.random() < 1 / 6) {
+    generate_style((mode = "wave"));
+  } else if (Math.random() < 1 / 5) {
+    generate_style((mode = "monochrome"));
+  } else if (Math.random() < 1 / 4) {
+    generate_pattern((mode = "honeycomb"));
+  } else if (Math.random() < 1 / 3) {
+    generate_pattern((mode = "jp-spirit"));
+  } else if (Math.random() < 1 / 2) {
+    generate_pattern((mode = "triangle"));
+  } else {
+    generate_pattern((mode = "isosceles-trapezoid"));
+  }
 };
 The_Infinitys_main();
