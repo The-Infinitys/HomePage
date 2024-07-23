@@ -442,15 +442,82 @@ const generate_style = (mode = "monochrome") => {
       break;
     case "wave":
       const drop = () => {
-        const wave = document.createElement("img");
-        wave.src = "data:image/svg+xml;base64,PHN2ZwogIHZpZXdCb3g9IjAgMCAxMDAgMTAwIgogIHZlcnNpb249IjEuMSIKICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmRyb3B7CiAgICAgICAgZmlsbDojMDAwOwogICAgICAgIHN0cm9rZTpub25lOwogICAgICAgIGZpbGwtb3BhY2l0eTogMDsKICAgICAgfQogICAgICAud2F2ZXsKICAgICAgICBmaWxsOm5vbmU7CiAgICAgICAgc3Ryb2tlOiMwMDA7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBjbGFzcz0iZHJvcCI+CiAgICAgIDxhbmltYXRlCiAgICAgICAgYXR0cmlidXRlVHlwZT0iWE1MIgogICAgICAgIGF0dHJpYnV0ZU5hbWU9InIiCiAgICAgICAgY2FsY01vZGU9InNwbGluZSIKICAgICAgICB2YWx1ZXM9IjQwOyAwOyAwIgogICAgICAgIGtleVRpbWVzPSIwLjA7IDAuNTsgMS4wIgogICAgICAgIGtleVNwbGluZXM9IjAuNSAwIDAuNSAxOyAwLjUgMCAwLjUgMSIKICAgICAgICBkdXI9IjJzIgogICAgICAgIHJlcGVhdENvdW50PSIxIgogICAgICAvPgogICAgICA8YW5pbWF0ZQogICAgICAgIGF0dHJpYnV0ZVR5cGU9IlhNTCIKICAgICAgICBhdHRyaWJ1dGVOYW1lPSJmaWxsLW9wYWNpdHkiCiAgICAgICAgY2FsY01vZGU9InNwbGluZSIKICAgICAgICB2YWx1ZXM9IjA7IDE7IDAiCiAgICAgICAga2V5VGltZXM9IjAuMDsgMC41OyAxLjAiCiAgICAgICAga2V5U3BsaW5lcz0iMC41IDAgMC41IDE7IDAuNSAwIDAuNSAxIgogICAgICAgIGR1cj0iMnMiCiAgICAgICAgcmVwZWF0Q291bnQ9IjEiCiAgICAgIC8+CiAgICA8L2NpcmNsZT4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBjbGFzcz0id2F2ZSI+CiAgICAgIDxhbmltYXRlCiAgICAgICAgYXR0cmlidXRlVHlwZT0iWE1MIgogICAgICAgIGF0dHJpYnV0ZU5hbWU9InIiCiAgICAgICAgY2FsY01vZGU9InNwbGluZSIKICAgICAgICB2YWx1ZXM9IjA7IDA7IDQwIgogICAgICAgIGtleVRpbWVzPSIwLjA7IDAuNTsgMS4wIgogICAgICAgIGtleVNwbGluZXM9IjAgMC41IDAuNSAxOzAgMC41IDAuNSAxIgogICAgICAgIGR1cj0iMnMiCiAgICAgICAgcmVwZWF0Q291bnQ9IjEiCiAgICAgIC8+CiAgICAgIDxhbmltYXRlCiAgICAgICAgYXR0cmlidXRlVHlwZT0iWE1MIgogICAgICAgIGF0dHJpYnV0ZU5hbWU9InN0cm9rZS13aWR0aCIKICAgICAgICBjYWxjTW9kZT0ic3BsaW5lIgogICAgICAgIHZhbHVlcz0iMDsgNTsgMCIKICAgICAgICBrZXlUaW1lcz0iMC4wOyAwLjU7IDEuMCIKICAgICAgICBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIKICAgICAgICBkdXI9IjJzIgogICAgICAgIHJlcGVhdENvdW50PSIxIgogICAgICAvPgogICAgPC9jaXJjbGU+CiAgPC9nPgo8L3N2Zz4K";
-        wave.alt = "";
+        const wave = document.createElement("div");
+        wave.innerHTML = `
+          <svg
+            viewBox="0 0 100 100"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <style>
+                .drop{
+                  fill:var(--color);
+                  stroke:none;
+                  fill-opacity: 0;
+                }
+                .wave{
+                  fill:var(--color);
+                  stroke:#000;
+                  stroke-width: 0;
+                }
+              </style>
+            </defs>
+            <g>
+              <circle cx="50" cy="50" r="40" class="drop">
+                <animate
+                  attributeType="XML"
+                  attributeName="r"
+                  calcMode="spline"
+                  values="40; 0; 0"
+                  keyTimes="0.0; 0.5; 1.0"
+                  keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+                  dur="2s"
+                  repeatCount="1"
+                />
+                <animate
+                  attributeType="XML"
+                  attributeName="fill-opacity"
+                  calcMode="spline"
+                  values="0; 1; 0"
+                  keyTimes="0.0; 0.5; 1.0"
+                  keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+                  dur="2s"
+                  repeatCount="1"
+                />
+              </circle>
+              <circle cx="50" cy="50" r="40" class="wave">
+                <animate
+                  attributeType="XML"
+                  attributeName="r"
+                  calcMode="spline"
+                  values="0; 0; 40"
+                  keyTimes="0.0; 0.5; 1.0"
+                  keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+                  dur="2s"
+                  repeatCount="1"
+                />
+                <animate
+                  attributeType="XML"
+                  attributeName="stroke-width"
+                  calcMode="spline"
+                  values="0; 5; 0"
+                  keyTimes="0.0; 0.5; 1.0"
+                  keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+                  dur="2s"
+                  repeatCount="1"
+                />
+              </circle>
+            </g>
+          </svg>
+        `;
         wave.style = `
           position:fixed;
           width:10vmin;
           height:10vmin;
           z-index:-1000;
-          fill:`+"hsl("+Math.random().toString()+"turn 100% 50%);"+`
+          --color:`+"hsl("+Math.random().toString()+"turn 100% 50%);"+`
         `;
         wave.style.top = (100 * Math.random()).toString() + "vh";
         wave.style.left = (100 * Math.random()).toString() + "vw";
