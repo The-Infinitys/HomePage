@@ -100,6 +100,15 @@ const init_header = function () {
           <a target="_blank" href="https://x.com/The_Infinity_s/">X </a>
         </th>
       </tr>
+      <tr>
+        <th>
+        </th>
+        <th>
+          <button id="color-theme-change">
+            Hello world
+          </button>
+        </th>
+      </tr>
     </table>
 `;
   const header = document.createElement("header");

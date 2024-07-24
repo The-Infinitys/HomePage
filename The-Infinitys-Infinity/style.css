@@ -32,7 +32,23 @@
 
 #rainbow-back {
   position: fixed;
-  background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00) 0/200%;
+  background: linear-gradient(
+      to right,
+      #f00,
+      #ff0,
+      #0f0,
+      #0ff,
+      #00f,
+      #f0f,
+      #f00,
+      #ff0,
+      #0f0,
+      #0ff,
+      #00f,
+      #f0f,
+      #f00
+    )
+    0/200%;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -61,7 +77,6 @@
   }
 }
 
-
 @media (max-aspect-ratio: 1/1) {
   :root {
     --hamburger-width: 100%;
@@ -72,7 +87,6 @@
   }
 }
 
-
 body {
   overflow-x: hidden;
   padding-top: 10vh;
@@ -81,7 +95,6 @@ body {
   color: var(--text);
   background-color: var(--background);
 }
-
 
 header {
   -webkit-backdrop-filter: blur(3px);
@@ -98,7 +111,7 @@ header {
   display: flex;
   font-size: 20px;
   color: var(--text);
-  background-color: color-mix(in srgb, transparent, var(--background) 77%)
+  background-color: color-mix(in srgb, transparent, var(--background) 77%);
 }
 
 header a img {
@@ -114,7 +127,7 @@ header h1 {
   top: 0;
   left: 12vw;
   font-family: "noto serif", serif;
-  font-weight:400;
+  font-weight: 400;
   font-size: 7vh;
 }
 
@@ -253,6 +266,15 @@ header button div {
   width: auto;
   height: 6vh;
 }
+#color-theme-change {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 6vh;
+  text-decoration: none;
+}
 
 @keyframes hamburger-open-animation {
   from {
@@ -276,7 +298,6 @@ header button div {
     left: 100vw;
     opacity: 0;
   }
-
 }
 
 .hamburger-open {
@@ -295,8 +316,8 @@ header button div {
 
 section.Title {
   margin-top: 5vh;
-  padding-bottom:10vh;
-  box-sizing:border-box;
+  padding-bottom: 10vh;
+  box-sizing: border-box;
   text-align: center;
   font-family: "noto serif", serif;
   font-size: 7vw;
