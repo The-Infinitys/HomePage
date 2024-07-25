@@ -102,11 +102,9 @@ const init_header = function () {
       </tr>
       <tr>
         <th>
-        </th>
-        <th>
-          <button id="color-theme-change">
-            Hello world
-          </button>
+          <div id="color-theme-change" onclick="change_color_theme()">
+            <img src="/image/The-Infinitys.svg" />
+          </div>
         </th>
       </tr>
     </table>
@@ -701,6 +699,11 @@ const is_phone = () => {
     return true;
   }
   return false;
+};
+
+
+const change_color_theme = () => {
+  alert(123);
 };
 
 const The_Infinitys_main = () => {
