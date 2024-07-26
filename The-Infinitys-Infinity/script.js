@@ -437,9 +437,6 @@ const auto_color_theme = () => {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   mediaQuery.addEventListener("change", renew_color_theme);
 };
-auto_color_theme();
-renew_color_theme();
-
 const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
   const Rainbowpattern = document.createElement("canvas");
@@ -797,6 +794,8 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
+  auto_color_theme();
+  renew_color_theme();
   if (Math.random() < 1 / 6) {
     generate_style((mode = "wave"));
   } else if (Math.random() < 1 / 5) {
