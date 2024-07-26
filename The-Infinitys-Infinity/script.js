@@ -433,8 +433,7 @@ const auto_color_theme=()=>{
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
   mediaQuery.addEventListener('change', renew_color_theme);
 }
-auto_color_theme();
-
+renew_color_theme();
 
 const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
