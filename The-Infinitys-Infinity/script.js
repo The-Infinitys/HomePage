@@ -406,14 +406,18 @@ function hamburger_menu() {
 // init color theme
 let color_theme = "auto";
 const renew_color_theme = () => {
+  const change_button = document.querySelector("#color-theme-change");
   switch (color_theme) {
     case "light":
       document.documentElement.setAttribute("theme", "light");
+      change_button.style.backgroundColor = "white";
       break;
     case "dark":
       document.documentElement.setAttribute("theme", "dark");
+      change_button.style.backgroundColor = "black";
       break;
     case "auto":
+      change_button.style.backgroundColor = "gray";
       if (window.matchMedia("(prefers-color-scheme: dark)").matches == true) {
         document.documentElement.setAttribute("theme", "dark");
       } else {
@@ -429,10 +433,11 @@ const change_color_theme = (mode = null) => {
   color_theme = mode;
   renew_color_theme();
 };
-const auto_color_theme=()=>{
+const auto_color_theme = () => {
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  mediaQuery.addEventListener('change', renew_color_theme);
-}
+  mediaQuery.addEventListener("change", renew_color_theme);
+};
+auto_color_theme();
 renew_color_theme();
 
 const generate_pattern = (mode = "honeycomb") => {

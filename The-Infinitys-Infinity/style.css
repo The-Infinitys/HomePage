@@ -301,7 +301,6 @@ header button div {
   height: 6vh;
   aspect-ratio: 2/1;
   display: flex;
-  background-color: var(--background);
   border: 2px solid var(--text);
   border-radius: 10vh;
   box-sizing: border-box;
