@@ -102,8 +102,79 @@ const init_header = function () {
       </tr>
       <tr>
         <th>
-          <div id="color-theme-change" onclick="change_color_theme()">
-            <img src="/image/The-Infinitys.svg" />
+          <div id="color-theme-change">
+            <svg
+              name="sun"
+              onclick="change_color_theme('light')"
+              viewBox="0 0 100 100"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <circle cx="50" cy="50" r="20" style="fill: var(--text); stroke: none" />
+              <path
+                d="
+                M50,25v-20
+                M50,75v20
+                M25,50h-20
+                M75,50h20
+                M67,67l14,14
+                M33,67l-14,14
+                M67,33l14,-14
+                M33,33l-14,-14
+                "
+                style="stroke: var(--text); stroke-width: 4; fill: none;stroke-linecap:round;"
+                />
+            </svg>
+            <svg
+              name="moon"
+              onclick="change_color_theme('dark')"
+              viewBox="0 0 100 100"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <path
+                d="
+                M50,10
+                A40,40,0,1,0,80,65
+                A35,35,0,1,1,50,10
+                z
+                "
+                style="stroke: none; fill: var(--text)"
+                />
+            </svg>
+            <svg
+              name="auto"
+              onclick="change_color_theme('auto')"
+              viewBox="0 0 100 100"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <path
+                d="
+                M50,30
+                A20,20,0,1,0,67,57
+                A15,15,0,1,1,50,30
+                z
+                "
+                style="stroke: none; fill: var(--text)"
+                />
+              <path
+                d="
+                M50,25v-20
+                M50,75v20
+                M25,50h-20
+                M75,50h20
+                M67,67l14,14
+                M33,67l-14,14
+                M67,33l14,-14
+                M33,33l-14,-14
+                "
+                style="stroke: var(--text); stroke-width: 4; fill: none;stroke-linecap:round;"
+                />
+            </svg>
           </div>
         </th>
       </tr>
@@ -331,6 +402,36 @@ function hamburger_menu() {
     menu.style.opacity = "0";
   }
 }
+
+// init color theme
+let color_theme = "auto";
+const init_color_theme = () => {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches == true) {
+    document.documentElement.setAttribute("theme", "dark");
+  } else {
+    document.documentElement.setAttribute("theme", "light");
+  }
+};
+init_color_theme();
+const change_color_theme = (mode = null) => {
+  color_theme = mode;
+  switch (mode) {
+    case "light":
+      document.documentElement.setAttribute("theme", "light");
+      break;
+    case "dark":
+      document.documentElement.setAttribute("theme", "dark");
+      break;
+    case "auto":
+      init_color_theme();
+      break;
+    default:
+      alert("error happend on change color theme");
+      break;
+  }
+};
+
+
 const generate_pattern = (mode = "honeycomb") => {
   //ダークモード・ライトモード対応
   const Rainbowpattern = document.createElement("canvas");
@@ -508,7 +609,7 @@ const generate_pattern = (mode = "honeycomb") => {
   const renewpatternCanvas = () => {
     Rainbowpattern.width = window.innerWidth * window.devicePixelRatio;
     Rainbowpattern.height = window.innerHeight * window.devicePixelRatio;
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (document.documentElement.getAttribute("theme") == "dark") {
       drawpattern("#000");
     } else {
       drawpattern("#fff");
@@ -516,23 +617,7 @@ const generate_pattern = (mode = "honeycomb") => {
   };
   renewpatternCanvas();
   window.onresize = renewpatternCanvas;
-  const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
-  // 最初の判定
-  if (mediaQueryList.matches) {
-    console.log("dark-mode is enabled.");
-  } else {
-    console.log("light-mode is enabled");
-  }
-  // メディアクエリの変化を監視するリスナー関数を定義
-  const listener_pattern = function (event) {
-    if (event.matches) {
-      console.log("swaped to dark-mode");
-    } else {
-      console.log("swaped to light-mode");
-    }
-    renewpatternCanvas();
-  };
-  mediaQueryList.addEventListener("change", listener_pattern);
+  setInterval(renewpatternCanvas, 100);
 };
 const generate_style = (mode = "monochrome") => {
   switch (mode) {
@@ -699,11 +784,6 @@ const is_phone = () => {
     return true;
   }
   return false;
-};
-
-
-const change_color_theme = () => {
-  alert(123);
 };
 
 const The_Infinitys_main = () => {

@@ -32,8 +32,7 @@
 
 #rainbow-back {
   position: fixed;
-  background: linear-gradient(
-      to right,
+  background: linear-gradient(to right,
       #f00,
       #ff0,
       #0f0,
@@ -46,9 +45,7 @@
       #0ff,
       #00f,
       #f0f,
-      #f00
-    )
-    0/200%;
+      #f00) 0/200%;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -58,23 +55,21 @@
   animation: show 3s linear 1, rainbow-back-animate 10s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: black;
-    --text: white;
-  }
+:root[theme="dark"] {
+  --background: black;
+  --text: white;
+}
 
-  #light-mobile {
-    visibility: hidden;
-  }
+#light-mobile[theme="dark"] {
+  visibility: hidden;
+}
 
-  #dark-mobile {
-    visibility: visible;
-  }
+#dark-mobile[theme="dark"] {
+  visibility: visible;
+}
 
-  a {
-    color: aqua;
-  }
+a[theme="dark"] {
+  color: aqua;
 }
 
 @media (max-aspect-ratio: 1/1) {
@@ -243,11 +238,7 @@ header button div {
   color: var(--text);
   z-index: 777;
   opacity: 0;
-  background-color: #ffffffcc;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #000000cc;
-  }
+  background-color: color-mix(in srgb, var(--background), transparent 10%);
 }
 
 #hamburger_menus tr {
@@ -266,15 +257,6 @@ header button div {
 .hamburger_menus-contents-icons {
   width: auto;
   height: 6vh;
-}
-
-#color-theme-change {
-  height: 100%;
-  width:100%;
-}
-#color-theme-change img{
-  height: 6vh;
-  width:auto;
 }
 
 @keyframes hamburger-open-animation {
@@ -315,6 +297,22 @@ header button div {
   animation-iteration-count: initial;
 }
 
+#color-theme-change {
+  height: 6vh;
+  aspect-ratio: 2/1;
+  display: flex;
+  background-color: var(--background);
+  border: 2px solid var(--text);
+  border-radius: 10vh;
+  box-sizing: border-box;
+}
+
+#color-theme-change img,
+#color-theme-change svg {
+  width: 33%;
+}
+
+
 section.Title {
   margin-top: 5vh;
   padding-bottom: 10vh;
@@ -336,6 +334,7 @@ section {
   border-bottom: 2px solid #888;
   color: var(--text);
 }
+
 section * {
   line-height: 2em;
 }
