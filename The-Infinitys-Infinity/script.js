@@ -405,8 +405,19 @@ function hamburger_menu() {
 
 // init color theme
 let color_theme = "auto";
+const init_color_theme = () => {
+  const ls_color_theme = localStorage.getItem("color-theme");
+  if (ls_color_theme == null) {
+    color_theme = "auto";
+    localStorage.setItem("color-theme", "auto");
+  } else {
+    color_theme = ls_color_theme;
+  }
+  auto_color_theme();
+};
 const renew_color_theme = () => {
   const change_button = document.querySelector("#color-theme-change");
+  localStorage.setItem("color-theme", color_theme);
   switch (color_theme) {
     case "light":
       document.documentElement.setAttribute("theme", "light");
@@ -794,7 +805,7 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
-  auto_color_theme();
+  init_color_theme();
   renew_color_theme();
   if (Math.random() < 1 / 6) {
     generate_style((mode = "wave"));
