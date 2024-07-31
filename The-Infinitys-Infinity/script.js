@@ -104,7 +104,7 @@ const init_header = function () {
         <th>
           <div id="color-theme-change">
             <svg
-              name="sun"
+              name="light"
               onclick="change_color_theme('light')"
               viewBox="0 0 100 100"
               version="1.1"
@@ -127,7 +127,7 @@ const init_header = function () {
                 />
             </svg>
             <svg
-              name="moon"
+              name="dark"
               onclick="change_color_theme('dark')"
               viewBox="0 0 100 100"
               version="1.1"
@@ -152,6 +152,7 @@ const init_header = function () {
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
             >
+            <circle id="color-theme-change-selected" cx="50" cy="50" r="45" />
               <path
                 d="
                 M50,30
@@ -418,6 +419,12 @@ const init_color_theme = () => {
 const renew_color_theme = () => {
   const change_button = document.querySelector("#color-theme-change");
   localStorage.setItem("color-theme", color_theme);
+  const target_svg = document.querySelector(
+    '#color-theme-change svg[name="' + color_theme + '"]'
+  );
+  const selected = document.querySelector("#color-theme-change-selected");
+  selected.remove();
+  target_svg.prepend(selected);
   switch (color_theme) {
     case "light":
       document.documentElement.setAttribute("theme", "light");

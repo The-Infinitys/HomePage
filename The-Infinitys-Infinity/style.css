@@ -298,6 +298,7 @@ header button div {
 }
 
 #color-theme-change {
+  position: relative;
   height: 6vh;
   aspect-ratio: 2/1;
   display: flex;
@@ -309,6 +310,12 @@ header button div {
 #color-theme-change img,
 #color-theme-change svg {
   width: 33%;
+}
+
+#color-theme-change-selected {
+  fill: var(--background);
+  stroke: var(--text);
+  stroke-width: 2;
 }
 
 
