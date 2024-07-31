@@ -7,17 +7,32 @@
 :root {
   --background: white;
   --text: black;
+  --link-color: blue;
+  --dark-background-visibility: hidden;
+  --light-background-visibility: visible;
   --hamburger-width: 35%;
+}
+
+:root[theme="dark"] {
+  --background: black;
+  --text: white;
+  --link-color: aqua;
+  --dark-background-visibility: visible;
+  --light-background-visibility: hidden;
 }
 
 #light-mobile {
   opacity: 0.3;
-  visibility: visible;
+  visibility: var(--light-background-visibility);
 }
 
 #dark-mobile {
   opacity: 0.3;
-  visibility: hidden;
+  visibility: var(--dark-background-visibility);
+}
+
+a {
+  color: var(--link-color);
 }
 
 @keyframes rainbow-back-animate {
@@ -55,22 +70,7 @@
   animation: show 3s linear 1, rainbow-back-animate 10s linear infinite;
 }
 
-:root[theme="dark"] {
-  --background: black;
-  --text: white;
-}
 
-#light-mobile[theme="dark"] {
-  visibility: hidden;
-}
-
-#dark-mobile[theme="dark"] {
-  visibility: visible;
-}
-
-a[theme="dark"] {
-  color: aqua;
-}
 
 @media (max-aspect-ratio: 1/1) {
   :root {
