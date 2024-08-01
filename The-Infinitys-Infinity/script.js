@@ -103,78 +103,67 @@ const init_header = function () {
       <tr>
         <th>
           <div id="color-theme-change">
-            <svg
-              name="light"
-              onclick="change_color_theme('light')"
-              viewBox="0 0 100 100"
+          <svg
+              viewBox="0 0 300 100"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
             >
+            <circle id="color-theme-change-selected" cx="250" cy="50" r="45" />
+            <g name="light" onclick="change_color_theme('light')">
+              <circle style="fill:#fff1;stroke:none;" cx="50" cy="50" r="45" />
               <circle cx="50" cy="50" r="20" style="fill: var(--text); stroke: none" />
+                <path
+                  d="
+                  M50,25v-20
+                  M50,75v20
+                  M25,50h-20
+                  M75,50h20
+                  M67,67l14,14
+                  M33,67l-14,14
+                  M67,33l14,-14
+                  M33,33l-14,-14
+                  "
+                  style="stroke: var(--text); stroke-width: 4; fill: none;stroke-linecap:round;"
+                  />
+            </g>
+            <g name="dark" onclick="change_color_theme('dark')">
+              <circle style="fill:#0001;stroke:none;" cx="150" cy="50" r="45" />
               <path
                 d="
-                M50,25v-20
-                M50,75v20
-                M25,50h-20
-                M75,50h20
-                M67,67l14,14
-                M33,67l-14,14
-                M67,33l14,-14
-                M33,33l-14,-14
-                "
-                style="stroke: var(--text); stroke-width: 4; fill: none;stroke-linecap:round;"
-                />
-            </svg>
-            <svg
-              name="dark"
-              onclick="change_color_theme('dark')"
-              viewBox="0 0 100 100"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <path
-                d="
-                M50,10
-                A40,40,0,1,0,80,65
-                A35,35,0,1,1,50,10
+                M150,10
+                A40,40,0,1,0,180,65
+                A35,35,0,1,1,150,10
                 z
                 "
                 style="stroke: none; fill: var(--text)"
                 />
-            </svg>
-            <svg
-              name="auto"
-              onclick="change_color_theme('auto')"
-              viewBox="0 0 100 100"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-            <circle id="color-theme-change-selected" cx="50" cy="50" r="45" />
+            </g>
+            <g name="auto" onclick="change_color_theme('auto')">
+              <circle style="fill:#8881;stroke:none;" cx="250" cy="50" r="45" />
               <path
                 d="
-                M50,30
-                A20,20,0,1,0,67,57
-                A15,15,0,1,1,50,30
+                M250,30
+                A20,20,0,1,0,267,57
+                A15,15,0,1,1,250,30
                 z
                 "
                 style="stroke: none; fill: var(--text)"
                 />
               <path
                 d="
-                M50,25v-20
-                M50,75v20
-                M25,50h-20
-                M75,50h20
-                M67,67l14,14
-                M33,67l-14,14
-                M67,33l14,-14
-                M33,33l-14,-14
+                M250,25v-20
+                M250,75v20
+                M225,50h-20
+                M275,50h20
+                M267,67l14,14
+                M233,67l-14,14
+                M267,33l14,-14
+                M233,33l-14,-14
                 "
                 style="stroke: var(--text); stroke-width: 4; fill: none;stroke-linecap:round;"
                 />
+            </g>
             </svg>
           </div>
         </th>
@@ -419,12 +408,34 @@ const init_color_theme = () => {
 const renew_color_theme = () => {
   const change_button = document.querySelector("#color-theme-change");
   localStorage.setItem("color-theme", color_theme);
-  const target_svg = document.querySelector(
-    '#color-theme-change svg[name="' + color_theme + '"]'
-  );
-  const selected = document.querySelector("#color-theme-change-selected");
-  selected.remove();
-  target_svg.prepend(selected);
+  const animate_selected = () => {
+    const speed = 10;
+    const selected = document.querySelector("#color-theme-change-selected");
+    let target_x;
+    switch (color_theme) {
+      case "light":
+        target_x = 50;
+        break;
+      case "dark":
+        target_x = 150;
+        break;
+      case "auto":
+        target_x = 250;
+        break;
+      default:
+        alert("error happend on change color theme");
+        break;
+    }
+    const now_x = parseFloat(selected.getAttribute("cx"));
+    next_x = now_x + (target_x - now_x) / speed;
+    if (Math.abs(next_x - target_x) > 1) {
+      selected.setAttribute("cx", next_x);
+      requestAnimationFrame(animate_selected);
+    } else {
+      selected.setAttribute("cx", target_x);
+    }
+  };
+  animate_selected();
   switch (color_theme) {
     case "light":
       document.documentElement.setAttribute("theme", "light");
