@@ -131,9 +131,9 @@ const init_header = function () {
               <circle style="fill:#0001;stroke:none;" cx="150" cy="50" r="45" />
               <path
                 d="
-                M150,10
-                A40,40,0,1,0,180,65
-                A35,35,0,1,1,150,10
+                M160,10
+                A40,40,0,1,0,190,65
+                A35,35,0,1,1,160,10
                 z
                 "
                 style="stroke: none; fill: var(--text)"
@@ -409,7 +409,7 @@ const renew_color_theme = () => {
   const change_button = document.querySelector("#color-theme-change");
   localStorage.setItem("color-theme", color_theme);
   const animate_selected = () => {
-    const speed = 10;
+    const speed = 5;
     const selected = document.querySelector("#color-theme-change-selected");
     let target_x;
     switch (color_theme) {
