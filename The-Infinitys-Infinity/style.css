@@ -128,7 +128,7 @@ header h1 {
 
 header button {
   position: absolute;
-  left: calc(100vw - 10vh);
+  right: 0;
   top: 0%;
   width: 10vh;
   height: 10vh;
@@ -227,79 +227,85 @@ header button div {
 
 #hamburger_menus {
   position: fixed;
-  left: 100vw;
+  right: 0;
   top: 10vh;
   width: var(--hamburger-width);
   height: 90vh;
+  border: 1px solid var(--text);
+  z-index: 777;
+  opacity: 0;
+  background-color: color-mix(in srgb, var(--background), transparent 5%);
+}
+
+#hamburger_menus>table {
+  position: absolute;
+  width: 100%;
+  height: 90%;
   text-align: left;
   overflow: scroll;
   text-overflow: clip;
-  border: 1px solid var(--text);
   color: var(--text);
-  z-index: 777;
-  opacity: 0;
-  background-color: color-mix(in srgb, var(--background), transparent 10%);
 }
 
-#hamburger_menus tr {
+#hamburger_menus>table tr {
   position: relative;
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
-#hamburger_menus tr th a {
+#hamburger_menus>table tr th a {
   color: var(--text);
-  font-size: 6vh;
+  font-size: 5vh;
   text-decoration: none;
 }
 
 .hamburger_menus-contents-icons {
   width: auto;
-  height: 6vh;
+  height: 5vh;
 }
 
 @keyframes hamburger-open-animation {
   from {
-    left: 100vw;
+    right: calc(-1 * var(--hamburger-width));
     opacity: 0;
   }
 
   to {
-    left: calc(100vw - var(--hamburger-width));
+    right: 0;
     opacity: 1;
   }
 }
 
 @keyframes hamburger-close-animation {
   from {
-    left: calc(100vw - var(--hamburger-width));
+    right: 0;
     opacity: 1;
   }
 
   to {
-    left: 100vw;
+    right: calc(-1 * var(--hamburger-width));
     opacity: 0;
   }
 }
 
 .hamburger-open {
   animation-name: hamburger-open-animation;
-  animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
 }
 
 .hamburger-close {
   animation-name: hamburger-close-animation;
-  animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: initial;
 }
 
 #color-theme-change {
   position: relative;
-  height: 6vh;
+  height: 8vh;
   aspect-ratio: 2/1;
   display: flex;
   border: 2px solid var(--text);
