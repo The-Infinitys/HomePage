@@ -109,7 +109,7 @@ const init_header = function () {
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
             >
-            <circle id="color-theme-change-selected" cx="250" cy="50" r="45" />
+            <circle id="color-theme-change-selected" data-inertia="0" cx="250" cy="50" r="45" />
             <g name="light" onclick="change_color_theme('light')">
               <circle style="fill:#fff1;stroke:none;" cx="50" cy="50" r="45" />
               <circle cx="50" cy="50" r="20" style="fill: var(--text); stroke: none" />
@@ -409,7 +409,7 @@ const renew_color_theme = () => {
   const change_button = document.querySelector("#color-theme-change");
   localStorage.setItem("color-theme", color_theme);
   const animate_selected = () => {
-    const speed = 5;
+    const speed = 2;
     const selected = document.querySelector("#color-theme-change-selected");
     let target_x;
     switch (color_theme) {
@@ -427,7 +427,26 @@ const renew_color_theme = () => {
         break;
     }
     const now_x = parseFloat(selected.getAttribute("cx"));
-    next_x = now_x + (target_x - now_x) / speed;
+    let next_x = now_x;
+    if (
+      Math.abs((target_x - now_x) / speed) <
+      parseFloat(Math.abs(selected.getAttribute("data-inertia")))
+    ) {
+      selected.setAttribute("data-inertia", (target_x - now_x) / speed);
+    } else {
+      if (target_x > now_x) {
+        selected.setAttribute(
+          "data-inertia",
+          parseFloat(selected.getAttribute("data-inertia")) + 2
+        );
+      } else {
+        selected.setAttribute(
+          "data-inertia",
+          parseFloat(selected.getAttribute("data-inertia")) - 2
+        );
+      }
+    }
+    next_x += parseFloat(selected.getAttribute("data-inertia"));
     if (Math.abs(next_x - target_x) > 1) {
       selected.setAttribute("cx", next_x);
       requestAnimationFrame(animate_selected);
