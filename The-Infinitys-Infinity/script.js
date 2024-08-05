@@ -102,6 +102,7 @@ const init_header = function () {
           </th>
         </tr>
         <tr>
+          <th></th>
           <th>
             <div id="color-theme-change">
             <svg
