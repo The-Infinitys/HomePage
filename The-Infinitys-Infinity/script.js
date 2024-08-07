@@ -363,8 +363,8 @@ const generate_Infinitys = function () {
   }
 };
 //ハンバーガーメニューの設定
-let is_opened_hamburgerMenu = false;
-function hamburger_menu() {
+let is_opened_hamburgerMenu = null;
+const hamburger_menu = () => {
   is_opened_hamburgerMenu = !is_opened_hamburgerMenu;
   const menu = document.querySelector("#hamburger_menus");
   const open_button = document.querySelector("#open_hamburger_menu");
@@ -395,8 +395,17 @@ function hamburger_menu() {
     menu.style.right = "calc(-1 * var(--hamburger-width))";
     menu.style.opacity = "0";
   }
-}
-
+};
+const init_hamburger_menu = () => {
+  is_opened_hamburgerMenu = false;
+  const menu = document.querySelector("#hamburger_menus");
+  const open_button = document.querySelector("#open_hamburger_menu");
+  const close_button = document.querySelector("#close_hamburger_menu");
+  open_button.style.opacity = "1";
+  close_button.style.opacity = "0";
+  menu.style.right = "calc(-1 * var(--hamburger-width))";
+  menu.style.opacity = "0";
+};
 // init color theme
 let color_theme = "auto";
 const init_color_theme = () => {
@@ -846,6 +855,7 @@ const is_phone = () => {
 const The_Infinitys_main = () => {
   init_header();
   init_footer();
+  init_hamburger_menu();
   init_color_theme();
   renew_color_theme();
   if (Math.random() < 1 / 6) {
