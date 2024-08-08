@@ -1,5 +1,5 @@
 const staticCacheName = 'The-Infinitys-cache'; // 独自のキャッシュ名を設定
-const offlineImage = '/image/loading-infinity.svg'; // 代替画像のパス
+const offlineImage = '/image/loading-yarimasune.svg'; // 代替画像のパス
 
 //when installed
 self.addEventListener("install", (e) => {
