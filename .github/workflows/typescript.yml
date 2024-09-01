@@ -4,14 +4,12 @@ permissions:
   contents: write
   repository-projects: write
 jobs:
-  run-InfinitySpirit:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: CheckOut
         uses: actions/checkout@v4
       - name: import sources
         run: npm install typescript --save-dev
-      - name: compile typescript xml
-        run: tsc ./*.tsx
       - name: compile typescript
         run: tsc ./*.ts
