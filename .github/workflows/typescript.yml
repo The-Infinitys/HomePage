@@ -12,4 +12,6 @@ jobs:
       - name: import sources
         run: npm install typescript --save-dev
       - name: compile typescript
-        run: tsc ./layout/script.tsx
+        run: tsc ./layout/script.tsx --jsx
+      - name: save result
+        run: python ./github.py
