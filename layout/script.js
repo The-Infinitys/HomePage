@@ -71,6 +71,53 @@ var InfinityHeader = function () {
         home_label_1.append(infinity_logo_1);
         result.append(home_label_1);
     }
+    // add txt
+    result.append(The_Infinitys_txt());
+    {
+        {
+            // add hamburger menu button
+            var hamburger_input_1 = document.createElement("input");
+            {
+                // set attributes
+                hamburger_input_1.id = "hamburger-button";
+                var attributes = [
+                    {
+                        name: "type",
+                        value: "checkbox",
+                    },
+                    {
+                        name: "aria-label",
+                        value: "hamburger menu button",
+                    },
+                ];
+                attributes.forEach(function (attribute) {
+                    hamburger_input_1.setAttribute(attribute.name, attribute.value);
+                });
+            }
+            result.append(hamburger_input_1);
+        }
+        {
+            // add hamburgermenu button img
+            var hm_label_1 = document.createElement("label");
+            {
+                // set attributes
+                hm_label_1.id = "hamburger-label";
+                var attributes = [
+                    {
+                        name: "for",
+                        value: "hamburger-button",
+                    },
+                ];
+                attributes.forEach(function (attribute) {
+                    hm_label_1.setAttribute(attribute.name, attribute.value);
+                });
+            }
+            // <label htmlFor="hamburger-button" id="hamburger-label">
+            //   <img className="logo open" src={hm.open} alt="" />
+            //   <img className="logo close" src={hm.close} alt="" />
+            // </label>
+        }
+    }
     return (
     // <header className="The-Infinitys-Header">
     //   <a href="/" aria-label="Home">
