@@ -1,3 +1,4 @@
+"use strict";
 var The_Infinitys_txt = function () {
     var result = document.createElement("svg");
     var attributes = [
