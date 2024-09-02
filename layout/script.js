@@ -213,3 +213,4 @@ var rendering = function () {
         1);
     };
 };
+rendering();
