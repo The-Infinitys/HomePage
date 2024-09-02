@@ -1,9 +1,9 @@
+type HTMLAttribute = {
+  name: string;
+  value: string;
+};
 const The_Infinitys_txt: Function = ():HTMLElement => {
   const result: HTMLElement = document.createElement("svg");
-  type HTMLAttribute = {
-    name: string;
-    value: string;
-  };
   const attributes: HTMLAttribute[] = [
     {
       name: "viewBox",
@@ -35,11 +35,54 @@ const The_Infinitys_txt: Function = ():HTMLElement => {
 };
 
 const InfinityHeader: Function = () => {
-  const The_Infinitys_logo: string = "/layout/image/The-Infinitys-txt.svg";
+  const The_Infinitys_logo_src: string = "/layout/image/The-Infinitys-txt.svg";
   const hm: { open: string; close: string } = {
     open: "/layout/image/hamburger/open.svg",
     close: "/layout/image/hamburger/close.svg",
   };
+  const result:HTMLElement=document.createElement("header");
+  result.className="The-Infinitys-Header";
+  {
+    // set Home button
+    const home_label:HTMLElement=document.createElement("a");
+    {
+      // set attributes
+      const attributes: HTMLAttribute[] = [
+        {
+          name: "href",
+          value: "/",
+        },
+        {
+          name: "aria-label",
+          value: "Home",
+        },
+      ];
+      attributes.forEach((attribute: HTMLAttribute) => {
+        home_label.setAttribute(attribute.name, attribute.value);
+      });
+    }
+    // set image
+    const infinity_logo:HTMLElement=document.createElement("img");
+    infinity_logo.className="logo";
+    {
+      // set attributes
+      const attributes: HTMLAttribute[] = [
+        {
+          name: "src",
+          value: The_Infinitys_logo_src,
+        },
+        {
+          name: "alt",
+          value: "",
+        },
+      ];
+      attributes.forEach((attribute: HTMLAttribute) => {
+        infinity_logo.setAttribute(attribute.name, attribute.value);
+      });
+    }
+    home_label.append(infinity_logo);
+    result.append(home_label);
+  }
   return (
     // <header className="The-Infinitys-Header">
     //   <a href="/" aria-label="Home">
