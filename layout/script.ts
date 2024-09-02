@@ -244,3 +244,4 @@ const rendering: Function = (): void => {
     );
   };
 };
+rendering();
