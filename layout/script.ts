@@ -1,5 +1,5 @@
-const The_Infinitys_txt: Function = ():HTMLOrSVGElement => {
-  const result: HTMLOrSVGElement = document.createElement("svg");
+const The_Infinitys_txt: Function = ():HTMLElement => {
+  const result: HTMLElement = document.createElement("svg");
   type HTMLAttribute = {
     name: string;
     value: string;
