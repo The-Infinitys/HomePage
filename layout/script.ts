@@ -1,34 +1,34 @@
 "use strict";
-
-type HTMLAttribute = {
-  name: string;
-  value: string;
-};
-const htmlAttributes: Function = (
-  elem: HTMLElement,
-  attributes: HTMLAttribute[]
-): void => {
-  attributes.forEach((attribute: HTMLAttribute) => {
-    elem.setAttribute(attribute.name, attribute.value);
-  });
-};
-const The_Infinitys_txt: Function = (): HTMLElement => {
-  const result: HTMLElement = document.createElement("svg");
-  htmlAttributes(result, [
-    {
-      name: "viewBox",
-      value: "0 0 623.301 101.001",
-    },
-    {
-      name: "xmlns",
-      value: "http://www.w3.org/2000/svg",
-    },
-    {
-      name: "class",
-      value: "The-Infinitys-txt",
-    },
-  ]);
-  const innerElem: string = `
+const rendering: Function = (): void => {
+  type HTMLAttribute = {
+    name: string;
+    value: string;
+  };
+  const htmlAttributes: Function = (
+    elem: HTMLElement,
+    attributes: HTMLAttribute[]
+  ): void => {
+    attributes.forEach((attribute: HTMLAttribute) => {
+      elem.setAttribute(attribute.name, attribute.value);
+    });
+  };
+  const The_Infinitys_txt: Function = (): HTMLElement => {
+    const result: HTMLElement = document.createElement("svg");
+    htmlAttributes(result, [
+      {
+        name: "viewBox",
+        value: "0 0 623.301 101.001",
+      },
+      {
+        name: "xmlns",
+        value: "http://www.w3.org/2000/svg",
+      },
+      {
+        name: "class",
+        value: "The-Infinitys-txt",
+      },
+    ]);
+    const innerElem: string = `
     <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
       <path
         fill="currentColor"
@@ -37,180 +37,209 @@ const The_Infinitys_txt: Function = (): HTMLElement => {
         vectorEffect="non-scaling-stroke"
       />
     </g>`;
-  result.innerHTML = innerElem;
-  return result;
-};
-
-const InfinityHeader: Function = () => {
-  const The_Infinitys_logo_src: string = "/layout/image/The-Infinitys-txt.svg";
-  const hm: { open: string; close: string } = {
-    open: "/layout/image/hamburger/open.svg",
-    close: "/layout/image/hamburger/close.svg",
+    result.innerHTML = innerElem;
+    return result;
   };
-  const result: HTMLElement = document.createElement("header");
-  result.className = "The-Infinitys-Header";
-  {
-    // set Home button
-    const home_label: HTMLElement = document.createElement("a");
-    htmlAttributes(home_label, [
-      {
-        name: "href",
-        value: "/",
-      },
-      {
-        name: "aria-label",
-        value: "Home",
-      },
-    ]);
-    // set image
-    const infinity_logo: HTMLElement = document.createElement("img");
-    infinity_logo.className = "logo";
-    htmlAttributes(infinity_logo, [
-      {
-        name: "src",
-        value: The_Infinitys_logo_src,
-      },
-      {
-        name: "alt",
-        value: "",
-      },
-    ]);
-    home_label.append(infinity_logo);
-    result.append(home_label);
-  }
-  // add txt
-  result.append(The_Infinitys_txt());
-  {
+
+  const InfinityHeader: Function = () => {
+    const The_Infinitys_logo_src: string =
+      "/layout/image/The-Infinitys-txt.svg";
+    const hm: { open: string; close: string } = {
+      open: "/layout/image/hamburger/open.svg",
+      close: "/layout/image/hamburger/close.svg",
+    };
+    const result: HTMLElement = document.createElement("header");
+    result.className = "The-Infinitys-Header";
     {
-      // add hamburger menu button
-      const hamburger_input = document.createElement("input");
-      // set attributes
-      hamburger_input.id = "hamburger-button";
-      htmlAttributes(hamburger_input, [
+      // set Home button
+      const home_label: HTMLElement = document.createElement("a");
+      htmlAttributes(home_label, [
         {
-          name: "type",
-          value: "checkbox",
+          name: "href",
+          value: "/",
         },
         {
           name: "aria-label",
-          value: "hamburger menu button",
+          value: "Home",
         },
       ]);
-      result.append(hamburger_input);
-    }
-    {
-      // add hamburgermenu button img
-      const hm_label = document.createElement("label");
-      // set attributes
-      hm_label.id = "hamburger-label";
-      htmlAttributes(hm_label, [
+      // set image
+      const infinity_logo: HTMLElement = document.createElement("img");
+      infinity_logo.className = "logo";
+      htmlAttributes(infinity_logo, [
         {
-          name: "for",
-          value: "hamburger-button",
+          name: "src",
+          value: The_Infinitys_logo_src,
+        },
+        {
+          name: "alt",
+          value: "",
         },
       ]);
-      {
-        const img: { open: HTMLImageElement; close: HTMLImageElement } = {
-          open: document.createElement("img"),
-          close: document.createElement("img"),
-        };
-        img.open.className = "logo open";
-        img.open.src = hm.open;
-        img.open.alt = "";
-        img.close.className = "logo close";
-        img.close.src = hm.close;
-        img.close.alt = "";
-        hm_label.append(img.open);
-        hm_label.append(img.close);
-      }
-      result.append(hm_label);
+      home_label.append(infinity_logo);
+      result.append(home_label);
     }
-    result.append(HamburgerMenu());
-  }
-  return result;
-};
-const HamburgerMenu: Function = () => {
-  const hamburger_icons: {
-    X: string;
-    article: string;
-    scratch: string;
-    github: string;
-  } = {
-    X: "/layout/image/hamburger/menu/x.svg",
-    article: "/layout/image/hamburger/menu/article.svg",
-    scratch: "/layout/image/hamburger/menu/scratch.svg",
-    github: "/layout/image/hamburger/menu/github.svg",
+    // add txt
+    result.append(The_Infinitys_txt());
+    {
+      {
+        // add hamburger menu button
+        const hamburger_input = document.createElement("input");
+        // set attributes
+        hamburger_input.id = "hamburger-button";
+        htmlAttributes(hamburger_input, [
+          {
+            name: "type",
+            value: "checkbox",
+          },
+          {
+            name: "aria-label",
+            value: "hamburger menu button",
+          },
+        ]);
+        result.append(hamburger_input);
+      }
+      {
+        // add hamburgermenu button img
+        const hm_label = document.createElement("label");
+        // set attributes
+        hm_label.id = "hamburger-label";
+        htmlAttributes(hm_label, [
+          {
+            name: "for",
+            value: "hamburger-button",
+          },
+        ]);
+        {
+          const img: { open: HTMLImageElement; close: HTMLImageElement } = {
+            open: document.createElement("img"),
+            close: document.createElement("img"),
+          };
+          img.open.className = "logo open";
+          img.open.src = hm.open;
+          img.open.alt = "";
+          img.close.className = "logo close";
+          img.close.src = hm.close;
+          img.close.alt = "";
+          hm_label.append(img.open);
+          hm_label.append(img.close);
+        }
+        result.append(hm_label);
+      }
+      result.append(HamburgerMenu());
+    }
+    return result;
   };
-  return (
-    // <div className="Hamburger-Menu">
-    //   <div>
-    //     <a href="/article/">
-    //       <img alt="" className="icon" src={hamburger_icons.article} />
-    //       <p>Article</p>
-    //     </a>
-    //   </div>
-    //   <div>
-    //     <a target="_blank" href="https://scratch.mit.edu/users/The_Infinitys/">
-    //       <img alt="" className="icon" src={hamburger_icons.scratch} />
-    //       <p>Scratch</p>
-    //     </a>
-    //   </div>
-    //   <div>
-    //     <a target="_blank" href="https://github.com/The-Infinitys">
-    //       <img alt="" className="icon" src={hamburger_icons.github} />
-    //       <p>GitHub</p>
-    //     </a>
-    //   </div>
-    //   <div>
-    //     <a target="_blank" href="https://x.com/The_Infinity_s/">
-    //       <img alt="" className="icon" src={hamburger_icons.X} />
-    //       <p>X</p>
-    //     </a>
-    //   </div>
-    // </div>
-    1
-  );
-};
-const InfinityFooter: Function = () => {
-  return (
-    // <footer className="The-Infinitys-Footer">
-    //   <h1>&copy; 2024 The Infinity&apos;s</h1>
-    // </footer>
-    1
-  );
-};
+  const HamburgerMenu: Function = () => {
+    const hamburger_icons: {
+      X: string;
+      article: string;
+      scratch: string;
+      github: string;
+    } = {
+      X: "/layout/image/hamburger/menu/x.svg",
+      article: "/layout/image/hamburger/menu/article.svg",
+      scratch: "/layout/image/hamburger/menu/scratch.svg",
+      github: "/layout/image/hamburger/menu/github.svg",
+    };
+    const result: HTMLElement = document.createElement("div");
+    result.className = "Hamburger-Menu";
+    type LinkMenu = {
+      name: string;
+      href: string;
+      target: string;
+      src: string;
+    };
+    const menus: LinkMenu[] = [
+      {
+        name: "Article",
+        href: "/article/",
+        target: "_self",
+        src: hamburger_icons.article,
+      },
+      {
+        name: "Scratch",
+        href: "https://scratch.mit.edu/users/The_Infinitys",
+        target: "blank",
+        src: hamburger_icons.article,
+      },
+      {
+        name: "GitHub",
+        href: "https://github.com/The-Infinitys/",
+        target: "blank",
+        src: hamburger_icons.article,
+      },
+      {
+        name: "X",
+        href: "https://x.com/The_Infinity_s/",
+        target: "blank",
+        src: hamburger_icons.article,
+      },
+    ];
+    menus.forEach((menu: LinkMenu) => {
+      const link_menu: HTMLElement = document.createElement("div");
+      {
+        const link_menu_a: HTMLElement = document.createElement("a");
+        htmlAttributes(link_menu_a, [
+          { name: "href", value: menu.href },
+          { name: "target", value: menu.target },
+        ]);
+        const link_menu_img: HTMLImageElement = document.createElement("img");
+        htmlAttributes(link_menu_img, [
+          { name: "alt", value: "" },
+          { name: "class", value: "icon" },
+          { name: "src", value: menu.src },
+        ]);
+        const link_menu_txt: HTMLElement = document.createElement("p");
+        link_menu_txt.innerHTML = menu.name;
+        link_menu_a.append(link_menu_img, link_menu_txt);
+        link_menu.append(link_menu_a);
+      }
+      result.append(link_menu);
+    });
+    return result;
+  };
+  const InfinityFooter: Function = () => {
+    return (
+      // <footer className="The-Infinitys-Footer">
+      //   <h1>&copy; 2024 The Infinity&apos;s</h1>
+      // </footer>
+      1
+    );
+  };
 
-const generate_background: Function = () => {
-  const monochrome_dark: string =
-    "/layout/image/background/monochrome/dark.svg";
-  const monochrome_light: string =
-    "/layout/image/background/monochrome/light.svg";
-  const monochrome_center: string =
-    "/layout/image/background/monochrome/center.svg";
-  return (
-    // <div id="BackGround">
-    //   <div data-background-name="monochrome">
-    //     <img
-    //       alt=""
-    //       className="background fill dark translucent"
-    //       src={monochrome_dark}
-    //     />
-    //     <img
-    //       alt=""
-    //       className="background fill light translucent"
-    //       src={monochrome_light}
-    //     />
-    //     <img
-    //       alt=""
-    //       className="background center translucent"
-    //       src={monochrome_center}
-    //     />
-    //   </div>
-    //   <div data-background-name="rainbow"></div>
-    //   <div data-background-name="rainbow">
-    //     <canvas className="background fill rainbow"></canvas>
-    //   </div>
-    // </div>
-    1
-  );
+  const generate_background: Function = () => {
+    const monochrome_dark: string =
+      "/layout/image/background/monochrome/dark.svg";
+    const monochrome_light: string =
+      "/layout/image/background/monochrome/light.svg";
+    const monochrome_center: string =
+      "/layout/image/background/monochrome/center.svg";
+    return (
+      // <div id="BackGround">
+      //   <div data-background-name="monochrome">
+      //     <img
+      //       alt=""
+      //       className="background fill dark translucent"
+      //       src={monochrome_dark}
+      //     />
+      //     <img
+      //       alt=""
+      //       className="background fill light translucent"
+      //       src={monochrome_light}
+      //     />
+      //     <img
+      //       alt=""
+      //       className="background center translucent"
+      //       src={monochrome_center}
+      //     />
+      //   </div>
+      //   <div data-background-name="rainbow"></div>
+      //   <div data-background-name="rainbow">
+      //     <canvas className="background fill rainbow"></canvas>
+      //   </div>
+      // </div>
+      1
+    );
+  };
 };
