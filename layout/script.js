@@ -22,11 +22,54 @@ var The_Infinitys_txt = function () {
     return result;
 };
 var InfinityHeader = function () {
-    var The_Infinitys_logo = "/layout/image/The-Infinitys-txt.svg";
+    var The_Infinitys_logo_src = "/layout/image/The-Infinitys-txt.svg";
     var hm = {
         open: "/layout/image/hamburger/open.svg",
         close: "/layout/image/hamburger/close.svg",
     };
+    var result = document.createElement("header");
+    result.className = "The-Infinitys-Header";
+    {
+        // set Home button
+        var home_label_1 = document.createElement("a");
+        {
+            // set attributes
+            var attributes = [
+                {
+                    name: "href",
+                    value: "/",
+                },
+                {
+                    name: "aria-label",
+                    value: "Home",
+                },
+            ];
+            attributes.forEach(function (attribute) {
+                home_label_1.setAttribute(attribute.name, attribute.value);
+            });
+        }
+        // set image
+        var infinity_logo_1 = document.createElement("img");
+        infinity_logo_1.className = "logo";
+        {
+            // set attributes
+            var attributes = [
+                {
+                    name: "src",
+                    value: The_Infinitys_logo_src,
+                },
+                {
+                    name: "alt",
+                    value: "",
+                },
+            ];
+            attributes.forEach(function (attribute) {
+                infinity_logo_1.setAttribute(attribute.name, attribute.value);
+            });
+        }
+        home_label_1.append(infinity_logo_1);
+        result.append(home_label_1);
+    }
     return (
     // <header className="The-Infinitys-Header">
     //   <a href="/" aria-label="Home">
