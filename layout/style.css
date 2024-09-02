@@ -1,0 +1,257 @@
+/* 肝心な初期化 */
+* {
+  /* デフォルトで余白をなくす */
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* テーマに応じた色を設定する */
+  --back-color: #000;
+  --text-color: #fff;
+  --link-color: aqua;
+  --dark-visilibity: visible;
+  --light-visilibity: hidden;
+  /* header menu */
+  --header-height: 50px;
+  /* hambburger menu */
+  --hamburger-width: min(350px, 100%);
+  --infinity-ease: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+/* 色の定義 */
+body {
+  background-color: var(--back-color);
+  color: var(--text-color);
+}
+
+/* ヘッダーメニュー */
+header.The-Infinitys-Header {
+  /* ヘッダーの位置の固定 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  /* ヘッダーのデザイン */
+  display: flex;
+  background-color: color-mix(in srgb, var(--back-color), transparent 20%);
+  padding: 0;
+}
+
+header.The-Infinitys-Header>a {
+  width: auto;
+  height: auto;
+}
+
+header.The-Infinitys-Header .logo {
+  width: auto;
+  height: 100%;
+}
+
+#hamburger-button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--header-height);
+  height: var(--header-height);
+  background-color: transparent;
+  border: none;
+}
+
+#hamburger-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--header-height);
+  height: var(--header-height);
+  background-color: transparent;
+  border: none;
+}
+
+#hamburger-label>img.logo {
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.5, 0, 0.5, 1),
+    right 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#hamburger-button:checked+#hamburger-label>img.open {
+  right: var(--hamburger-width);
+  opacity: 0;
+}
+
+:not(#hamburger-button:checked)+#hamburger-label>img.close {
+  right: calc(-1 * var(--hamburger-width));
+  opacity: 0;
+}
+
+.Hamburger-Menu {
+  right: calc(-1 * var(--hamburger-width));
+  transition: right 0.5s var(--infinity-ease);
+  position: fixed;
+  top: var(--header-height);
+  width: var(--hamburger-width);
+  height: calc(100vh - var(--header-height));
+  background-color: var(--back-color);
+  color: var(--text-color);
+  border: none;
+}
+
+#hamburger-button:checked+#hamburger-label+.Hamburger-Menu {
+  right: 0;
+}
+
+.Hamburger-Menu img.icon {
+  width: calc(0.8 * var(--header-height));
+  height: calc(0.8 * var(--header-height));
+}
+
+.The-Infinitys-txt {
+  position: absolute;
+  top: 0;
+  left: var(--header-height);
+  width: auto;
+  height: var(--header-height);
+  stroke: var(--text-color);
+  fill: var(--text-color);
+}
+
+.Hamburger-Menu a {
+  font-family: "noto-sans", sans-serif;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: calc(0.8 * var(--header-height));
+}
+
+.Hamburger-Menu>div {
+  width: 100%;
+  height: calc(0.8 * var(--header-height));
+  margin-top: calc(0.5 * var(--header-height));
+}
+
+.Hamburger-Menu>div>a {
+  display: flex;
+}
+
+/* 背景 */
+#BackGround {
+  position: fixed;
+  z-index: -1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#BackGround>div {
+  display: none;
+}
+
+.background.fill,
+#BackGround>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background.center {
+  position: fixed;
+  width: 50vmin;
+  height: 50vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dark {
+  visibility: var(--dark-visilibity);
+}
+
+.light {
+  visibility: var(--light-visilibity);
+}
+
+@keyframes rainbow-animation {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 200%;
+  }
+}
+
+.rainbow {
+  background: linear-gradient(to left,
+      #f00,
+      #ff0,
+      #0f0,
+      #0ff,
+      #00f,
+      #f0f,
+      #f00,
+      #ff0,
+      #0f0,
+      #0ff,
+      #00f,
+      #f0f,
+      #f00) 0/200%;
+  animation: 10s rainbow-animation linear infinite;
+}
+
+.translucent {
+  opacity: 0.25;
+}
+
+div.main {
+  font-family: "noto-sans", sans-serif;
+  margin-top: calc(1.1 * var(--header-height));
+  min-height: calc(100vh - var(--header-height));
+}
+
+div.main>section {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--back-color) 87%, transparent);
+  border-bottom: 2px solid #888;
+  color: var(--text);
+}
+
+section.Title {
+  margin-top: 5vh;
+  padding-bottom: 10vh;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "noto serif", serif;
+  font-size: 7vw;
+  background-color: transparent !important;
+  color: var(--text-color);
+  text-align: center;
+  padding: 0;
+}
+
+div.main>section * {
+  line-height: 2;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+footer.The-Infinitys-Footer {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: color-mix(in srgb, var(--back-color), transparent 77%);
+}

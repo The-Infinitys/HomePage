@@ -4,14 +4,17 @@ type HTMLAttribute = {
   name: string;
   value: string;
 };
-const htmlAttributes:Function = (elem:HTMLElement,attributes:HTMLAttribute[]):void => {
+const htmlAttributes: Function = (
+  elem: HTMLElement,
+  attributes: HTMLAttribute[]
+): void => {
   attributes.forEach((attribute: HTMLAttribute) => {
     elem.setAttribute(attribute.name, attribute.value);
   });
-}
-const The_Infinitys_txt: Function = ():HTMLElement => {
+};
+const The_Infinitys_txt: Function = (): HTMLElement => {
   const result: HTMLElement = document.createElement("svg");
-  htmlAttributes(result,[
+  htmlAttributes(result, [
     {
       name: "viewBox",
       value: "0 0 623.301 101.001",
@@ -24,7 +27,7 @@ const The_Infinitys_txt: Function = ():HTMLElement => {
       name: "class",
       value: "The-Infinitys-txt",
     },
-  ])
+  ]);
   const innerElem: string = `
     <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
       <path
@@ -44,11 +47,11 @@ const InfinityHeader: Function = () => {
     open: "/layout/image/hamburger/open.svg",
     close: "/layout/image/hamburger/close.svg",
   };
-  const result:HTMLElement=document.createElement("header");
-  result.className="The-Infinitys-Header";
+  const result: HTMLElement = document.createElement("header");
+  result.className = "The-Infinitys-Header";
   {
     // set Home button
-    const home_label:HTMLElement=document.createElement("a");
+    const home_label: HTMLElement = document.createElement("a");
     htmlAttributes(home_label, [
       {
         name: "href",
@@ -60,8 +63,8 @@ const InfinityHeader: Function = () => {
       },
     ]);
     // set image
-    const infinity_logo:HTMLElement=document.createElement("img");
-    infinity_logo.className="logo";
+    const infinity_logo: HTMLElement = document.createElement("img");
+    infinity_logo.className = "logo";
     htmlAttributes(infinity_logo, [
       {
         name: "src",
@@ -80,9 +83,9 @@ const InfinityHeader: Function = () => {
   {
     {
       // add hamburger menu button
-      const hamburger_input=document.createElement("input");
+      const hamburger_input = document.createElement("input");
       // set attributes
-      hamburger_input.id="hamburger-button";
+      hamburger_input.id = "hamburger-button";
       htmlAttributes(hamburger_input, [
         {
           name: "type",
@@ -97,40 +100,34 @@ const InfinityHeader: Function = () => {
     }
     {
       // add hamburgermenu button img
-      const hm_label=document.createElement("label");
+      const hm_label = document.createElement("label");
       // set attributes
-      hm_label.id="hamburger-label";
+      hm_label.id = "hamburger-label";
       htmlAttributes(hm_label, [
         {
           name: "for",
           value: "hamburger-button",
         },
       ]);
-      // <label htmlFor="hamburger-button" id="hamburger-label">
-      //   <img className="logo open" src={hm.open} alt="" />
-      //   <img className="logo close" src={hm.close} alt="" />
-      // </label>
+      {
+        const img: { open: HTMLImageElement; close: HTMLImageElement } = {
+          open: document.createElement("img"),
+          close: document.createElement("img"),
+        };
+        img.open.className = "logo open";
+        img.open.src = hm.open;
+        img.open.alt = "";
+        img.close.className = "logo close";
+        img.close.src = hm.close;
+        img.close.alt = "";
+        hm_label.append(img.open);
+        hm_label.append(img.close);
+      }
+      result.append(hm_label);
     }
+    result.append(HamburgerMenu());
   }
-  return (
-    // <header className="The-Infinitys-Header">
-    //   <a href="/" aria-label="Home">
-    //     <img className="logo" src={The_Infinitys_logo} alt="" />
-    //   </a>
-    //   {The_Infinitys_txt()}
-    //   <input
-    //     id="hamburger-button"
-    //     type="checkbox"
-    //     aria-label="hamburger menu button"
-    //   />
-    //   <label htmlFor="hamburger-button" id="hamburger-label">
-    //     <img className="logo open" src={hm.open} alt="" />
-    //     <img className="logo close" src={hm.close} alt="" />
-    //   </label>
-    //   {HamburgerMenu()}
-    // </header>
-    1
-  );
+  return result;
 };
 const HamburgerMenu: Function = () => {
   const hamburger_icons: {
