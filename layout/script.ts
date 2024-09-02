@@ -4,9 +4,14 @@ type HTMLAttribute = {
   name: string;
   value: string;
 };
+const htmlAttributes:Function = (elem:HTMLElement,attributes:HTMLAttribute[]):void => {
+  attributes.forEach((attribute: HTMLAttribute) => {
+    elem.setAttribute(attribute.name, attribute.value);
+  });
+}
 const The_Infinitys_txt: Function = ():HTMLElement => {
   const result: HTMLElement = document.createElement("svg");
-  const attributes: HTMLAttribute[] = [
+  htmlAttributes(result,[
     {
       name: "viewBox",
       value: "0 0 623.301 101.001",
@@ -19,10 +24,7 @@ const The_Infinitys_txt: Function = ():HTMLElement => {
       name: "class",
       value: "The-Infinitys-txt",
     },
-  ];
-  attributes.forEach((attribute: HTMLAttribute) => {
-    result.setAttribute(attribute.name, attribute.value);
-  });
+  ])
   const innerElem: string = `
     <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
       <path
@@ -47,41 +49,29 @@ const InfinityHeader: Function = () => {
   {
     // set Home button
     const home_label:HTMLElement=document.createElement("a");
-    {
-      // set attributes
-      const attributes: HTMLAttribute[] = [
-        {
-          name: "href",
-          value: "/",
-        },
-        {
-          name: "aria-label",
-          value: "Home",
-        },
-      ];
-      attributes.forEach((attribute: HTMLAttribute) => {
-        home_label.setAttribute(attribute.name, attribute.value);
-      });
-    }
+    htmlAttributes(home_label, [
+      {
+        name: "href",
+        value: "/",
+      },
+      {
+        name: "aria-label",
+        value: "Home",
+      },
+    ]);
     // set image
     const infinity_logo:HTMLElement=document.createElement("img");
     infinity_logo.className="logo";
-    {
-      // set attributes
-      const attributes: HTMLAttribute[] = [
-        {
-          name: "src",
-          value: The_Infinitys_logo_src,
-        },
-        {
-          name: "alt",
-          value: "",
-        },
-      ];
-      attributes.forEach((attribute: HTMLAttribute) => {
-        infinity_logo.setAttribute(attribute.name, attribute.value);
-      });
-    }
+    htmlAttributes(infinity_logo, [
+      {
+        name: "src",
+        value: The_Infinitys_logo_src,
+      },
+      {
+        name: "alt",
+        value: "",
+      },
+    ]);
     home_label.append(infinity_logo);
     result.append(home_label);
   }
@@ -91,41 +81,31 @@ const InfinityHeader: Function = () => {
     {
       // add hamburger menu button
       const hamburger_input=document.createElement("input");
-      {
-        // set attributes
-        hamburger_input.id="hamburger-button";
-        const attributes: HTMLAttribute[] = [
-          {
-            name: "type",
-            value: "checkbox",
-          },
-          {
-            name: "aria-label",
-            value: "hamburger menu button",
-          },
-        ];
-        attributes.forEach((attribute: HTMLAttribute) => {
-          hamburger_input.setAttribute(attribute.name, attribute.value);
-        });
-      } 
+      // set attributes
+      hamburger_input.id="hamburger-button";
+      htmlAttributes(hamburger_input, [
+        {
+          name: "type",
+          value: "checkbox",
+        },
+        {
+          name: "aria-label",
+          value: "hamburger menu button",
+        },
+      ]);
       result.append(hamburger_input);
     }
     {
       // add hamburgermenu button img
       const hm_label=document.createElement("label");
-      {
-        // set attributes
-        hm_label.id="hamburger-label";
-        const attributes: HTMLAttribute[] = [
-          {
-            name: "for",
-            value: "hamburger-button",
-          },
-        ];
-        attributes.forEach((attribute: HTMLAttribute) => {
-          hm_label.setAttribute(attribute.name, attribute.value);
-        })
-      } 
+      // set attributes
+      hm_label.id="hamburger-label";
+      htmlAttributes(hm_label, [
+        {
+          name: "for",
+          value: "hamburger-button",
+        },
+      ]);
       // <label htmlFor="hamburger-button" id="hamburger-label">
       //   <img className="logo open" src={hm.open} alt="" />
       //   <img className="logo close" src={hm.close} alt="" />
