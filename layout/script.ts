@@ -85,6 +85,53 @@ const InfinityHeader: Function = () => {
     home_label.append(infinity_logo);
     result.append(home_label);
   }
+  // add txt
+  result.append(The_Infinitys_txt());
+  {
+    {
+      // add hamburger menu button
+      const hamburger_input=document.createElement("input");
+      {
+        // set attributes
+        hamburger_input.id="hamburger-button";
+        const attributes: HTMLAttribute[] = [
+          {
+            name: "type",
+            value: "checkbox",
+          },
+          {
+            name: "aria-label",
+            value: "hamburger menu button",
+          },
+        ];
+        attributes.forEach((attribute: HTMLAttribute) => {
+          hamburger_input.setAttribute(attribute.name, attribute.value);
+        });
+      } 
+      result.append(hamburger_input);
+    }
+    {
+      // add hamburgermenu button img
+      const hm_label=document.createElement("label");
+      {
+        // set attributes
+        hm_label.id="hamburger-label";
+        const attributes: HTMLAttribute[] = [
+          {
+            name: "for",
+            value: "hamburger-button",
+          },
+        ];
+        attributes.forEach((attribute: HTMLAttribute) => {
+          hm_label.setAttribute(attribute.name, attribute.value);
+        })
+      } 
+      // <label htmlFor="hamburger-button" id="hamburger-label">
+      //   <img className="logo open" src={hm.open} alt="" />
+      //   <img className="logo close" src={hm.close} alt="" />
+      // </label>
+    }
+  }
   return (
     // <header className="The-Infinitys-Header">
     //   <a href="/" aria-label="Home">
