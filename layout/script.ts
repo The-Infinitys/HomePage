@@ -1,3 +1,5 @@
+"use strict";
+
 type HTMLAttribute = {
   name: string;
   value: string;
