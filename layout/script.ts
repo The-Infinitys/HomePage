@@ -34,7 +34,6 @@ const main: Function = () => {
             value: "Home",
           },
         ]);
-        // set image
         const infinity_logo: HTMLElement = document.createElement("img");
         infinity_logo.className = "logo";
         const The_Infinitys_logo_src: string = "/image/The-Infinitys.webp";
