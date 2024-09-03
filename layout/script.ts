@@ -55,6 +55,7 @@ const main: Function = () => {
       {
         const The_Infinitys_txt: Function = (): HTMLElement => {
           const inf_txt: HTMLElement = document.createElement("svg");
+          inf_txt.className = "The-Infinity-txt";
           htmlAttributes(inf_txt, [
             {
               name: "viewBox",
@@ -63,11 +64,7 @@ const main: Function = () => {
             {
               name: "xmlns",
               value: "http://www.w3.org/2000/svg",
-            },
-            {
-              name: "class",
-              value: "The-Infinitys-txt",
-            },
+            }
           ]);
           const innerElem: string = `
           <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
