@@ -1,0 +1,50 @@
+<svg
+  version="1.1"
+  preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="360"
+  height="360"
+  viewBox="0,0,360,360"
+>
+  <g transform="translate(-60,0)">
+    <g
+      data-paper-data='{"isPaintingLayer":true}'
+      fill-rule="nonzero"
+      stroke="none"
+      stroke-width="0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      stroke-dasharray=""
+      stroke-dashoffset="0"
+      style="mix-blend-mode: normal"
+    >
+      <path d="M60,360v-360h360v360z" fill="#000000" />
+      <path d="M60,180v-180h180z" fill="#272727" />
+      <path d="M60,90v-90h180z" fill="#888888" />
+      <path
+        d="M420,180v180h-180z"
+        data-paper-data='{"index":null}'
+        fill="#272727"
+      />
+      <path
+        d="M420,270v90h-180z"
+        data-paper-data='{"index":null}'
+        fill="#888888"
+      />
+      <path d="M240,0l180,0v180z" fill="#272727" />
+      <path d="M330,0l90,0v180z" fill="#888888" />
+      <path
+        d="M240,360l-180,0l0,-180z"
+        data-paper-data='{"index":null}'
+        fill="#272727"
+      />
+      <path
+        d="M150,360h-90l0,-180z"
+        data-paper-data='{"index":null}'
+        fill="#888888"
+      />
+    </g>
+  </g>
+</svg>
