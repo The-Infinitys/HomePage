@@ -15,7 +15,6 @@ const main: Function = () => {
       });
     };
     const InfinityHeader: Function = () => {
-      const The_Infinitys_logo_src: string = "/image/The-Infinitys.webp";
       const hm: { open: string; close: string } = {
         open: "/layout/image/hamburger/open.svg",
         close: "/layout/image/hamburger/close.svg",
@@ -38,6 +37,7 @@ const main: Function = () => {
         // set image
         const infinity_logo: HTMLElement = document.createElement("img");
         infinity_logo.className = "logo";
+        const The_Infinitys_logo_src: string = "/image/The-Infinitys.webp";
         htmlAttributes(infinity_logo, [
           {
             name: "src",
@@ -198,6 +198,7 @@ const main: Function = () => {
       }
       return result;
     };
+    rendering();
     const InfinityFooter: Function = () => {
       const result: HTMLElement = document.createElement("footer");
       result.className = "The-Infinitys-Footer";
@@ -447,7 +448,6 @@ const main: Function = () => {
     };
     select_bg();
   };
-  rendering();
   client();
 };
 main();
