@@ -126,77 +126,79 @@ const main: Function = () => {
           }
           result.append(hm_label);
         }
-        result.append(HamburgerMenu());
-      }
-      return result;
-    };
-    const HamburgerMenu: Function = () => {
-      const hamburger_icons: {
-        X: string;
-        article: string;
-        scratch: string;
-        github: string;
-      } = {
-        X: "/layout/image/hamburger/menu/x.svg",
-        article: "/layout/image/hamburger/menu/article.svg",
-        scratch: "/layout/image/hamburger/menu/scratch.svg",
-        github: "/layout/image/hamburger/menu/github.svg",
-      };
-      const result: HTMLElement = document.createElement("div");
-      result.className = "Hamburger-Menu";
-      type LinkMenu = {
-        name: string;
-        href: string;
-        target: string;
-        src: string;
-      };
-      const menus: LinkMenu[] = [
         {
-          name: "Article",
-          href: "/article/",
-          target: "_self",
-          src: hamburger_icons.article,
-        },
-        {
-          name: "Scratch",
-          href: "https://scratch.mit.edu/users/The_Infinitys",
-          target: "blank",
-          src: hamburger_icons.scratch,
-        },
-        {
-          name: "GitHub",
-          href: "https://github.com/The-Infinitys/",
-          target: "blank",
-          src: hamburger_icons.github,
-        },
-        {
-          name: "X",
-          href: "https://x.com/The_Infinity_s/",
-          target: "blank",
-          src: hamburger_icons.X,
-        },
-      ];
-      menus.forEach((menu: LinkMenu) => {
-        const link_menu: HTMLElement = document.createElement("div");
-        {
-          const link_menu_a: HTMLElement = document.createElement("a");
-          htmlAttributes(link_menu_a, [
-            { name: "href", value: menu.href },
-            { name: "target", value: menu.target },
-          ]);
-          const link_menu_img: HTMLImageElement = document.createElement("img");
-          htmlAttributes(link_menu_img, [
-            { name: "alt", value: "" },
-            { name: "class", value: "icon" },
-            { name: "src", value: menu.src },
-          ]);
-          const link_menu_txt: HTMLElement = document.createElement("p");
-          link_menu_txt.innerHTML = menu.name;
-          link_menu_a.append(link_menu_img, link_menu_txt);
-          link_menu.append(link_menu_a);
+          const HamburgerMenu: Function = () => {
+            const hamburger_icons: {
+              X: string;
+              article: string;
+              scratch: string;
+              github: string;
+            } = {
+              X: "/layout/image/hamburger/menu/x.svg",
+              article: "/layout/image/hamburger/menu/article.svg",
+              scratch: "/layout/image/hamburger/menu/scratch.svg",
+              github: "/layout/image/hamburger/menu/github.svg",
+            };
+            const hm_menu: HTMLElement = document.createElement("div");
+            result.className = "Hamburger-Menu";
+            type LinkMenu = {
+              name: string;
+              href: string;
+              target: string;
+              src: string;
+            };
+            const menus: LinkMenu[] = [
+              {
+                name: "Article",
+                href: "/article/",
+                target: "_self",
+                src: hamburger_icons.article,
+              },
+              {
+                name: "Scratch",
+                href: "https://scratch.mit.edu/users/The_Infinitys",
+                target: "blank",
+                src: hamburger_icons.scratch,
+              },
+              {
+                name: "GitHub",
+                href: "https://github.com/The-Infinitys/",
+                target: "blank",
+                src: hamburger_icons.github,
+              },
+              {
+                name: "X",
+                href: "https://x.com/The_Infinity_s/",
+                target: "blank",
+                src: hamburger_icons.X,
+              },
+            ];
+            menus.forEach((menu: LinkMenu) => {
+              const link_menu: HTMLElement = document.createElement("div");
+              {
+                const link_menu_a: HTMLElement = document.createElement("a");
+                htmlAttributes(link_menu_a, [
+                  { name: "href", value: menu.href },
+                  { name: "target", value: menu.target },
+                ]);
+                const link_menu_img: HTMLImageElement = document.createElement("img");
+                htmlAttributes(link_menu_img, [
+                  { name: "alt", value: "" },
+                  { name: "class", value: "icon" },
+                  { name: "src", value: menu.src },
+                ]);
+                const link_menu_txt: HTMLElement = document.createElement("p");
+                link_menu_txt.innerHTML = menu.name;
+                link_menu_a.append(link_menu_img, link_menu_txt);
+                link_menu.append(link_menu_a);
+              }
+              hm_menu.append(link_menu);
+            });
+            return hm_menu;
+          };
+          result.append(HamburgerMenu());
         }
-        result.append(link_menu);
-      });
+      }
       return result;
     };
     const InfinityFooter: Function = () => {
@@ -242,7 +244,6 @@ const main: Function = () => {
     };
     document.body.append(generate_background());
   };
-  rendering();
   const client: Function = (): void => {
     const select_bg: Function = () => {
       const bg_parent: HTMLElement | null =
@@ -448,6 +449,7 @@ const main: Function = () => {
     };
     select_bg();
   };
+  rendering();
   client();
 };
 main();
