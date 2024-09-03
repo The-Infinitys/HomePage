@@ -53,8 +53,8 @@ const rendering: Function = (): void => {
     // add txt
     {
       const The_Infinitys_txt: Function = (): HTMLElement => {
-        const result: HTMLElement = document.createElement("svg");
-        htmlAttributes(result, [
+        const inf_txt: HTMLElement = document.createElement("svg");
+        htmlAttributes(inf_txt, [
           {
             name: "viewBox",
             value: "0 0 623.301 101.001",
@@ -77,8 +77,8 @@ const rendering: Function = (): void => {
             vectorEffect="non-scaling-stroke"
           />
         </g>`;
-        result.innerHTML = innerElem;
-        return result;
+        inf_txt.innerHTML = innerElem;
+        return inf_txt;
       };
       result.append(The_Infinitys_txt());
     }
