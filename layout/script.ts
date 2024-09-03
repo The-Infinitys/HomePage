@@ -15,6 +15,7 @@ const main: Function = () => {
       });
     };
     const InfinityHeader: Function = () => {
+      const The_Infinitys_logo_src: string = "/image/The-Infinitys.webp";
       const hm: { open: string; close: string } = {
         open: "/layout/image/hamburger/open.svg",
         close: "/layout/image/hamburger/close.svg",
@@ -209,7 +210,7 @@ const main: Function = () => {
     };
     document.body.prepend(InfinityHeader());
     document.body.append(InfinityFooter());
-    const generate_background: Function = () => {
+    const generate_background: Function = ():HTMLDivElement => {
       const monochrome_dark: string =
         "/layout/image/background/monochrome/dark.svg";
       const monochrome_light: string =
@@ -219,29 +220,29 @@ const main: Function = () => {
       const result: HTMLDivElement = document.createElement("div");
       result.id = "BackGround";
       result.innerHTML = `
-    <div data-background-name="monochrome">
-      <img
-        alt=""
-        className="background fill dark translucent"
-        src=${monochrome_dark}
-      />
-      <img
-        alt=""
-        className="background fill light translucent"
-        src=${monochrome_light}
-      />
-      <img
-        alt=""
-        className="background center translucent"
-        src=${monochrome_center}
-      />
-    </div>
-    <div data-background-name="rainbow">
-      <canvas className="background fill rainbow"></canvas>
-    </div>`;
+      <div data-background-name="monochrome">
+        <img
+          alt=""
+          className="background fill dark translucent"
+          src=${monochrome_dark}
+        />
+        <img
+          alt=""
+          className="background fill light translucent"
+          src=${monochrome_light}
+        />
+        <img
+          alt=""
+          className="background center translucent"
+          src=${monochrome_center}
+        />
+      </div>
+      <div data-background-name="rainbow">
+        <canvas className="background fill rainbow"></canvas>
+      </div>`;
       return result;
     };
-    document.body.append(generate_background);
+    document.body.append(generate_background());
   };
   rendering();
   const client: Function = (): void => {
