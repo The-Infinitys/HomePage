@@ -198,7 +198,6 @@ const main: Function = () => {
       }
       return result;
     };
-    rendering();
     const InfinityFooter: Function = () => {
       const result: HTMLElement = document.createElement("footer");
       result.className = "The-Infinitys-Footer";
@@ -243,6 +242,7 @@ const main: Function = () => {
     };
     document.body.append(generate_background());
   };
+  rendering();
   const client: Function = (): void => {
     const select_bg: Function = () => {
       const bg_parent: HTMLElement | null =
