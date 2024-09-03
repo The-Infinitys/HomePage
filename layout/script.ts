@@ -216,6 +216,7 @@ const main: Function = () => {
         "/layout/image/background/monochrome/center.svg";
       const result: HTMLDivElement = document.createElement("div");
       result.id = "BackGround";
+      result.className = "background";
       result.innerHTML = `
       <div data-background-name="monochrome">
         <img
