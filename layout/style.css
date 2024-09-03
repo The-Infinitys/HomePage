@@ -49,16 +49,21 @@ header.The-Infinitys-Header .logo {
   height: 100%;
 }
 
-.The-Infinitys-txt {
+header.The-Infinitys-Header+* {
+  margin-top: var(--header-height);
+}
+/* 
+svg.The-Infinitys-txt {
   position: absolute;
   top: 0;
   left: var(--header-height);
-  width: auto;
   height: var(--header-height);
-  stroke: var(--text-color);
-  fill: var(--text-color);
 }
 
+svg.The-Infinitys-txt>g>path {
+  stroke: var(--text-color);
+  fill: var(--text-color)
+} */
 
 #hamburger-button {
   display: none;

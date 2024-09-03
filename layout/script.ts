@@ -54,16 +54,20 @@ const main: Function = () => {
       {
         const The_Infinitys_txt: Function = (): HTMLElement => {
           const inf_txt: HTMLElement = document.createElement("svg");
-          inf_txt.className = "The-Infinity-txt";
+          inf_txt.className = "The-Infinitys-txt logo";
           htmlAttributes(inf_txt, [
             {
               name: "viewBox",
               value: "0 0 623.301 101.001",
             },
             {
+              name: "viewport",
+              value: "0 0 623.301 101.001",
+            },
+            {
               name: "xmlns",
               value: "http://www.w3.org/2000/svg",
-            }
+            },
           ]);
           const innerElem: string = `
           <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
@@ -136,7 +140,7 @@ const main: Function = () => {
               github: "/layout/image/hamburger/menu/github.svg",
             };
             const hm_menu: HTMLElement = document.createElement("div");
-            result.className = "Hamburger-Menu";
+            hm_menu.className = "Hamburger-Menu";
             type LinkMenu = {
               name: string;
               href: string;
@@ -177,7 +181,8 @@ const main: Function = () => {
                   { name: "href", value: menu.href },
                   { name: "target", value: menu.target },
                 ]);
-                const link_menu_img: HTMLImageElement = document.createElement("img");
+                const link_menu_img: HTMLImageElement =
+                  document.createElement("img");
                 htmlAttributes(link_menu_img, [
                   { name: "alt", value: "" },
                   { name: "class", value: "icon" },
@@ -206,7 +211,7 @@ const main: Function = () => {
     };
     document.body.prepend(InfinityHeader());
     document.body.append(InfinityFooter());
-    const generate_background: Function = ():HTMLDivElement => {
+    const generate_background: Function = (): HTMLDivElement => {
       const monochrome_dark: string =
         "/layout/image/background/monochrome/dark.svg";
       const monochrome_light: string =
@@ -220,23 +225,24 @@ const main: Function = () => {
       <div data-background-name="monochrome">
         <img
           alt=""
-          className="background fill dark translucent"
-          src=${monochrome_dark}
+          class="background fill dark translucent"
+          src="${monochrome_dark}"
         />
         <img
           alt=""
-          className="background fill light translucent"
-          src=${monochrome_light}
+          class="background fill light translucent"
+          src="${monochrome_light}"
         />
         <img
           alt=""
-          className="background center translucent"
-          src=${monochrome_center}
+          class="background center translucent"
+          src="${monochrome_center}"
         />
       </div>
       <div data-background-name="rainbow">
-        <canvas className="background fill rainbow"></canvas>
-      </div>`;
+        <canvas class="background fill rainbow"></canvas>
+      </div>
+      <div data-background-name="raindrop"></div>`;
       return result;
     };
     document.body.append(generate_background());
