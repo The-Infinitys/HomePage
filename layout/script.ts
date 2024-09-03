@@ -1,74 +1,74 @@
 "use strict";
-const rendering: Function = (): void => {
-  type HTMLAttribute = {
-    name: string;
-    value: string;
-  };
-  const htmlAttributes: Function = (
-    elem: HTMLElement,
-    attributes: HTMLAttribute[]
-  ): void => {
-    attributes.forEach((attribute: HTMLAttribute) => {
-      elem.setAttribute(attribute.name, attribute.value);
-    });
-  };
-  const InfinityHeader: Function = () => {
-    const The_Infinitys_logo_src: string =
-      "/layout/image/The-Infinitys-txt.svg";
-    const hm: { open: string; close: string } = {
-      open: "/layout/image/hamburger/open.svg",
-      close: "/layout/image/hamburger/close.svg",
+
+const main: Function = () => {
+  const rendering: Function = (): void => {
+    type HTMLAttribute = {
+      name: string;
+      value: string;
     };
-    const result: HTMLElement = document.createElement("header");
-    result.className = "The-Infinitys-Header";
-    {
-      // set Home button
-      const home_label: HTMLElement = document.createElement("a");
-      htmlAttributes(home_label, [
-        {
-          name: "href",
-          value: "/",
-        },
-        {
-          name: "aria-label",
-          value: "Home",
-        },
-      ]);
-      // set image
-      const infinity_logo: HTMLElement = document.createElement("img");
-      infinity_logo.className = "logo";
-      htmlAttributes(infinity_logo, [
-        {
-          name: "src",
-          value: The_Infinitys_logo_src,
-        },
-        {
-          name: "alt",
-          value: "",
-        },
-      ]);
-      home_label.append(infinity_logo);
-      result.append(home_label);
-    }
-    // add txt
-    {
-      const The_Infinitys_txt: Function = (): HTMLElement => {
-        const inf_txt: HTMLElement = document.createElement("svg");
-        htmlAttributes(inf_txt, [
+    const htmlAttributes: Function = (
+      elem: HTMLElement,
+      attributes: HTMLAttribute[]
+    ): void => {
+      attributes.forEach((attribute: HTMLAttribute) => {
+        elem.setAttribute(attribute.name, attribute.value);
+      });
+    };
+    const InfinityHeader: Function = () => {
+      const hm: { open: string; close: string } = {
+        open: "/layout/image/hamburger/open.svg",
+        close: "/layout/image/hamburger/close.svg",
+      };
+      const result: HTMLElement = document.createElement("header");
+      result.className = "The-Infinitys-Header";
+      {
+        // set Home button
+        const home_label: HTMLElement = document.createElement("a");
+        htmlAttributes(home_label, [
           {
-            name: "viewBox",
-            value: "0 0 623.301 101.001",
+            name: "href",
+            value: "/",
           },
           {
-            name: "xmlns",
-            value: "http://www.w3.org/2000/svg",
-          },
-          {
-            name: "class",
-            value: "The-Infinitys-txt",
+            name: "aria-label",
+            value: "Home",
           },
         ]);
-        const innerElem: string = `
+        // set image
+        const infinity_logo: HTMLElement = document.createElement("img");
+        infinity_logo.className = "logo";
+        htmlAttributes(infinity_logo, [
+          {
+            name: "src",
+            value: The_Infinitys_logo_src,
+          },
+          {
+            name: "alt",
+            value: "",
+          },
+        ]);
+        home_label.append(infinity_logo);
+        result.append(home_label);
+      }
+      // add txt
+      {
+        const The_Infinitys_txt: Function = (): HTMLElement => {
+          const inf_txt: HTMLElement = document.createElement("svg");
+          htmlAttributes(inf_txt, [
+            {
+              name: "viewBox",
+              value: "0 0 623.301 101.001",
+            },
+            {
+              name: "xmlns",
+              value: "http://www.w3.org/2000/svg",
+            },
+            {
+              name: "class",
+              value: "The-Infinitys-txt",
+            },
+          ]);
+          const innerElem: string = `
         <g strokeLinecap="round" fillRule="evenodd" strokeWidth="0.25mm">
           <path
             fill="currentColor"
@@ -77,171 +77,378 @@ const rendering: Function = (): void => {
             vectorEffect="non-scaling-stroke"
           />
         </g>`;
-        inf_txt.innerHTML = innerElem;
-        return inf_txt;
-      };
-      result.append(The_Infinitys_txt());
-    }
-    {
-      {
-        // add hamburger menu button
-        const hamburger_input = document.createElement("input");
-        // set attributes
-        hamburger_input.id = "hamburger-button";
-        htmlAttributes(hamburger_input, [
-          {
-            name: "type",
-            value: "checkbox",
-          },
-          {
-            name: "aria-label",
-            value: "hamburger menu button",
-          },
-        ]);
-        result.append(hamburger_input);
+          inf_txt.innerHTML = innerElem;
+          return inf_txt;
+        };
+        result.append(The_Infinitys_txt());
       }
       {
-        // add hamburgermenu button img
-        const hm_label = document.createElement("label");
-        // set attributes
-        hm_label.id = "hamburger-label";
-        htmlAttributes(hm_label, [
-          {
-            name: "for",
-            value: "hamburger-button",
-          },
-        ]);
         {
-          const img: { open: HTMLImageElement; close: HTMLImageElement } = {
-            open: document.createElement("img"),
-            close: document.createElement("img"),
-          };
-          img.open.className = "logo open";
-          img.open.src = hm.open;
-          img.open.alt = "";
-          img.close.className = "logo close";
-          img.close.src = hm.close;
-          img.close.alt = "";
-          hm_label.append(img.open);
-          hm_label.append(img.close);
+          // add hamburger menu button
+          const hamburger_input = document.createElement("input");
+          // set attributes
+          hamburger_input.id = "hamburger-button";
+          htmlAttributes(hamburger_input, [
+            {
+              name: "type",
+              value: "checkbox",
+            },
+            {
+              name: "aria-label",
+              value: "hamburger menu button",
+            },
+          ]);
+          result.append(hamburger_input);
         }
-        result.append(hm_label);
+        {
+          // add hamburgermenu button img
+          const hm_label = document.createElement("label");
+          // set attributes
+          hm_label.id = "hamburger-label";
+          htmlAttributes(hm_label, [
+            {
+              name: "for",
+              value: "hamburger-button",
+            },
+          ]);
+          {
+            const img: { open: HTMLImageElement; close: HTMLImageElement } = {
+              open: document.createElement("img"),
+              close: document.createElement("img"),
+            };
+            img.open.className = "logo open";
+            img.open.src = hm.open;
+            img.open.alt = "";
+            img.close.className = "logo close";
+            img.close.src = hm.close;
+            img.close.alt = "";
+            hm_label.append(img.open);
+            hm_label.append(img.close);
+          }
+          result.append(hm_label);
+        }
+        result.append(HamburgerMenu());
       }
-      result.append(HamburgerMenu());
-    }
-    return result;
+      return result;
+    };
+    const HamburgerMenu: Function = () => {
+      const hamburger_icons: {
+        X: string;
+        article: string;
+        scratch: string;
+        github: string;
+      } = {
+        X: "/layout/image/hamburger/menu/x.svg",
+        article: "/layout/image/hamburger/menu/article.svg",
+        scratch: "/layout/image/hamburger/menu/scratch.svg",
+        github: "/layout/image/hamburger/menu/github.svg",
+      };
+      const result: HTMLElement = document.createElement("div");
+      result.className = "Hamburger-Menu";
+      type LinkMenu = {
+        name: string;
+        href: string;
+        target: string;
+        src: string;
+      };
+      const menus: LinkMenu[] = [
+        {
+          name: "Article",
+          href: "/article/",
+          target: "_self",
+          src: hamburger_icons.article,
+        },
+        {
+          name: "Scratch",
+          href: "https://scratch.mit.edu/users/The_Infinitys",
+          target: "blank",
+          src: hamburger_icons.article,
+        },
+        {
+          name: "GitHub",
+          href: "https://github.com/The-Infinitys/",
+          target: "blank",
+          src: hamburger_icons.article,
+        },
+        {
+          name: "X",
+          href: "https://x.com/The_Infinity_s/",
+          target: "blank",
+          src: hamburger_icons.article,
+        },
+      ];
+      menus.forEach((menu: LinkMenu) => {
+        const link_menu: HTMLElement = document.createElement("div");
+        {
+          const link_menu_a: HTMLElement = document.createElement("a");
+          htmlAttributes(link_menu_a, [
+            { name: "href", value: menu.href },
+            { name: "target", value: menu.target },
+          ]);
+          const link_menu_img: HTMLImageElement = document.createElement("img");
+          htmlAttributes(link_menu_img, [
+            { name: "alt", value: "" },
+            { name: "class", value: "icon" },
+            { name: "src", value: menu.src },
+          ]);
+          const link_menu_txt: HTMLElement = document.createElement("p");
+          link_menu_txt.innerHTML = menu.name;
+          link_menu_a.append(link_menu_img, link_menu_txt);
+          link_menu.append(link_menu_a);
+        }
+        result.append(link_menu);
+      });
+      return result;
+    };
+    const InfinityFooter: Function = () => {
+      const result: HTMLElement = document.createElement("footer");
+      result.className = "The-Infinitys-Footer";
+      const content: string = `<h1>&copy; 2024 The Infinity&apos;s</h1>`;
+      result.innerHTML = content;
+      return result;
+    };
+    document.body.prepend(InfinityHeader());
+    document.body.append(InfinityFooter());
+    const generate_background: Function = () => {
+      const monochrome_dark: string =
+        "/layout/image/background/monochrome/dark.svg";
+      const monochrome_light: string =
+        "/layout/image/background/monochrome/light.svg";
+      const monochrome_center: string =
+        "/layout/image/background/monochrome/center.svg";
+      const result: HTMLDivElement = document.createElement("div");
+      result.id = "BackGround";
+      result.innerHTML = `
+    <div data-background-name="monochrome">
+      <img
+        alt=""
+        className="background fill dark translucent"
+        src=${monochrome_dark}
+      />
+      <img
+        alt=""
+        className="background fill light translucent"
+        src=${monochrome_light}
+      />
+      <img
+        alt=""
+        className="background center translucent"
+        src=${monochrome_center}
+      />
+    </div>
+    <div data-background-name="rainbow">
+      <canvas className="background fill rainbow"></canvas>
+    </div>`;
+      return result;
+    };
+    document.body.append(generate_background);
   };
-  const HamburgerMenu: Function = () => {
-    const hamburger_icons: {
-      X: string;
-      article: string;
-      scratch: string;
-      github: string;
-    } = {
-      X: "/layout/image/hamburger/menu/x.svg",
-      article: "/layout/image/hamburger/menu/article.svg",
-      scratch: "/layout/image/hamburger/menu/scratch.svg",
-      github: "/layout/image/hamburger/menu/github.svg",
-    };
-    const result: HTMLElement = document.createElement("div");
-    result.className = "Hamburger-Menu";
-    type LinkMenu = {
-      name: string;
-      href: string;
-      target: string;
-      src: string;
-    };
-    const menus: LinkMenu[] = [
-      {
-        name: "Article",
-        href: "/article/",
-        target: "_self",
-        src: hamburger_icons.article,
-      },
-      {
-        name: "Scratch",
-        href: "https://scratch.mit.edu/users/The_Infinitys",
-        target: "blank",
-        src: hamburger_icons.article,
-      },
-      {
-        name: "GitHub",
-        href: "https://github.com/The-Infinitys/",
-        target: "blank",
-        src: hamburger_icons.article,
-      },
-      {
-        name: "X",
-        href: "https://x.com/The_Infinity_s/",
-        target: "blank",
-        src: hamburger_icons.article,
-      },
-    ];
-    menus.forEach((menu: LinkMenu) => {
-      const link_menu: HTMLElement = document.createElement("div");
-      {
-        const link_menu_a: HTMLElement = document.createElement("a");
-        htmlAttributes(link_menu_a, [
-          { name: "href", value: menu.href },
-          { name: "target", value: menu.target },
-        ]);
-        const link_menu_img: HTMLImageElement = document.createElement("img");
-        htmlAttributes(link_menu_img, [
-          { name: "alt", value: "" },
-          { name: "class", value: "icon" },
-          { name: "src", value: menu.src },
-        ]);
-        const link_menu_txt: HTMLElement = document.createElement("p");
-        link_menu_txt.innerHTML = menu.name;
-        link_menu_a.append(link_menu_img, link_menu_txt);
-        link_menu.append(link_menu_a);
+  rendering();
+  const client: Function = (): void => {
+    const select_bg: Function = () => {
+      const bg_parent: HTMLElement | null =
+        document.querySelector("#BackGround");
+      if (bg_parent == null) {
+        return 1;
       }
-      result.append(link_menu);
-    });
-    return result;
+      type bg_pattern = {
+        width: number;
+        height: number;
+        shift: number[];
+        func: Function;
+      };
+      const bg_func: {
+        monochrome: Function;
+        raindrop: Function;
+        rainbow: {
+          run: Function;
+          rectangle: Function;
+          triangle: Function;
+          honeycomb: Function;
+        };
+      } = {
+        monochrome: (): number => {
+          const monochrome: HTMLElement | null = document.querySelector(
+            '#BackGround>div[data-background-name="monochrome"]'
+          );
+          if (monochrome == null) {
+            return 1;
+          } else {
+            monochrome.style.display = "contents";
+            return 0;
+          }
+        },
+        raindrop: (): number => {
+          const raindrop: HTMLElement | null = document.querySelector(
+            '#BackGround>div[data-background-name="raindrop"]'
+          );
+          if (raindrop == null) {
+            return 1;
+          } else {
+            raindrop.style.display = "contents";
+            return 0;
+          }
+        },
+        rainbow: {
+          run: (pattern: bg_pattern): number => {
+            const rainbow: HTMLElement | null = document.querySelector(
+              '#BackGround>div[data-background-name="rainbow"]'
+            );
+            if (rainbow == null) {
+              return 1;
+            }
+            rainbow.style.display = "contents";
+            const canvas: HTMLCanvasElement | null = document.querySelector(
+              '#BackGround>div[data-background-name="rainbow"]>canvas'
+            );
+            if (canvas == null) {
+              return 2;
+            }
+            canvas.width = window.devicePixelRatio * window.innerWidth;
+            canvas.height = window.devicePixelRatio * window.innerHeight;
+            const ctx: CanvasRenderingContext2D | null =
+              canvas.getContext("2d");
+            if (ctx == null) {
+              return 3;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const theme_color: Function = () => {
+              const rootElem: Element | null = document.querySelector(":root");
+              if (rootElem == null) {
+                return "";
+              }
+              const SelectStyle = getComputedStyle(rootElem);
+              return String(
+                SelectStyle.getPropertyValue("--back-color")
+              ).trim();
+            };
+            ctx.fillStyle = theme_color();
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            const draw: Function = (): void => {
+              for (
+                let canvas_y = 0;
+                (canvas_y - 1) * pattern.height < canvas.height;
+                canvas_y++
+              ) {
+                for (
+                  let canvas_x = 0;
+                  (canvas_x - 1) * pattern.width +
+                    pattern.shift[canvas_y % pattern.shift.length] <
+                  canvas.width;
+                  canvas_x++
+                ) {
+                  pattern.func(
+                    ctx,
+                    canvas_x * pattern.width +
+                      pattern.shift[canvas_y % pattern.shift.length],
+                    canvas_y * pattern.height
+                  );
+                }
+              }
+            };
+            draw();
+            return 0;
+          },
+          rectangle: (): void => {
+            const pattern: bg_pattern = {
+              width: 100,
+              height: 100,
+              shift: [0],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, 100, 100);
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.rectangle, 100);
+          },
+          triangle: (): void => {
+            const pattern: bg_pattern = {
+              width: 100,
+              height: Math.sqrt(3) * 50,
+              shift: [0, -50],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                const root3: number = Math.sqrt(3); //複数回使うので先に確保
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + 100, y);
+                ctx.lineTo(x + 50, y + 50 * root3);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(x + 100, y);
+                ctx.lineTo(x + 150, y + 50 * root3);
+                ctx.lineTo(x + 50, y + 50 * root3);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.triangle, 100);
+          },
+          honeycomb: (): void => {
+            const r: number = 25;
+            const root3: number = Math.sqrt(3); //複数回使うので先に確保
+            const honeycomb_width: number = r * root3;
+            const honeycomb_height: number = (r * 3) / 2;
+            const pattern: bg_pattern = {
+              width: honeycomb_width,
+              height: honeycomb_height,
+              shift: [0, honeycomb_width / -2],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(x, y - r);
+                ctx.lineTo(x + (root3 / 2) * r, y - r / 2);
+                ctx.lineTo(x + (root3 / 2) * r, y + r / 2);
+                ctx.lineTo(x, y + r);
+                ctx.lineTo(x - (root3 / 2) * r, y + r / 2);
+                ctx.lineTo(x - (root3 / 2) * r, y - r / 2);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.honeycomb, 100);
+          },
+        },
+      };
+      const randInt: Function = (min: number, max: number): number =>
+        Math.floor(Math.random() * (max + 1 - min)) + min;
+      const bg_num: number = randInt(1, 5);
+      switch (bg_num) {
+        // monochrome
+        case 1:
+          bg_func.monochrome();
+          break;
+        // rainbow rectangle
+        case 2:
+          bg_func.rainbow.rectangle();
+          break;
+        case 3:
+          bg_func.rainbow.triangle();
+          break;
+        case 4:
+          bg_func.rainbow.honeycomb();
+          break;
+        case 5:
+          bg_func.raindrop();
+          break;
+        // error
+        default:
+          break;
+      }
+      return 0;
+    };
+    select_bg();
   };
-  const InfinityFooter: Function = () => {
-    const result: HTMLElement = document.createElement("footer");
-    result.className = "The-Infinitys-Footer";
-    const content: string = `<h1>&copy; 2024 The Infinity&apos;s</h1>`;
-    result.innerHTML = content;
-    return result;
-  };
-  document.body.prepend(InfinityHeader());
-  document.body.append(InfinityFooter());
-  const generate_background: Function = () => {
-    const monochrome_dark: string =
-      "/layout/image/background/monochrome/dark.svg";
-    const monochrome_light: string =
-      "/layout/image/background/monochrome/light.svg";
-    const monochrome_center: string =
-      "/layout/image/background/monochrome/center.svg";
-    return (
-      // <div id="BackGround">
-      //   <div data-background-name="monochrome">
-      //     <img
-      //       alt=""
-      //       className="background fill dark translucent"
-      //       src={monochrome_dark}
-      //     />
-      //     <img
-      //       alt=""
-      //       className="background fill light translucent"
-      //       src={monochrome_light}
-      //     />
-      //     <img
-      //       alt=""
-      //       className="background center translucent"
-      //       src={monochrome_center}
-      //     />
-      //   </div>
-      //   <div data-background-name="rainbow"></div>
-      //   <div data-background-name="rainbow">
-      //     <canvas className="background fill rainbow"></canvas>
-      //   </div>
-      // </div>
-      1
-    );
-  };
+  client();
 };
-rendering();
+main();
