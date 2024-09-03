@@ -26,7 +26,6 @@ var main = function () {
                         value: "Home",
                     },
                 ]);
-                // set image
                 var infinity_logo = document.createElement("img");
                 infinity_logo.className = "logo";
                 var The_Infinitys_logo_src = "/image/The-Infinitys.webp";
@@ -173,7 +172,6 @@ var main = function () {
             }
             return result;
         };
-        rendering();
         var InfinityFooter = function () {
             var result = document.createElement("footer");
             result.className = "The-Infinitys-Footer";
@@ -195,6 +193,7 @@ var main = function () {
         };
         document.body.append(generate_background());
     };
+    rendering();
     var client = function () {
         var select_bg = function () {
             var bg_parent = document.querySelector("#BackGround");
