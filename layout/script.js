@@ -7,7 +7,6 @@ var main = function () {
             });
         };
         var InfinityHeader = function () {
-            var The_Infinitys_logo_src = "/image/The-Infinitys.webp";
             var hm = {
                 open: "/layout/image/hamburger/open.svg",
                 close: "/layout/image/hamburger/close.svg",
@@ -30,6 +29,7 @@ var main = function () {
                 // set image
                 var infinity_logo = document.createElement("img");
                 infinity_logo.className = "logo";
+                var The_Infinitys_logo_src = "/image/The-Infinitys.webp";
                 htmlAttributes(infinity_logo, [
                     {
                         name: "src",
@@ -173,6 +173,7 @@ var main = function () {
             }
             return result;
         };
+        rendering();
         var InfinityFooter = function () {
             var result = document.createElement("footer");
             result.className = "The-Infinitys-Footer";
@@ -363,7 +364,6 @@ var main = function () {
         };
         select_bg();
     };
-    rendering();
     client();
 };
 main();
