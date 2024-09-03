@@ -49,6 +49,17 @@ header.The-Infinitys-Header .logo {
   height: 100%;
 }
 
+.The-Infinitys-txt {
+  position: absolute;
+  top: 0;
+  left: var(--header-height);
+  width: auto;
+  height: var(--header-height);
+  stroke: var(--text-color);
+  fill: var(--text-color);
+}
+
+
 #hamburger-button {
   display: none;
   position: absolute;
@@ -110,16 +121,6 @@ header.The-Infinitys-Header .logo {
 .Hamburger-Menu img.icon {
   width: calc(0.8 * var(--header-height));
   height: calc(0.8 * var(--header-height));
-}
-
-.The-Infinitys-txt {
-  position: absolute;
-  top: 0;
-  left: var(--header-height);
-  width: auto;
-  height: var(--header-height);
-  stroke: var(--text-color);
-  fill: var(--text-color);
 }
 
 .Hamburger-Menu a {

@@ -1,32 +1,48 @@
 <svg
-  viewBox="0 0 70 100"
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="44.8154"
+  height="63.12467"
+  viewBox="0,0,44.8154,63.12467"
 >
-  <defs>
-    <style>
-      .thin-line {
-        fill: #888;
-        stroke: #888;
-        stroke-width: 3;
-      }
-      .Rainbow-line {
-        fill: url(#Rainbow);
-        stroke: #888;
-        stroke-width: 2;
-      }
-    </style>
-    <linearGradient id="Rainbow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f00" />
-      <stop offset="16%" stop-color="#ff0" />
-      <stop offset="33%" stop-color="#0f0" />
-      <stop offset="50%" stop-color="#0ff" />
-      <stop offset="67%" stop-color="#00f" />
-      <stop offset="83%" stop-color="#f0f" />
-      <stop offset="100%" stop-color="#f00" />
-    </linearGradient>
-  </defs>
-  <path d="M0,0l70,100h2l-70,-100z" class="thin-line" />
-  <path d="M70,0l-60,100h-10l60,-100z" class="Rainbow-line" />
+  <g transform="translate(-217.5923,-146.01059)">
+    <g
+      data-paper-data='{"isPaintingLayer":true}'
+      fill-rule="nonzero"
+      stroke="#888888"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      stroke-dasharray=""
+      stroke-dashoffset="0"
+      style="mix-blend-mode: normal"
+    >
+      <path
+        d="M218.8423,207.88527v-55.77053h42.3154v55.77053z"
+        fill="none"
+        stroke-width="2.5"
+      />
+      <path
+        d="M220.90737,180c0,-10.54457 8.54807,-19.09263 19.09264,-19.09263c10.54457,0 19.09263,8.54806 19.09263,19.09263c0,10.54457 -8.54806,19.09264 -19.09263,19.09264c-10.54457,0 -19.09264,-8.54807 -19.09264,-19.09264z"
+        fill="none"
+        stroke-width="2"
+      />
+      <path
+        d="M240,180c0,3.62345 -4.04583,6.56083 -9.03662,6.56083c-4.99078,0 -9.03661,-2.93739 -9.03661,-6.56083c0,-3.62345 4.04583,-6.56083 9.03661,-6.56083c4.99078,0 9.03662,2.93739 9.03662,6.56083z"
+        fill="none"
+        stroke-width="1"
+      />
+      <path
+        d="M258.07322,180c0,3.62345 -4.04583,6.56083 -9.03661,6.56083c-4.99078,0 -9.03661,-2.93739 -9.03661,-6.56083c0,-3.62345 4.04583,-6.56083 9.03661,-6.56083c4.99078,0 9.03661,2.93739 9.03661,6.56083z"
+        fill="none"
+        stroke-width="1"
+      />
+      <path
+        d="M226.35714,152.43917l3.85715,-6.42857h18.85714l4.57143,6.42857z"
+        fill="#888888"
+        stroke-width="0"
+      />
+    </g>
+  </g>
 </svg>
