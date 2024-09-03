@@ -112,66 +112,68 @@ var main = function () {
                     }
                     result.append(hm_label);
                 }
-                result.append(HamburgerMenu());
-            }
-            return result;
-        };
-        var HamburgerMenu = function () {
-            var hamburger_icons = {
-                X: "/layout/image/hamburger/menu/x.svg",
-                article: "/layout/image/hamburger/menu/article.svg",
-                scratch: "/layout/image/hamburger/menu/scratch.svg",
-                github: "/layout/image/hamburger/menu/github.svg",
-            };
-            var result = document.createElement("div");
-            result.className = "Hamburger-Menu";
-            var menus = [
                 {
-                    name: "Article",
-                    href: "/article/",
-                    target: "_self",
-                    src: hamburger_icons.article,
-                },
-                {
-                    name: "Scratch",
-                    href: "https://scratch.mit.edu/users/The_Infinitys",
-                    target: "blank",
-                    src: hamburger_icons.scratch,
-                },
-                {
-                    name: "GitHub",
-                    href: "https://github.com/The-Infinitys/",
-                    target: "blank",
-                    src: hamburger_icons.github,
-                },
-                {
-                    name: "X",
-                    href: "https://x.com/The_Infinity_s/",
-                    target: "blank",
-                    src: hamburger_icons.X,
-                },
-            ];
-            menus.forEach(function (menu) {
-                var link_menu = document.createElement("div");
-                {
-                    var link_menu_a = document.createElement("a");
-                    htmlAttributes(link_menu_a, [
-                        { name: "href", value: menu.href },
-                        { name: "target", value: menu.target },
-                    ]);
-                    var link_menu_img = document.createElement("img");
-                    htmlAttributes(link_menu_img, [
-                        { name: "alt", value: "" },
-                        { name: "class", value: "icon" },
-                        { name: "src", value: menu.src },
-                    ]);
-                    var link_menu_txt = document.createElement("p");
-                    link_menu_txt.innerHTML = menu.name;
-                    link_menu_a.append(link_menu_img, link_menu_txt);
-                    link_menu.append(link_menu_a);
+                    var HamburgerMenu = function () {
+                        var hamburger_icons = {
+                            X: "/layout/image/hamburger/menu/x.svg",
+                            article: "/layout/image/hamburger/menu/article.svg",
+                            scratch: "/layout/image/hamburger/menu/scratch.svg",
+                            github: "/layout/image/hamburger/menu/github.svg",
+                        };
+                        var hm_menu = document.createElement("div");
+                        result.className = "Hamburger-Menu";
+                        var menus = [
+                            {
+                                name: "Article",
+                                href: "/article/",
+                                target: "_self",
+                                src: hamburger_icons.article,
+                            },
+                            {
+                                name: "Scratch",
+                                href: "https://scratch.mit.edu/users/The_Infinitys",
+                                target: "blank",
+                                src: hamburger_icons.scratch,
+                            },
+                            {
+                                name: "GitHub",
+                                href: "https://github.com/The-Infinitys/",
+                                target: "blank",
+                                src: hamburger_icons.github,
+                            },
+                            {
+                                name: "X",
+                                href: "https://x.com/The_Infinity_s/",
+                                target: "blank",
+                                src: hamburger_icons.X,
+                            },
+                        ];
+                        menus.forEach(function (menu) {
+                            var link_menu = document.createElement("div");
+                            {
+                                var link_menu_a = document.createElement("a");
+                                htmlAttributes(link_menu_a, [
+                                    { name: "href", value: menu.href },
+                                    { name: "target", value: menu.target },
+                                ]);
+                                var link_menu_img = document.createElement("img");
+                                htmlAttributes(link_menu_img, [
+                                    { name: "alt", value: "" },
+                                    { name: "class", value: "icon" },
+                                    { name: "src", value: menu.src },
+                                ]);
+                                var link_menu_txt = document.createElement("p");
+                                link_menu_txt.innerHTML = menu.name;
+                                link_menu_a.append(link_menu_img, link_menu_txt);
+                                link_menu.append(link_menu_a);
+                            }
+                            hm_menu.append(link_menu);
+                        });
+                        return hm_menu;
+                    };
+                    result.append(HamburgerMenu());
                 }
-                result.append(link_menu);
-            });
+            }
             return result;
         };
         var InfinityFooter = function () {
@@ -194,7 +196,6 @@ var main = function () {
         };
         document.body.append(generate_background());
     };
-    rendering();
     var client = function () {
         var select_bg = function () {
             var bg_parent = document.querySelector("#BackGround");
@@ -364,6 +365,7 @@ var main = function () {
         };
         select_bg();
     };
+    rendering();
     client();
 };
 main();
