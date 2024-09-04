@@ -61,7 +61,7 @@ const main: Function = () => {
               </path>
             </g>
           </svg>
-`;
+          `;
           return inf_txt;
         };
         result.append(The_Infinitys_txt());
