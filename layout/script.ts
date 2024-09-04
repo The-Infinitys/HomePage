@@ -157,6 +157,12 @@ const main: Function = () => {
                 target: "blank",
                 src: hamburger_icons.X,
               },
+              {
+                name: "Pixiv",
+                href: "https://www.pixiv.net/users/109461187",
+                target: "blank",
+                src: hamburger_icons.X //TODO: アイコンを作ろう。あといい加減にあれ(Inf txt)、治そう。
+              }
             ];
             menus.forEach((menu: LinkMenu) => {
               const link_menu: HTMLElement = document.createElement("div");
