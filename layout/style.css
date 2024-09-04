@@ -12,17 +12,24 @@
   --link-color: aqua;
   --dark-visilibity: visible;
   --light-visilibity: hidden;
-  /* header menu */
+  /* menu */
   --header-height: 50px;
+  --footer-height: 50px;
   /* hambburger menu */
   --hamburger-width: min(350px, 100%);
   --infinity-ease: cubic-bezier(0.5, 0, 0.5, 1);
 }
 
-/* 色の定義 */
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
+  /* 色の定義 */
   background-color: var(--back-color);
   color: var(--text-color);
+  margin-bottom: var(--footer-height);
 }
 
 /* ヘッダーメニュー */
@@ -52,6 +59,7 @@ header.The-Infinitys-Header .logo {
 header.The-Infinitys-Header+* {
   margin-top: var(--header-height);
 }
+
 /* 
 svg.The-Infinitys-txt {
   position: absolute;
@@ -256,8 +264,10 @@ a {
 
 footer.The-Infinitys-Footer {
   text-align: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: color-mix(in srgb, var(--back-color), transparent 77%);
+  height: var(--footer-height);
+  background-color: color-mix(in srgb, var(--back-color), transparent 17%);
 }
