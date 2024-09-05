@@ -41,6 +41,7 @@ body {
 /* ヘッダーメニュー */
 header.The-Infinitys-Header {
   /* ヘッダーの位置の固定 */
+  z-index: 99999999;
   position: fixed;
   top: 0;
   left: 0;
@@ -227,21 +228,6 @@ svg.The-Infinitys-txt {
   opacity: 0.25;
 }
 
-div.main {
-  font-family: "noto-sans", sans-serif;
-  margin-top: calc(1.1 * var(--header-height));
-  min-height: calc(100vh - var(--header-height));
-}
-
-div.main>section {
-  width: 100%;
-  padding: 5%;
-  box-sizing: border-box;
-  background-color: color-mix(in srgb, var(--back-color) 87%, transparent);
-  border-bottom: 2px solid #888;
-  color: var(--text);
-}
-
 section.Title {
   margin-top: 5vh;
   padding-bottom: 10vh;
@@ -249,14 +235,23 @@ section.Title {
   text-align: center;
   font-family: "noto serif", serif;
   font-size: 7vw;
-  background-color: transparent !important;
+  background-color: transparent;
   color: var(--text-color);
   text-align: center;
   padding: 0;
 }
 
-div.main>section * {
-  line-height: 2;
+section {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--back-color) 87%, transparent);
+  border-bottom: 2px solid #888;
+  color: var(--text-color);
+}
+
+section * {
+  line-height: 2em;
 }
 
 a {
