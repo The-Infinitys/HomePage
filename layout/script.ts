@@ -121,11 +121,13 @@ const main: Function = () => {
               article: string;
               scratch: string;
               github: string;
+              pixiv: string;
             } = {
               X: "/layout/image/hamburger/menu/x.svg",
               article: "/layout/image/hamburger/menu/article.svg",
               scratch: "/layout/image/hamburger/menu/scratch.svg",
               github: "/layout/image/hamburger/menu/github.svg",
+              pixiv: "/layout/image/hamburger/menu/pixiv.svg",
             };
             const hm_menu: HTMLElement = document.createElement("div");
             hm_menu.className = "Hamburger-Menu";
@@ -139,7 +141,7 @@ const main: Function = () => {
               {
                 name: "Article",
                 href: "/article/",
-                target: "_self",
+                target: "self",
                 src: hamburger_icons.article,
               },
               {
@@ -164,7 +166,7 @@ const main: Function = () => {
                 name: "Pixiv",
                 href: "https://www.pixiv.net/users/109461187",
                 target: "blank",
-                src: hamburger_icons.X, //TODO: アイコンを作ろう。あといい加減にあれ(Inf txt)、治そう。
+                src: hamburger_icons.pixiv, 
               },
             ];
             menus.forEach((menu: LinkMenu) => {
@@ -173,7 +175,7 @@ const main: Function = () => {
                 const link_menu_a: HTMLElement = document.createElement("a");
                 htmlAttributes(link_menu_a, [
                   { name: "href", value: menu.href },
-                  { name: "target", value: menu.target },
+                  { name: "target", value: "_" + menu.target },
                 ]);
                 const link_menu_img: HTMLImageElement =
                   document.createElement("img");
