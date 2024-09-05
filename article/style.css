@@ -1,17 +1,3 @@
-:root {
-  --infinityspirit-back: white;
-  --infinityspirit-text: black;
-}
-
-
-:root[theme="dark"] {
-  --infinityspirit-back: black;
-  --infinityspirit-text: white;
-}
-
-a[theme="dark"] {
-  color: aqua;
-}
 
 
 .search-query {
@@ -30,9 +16,9 @@ a[theme="dark"] {
   width: min(50vh, 70vw);
   height: max(24px, 7vh);
   font-size: max(24px, 7vh);
-  background-color: var(--infinityspirit-back);
-  color: var(--infinityspirit-text);
-  border: 1px solid var(--infinityspirit-text);
+  background-color: var(--back-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
   border-radius: 2px;
 }
 
@@ -42,7 +28,7 @@ a[theme="dark"] {
   flex-wrap: wrap;
   align-items: flex-start;
   font-family: "Noto-Sans", Arial, Helvetica, sans-serif;
-  color: var(--infinityspirit-text);
+  color: var(--text-color);
   background-color: #8883;
 }
 
@@ -56,7 +42,7 @@ a[theme="dark"] {
   width: calc(var(--this-width) - 2 * var(--this-margin));
   margin: var(--this-margin);
   aspect-ratio: 4/3;
-  background-color: var(--infinityspirit-back);
+  background-color: var(--back-color);
 }
 
 .article-list-main>button>img {
@@ -76,7 +62,7 @@ a[theme="dark"] {
   height: 20%;
   top: 80%;
   left: 0;
-  color: var(--infinityspirit-text);
+  color: var(--text-color);
 }
 
 .article-list-main>button>div h1 {
