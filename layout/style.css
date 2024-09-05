@@ -16,8 +16,14 @@
   --header-height: 50px;
   --footer-height: 50px;
   /* hambburger menu */
-  --hamburger-width: min(350px, 100%);
+  --hamburger-width: 350px;
   --infinity-ease: cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+@media (max-aspect-ratio: 2/3) {
+  :root {
+    --hamburger-width: 100%;
+  }
 }
 
 html {
@@ -60,18 +66,14 @@ header.The-Infinitys-Header+* {
   margin-top: var(--header-height);
 }
 
-/* 
 svg.The-Infinitys-txt {
   position: absolute;
   top: 0;
   left: var(--header-height);
   height: var(--header-height);
-}
-
-svg.The-Infinitys-txt>g>path {
   stroke: var(--text-color);
   fill: var(--text-color)
-} */
+}
 
 #hamburger-button {
   display: none;
@@ -106,12 +108,12 @@ svg.The-Infinitys-txt>g>path {
 }
 
 #hamburger-button:checked+#hamburger-label>img.open {
-  right: var(--hamburger-width);
+  right: var(--header-height);
   opacity: 0;
 }
 
 :not(#hamburger-button:checked)+#hamburger-label>img.close {
-  right: calc(-1 * var(--hamburger-width));
+  right: calc(-1 * var(--header-height));
   opacity: 0;
 }
 
