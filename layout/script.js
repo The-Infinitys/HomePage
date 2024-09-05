@@ -108,6 +108,7 @@ var main = function () {
                             article: "/layout/image/hamburger/menu/article.svg",
                             scratch: "/layout/image/hamburger/menu/scratch.svg",
                             github: "/layout/image/hamburger/menu/github.svg",
+                            pixiv: "/layout/image/hamburger/menu/pixiv.svg",
                         };
                         var hm_menu = document.createElement("div");
                         hm_menu.className = "Hamburger-Menu";
@@ -115,7 +116,7 @@ var main = function () {
                             {
                                 name: "Article",
                                 href: "/article/",
-                                target: "_self",
+                                target: "self",
                                 src: hamburger_icons.article,
                             },
                             {
@@ -140,7 +141,7 @@ var main = function () {
                                 name: "Pixiv",
                                 href: "https://www.pixiv.net/users/109461187",
                                 target: "blank",
-                                src: hamburger_icons.X, //TODO: アイコンを作ろう。あといい加減にあれ(Inf txt)、治そう。
+                                src: hamburger_icons.pixiv,
                             },
                         ];
                         menus.forEach(function (menu) {
@@ -149,7 +150,7 @@ var main = function () {
                                 var link_menu_a = document.createElement("a");
                                 htmlAttributes(link_menu_a, [
                                     { name: "href", value: menu.href },
-                                    { name: "target", value: menu.target },
+                                    { name: "target", value: "_" + menu.target },
                                 ]);
                                 var link_menu_img = document.createElement("img");
                                 htmlAttributes(link_menu_img, [
