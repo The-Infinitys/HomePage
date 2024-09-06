@@ -369,19 +369,19 @@ var layout_main = function () {
                 var ls_color_theme = localStorage.getItem("color-theme");
                 if (ls_color_theme == null) {
                     color_theme = "auto";
+                    localStorage.setItem("color-theme", color_theme);
                 }
                 else {
                     color_theme = ls_color_theme;
                 }
-                localStorage.setItem("color-theme", color_theme);
                 auto_color_theme();
             };
             var renew_color_theme = function () {
+                localStorage.setItem("color-theme", color_theme);
                 var change_button = document.querySelector("#change-color-theme");
                 if (change_button == null) {
                     return;
                 }
-                localStorage.setItem("color-theme", color_theme);
                 var animate_selected = function () {
                     var speed = 2;
                     var selected = document.querySelector("#color-theme-change-selected");
