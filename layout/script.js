@@ -258,14 +258,15 @@ var main = function () {
                         return 0;
                     },
                     rectangle: function () {
+                        var size = 50;
                         var pattern = {
-                            width: 100,
-                            height: 100,
+                            width: size,
+                            height: size,
                             shift: [0],
                             func: function (ctx, x, y) {
                                 ctx.globalCompositeOperation = "destination-out";
-                                ctx.lineWidth = 2;
-                                ctx.strokeRect(x, y, 100, 100);
+                                ctx.lineWidth = 1;
+                                ctx.strokeRect(x, y, size, size);
                                 ctx.globalCompositeOperation = "source-over";
                             },
                         };
