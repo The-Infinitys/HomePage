@@ -273,24 +273,25 @@ var main = function () {
                         setTimeout(bg_func.rainbow.rectangle, 100);
                     },
                     triangle: function () {
+                        var size = 25;
                         var pattern = {
-                            width: 100,
-                            height: Math.sqrt(3) * 50,
-                            shift: [0, -50],
+                            width: size * 2,
+                            height: Math.sqrt(3) * size,
+                            shift: [0, -size],
                             func: function (ctx, x, y) {
                                 var root3 = Math.sqrt(3); //複数回使うので先に確保
                                 ctx.globalCompositeOperation = "destination-out";
-                                ctx.lineWidth = 2;
+                                ctx.lineWidth = 1;
                                 ctx.beginPath();
                                 ctx.moveTo(x, y);
-                                ctx.lineTo(x + 100, y);
-                                ctx.lineTo(x + 50, y + 50 * root3);
+                                ctx.lineTo(x + size * 2, y);
+                                ctx.lineTo(x + size, y + size * root3);
                                 ctx.closePath();
                                 ctx.stroke();
                                 ctx.beginPath();
-                                ctx.moveTo(x + 100, y);
-                                ctx.lineTo(x + 150, y + 50 * root3);
-                                ctx.lineTo(x + 50, y + 50 * root3);
+                                ctx.moveTo(x + size * 2, y);
+                                ctx.lineTo(x + size * 3, y + size * root3);
+                                ctx.lineTo(x + size, y + size * root3);
                                 ctx.closePath();
                                 ctx.stroke();
                                 ctx.globalCompositeOperation = "source-over";
