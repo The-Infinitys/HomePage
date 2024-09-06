@@ -1,5 +1,5 @@
 "use strict";
-var main = function () {
+var layout_main = function () {
     var rendering = function () {
         var htmlAttributes = function (elem, attributes) {
             attributes.forEach(function (attribute) {
@@ -98,6 +98,11 @@ var main = function () {
                 }
                 {
                     var HamburgerMenu = function () {
+                        var hm_menu = document.createElement("div");
+                        var color_theme_div = document.createElement("div");
+                        color_theme_div.id = "change-color-theme";
+                        color_theme_div.innerHTML = "\n            <svg\n                viewBox=\"0 0 300 100\"\n                version=\"1.1\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n              >\n              <circle id=\"color-theme-change-selected\" data-inertia=\"0\" cx=\"250\" cy=\"50\" r=\"45\" />\n              <g name=\"light\">\n                <circle style=\"fill:#fff1;stroke:none;\" cx=\"50\" cy=\"50\" r=\"45\" />\n                <circle cx=\"50\" cy=\"50\" r=\"20\" style=\"fill: var(--text-color); stroke: none\" />\n                  <path\n                    d=\"\n                    M50,25v-20\n                    M50,75v20\n                    M25,50h-20\n                    M75,50h20\n                    M67,67l14,14\n                    M33,67l-14,14\n                    M67,33l14,-14\n                    M33,33l-14,-14\n                    \"\n                    style=\"stroke: var(--text-color); stroke-width: 4; fill: none;stroke-linecap:round;\"\n                    />\n              </g>\n              <g name=\"dark\">\n                <circle style=\"fill:#0001;stroke:none;\" cx=\"150\" cy=\"50\" r=\"45\" />\n                <path\n                  d=\"\n                  M160,10\n                  A40,40,0,1,0,190,65\n                  A35,35,0,1,1,160,10\n                  z\n                  \"\n                  style=\"stroke: none; fill: var(--text-color)\"\n                  />\n              </g>\n              <g name=\"auto\">\n                <circle style=\"fill:#8881;stroke:none;\" cx=\"250\" cy=\"50\" r=\"45\" />\n                <path\n                  d=\"\n                  M250,30\n                  A20,20,0,1,0,267,57\n                  A15,15,0,1,1,250,30\n                  z\n                  \"\n                  style=\"stroke: none; fill: var(--text-color)\"\n                  />\n                <path\n                  d=\"\n                  M250,25v-20\n                  M250,75v20\n                  M225,50h-20\n                  M275,50h20\n                  M267,67l14,14\n                  M233,67l-14,14\n                  M267,33l14,-14\n                  M233,33l-14,-14\n                  \"\n                  style=\"stroke: var(--text-color); stroke-width: 4; fill: none;stroke-linecap:round;\"\n                  />\n              </g>\n            </svg>\n            ";
+                        hm_menu.append(color_theme_div);
                         var hamburger_icons = {
                             X: "/layout/image/hamburger/menu/x.svg",
                             article: "/layout/image/hamburger/menu/article.svg",
@@ -105,7 +110,6 @@ var main = function () {
                             github: "/layout/image/hamburger/menu/github.svg",
                             pixiv: "/layout/image/hamburger/menu/pixiv.svg",
                         };
-                        var hm_menu = document.createElement("div");
                         hm_menu.className = "Hamburger-Menu";
                         var menus = [
                             {
@@ -358,8 +362,123 @@ var main = function () {
             }
             return 0;
         };
+        var color_theme_detector = function () {
+            var _a, _b, _c;
+            var color_theme = "auto";
+            var init_color_theme = function () {
+                var ls_color_theme = localStorage.getItem("color-theme");
+                if (ls_color_theme == null) {
+                    color_theme = "auto";
+                    localStorage.setItem("color-theme", "auto");
+                }
+                else {
+                    color_theme = ls_color_theme;
+                }
+                auto_color_theme();
+            };
+            var renew_color_theme = function () {
+                var change_button = document.querySelector("#change-color-theme");
+                if (change_button == null) {
+                    return;
+                }
+                localStorage.setItem("color-theme", color_theme);
+                var animate_selected = function () {
+                    var speed = 2;
+                    var selected = document.querySelector("#color-theme-change-selected");
+                    var target_x = 250;
+                    switch (color_theme) {
+                        case "light":
+                            target_x = 50;
+                            break;
+                        case "dark":
+                            target_x = 150;
+                            break;
+                        case "auto":
+                            target_x = 250;
+                            break;
+                        default:
+                            alert("error happend on change color theme");
+                            break;
+                    }
+                    var selected_cx = selected.getAttribute("cx");
+                    var selected_inertia = selected.getAttribute("data-inertia");
+                    var now_x = parseFloat(selected_cx);
+                    var next_x = now_x;
+                    if (Math.abs((target_x - now_x) / speed) <
+                        Math.abs(parseFloat(selected_inertia))) {
+                        selected === null || selected === void 0 ? void 0 : selected.setAttribute("data-inertia", ((target_x - now_x) / speed).toString());
+                    }
+                    else {
+                        if (target_x > now_x) {
+                            selected === null || selected === void 0 ? void 0 : selected.setAttribute("data-inertia", (parseFloat(selected_inertia) + 2).toString());
+                        }
+                        else {
+                            selected === null || selected === void 0 ? void 0 : selected.setAttribute("data-inertia", (parseFloat(selected_inertia) - 2).toString());
+                        }
+                    }
+                    next_x += parseFloat(selected.getAttribute("data-inertia"));
+                    if (Math.abs(next_x - target_x) > 1) {
+                        selected === null || selected === void 0 ? void 0 : selected.setAttribute("cx", next_x.toString());
+                        requestAnimationFrame(function () {
+                            animate_selected();
+                        });
+                    }
+                    else {
+                        selected === null || selected === void 0 ? void 0 : selected.setAttribute("cx", target_x.toString());
+                    }
+                };
+                animate_selected();
+                switch (color_theme) {
+                    case "light":
+                        document.documentElement.setAttribute("theme", "light");
+                        change_button.style.fill = "#aaa";
+                        change_button.style.backgroundColor = "white";
+                        break;
+                    case "dark":
+                        document.documentElement.setAttribute("theme", "dark");
+                        change_button.style.fill = "#333";
+                        change_button.style.backgroundColor = "black";
+                        break;
+                    case "auto":
+                        change_button.style.fill = "#888";
+                        change_button.style.backgroundColor = "gray";
+                        if (window.matchMedia("(prefers-color-scheme: dark)").matches == true) {
+                            document.documentElement.setAttribute("theme", "dark");
+                        }
+                        else {
+                            document.documentElement.setAttribute("theme", "light");
+                        }
+                        break;
+                    default:
+                        alert("error happend on change color theme");
+                        break;
+                }
+            };
+            var change_color_theme = function (mode) {
+                color_theme = mode;
+                renew_color_theme();
+            };
+            var auto_color_theme = function () {
+                var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+                mediaQuery.addEventListener("change", renew_color_theme);
+            };
+            init_color_theme();
+            (_a = document
+                .querySelector('#change-color-theme > svg > g[name="auto"]')) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
+                change_color_theme("auto");
+            });
+            (_b = document
+                .querySelector('#change-color-theme > svg > g[name="light"]')) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
+                change_color_theme("light");
+            });
+            (_c = document
+                .querySelector('#change-color-theme > svg > g[name="dark"]')) === null || _c === void 0 ? void 0 : _c.addEventListener("click", function () {
+                change_color_theme("dark");
+            });
+        };
         select_bg();
+        color_theme_detector();
     };
     client();
 };
-main();
+layout_main();

@@ -1,6 +1,6 @@
 "use strict";
 
-const main: Function = () => {
+const layout_main: Function = () => {
   const rendering: Function = (): void => {
     type HTMLAttribute = {
       name: string;
@@ -113,6 +113,75 @@ const main: Function = () => {
         }
         {
           const HamburgerMenu: Function = () => {
+            const hm_menu: HTMLElement = document.createElement("div");
+            const color_theme_div: HTMLDivElement =
+              document.createElement("div");
+            color_theme_div.id = "change-color-theme";
+            color_theme_div.innerHTML = `
+            <svg
+                viewBox="0 0 300 100"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+              <circle id="color-theme-change-selected" data-inertia="0" cx="250" cy="50" r="45" />
+              <g name="light">
+                <circle style="fill:#fff1;stroke:none;" cx="50" cy="50" r="45" />
+                <circle cx="50" cy="50" r="20" style="fill: var(--text-color); stroke: none" />
+                  <path
+                    d="
+                    M50,25v-20
+                    M50,75v20
+                    M25,50h-20
+                    M75,50h20
+                    M67,67l14,14
+                    M33,67l-14,14
+                    M67,33l14,-14
+                    M33,33l-14,-14
+                    "
+                    style="stroke: var(--text-color); stroke-width: 4; fill: none;stroke-linecap:round;"
+                    />
+              </g>
+              <g name="dark">
+                <circle style="fill:#0001;stroke:none;" cx="150" cy="50" r="45" />
+                <path
+                  d="
+                  M160,10
+                  A40,40,0,1,0,190,65
+                  A35,35,0,1,1,160,10
+                  z
+                  "
+                  style="stroke: none; fill: var(--text-color)"
+                  />
+              </g>
+              <g name="auto">
+                <circle style="fill:#8881;stroke:none;" cx="250" cy="50" r="45" />
+                <path
+                  d="
+                  M250,30
+                  A20,20,0,1,0,267,57
+                  A15,15,0,1,1,250,30
+                  z
+                  "
+                  style="stroke: none; fill: var(--text-color)"
+                  />
+                <path
+                  d="
+                  M250,25v-20
+                  M250,75v20
+                  M225,50h-20
+                  M275,50h20
+                  M267,67l14,14
+                  M233,67l-14,14
+                  M267,33l14,-14
+                  M233,33l-14,-14
+                  "
+                  style="stroke: var(--text-color); stroke-width: 4; fill: none;stroke-linecap:round;"
+                  />
+              </g>
+            </svg>
+            `;
+            hm_menu.append(color_theme_div);
             const hamburger_icons: {
               X: string;
               article: string;
@@ -126,7 +195,6 @@ const main: Function = () => {
               github: "/layout/image/hamburger/menu/github.svg",
               pixiv: "/layout/image/hamburger/menu/pixiv.svg",
             };
-            const hm_menu: HTMLElement = document.createElement("div");
             hm_menu.className = "Hamburger-Menu";
             type LinkMenu = {
               name: string;
@@ -446,8 +514,139 @@ const main: Function = () => {
       }
       return 0;
     };
+    const color_theme_detector: Function = (): void => {
+      let color_theme: string = "auto";
+      const init_color_theme: Function = (): void => {
+        const ls_color_theme: string | null =
+          localStorage.getItem("color-theme");
+        if (ls_color_theme == null) {
+          color_theme = "auto";
+          localStorage.setItem("color-theme", "auto");
+        } else {
+          color_theme = ls_color_theme;
+        }
+        auto_color_theme();
+      };
+      const renew_color_theme = () => {
+        const change_button: HTMLElement | null = document.querySelector(
+          "#change-color-theme"
+        );
+        if (change_button == null) {
+          return;
+        }
+        localStorage.setItem("color-theme", color_theme);
+        const animate_selected: Function = () => {
+          const speed = 2;
+          const selected: HTMLElement | null = document.querySelector(
+            "#color-theme-change-selected"
+          );
+          let target_x: number = 250;
+          switch (color_theme) {
+            case "light":
+              target_x = 50;
+              break;
+            case "dark":
+              target_x = 150;
+              break;
+            case "auto":
+              target_x = 250;
+              break;
+            default:
+              alert("error happend on change color theme");
+              break;
+          }
+          const selected_cx: string = selected!.getAttribute("cx")!;
+          const selected_inertia: string =
+            selected!.getAttribute("data-inertia")!;
+          const now_x: number = parseFloat(selected_cx);
+          let next_x: number = now_x;
+          if (
+            Math.abs((target_x - now_x) / speed) <
+            Math.abs(parseFloat(selected_inertia))
+          ) {
+            selected?.setAttribute(
+              "data-inertia",
+              ((target_x - now_x) / speed).toString()
+            );
+          } else {
+            if (target_x > now_x) {
+              selected?.setAttribute(
+                "data-inertia",
+                (parseFloat(selected_inertia) + 2).toString()
+              );
+            } else {
+              selected?.setAttribute(
+                "data-inertia",
+                (parseFloat(selected_inertia) - 2).toString()
+              );
+            }
+          }
+          next_x += parseFloat(selected!.getAttribute("data-inertia")!);
+          if (Math.abs(next_x - target_x) > 1) {
+            selected?.setAttribute("cx", next_x.toString());
+            requestAnimationFrame(() => {
+              animate_selected();
+            });
+          } else {
+            selected?.setAttribute("cx", target_x.toString());
+          }
+        };
+        animate_selected();
+        switch (color_theme) {
+          case "light":
+            document.documentElement.setAttribute("theme", "light");
+            change_button.style.fill = "#aaa";
+            change_button.style.backgroundColor = "white";
+            break;
+          case "dark":
+            document.documentElement.setAttribute("theme", "dark");
+            change_button.style.fill = "#333";
+            change_button.style.backgroundColor = "black";
+            break;
+          case "auto":
+            change_button.style.fill = "#888";
+            change_button.style.backgroundColor = "gray";
+            if (
+              window.matchMedia("(prefers-color-scheme: dark)").matches == true
+            ) {
+              document.documentElement.setAttribute("theme", "dark");
+            } else {
+              document.documentElement.setAttribute("theme", "light");
+            }
+            break;
+          default:
+            alert("error happend on change color theme");
+            break;
+        }
+      };
+      const change_color_theme = (mode: string) => {
+        color_theme = mode;
+        renew_color_theme();
+      };
+      const auto_color_theme = () => {
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        mediaQuery.addEventListener("change", renew_color_theme);
+      };
+      init_color_theme();
+      document
+        .querySelector('#change-color-theme > svg > g[name="auto"]')
+        ?.addEventListener("click", () => {
+          change_color_theme("auto");
+        });
+      document
+        .querySelector('#change-color-theme > svg > g[name="light"]')
+        ?.addEventListener("click", () => {
+          change_color_theme("light");
+        });
+      document
+        .querySelector('#change-color-theme > svg > g[name="dark"]')
+        ?.addEventListener("click", () => {
+          change_color_theme("dark");
+        });
+    };
     select_bg();
+    color_theme_detector();
   };
   client();
 };
-main();
+layout_main();

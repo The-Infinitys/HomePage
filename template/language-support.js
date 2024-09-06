@@ -1,4 +1,6 @@
-const translate_Infinitys = (lang, data) => {
+const translate_main = () => {
+  //get information
+  const translate_Infinitys = (lang, data) => {
   if (lang in data) {
     const translate_info = data[lang];
     for (let i = 0; i < translate_info.length; ++i) {
@@ -7,19 +9,14 @@ const translate_Infinitys = (lang, data) => {
     }
   }
 };
-
-const main = () => {
-  //get information
   let language = navigator.language;
   const params=new URL(window.location.href).searchParams;
   if (params.has("lang")){
     language=params.get("lang");
   }
-  const location=new URL(window.location.href);
-  
   fetch("./language.json")
     .then(res => res.json())
     .then(data => translate_Infinitys(language, data))
     .catch(err => alert("Translation programs was failed. Please reload the page. path: "+data_path+" error: "+err))
 };
-main();
+translate_main();

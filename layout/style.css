@@ -20,6 +20,12 @@
   --infinity-ease: cubic-bezier(0.5, 0, 0.5, 1);
 }
 
+:root[theme="light"] {
+  /* テーマに応じた色を設定する */
+  --back-color: #fff;
+  --text-color: #000;
+}
+
 @media (max-aspect-ratio: 2/3) {
   :root {
     --hamburger-width: 100%;
@@ -138,6 +144,17 @@ svg.The-Infinitys-txt {
   width: calc(0.8 * var(--header-height));
   height: calc(0.8 * var(--header-height));
 }
+
+.Hamburger-Menu svg {
+  width: auto;
+  height: calc(0.8 * var(--header-height));
+}
+
+#change-color-theme {
+  width: fit-content;
+  border-radius: calc(var(--hamburger-width) * 0.4);
+}
+
 
 .Hamburger-Menu a {
   font-family: "noto-sans", sans-serif;
