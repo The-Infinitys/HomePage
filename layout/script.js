@@ -369,11 +369,11 @@ var layout_main = function () {
                 var ls_color_theme = localStorage.getItem("color-theme");
                 if (ls_color_theme == null) {
                     color_theme = "auto";
-                    localStorage.setItem("color-theme", "auto");
                 }
                 else {
                     color_theme = ls_color_theme;
                 }
+                localStorage.setItem("color-theme", color_theme);
                 auto_color_theme();
             };
             var renew_color_theme = function () {
