@@ -521,20 +521,20 @@ const layout_main: Function = () => {
           localStorage.getItem("color-theme");
         if (ls_color_theme == null) {
           color_theme = "auto";
+          localStorage.setItem("color-theme", color_theme);
         } else {
           color_theme = ls_color_theme;
         }
-        localStorage.setItem("color-theme", color_theme);
         auto_color_theme();
       };
       const renew_color_theme = () => {
+        localStorage.setItem("color-theme", color_theme);
         const change_button: HTMLElement | null = document.querySelector(
           "#change-color-theme"
         );
         if (change_button == null) {
           return;
         }
-        localStorage.setItem("color-theme", color_theme);
         const animate_selected: Function = () => {
           const speed = 2;
           const selected: HTMLElement | null = document.querySelector(
