@@ -362,9 +362,9 @@ var layout_main = function () {
             }
             return 0;
         };
+        var color_theme = "auto";
         var color_theme_detector = function () {
             var _a, _b, _c;
-            var color_theme = "auto";
             var init_color_theme = function () {
                 var ls_color_theme = localStorage.getItem("color-theme");
                 if (ls_color_theme == null) {
@@ -375,6 +375,7 @@ var layout_main = function () {
                     color_theme = ls_color_theme;
                 }
                 auto_color_theme();
+                renew_color_theme();
             };
             var renew_color_theme = function () {
                 localStorage.setItem("color-theme", color_theme);
