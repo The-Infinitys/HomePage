@@ -524,6 +524,7 @@ const layout_main: Function = () => {
           localStorage.setItem("color-theme", color_theme);
         } else {
           color_theme = ls_color_theme;
+          renew_color_theme();
         }
         auto_color_theme();
       };
