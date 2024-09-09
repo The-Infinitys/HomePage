@@ -514,8 +514,8 @@ const layout_main: Function = () => {
       }
       return 0;
     };
+    let color_theme: string = "auto";
     const color_theme_detector: Function = (): void => {
-      let color_theme: string = "auto";
       const init_color_theme: Function = (): void => {
         const ls_color_theme: string | null =
           localStorage.getItem("color-theme");
@@ -524,9 +524,9 @@ const layout_main: Function = () => {
           localStorage.setItem("color-theme", color_theme);
         } else {
           color_theme = ls_color_theme;
-          renew_color_theme();
         }
         auto_color_theme();
+        renew_color_theme();
       };
       const renew_color_theme = () => {
         localStorage.setItem("color-theme", color_theme);
