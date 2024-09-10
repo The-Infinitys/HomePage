@@ -148,11 +148,11 @@ svg.The-Infinitys-txt {
 .Hamburger-Menu svg {
   width: auto;
   height: calc(0.8 * var(--header-height));
-  margin-top: calc(0.1 * var(--header-height));
 }
 
 #change-color-theme {
   width: fit-content;
+  padding: calc(0.1 * var(--header-height));
   border-radius: calc(var(--hamburger-width) * 0.4);
   background-color: var(--back-color);
   border:2px solid var(--text-color);
