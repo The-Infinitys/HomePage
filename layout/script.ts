@@ -126,7 +126,7 @@ const layout_main: Function = () => {
               >
               <circle id="color-theme-change-selected" data-inertia="0" cx="250" cy="50" r="45" />
               <g name="light">
-                <circle style="fill:var(--back-color);stroke:none;" cx="50" cy="50" r="45" />
+                <circle style="fill:color-mix(in srgb, transparent 99%, var(--back-color));stroke:none;" cx="50" cy="50" r="45" />
                 <circle cx="50" cy="50" r="20" style="fill: var(--text-color); stroke: none" />
                   <path
                     d="
@@ -143,7 +143,7 @@ const layout_main: Function = () => {
                     />
               </g>
               <g name="dark">
-                <circle style="fill:var(--back-color);stroke:none;" cx="150" cy="50" r="45" />
+                <circle style="fill:color-mix(in srgb, transparent 99%, var(--back-color));stroke:none;" cx="150" cy="50" r="45" />
                 <path
                   d="
                   M160,10
@@ -155,7 +155,7 @@ const layout_main: Function = () => {
                   />
               </g>
               <g name="auto">
-                <circle style="fill:var(--back-color);stroke:none;" cx="250" cy="50" r="45" />
+                <circle style="fill:color-mix(in srgb, transparent 99%, var(--back-color));stroke:none;" cx="250" cy="50" r="45" />
                 <path
                   d="
                   M250,30
