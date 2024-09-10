@@ -390,12 +390,15 @@ var layout_main = function () {
                     switch (color_theme) {
                         case "light":
                             target_x = 50;
+                            selected.style.fill = "#bbb";
                             break;
                         case "dark":
                             target_x = 150;
+                            selected.style.fill = "#333";
                             break;
                         case "auto":
                             target_x = 250;
+                            selected.style.fill = "#888";
                             break;
                         default:
                             alert("error happend on change color theme");
@@ -432,17 +435,14 @@ var layout_main = function () {
                 switch (color_theme) {
                     case "light":
                         document.documentElement.setAttribute("theme", "light");
-                        change_button.style.fill = "#aaa";
-                        change_button.style.backgroundColor = "white";
+                        change_button.style.borderColor = "#000";
                         break;
                     case "dark":
                         document.documentElement.setAttribute("theme", "dark");
-                        change_button.style.fill = "#333";
-                        change_button.style.backgroundColor = "black";
+                        change_button.style.borderColor = "#fff";
                         break;
                     case "auto":
-                        change_button.style.fill = "#888";
-                        change_button.style.backgroundColor = "gray";
+                        change_button.style.borderColor = "#888";
                         if (window.matchMedia("(prefers-color-scheme: dark)").matches == true) {
                             document.documentElement.setAttribute("theme", "dark");
                         }
