@@ -1,5 +1,4 @@
 "use strict";
-
 const layout_main: Function = () => {
   const rendering: Function = (): void => {
     type HTMLAttribute = {
