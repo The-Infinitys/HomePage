@@ -390,7 +390,7 @@ var layout_main = function () {
                     switch (color_theme) {
                         case "light":
                             target_x = 50;
-                            selected.style.fill = "#bbb";
+                            selected.style.fill = "#eee";
                             break;
                         case "dark":
                             target_x = 150;
