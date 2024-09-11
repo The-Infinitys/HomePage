@@ -438,7 +438,7 @@ const layout_main: Function = () => {
                 vmin;
               `
             );
-            document.body.append(wave);
+            raindrop.append(wave);
             setTimeout(() => {
               wave.remove();
               drop();
