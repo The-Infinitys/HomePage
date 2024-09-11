@@ -349,10 +349,103 @@ const layout_main: Function = () => {
           );
           if (raindrop == null) {
             return 1;
-          } else {
-            raindrop.style.display = "contents";
-            return 0;
           }
+          raindrop.style.display = "contents";
+          const drop: Function = (): void => {
+            const wave: HTMLElement = document.createElement("div");
+            wave.innerHTML = `
+              <svg
+                viewBox="0 0 100 100"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <style>
+                    .drop{
+                      fill:var(--color);
+                      stroke:none;
+                      fill-opacity: 0;
+                    }
+                    .wave{
+                      fill:none;
+                      stroke:var(--color);
+                      stroke-width: 0;
+                    }
+                  </style>
+                </defs>
+                <g>
+                  <circle cx="50" cy="50" r="40" class="drop">
+                    <animate
+                      attributeType="XML"
+                      attributeName="r"
+                      calcMode="spline"
+                      values="40; 0; 0"
+                      keyTimes="0.0; 0.5; 1.0"
+                      keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+                      dur="2s"
+                      repeatCount="1"
+                    />
+                    <animate
+                      attributeType="XML"
+                      attributeName="fill-opacity"
+                      calcMode="spline"
+                      values="0; 1; 0"
+                      keyTimes="0.0; 0.5; 1.0"
+                      keySplines="0.5 0 0.5 1; 0.5 0 0.5 1"
+                      dur="2s"
+                      repeatCount="1"
+                    />
+                  </circle>
+                  <circle cx="50" cy="50" r="40" class="wave">
+                    <animate
+                      attributeType="XML"
+                      attributeName="r"
+                      calcMode="spline"
+                      values="0; 0; 40"
+                      keyTimes="0.0; 0.5; 1.0"
+                      keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+                      dur="2s"
+                      repeatCount="1"
+                    />
+                    <animate
+                      attributeType="XML"
+                      attributeName="stroke-width"
+                      calcMode="spline"
+                      values="0; 5; 0"
+                      keyTimes="0.0; 0.5; 1.0"
+                      keySplines="0 0.5 0.5 1;0 0.5 0.5 1"
+                      dur="2s"
+                      repeatCount="1"
+                    />
+                  </circle>
+                </g>
+              </svg>
+            `;
+            wave.setAttribute(
+              "style",
+              `
+              position:fixed;
+              top:${(100 * Math.random()).toString()}vh;
+              left:${(100 * Math.random()).toString()}vw;
+              width:var(--size);
+              height:var(--size);
+              z-index:-1000;
+              transform:translate(-50%,-50%);
+              --color:
+                ${"hsl(" + Math.random().toString()}turn 100% 50%);
+              --size:
+                ${(40 * (1 - 0.9 * Math.random())).toString()}
+                vmin;
+              `
+            );
+            document.body.append(wave);
+            setTimeout(() => {
+              wave.remove();
+              drop();
+            }, 1950);
+          };
+          drop();
         },
         rainbow: {
           run: (pattern: bg_pattern): number => {
@@ -489,7 +582,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 5);
+      const bg_num: number = 5; //randInt(1, 5);
       switch (bg_num) {
         // monochrome
         case 1:
