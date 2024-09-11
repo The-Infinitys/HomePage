@@ -6,7 +6,7 @@
     <script defer src="../layout/script.js"></script>
   </head>
   <body>
-    <button onclick="test()">test</button>
+    <button onclick="geo()">test</button>
     <script>
       const geo = () => {
         const alert_position = (position) => {
@@ -23,7 +23,6 @@
         };
         navigator.geolocation.getCurrentPosition(alert_position);
       };
-      geo();
     </script>
   </body>
 </html>
