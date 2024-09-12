@@ -324,7 +324,7 @@ const layout_main: Function = () => {
         msPos.m.x = e.clientX;
         msPos.m.y = e.clientY;
       });
-      const ms_animation() => {
+      const ms_animation:Function = () => {
         msPos.s.x += (msPos.m.x - msPos.s.x) * 0.1;
         msPos.s.y += (msPos.m.y - msPos.s.y) * 0.1;
         const x = Math.round(msPos.s.x * 10) / 10;
