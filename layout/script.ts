@@ -308,7 +308,7 @@ const layout_main: Function = () => {
     document.body.append(generate_background());
     const generate_mousestoker: Function = ():HTMLElement => {
       const result: HTMLElement = document.createElement("div");
-      result.id="mouse-stoker";
+      result.id="mouse-stalker";
       result.innerHTML = `<img src="/image/The-Infinitys.webp" />`;
       let msPos = {
         s: {
