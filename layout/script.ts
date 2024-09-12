@@ -211,7 +211,7 @@ const layout_main: Function = () => {
               {
                 name: "Scratch",
                 href: "/Scratch/",
-                target: "blank",
+                target: "self",
                 src: hamburger_icons.scratch,
               },
               {
