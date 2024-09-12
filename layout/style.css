@@ -289,3 +289,15 @@ footer.The-Infinitys-Footer {
   height: var(--footer-height);
   background-color: color-mix(in srgb, var(--back-color), transparent 17%);
 }
+
+#mouse-stalker{
+  position: fixed;
+  top:0;
+  left:0;
+  width: calc(var(--header-width) / 4);
+  aspect-ratio: 1;
+}
+#mouse-stalker>img{
+  width:100%;
+  height:100%;
+}
