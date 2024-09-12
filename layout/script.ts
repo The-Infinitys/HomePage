@@ -306,36 +306,42 @@ const layout_main: Function = () => {
       return result;
     };
     document.body.append(generate_background());
-    const generate_mousestoker: Function = ():HTMLElement => {
+    const generate_mousestalker: Function = (): HTMLElement => {
       const result: HTMLElement = document.createElement("div");
-      result.id="mouse-stalker";
+      result.id = "mouse-stalker";
       result.innerHTML = `<img src="/image/The-Infinitys.webp" />`;
       let msPos = {
         s: {
           x: document.documentElement.clientWidth / 2,
-          y: document.documentElement.clientHeight / 2
+          y: document.documentElement.clientHeight / 2,
         },
         m: {
           x: document.documentElement.clientWidth / 2,
-          y: document.documentElement.clientHeight / 2
-        }
+          y: document.documentElement.clientHeight / 2,
+        },
       };
-      document.addEventListener('mousemove', (e) => {
+      document.addEventListener("mousemove", (e) => {
         msPos.m.x = e.clientX;
         msPos.m.y = e.clientY;
       });
-      function ms_animation(){
+      function ms_animation() {
         msPos.s.x += (msPos.m.x - msPos.s.x) * 0.1;
         msPos.s.y += (msPos.m.y - msPos.s.y) * 0.1;
         const x = Math.round(msPos.s.x * 10) / 10;
         const y = Math.round(msPos.s.y * 10) / 10;
-        result.style.transform = `translate3d(` + x + 'px,' + y + 'px, 0)';
+        result.style.top = y.toString() + "px";
+        result.style.left = x.toString() + "px";
+        result.style.opacity = Math.max(
+          0,
+          Math.min(Math.sqrt((msPos.m.x - x) ** 2 + (msPos.m.y - y) ** 2), 1) /
+            4
+        ).toString();
         requestAnimationFrame(ms_animation);
       }
       requestAnimationFrame(ms_animation);
       return result;
     };
-    document.body.append(generate_mousestoker());
+    document.body.append(generate_mousestalker());
   };
   rendering();
   const client: Function = (): void => {
@@ -475,6 +481,7 @@ const layout_main: Function = () => {
             }, 1950);
           };
           drop();
+          return 0;
         },
         rainbow: {
           run: (pattern: bg_pattern): number => {
@@ -663,6 +670,9 @@ const layout_main: Function = () => {
           const selected: HTMLElement | null = document.querySelector(
             "#color-theme-change-selected"
           );
+          if (selected == null) {
+            return;
+          }
           let target_x: number = 250;
           switch (color_theme) {
             case "light":

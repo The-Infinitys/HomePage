@@ -47,7 +47,7 @@ body {
 /* ヘッダーメニュー */
 header.The-Infinitys-Header {
   /* ヘッダーの位置の固定 */
-  z-index: 99999999;
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
@@ -155,7 +155,7 @@ svg.The-Infinitys-txt {
   padding: calc(0.1 * var(--header-height));
   border-radius: calc(var(--hamburger-width) * 0.4);
   background-color: var(--back-color);
-  border:2px solid var(--text-color);
+  border: 2px solid var(--text-color);
 }
 
 
@@ -254,7 +254,7 @@ section.Title {
   box-sizing: border-box;
   text-align: center;
   font-family: "noto serif", serif;
-  font-size: 7vw;
+  font-size: 5vw;
   background-color: transparent;
   color: var(--text-color);
   text-align: center;
@@ -290,16 +290,22 @@ footer.The-Infinitys-Footer {
   background-color: color-mix(in srgb, var(--back-color), transparent 17%);
 }
 
-#mouse-stalker{
+#mouse-stalker {
   position: fixed;
-  top:0;
-  left:0;
-  width: calc(var(--header-width) / 4);
+  top: 100vh;
+  left: 100vw;
+  z-index: 77777;
+  width: calc(var(--header-height) / 2);
   aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background-color: var(--text-color);
+  opacity: 0.5;
+  pointer-events: none;
+  border-radius: 50%;
 }
-#mouse-stalker>img{
-  position:absolute;
-  transform:translate(-50%,-50%);
-  width:calc(var(--header-width) / 4);
-  height:auto;
+
+#mouse-stalker img {
+  position: absolute;
+  width: 100%;
+  height: auto;
 }

@@ -191,21 +191,21 @@ var layout_main = function () {
             return result;
         };
         document.body.append(generate_background());
-        var generate_mousestoker = function () {
+        var generate_mousestalker = function () {
             var result = document.createElement("div");
             result.id = "mouse-stalker";
             result.innerHTML = "<img src=\"/image/The-Infinitys.webp\" />";
             var msPos = {
                 s: {
                     x: document.documentElement.clientWidth / 2,
-                    y: document.documentElement.clientHeight / 2
+                    y: document.documentElement.clientHeight / 2,
                 },
                 m: {
                     x: document.documentElement.clientWidth / 2,
-                    y: document.documentElement.clientHeight / 2
-                }
+                    y: document.documentElement.clientHeight / 2,
+                },
             };
-            document.addEventListener('mousemove', function (e) {
+            document.addEventListener("mousemove", function (e) {
                 msPos.m.x = e.clientX;
                 msPos.m.y = e.clientY;
             });
@@ -214,13 +214,16 @@ var layout_main = function () {
                 msPos.s.y += (msPos.m.y - msPos.s.y) * 0.1;
                 var x = Math.round(msPos.s.x * 10) / 10;
                 var y = Math.round(msPos.s.y * 10) / 10;
-                result.style.transform = "translate3d(" + x + 'px,' + y + 'px, 0)';
+                result.style.top = y.toString() + "px";
+                result.style.left = x.toString() + "px";
+                result.style.opacity = Math.max(0, Math.min(Math.sqrt(Math.pow((msPos.m.x - x), 2) + Math.pow((msPos.m.y - y), 2)), 1) /
+                    4).toString();
                 requestAnimationFrame(ms_animation);
             }
             requestAnimationFrame(ms_animation);
             return result;
         };
-        document.body.append(generate_mousestoker());
+        document.body.append(generate_mousestalker());
     };
     rendering();
     var client = function () {
@@ -257,6 +260,7 @@ var layout_main = function () {
                         }, 1950);
                     };
                     drop();
+                    return 0;
                 },
                 rainbow: {
                     run: function (pattern) {
@@ -424,6 +428,9 @@ var layout_main = function () {
                 var animate_selected = function () {
                     var speed = 2;
                     var selected = document.querySelector("#color-theme-change-selected");
+                    if (selected == null) {
+                        return;
+                    }
                     var target_x = 250;
                     switch (color_theme) {
                         case "light":
