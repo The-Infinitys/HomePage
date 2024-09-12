@@ -306,6 +306,36 @@ const layout_main: Function = () => {
       return result;
     };
     document.body.append(generate_background());
+    const generate_mousestoker: Function = ():HTMLElement => {
+      const result: HTMLElement = document.createElement("div");
+      result.id="mouse-stoker";
+      result.innerHTML = `<img src="/image/The-Infinitys.webp" />`;
+      let msPos = {
+        s: {
+          x: document.documentElement.clientWidth / 2,
+          y: document.documentElement.clientHeight / 2
+        },
+        m: {
+          x: document.documentElement.clientWidth / 2,
+          y: document.documentElement.clientHeight / 2
+        }
+      };
+      document.addEventListener('mousemove', (e) => {
+        msPos.m.x = e.clientX;
+        msPos.m.y = e.clientY;
+      });
+      const ms_animation() => {
+        msPos.s.x += (msPos.m.x - msPos.s.x) * 0.1;
+        msPos.s.y += (msPos.m.y - msPos.s.y) * 0.1;
+        const x = Math.round(msPos.s.x * 10) / 10;
+        const y = Math.round(msPos.s.y * 10) / 10;
+        result.style.transform = `translate3d(` + x + 'px,' + y + 'px, 0)';
+        requestAnimationFrame(ms_animation);
+      };
+      requestAnimationFrame(ms_animation);
+      return result;
+    };
+    document.body.append(generate_mousestoker());
   };
   rendering();
   const client: Function = (): void => {
