@@ -191,6 +191,36 @@ var layout_main = function () {
             return result;
         };
         document.body.append(generate_background());
+        var generate_mousestoker = function () {
+            var result = document.createElement("div");
+            result.id = "mouse-stalker";
+            result.innerHTML = "<img src=\"/image/The-Infinitys.webp\" />";
+            var msPos = {
+                s: {
+                    x: document.documentElement.clientWidth / 2,
+                    y: document.documentElement.clientHeight / 2
+                },
+                m: {
+                    x: document.documentElement.clientWidth / 2,
+                    y: document.documentElement.clientHeight / 2
+                }
+            };
+            document.addEventListener('mousemove', function (e) {
+                msPos.m.x = e.clientX;
+                msPos.m.y = e.clientY;
+            });
+            function ms_animation() {
+                msPos.s.x += (msPos.m.x - msPos.s.x) * 0.1;
+                msPos.s.y += (msPos.m.y - msPos.s.y) * 0.1;
+                var x = Math.round(msPos.s.x * 10) / 10;
+                var y = Math.round(msPos.s.y * 10) / 10;
+                result.style.transform = "translate3d(" + x + 'px,' + y + 'px, 0)';
+                requestAnimationFrame(ms_animation);
+            }
+            requestAnimationFrame(ms_animation);
+            return result;
+        };
+        document.body.append(generate_mousestoker());
     };
     rendering();
     var client = function () {
