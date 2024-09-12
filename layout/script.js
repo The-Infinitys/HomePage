@@ -120,8 +120,8 @@ var layout_main = function () {
                             },
                             {
                                 name: "Scratch",
-                                href: "https://scratch.mit.edu/users/The_Infinitys",
-                                target: "blank",
+                                href: "/Scratch/",
+                                target: "self",
                                 src: hamburger_icons.scratch,
                             },
                             {
