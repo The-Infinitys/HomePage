@@ -298,6 +298,8 @@ footer.The-Infinitys-Footer {
   aspect-ratio: 1;
 }
 #mouse-stalker>img{
-  width:100%;
-  height:100%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  width:calc(var(--header-width) / 4);
+  height:auto;
 }
