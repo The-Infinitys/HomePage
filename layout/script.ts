@@ -210,7 +210,7 @@ const layout_main: Function = () => {
               },
               {
                 name: "Scratch",
-                href: "https://scratch.mit.edu/users/The_Infinitys",
+                href: "/Scratch/",
                 target: "blank",
                 src: hamburger_icons.scratch,
               },
