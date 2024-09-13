@@ -463,15 +463,15 @@ const layout_main: Function = () => {
               position:fixed;
               top:${(100 * Math.random()).toString()}vh;
               left:${(100 * Math.random()).toString()}vw;
+              --size:
+                ${(20 * (1 - 0.9 * Math.random())).toString()}
+                vmin;
               width:var(--size);
               height:var(--size);
               z-index:-1000;
               transform:translate(-50%,-50%);
               --color:
                 ${"hsl(" + Math.random().toString()}turn 100% 50%);
-              --size:
-                ${(30 * (1 - 0.8 * Math.random())).toString()}
-                vmin;
               `
             );
             raindrop.append(wave);
@@ -480,7 +480,7 @@ const layout_main: Function = () => {
               drop();
             }, 1950);
           };
-          for (let i = 0; i < 10; ++i) {
+          for (let i = 0; i < 5; ++i) {
             drop();
           }
           return 0;
