@@ -381,7 +381,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 5; //randInt(1, 5);
+            var bg_num = randInt(1, 5);
             switch (bg_num) {
                 // monochrome
                 case 1:
