@@ -322,6 +322,7 @@ const layout_main: Function = () => {
         "/layout/image/background/monochrome/light.svg";
       const monochrome_center: string =
         "/layout/image/background/monochrome/center.svg";
+      const gradient_bg: string = "/layout/image/background/gradient/bg.jpeg";
       const result: HTMLDivElement = document.createElement("div");
       result.id = "BackGround";
       result.className = "background";
@@ -342,6 +343,12 @@ const layout_main: Function = () => {
           class="background center translucent"
           src="${monochrome_center}"
         />
+      </div>
+      <div data-background-name="gradient">
+        <img
+          alt=""
+          class="background over"
+          src="${gradient_bg}"
       </div>
       <div data-background-name="rainbow">
         <canvas class="background fill rainbow"></canvas>
@@ -403,6 +410,7 @@ const layout_main: Function = () => {
       };
       const bg_func: {
         monochrome: Function;
+        gradient: Function;
         raindrop: Function;
         rainbow: {
           run: Function;
@@ -419,6 +427,17 @@ const layout_main: Function = () => {
             return 1;
           } else {
             monochrome.style.display = "contents";
+            return 0;
+          }
+        },
+        gradient: (): number => {
+          const gradient: HTMLElement | null = document.querySelector(
+            '#BackGround>div[data-background-name="gradient"]'
+          );
+          if (gradient == null) {
+            return 1;
+          } else {
+            gradient.style.display = "contents";
             return 0;
           }
         },
@@ -664,7 +683,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 5);
+      const bg_num: number = 6; //randInt(1, 6);
       switch (bg_num) {
         // monochrome
         case 1:
@@ -682,6 +701,9 @@ const layout_main: Function = () => {
           break;
         case 5:
           bg_func.raindrop();
+          break;
+        case 6:
+          bg_func.gradient();
           break;
         // error
         default:
