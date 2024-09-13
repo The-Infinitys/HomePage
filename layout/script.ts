@@ -457,7 +457,7 @@ const layout_main: Function = () => {
                 </g>
               </svg>
             `;
-            wave.setAttribute(
+            wave.children[0].setAttribute(
               "style",
               `
               position:fixed;
@@ -470,7 +470,7 @@ const layout_main: Function = () => {
               --color:
                 ${"hsl(" + Math.random().toString()}turn 100% 50%);
               --size:
-                ${(40 * (1 - 0.9 * Math.random())).toString()}
+                ${(30 * (1 - 0.8 * Math.random())).toString()}
                 vmin;
               `
             );
@@ -480,7 +480,9 @@ const layout_main: Function = () => {
               drop();
             }, 1950);
           };
-          drop();
+          for (let i = 0; i < 10; ++i) {
+            drop();
+          }
           return 0;
         },
         rainbow: {
@@ -618,7 +620,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 5; //randInt(1, 5);
+      const bg_num: number = randInt(1, 5);
       switch (bg_num) {
         // monochrome
         case 1:
