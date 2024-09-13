@@ -347,7 +347,7 @@ const layout_main: Function = () => {
       <div data-background-name="gradient">
         <img
           alt=""
-          class="background over"
+          class="background over translucent"
           src="${gradient_bg}"
         />
       </div>
