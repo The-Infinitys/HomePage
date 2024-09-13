@@ -98,7 +98,7 @@ const layout_main: Function = () => {
                 <animate
                   attributeName="fill-opacity"
                   dur="7s"
-                  values="0;1;0"
+                  values="1;0;1"
                   repeatCount="indefinite"
                 />
               </path>
