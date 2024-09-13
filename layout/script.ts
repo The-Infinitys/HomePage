@@ -349,6 +349,7 @@ const layout_main: Function = () => {
           alt=""
           class="background over"
           src="${gradient_bg}"
+        />
       </div>
       <div data-background-name="rainbow">
         <canvas class="background fill rainbow"></canvas>
