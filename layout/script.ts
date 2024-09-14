@@ -351,6 +351,13 @@ const layout_main: Function = () => {
           src="${gradient_bg}"
         />
       </div>
+      <div data-background-name="fluffycat">
+        <img
+          alt=""
+          class="background over translucent"
+          src="${gradient_bg}"
+        />
+      </div>
       <div data-background-name="rainbow">
         <canvas class="background fill rainbow"></canvas>
       </div>
@@ -413,6 +420,7 @@ const layout_main: Function = () => {
         monochrome: Function;
         gradient: Function;
         raindrop: Function;
+        fluffycat: Function;
         rainbow: {
           run: Function;
           rectangle: Function;
@@ -549,6 +557,17 @@ const layout_main: Function = () => {
           }
           return 0;
         },
+        fluffycat: (): number => {
+          const fluffycat: HTMLElement | null = document.querySelector(
+            '#BackGround>div[data-background-name="fluffycat"]'
+          );
+          if (fluffycat == null) {
+            return 1;
+          } else {
+            fluffycat.style.display = "contents";
+            return 0;
+          }
+        },
         rainbow: {
           run: (pattern: bg_pattern): number => {
             const rainbow: HTMLElement | null = document.querySelector(
@@ -684,7 +703,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 6; //randInt(1, 6);
+      const bg_num: number = 7; //randInt(1, 6);
       switch (bg_num) {
         // monochrome
         case 1:
@@ -705,6 +724,9 @@ const layout_main: Function = () => {
           break;
         case 6:
           bg_func.gradient();
+          break;
+        case 7:
+          bg_func.fluffycat();
           break;
         // error
         default:

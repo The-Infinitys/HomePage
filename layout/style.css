@@ -207,7 +207,8 @@ svg.The-Infinitys-txt {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.background.over{
+
+.background.over {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -215,6 +216,11 @@ svg.The-Infinitys-txt {
   left: 0;
   object-fit: cover;
 }
+
+#BackGround>div[data-background-name="fluffycat"] {
+  background-color: aqua;
+}
+
 .dark {
   visibility: var(--dark-visilibity);
 }

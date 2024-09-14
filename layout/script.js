@@ -188,7 +188,7 @@ var layout_main = function () {
             var result = document.createElement("div");
             result.id = "BackGround";
             result.className = "background";
-            result.innerHTML = "\n      <div data-background-name=\"monochrome\">\n        <img\n          alt=\"\"\n          class=\"background fill dark translucent\"\n          src=\"".concat(monochrome_dark, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background fill light translucent\"\n          src=\"").concat(monochrome_light, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background center translucent\"\n          src=\"").concat(monochrome_center, "\"\n        />\n      </div>\n      <div data-background-name=\"gradient\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"rainbow\">\n        <canvas class=\"background fill rainbow\"></canvas>\n      </div>\n      <div data-background-name=\"raindrop\"></div>");
+            result.innerHTML = "\n      <div data-background-name=\"monochrome\">\n        <img\n          alt=\"\"\n          class=\"background fill dark translucent\"\n          src=\"".concat(monochrome_dark, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background fill light translucent\"\n          src=\"").concat(monochrome_light, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background center translucent\"\n          src=\"").concat(monochrome_center, "\"\n        />\n      </div>\n      <div data-background-name=\"gradient\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"fluffycat\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"rainbow\">\n        <canvas class=\"background fill rainbow\"></canvas>\n      </div>\n      <div data-background-name=\"raindrop\"></div>");
             return result;
         };
         document.body.append(generate_background());
@@ -274,6 +274,16 @@ var layout_main = function () {
                         drop();
                     }
                     return 0;
+                },
+                fluffycat: function () {
+                    var fluffycat = document.querySelector('#BackGround>div[data-background-name="fluffycat"]');
+                    if (fluffycat == null) {
+                        return 1;
+                    }
+                    else {
+                        fluffycat.style.display = "contents";
+                        return 0;
+                    }
                 },
                 rainbow: {
                     run: function (pattern) {
@@ -392,7 +402,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 6; //randInt(1, 6);
+            var bg_num = 7; //randInt(1, 6);
             switch (bg_num) {
                 // monochrome
                 case 1:
@@ -413,6 +423,9 @@ var layout_main = function () {
                     break;
                 case 6:
                     bg_func.gradient();
+                    break;
+                case 7:
+                    bg_func.fluffycat();
                     break;
                 // error
                 default:
