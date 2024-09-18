@@ -413,13 +413,12 @@ var layout_main = function () {
                                     ctx.lineTo(x + i, y + wave_r * Math.sin((2 * Math.PI * i) / wave_width));
                                 }
                                 ctx.lineTo(x + wave_width, y);
-                                ctx.closePath();
                                 ctx.stroke();
                                 ctx.globalCompositeOperation = "source-over";
                             },
                         };
                         bg_func.rainbow.run(pattern);
-                        setTimeout(bg_func.rainbow.honeycomb, 100);
+                        setTimeout(bg_func.rainbow.wave, 100);
                     },
                 },
             };
@@ -428,11 +427,9 @@ var layout_main = function () {
             };
             var bg_num = 8; //randInt(1, 8);
             switch (bg_num) {
-                // monochrome
                 case 1:
                     bg_func.monochrome();
                     break;
-                // rainbow rectangle
                 case 2:
                     bg_func.rainbow.rectangle();
                     break;
@@ -450,6 +447,7 @@ var layout_main = function () {
                     break;
                 case 7:
                     bg_func.fluffycat();
+                    break;
                 case 8:
                     bg_func.rainbow.wave();
                     break;
