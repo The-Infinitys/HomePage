@@ -426,6 +426,7 @@ const layout_main: Function = () => {
           rectangle: Function;
           triangle: Function;
           honeycomb: Function;
+          wave: Function;
         };
       } = {
         monochrome: (): number => {
@@ -699,11 +700,38 @@ const layout_main: Function = () => {
             bg_func.rainbow.run(pattern);
             setTimeout(bg_func.rainbow.honeycomb, 100);
           },
+          wave: () => {
+            const wave_width = 250;
+            const wave_r = 25;
+            const pattern: bg_pattern = {
+              width: wave_width,
+              height: wave_r * 2,
+              shift: [0],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                for (let i = 0; i < wave_width; i++) {
+                  ctx.lineTo(
+                    x + i,
+                    y + wave_r * Math.sin((2 * Math.PI * i) / wave_width)
+                  );
+                }
+                ctx.lineTo(x + wave_width, y);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.honeycomb, 100);
+          },
         },
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 6);
+      const bg_num: number = 8; //randInt(1, 8);
       switch (bg_num) {
         // monochrome
         case 1:
@@ -727,8 +755,9 @@ const layout_main: Function = () => {
           break;
         case 7:
           bg_func.fluffycat();
+        case 8:
+          bg_func.rainbow.wave();
           break;
-        // error
         default:
           break;
       }
