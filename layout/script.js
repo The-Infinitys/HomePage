@@ -397,12 +397,36 @@ var layout_main = function () {
                         bg_func.rainbow.run(pattern);
                         setTimeout(bg_func.rainbow.honeycomb, 100);
                     },
+                    wave: function () {
+                        var wave_width = 250;
+                        var wave_r = 25;
+                        var pattern = {
+                            width: wave_width,
+                            height: wave_r * 2,
+                            shift: [0],
+                            func: function (ctx, x, y) {
+                                ctx.globalCompositeOperation = "destination-out";
+                                ctx.lineWidth = 1;
+                                ctx.beginPath();
+                                ctx.moveTo(x, y);
+                                for (var i = 0; i < wave_width; i++) {
+                                    ctx.lineTo(x + i, y + wave_r * Math.sin((2 * Math.PI * i) / wave_width));
+                                }
+                                ctx.lineTo(x + wave_width, y);
+                                ctx.closePath();
+                                ctx.stroke();
+                                ctx.globalCompositeOperation = "source-over";
+                            },
+                        };
+                        bg_func.rainbow.run(pattern);
+                        setTimeout(bg_func.rainbow.honeycomb, 100);
+                    },
                 },
             };
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = randInt(1, 6);
+            var bg_num = 8; //randInt(1, 8);
             switch (bg_num) {
                 // monochrome
                 case 1:
@@ -426,8 +450,9 @@ var layout_main = function () {
                     break;
                 case 7:
                     bg_func.fluffycat();
+                case 8:
+                    bg_func.rainbow.wave();
                     break;
-                // error
                 default:
                     break;
             }
