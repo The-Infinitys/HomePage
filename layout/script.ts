@@ -719,13 +719,12 @@ const layout_main: Function = () => {
                   );
                 }
                 ctx.lineTo(x + wave_width, y);
-                ctx.closePath();
                 ctx.stroke();
                 ctx.globalCompositeOperation = "source-over";
               },
             };
             bg_func.rainbow.run(pattern);
-            setTimeout(bg_func.rainbow.honeycomb, 100);
+            setTimeout(bg_func.rainbow.wave, 100);
           },
         },
       };
@@ -733,11 +732,9 @@ const layout_main: Function = () => {
         Math.floor(Math.random() * (max + 1 - min)) + min;
       const bg_num: number = 8; //randInt(1, 8);
       switch (bg_num) {
-        // monochrome
         case 1:
           bg_func.monochrome();
           break;
-        // rainbow rectangle
         case 2:
           bg_func.rainbow.rectangle();
           break;
@@ -755,6 +752,7 @@ const layout_main: Function = () => {
           break;
         case 7:
           bg_func.fluffycat();
+          break;
         case 8:
           bg_func.rainbow.wave();
           break;
