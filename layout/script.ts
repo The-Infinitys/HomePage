@@ -730,7 +730,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 8; //randInt(1, 8);
+      const bg_num: number = randInt(1, 8);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
