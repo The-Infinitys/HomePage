@@ -59,7 +59,7 @@ const layout_main: Function = () => {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0,0,409.89512,84.2878"
+            viewBox="0,0,430.56179,84.2878"
           >
             <g transform="translate(-14.38578,-137.8561)">
               <g stroke-miterlimit="10">
@@ -94,7 +94,7 @@ const layout_main: Function = () => {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0,0,409.89512,84.2878"
+            viewBox="0,0,430.56179,84.2878"
           >
             <defs>
               <linearGradient
