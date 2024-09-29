@@ -1,0 +1,28 @@
+
+<svg
+  viewBox="0 0 50 100"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  class="The-Infinity-font Spirit n"
+>
+  <path
+    fill-rule="nonzero"
+    d="
+  M0,40
+  v60
+  l10,-5
+  v-30
+  a 15,15,0,0,1,30,0
+  v 30
+  l10,5
+  v-35
+  a 20,20,0,0,0,-50,0
+  h10
+  v-20
+  z
+  "
+    fill="#000"
+    stroke="none"
+  />
+</svg>
