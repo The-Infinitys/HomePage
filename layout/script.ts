@@ -205,11 +205,7 @@ const layout_main: Function = () => {
             </g>
           </svg>
           `;
-          if (Math.random() < 0.5) {
-            inf_txt.innerHTML = inf_spirit;
-          } else {
-            inf_txt.innerHTML = inf_notoserif;
-          }
+          inf_txt.innerHTML = inf_notoserif;
           return inf_txt;
         };
         result.append(The_Infinitys_txt());
