@@ -756,7 +756,7 @@ const layout_main: Function = () => {
               func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
                 ctx.globalCompositeOperation = "destination-out";
                 ctx.lineWidth = 1;
-                ctx.strokeRect(x, y, size, size);
+                ctx.fillRect(x, y, size, size);
                 ctx.globalCompositeOperation = "source-over";
               },
             };
