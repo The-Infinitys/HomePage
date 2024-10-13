@@ -525,6 +525,7 @@ const layout_main: Function = () => {
         rainbow: {
           run: Function;
           rectangle: Function;
+          mono_check: Function;
           triangle: Function;
           honeycomb: Function;
           wave: Function;
@@ -746,6 +747,22 @@ const layout_main: Function = () => {
             bg_func.rainbow.run(pattern);
             setTimeout(bg_func.rainbow.rectangle, 100);
           },
+          mono_check: (): void => {
+            const size = 50;
+            const pattern: bg_pattern = {
+              width: size * 2,
+              height: size,
+              shift: [0, size],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 1;
+                ctx.strokeRect(x, y, size, size);
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.mono_check, 100);
+          },
           triangle: (): void => {
             const size = 25;
             const pattern: bg_pattern = {
@@ -831,7 +848,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 8);
+      const bg_num: number = 5; //randInt(1, 9);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -846,7 +863,7 @@ const layout_main: Function = () => {
           bg_func.rainbow.honeycomb();
           break;
         case 5:
-          bg_func.raindrop();
+          bg_func.rainbow.mono_check();
           break;
         case 6:
           bg_func.gradient();
@@ -856,6 +873,9 @@ const layout_main: Function = () => {
           break;
         case 8:
           bg_func.rainbow.wave();
+          break;
+        case 9:
+          bg_func.raindrop();
           break;
         default:
           break;
