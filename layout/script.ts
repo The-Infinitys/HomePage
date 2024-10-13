@@ -1002,3 +1002,8 @@ const layout_main: Function = () => {
   client();
 };
 layout_main();
+
+//  TODO: ハロウィーンが終わったらここから削除する
+const halloween: Function = () => {};
+halloween();
+//  TODO: ハロウィーンが終わったらここまで削除する
