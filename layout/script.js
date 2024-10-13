@@ -353,7 +353,7 @@ var layout_main = function () {
                             func: function (ctx, x, y) {
                                 ctx.globalCompositeOperation = "destination-out";
                                 ctx.lineWidth = 1;
-                                ctx.strokeRect(x, y, size, size);
+                                ctx.fillRect(x, y, size, size);
                                 ctx.globalCompositeOperation = "source-over";
                             },
                         };
