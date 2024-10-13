@@ -344,6 +344,22 @@ var layout_main = function () {
                         bg_func.rainbow.run(pattern);
                         setTimeout(bg_func.rainbow.rectangle, 100);
                     },
+                    mono_check: function () {
+                        var size = 50;
+                        var pattern = {
+                            width: size * 2,
+                            height: size,
+                            shift: [0, size],
+                            func: function (ctx, x, y) {
+                                ctx.globalCompositeOperation = "destination-out";
+                                ctx.lineWidth = 1;
+                                ctx.strokeRect(x, y, size, size);
+                                ctx.globalCompositeOperation = "source-over";
+                            },
+                        };
+                        bg_func.rainbow.run(pattern);
+                        setTimeout(bg_func.rainbow.mono_check, 100);
+                    },
                     triangle: function () {
                         var size = 25;
                         var pattern = {
@@ -427,7 +443,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = randInt(1, 8);
+            var bg_num = 5; //randInt(1, 9);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
@@ -442,7 +458,7 @@ var layout_main = function () {
                     bg_func.rainbow.honeycomb();
                     break;
                 case 5:
-                    bg_func.raindrop();
+                    bg_func.rainbow.mono_check();
                     break;
                 case 6:
                     bg_func.gradient();
@@ -452,6 +468,9 @@ var layout_main = function () {
                     break;
                 case 8:
                     bg_func.rainbow.wave();
+                    break;
+                case 9:
+                    bg_func.raindrop();
                     break;
                 default:
                     break;
@@ -582,3 +601,6 @@ var layout_main = function () {
     client();
 };
 layout_main();
+//  TODO: ハロウィーンが終わったらここから削除する
+var halloween = function () { };
+halloween();
