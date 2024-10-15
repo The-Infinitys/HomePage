@@ -289,7 +289,8 @@ var layout_main = function () {
                     }
                 },
                 rainbow: {
-                    run: function (pattern) {
+                    run: function (pattern, fill) {
+                        if (fill === void 0) { fill = true; }
                         var rainbow = document.querySelector('#BackGround>div[data-background-name="rainbow"]');
                         if (rainbow == null) {
                             return 1;
@@ -315,7 +316,9 @@ var layout_main = function () {
                             return String(SelectStyle.getPropertyValue("--back-color")).trim();
                         };
                         ctx.fillStyle = theme_color();
-                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        if (fill) {
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        }
                         var draw = function () {
                             for (var canvas_y = 0; (canvas_y - 1) * pattern.height < canvas.height; canvas_y++) {
                                 for (var canvas_x = 0; (canvas_x - 1) * pattern.width +
@@ -350,16 +353,36 @@ var layout_main = function () {
                         var pattern = {
                             width: size * 2,
                             height: size,
-                            shift: [0, size],
+                            shift: [0, -size],
                             func: function (ctx, x, y) {
-                                ctx.globalCompositeOperation = "destination-out";
-                                ctx.lineWidth = 1;
+                                ctx.globalAlpha = 0.8;
                                 ctx.fillRect(x, y, size, size);
-                                ctx.globalCompositeOperation = "source-over";
+                                ctx.globalAlpha = 1;
+                                ctx.fillRect(x + size, y, size, size);
                             },
                         };
-                        bg_func.rainbow.run(pattern);
+                        bg_func.rainbow.run(pattern, false);
                         setTimeout(bg_func.rainbow.mono_check, 100);
+                    },
+                    super_check: function () {
+                        var size = 50;
+                        var pattern = {
+                            width: size * 2,
+                            height: size * 2,
+                            shift: [0],
+                            func: function (ctx, x, y) {
+                                ctx.globalAlpha = 1;
+                                ctx.fillRect(x, y, size, size);
+                                ctx.globalAlpha = 0.9;
+                                ctx.fillRect(x + size, y, size, size);
+                                ctx.globalAlpha = 0.9;
+                                ctx.fillRect(x, y + size, size, size);
+                                ctx.globalAlpha = 0.8;
+                                ctx.fillRect(x + size, y + size, size, size);
+                            },
+                        };
+                        bg_func.rainbow.run(pattern, false);
+                        setTimeout(bg_func.rainbow.super_check, 100);
                     },
                     triangle: function () {
                         var size = 25;
@@ -444,7 +467,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 5; //randInt(1, 9);
+            var bg_num = 10; //randInt(1, 10);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
@@ -472,6 +495,9 @@ var layout_main = function () {
                     break;
                 case 9:
                     bg_func.raindrop();
+                    break;
+                case 10:
+                    bg_func.rainbow.super_check();
                     break;
                 default:
                     break;

@@ -527,6 +527,7 @@ const layout_main: Function = () => {
           run: Function;
           rectangle: Function;
           mono_check: Function;
+          super_check: Function;
           triangle: Function;
           honeycomb: Function;
           wave: Function;
@@ -673,7 +674,7 @@ const layout_main: Function = () => {
           }
         },
         rainbow: {
-          run: (pattern: bg_pattern): number => {
+          run: (pattern: bg_pattern, fill: boolean = true): number => {
             const rainbow: HTMLElement | null = document.querySelector(
               '#BackGround>div[data-background-name="rainbow"]'
             );
@@ -706,7 +707,9 @@ const layout_main: Function = () => {
               ).trim();
             };
             ctx.fillStyle = theme_color();
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            if (fill) {
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
             const draw: Function = (): void => {
               for (
                 let canvas_y = 0;
@@ -753,16 +756,36 @@ const layout_main: Function = () => {
             const pattern: bg_pattern = {
               width: size * 2,
               height: size,
-              shift: [0, size],
+              shift: [0, -size],
               func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
-                ctx.globalCompositeOperation = "destination-out";
-                ctx.lineWidth = 1;
+                ctx.globalAlpha = 0.8;
                 ctx.fillRect(x, y, size, size);
-                ctx.globalCompositeOperation = "source-over";
+                ctx.globalAlpha = 1;
+                ctx.fillRect(x + size, y, size, size);
               },
             };
-            bg_func.rainbow.run(pattern);
+            bg_func.rainbow.run(pattern, false);
             setTimeout(bg_func.rainbow.mono_check, 100);
+          },
+          super_check: (): void => {
+            const size = 30;
+            const pattern: bg_pattern = {
+              width: size * 2,
+              height: size * 2,
+              shift: [0],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalAlpha = 1;
+                ctx.fillRect(x, y, size, size);
+                ctx.globalAlpha = 0.9;
+                ctx.fillRect(x + size, y, size, size);
+                ctx.globalAlpha = 0.9;
+                ctx.fillRect(x, y + size, size, size);
+                ctx.globalAlpha = 0.8;
+                ctx.fillRect(x + size, y + size, size, size);
+              },
+            };
+            bg_func.rainbow.run(pattern, false);
+            setTimeout(bg_func.rainbow.super_check, 100);
           },
           triangle: (): void => {
             const size = 25;
@@ -849,7 +872,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 5; //randInt(1, 9);
+      const bg_num: number = 10; //randInt(1, 10);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -877,6 +900,9 @@ const layout_main: Function = () => {
           break;
         case 9:
           bg_func.raindrop();
+          break;
+        case 10:
+          bg_func.rainbow.super_check();
           break;
         default:
           break;
