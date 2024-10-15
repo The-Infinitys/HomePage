@@ -329,13 +329,13 @@ const layout_main: Function = () => {
             const hamburger_icons: {
               X: string;
               article: string;
-              scratch: string;
+              // scratch: string;
               github: string;
               pixiv: string;
             } = {
               X: "/layout/image/hamburger/menu/x.svg",
               article: "/layout/image/hamburger/menu/article.svg",
-              scratch: "/layout/image/hamburger/menu/scratch.svg",
+              // scratch: "/layout/image/hamburger/menu/scratch.svg",
               github: "/layout/image/hamburger/menu/github.svg",
               pixiv: "/layout/image/hamburger/menu/pixiv.svg",
             };
@@ -353,12 +353,13 @@ const layout_main: Function = () => {
                 target: "self",
                 src: hamburger_icons.article,
               },
-              {
-                name: "Scratch",
-                href: "/Scratch/",
-                target: "self",
-                src: hamburger_icons.scratch,
-              },
+              // {
+              //   name: "Scratch",
+              //   href: "/Scratch/",
+              //   target: "self",
+              //   src: hamburger_icons.scratch,
+              // },
+              // [Removed By ST]
               {
                 name: "GitHub",
                 href: "https://github.com/The-Infinitys/",
