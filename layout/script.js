@@ -365,7 +365,7 @@ var layout_main = function () {
                         setTimeout(bg_func.rainbow.mono_check, 100);
                     },
                     super_check: function () {
-                        var size = 50;
+                        var size = 30;
                         var pattern = {
                             width: size * 2,
                             height: size * 2,
