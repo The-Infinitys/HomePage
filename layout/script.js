@@ -467,7 +467,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 10; //randInt(1, 10);
+            var bg_num = randInt(1, 10);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
@@ -500,6 +500,7 @@ var layout_main = function () {
                     bg_func.rainbow.super_check();
                     break;
                 default:
+                    console.error("Error bg_func out of Index");
                     break;
             }
             return 0;
