@@ -881,7 +881,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 10; //randInt(1, 10);
+      const bg_num: number = randInt(1, 10);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -914,6 +914,7 @@ const layout_main: Function = () => {
           bg_func.rainbow.super_check();
           break;
         default:
+          console.error("Error bg_func out of Index");
           break;
       }
       return 0;
