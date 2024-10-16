@@ -177,7 +177,7 @@ var layout_main = function () {
         var InfinityFooter = function () {
             var result = document.createElement("footer");
             result.className = "The-Infinitys-Footer";
-            var content = "<h1>&copy; 2024 The Infinity&apos;s</h1>";
+            var content = "\n      <div>\n      <div>\n        <p><a href=\"/contact/\">Contact to The Infinity's</a></p>\n        <p><a href=\"/article/\">Watch The Infinity's Articles</a></p>\n        <p><a href=\"https://x.com/The_Infinity_s/\">X(Twitter)</a></p>\n        <p><a href=\"https://github.com/The_Infinitys/\">GitHub profile</a></p>\n      </div>\n      </div>\n      <h1>&copy; 2024 The Infinity's</h1>";
             result.innerHTML = content;
             return result;
         };
