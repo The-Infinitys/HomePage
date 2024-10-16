@@ -411,7 +411,16 @@ const layout_main: Function = () => {
     const InfinityFooter: Function = () => {
       const result: HTMLElement = document.createElement("footer");
       result.className = "The-Infinitys-Footer";
-      const content: string = `<h1>&copy; 2024 The Infinity&apos;s</h1>`;
+      const content: string = `
+      <div>
+      <div>
+        <p><a href="/contact/">Contact to The Infinity's</a></p>
+        <p><a href="/article/">Watch The Infinity's Articles</a></p>
+        <p><a href="https://x.com/The_Infinity_s/">X(Twitter)</a></p>
+        <p><a href="https://github.com/The_Infinitys/">GitHub profile</a></p>
+      </div>
+      </div>
+      <h1>&copy; 2024 The Infinity's</h1>`;
       result.innerHTML = content;
       return result;
     };
