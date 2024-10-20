@@ -14,7 +14,7 @@
   --light-visilibity: hidden;
   /* menu */
   --header-height: 50px;
-  --footer-height: 50px;
+  --footer-height: calc(50px + 4 * 14px);
   /* hambburger menu */
   --hamburger-width: 350px;
   --infinity-ease: cubic-bezier(0.5, 0, 0.5, 1);
@@ -160,7 +160,7 @@ svg.The-Infinitys-txt {
 
 
 .Hamburger-Menu a {
-  font-family: "noto-sans", sans-serif;
+  font-family: "noto-sans", system-ui, sans-serif;
   text-decoration: none;
   color: var(--text-color);
   font-size: calc(0.8 * var(--header-height));
@@ -300,7 +300,12 @@ footer.The-Infinitys-Footer {
   left: 0;
   width: 100%;
   height: var(--footer-height);
+  font-family: "noto-sans", system-ui, sans-serif;
   background-color: color-mix(in srgb, var(--back-color), transparent 17%);
+}
+
+footer.The-Infinitys-Footer a {
+  font-size: 14px;
 }
 
 #mouse-stalker {
