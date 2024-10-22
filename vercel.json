@@ -3,6 +3,14 @@
     {
       "source": "/article-2024/:match*",
       "destination": "https://the-infinitys-repos-article-2024.vercel.app/:match*"
+    },
+    {
+      "source": "/app/:match*",
+      "destination": "https://the-infinitys-repos-app.vercel.app/:match*"
+    },
+    {
+      "source": "/Scratch/:match*",
+      "destination": "https://the-infinitys-repos-scratch.vercel.app/:match*"
     }
   ]
 }
