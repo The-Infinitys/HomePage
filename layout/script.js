@@ -191,7 +191,7 @@ var layout_main = function () {
             var result = document.createElement("div");
             result.id = "BackGround";
             result.className = "background";
-            result.innerHTML = "\n      <div data-background-name=\"monochrome\">\n        <img\n          alt=\"\"\n          class=\"background fill dark translucent\"\n          src=\"".concat(monochrome_dark, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background fill light translucent\"\n          src=\"").concat(monochrome_light, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background center translucent\"\n          src=\"").concat(monochrome_center, "\"\n        />\n      </div>\n      <div data-background-name=\"gradient\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"fluffycat\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"rainbow\">\n        <canvas class=\"background fill rainbow\"></canvas>\n      </div>\n      <div data-background-name=\"raindrop\"></div>");
+            result.innerHTML = "\n      <div data-background-name=\"monochrome\">\n        <img\n          alt=\"\"\n          class=\"background fill dark translucent\"\n          src=\"".concat(monochrome_dark, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background fill light translucent\"\n          src=\"").concat(monochrome_light, "\"\n        />\n        <img\n          alt=\"\"\n          class=\"background center translucent\"\n          src=\"").concat(monochrome_center, "\"\n        />\n      </div>\n      <div data-background-name=\"gradient\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"fluffycat\">\n        <img\n          alt=\"\"\n          class=\"background over translucent\"\n          src=\"").concat(gradient_bg, "\"\n        />\n      </div>\n      <div data-background-name=\"rainbow\">\n        <canvas class=\"background fill rainbow\"></canvas>\n      </div>\n      <div data-background-name=\"raindrop\"></div>\n      <div data-background-name=\"space\"></div>\n      ");
             return result;
         };
         document.body.append(generate_background());
@@ -237,6 +237,38 @@ var layout_main = function () {
                 return 1;
             }
             var bg_func = {
+                space: function () {
+                    var space = document.querySelector('#BackGround>div[data-background-name="space"]');
+                    if (space == null) {
+                        return 1;
+                    }
+                    var asteroid_count = 20;
+                    var asteroid_dispersion = asteroid_count / 10;
+                    var generate = function () {
+                        var asteroid = document.createElement("div");
+                        asteroid.className = "light three-d";
+                        space.append(asteroid);
+                    };
+                    var define_animation = function () {
+                        var elems = space.children;
+                        var _loop_1 = function (i) {
+                            var elem = elems[i];
+                            elem.addEventListener("animationiteration", function () {
+                                elem.setAttribute("style", "\n                  --x-pos: ".concat((asteroid_dispersion *
+                                    (2 * Math.random() - 1)).toString(), ";\n                  --y-pos: ").concat((asteroid_dispersion *
+                                    (2 * Math.random() - 1)).toString(), ";\n                  background-color: hsl(").concat(Math.random().toString(), "turn, 100%, 50%);\n                  "));
+                            });
+                        };
+                        for (var i = 0; i < elems.length; i++) {
+                            _loop_1(i);
+                        }
+                    };
+                    for (var i = 0; i < asteroid_count; i++) {
+                        setTimeout(generate, (i * 2000) / asteroid_count);
+                    }
+                    setTimeout(define_animation, 2000);
+                    return 0;
+                },
                 monochrome: function () {
                     var monochrome = document.querySelector('#BackGround>div[data-background-name="monochrome"]');
                     if (monochrome == null) {
@@ -348,7 +380,7 @@ var layout_main = function () {
                         bg_func.rainbow.run(pattern);
                         setTimeout(bg_func.rainbow.rectangle, 100);
                     },
-                    mono_check: function () {
+                    ichimatsu: function () {
                         var size = 50;
                         var pattern = {
                             width: size * 2,
@@ -362,7 +394,7 @@ var layout_main = function () {
                             },
                         };
                         bg_func.rainbow.run(pattern, false);
-                        setTimeout(bg_func.rainbow.mono_check, 100);
+                        setTimeout(bg_func.rainbow.ichimatsu, 100);
                     },
                     super_check: function () {
                         var size = 30;
@@ -467,7 +499,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = randInt(1, 10);
+            var bg_num = 11; //randInt(1, 11);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
@@ -482,7 +514,7 @@ var layout_main = function () {
                     bg_func.rainbow.honeycomb();
                     break;
                 case 5:
-                    bg_func.rainbow.mono_check();
+                    bg_func.rainbow.ichimatsu();
                     break;
                 case 6:
                     bg_func.gradient();
@@ -498,6 +530,9 @@ var layout_main = function () {
                     break;
                 case 10:
                     bg_func.rainbow.super_check();
+                    break;
+                case 11:
+                    bg_func.space();
                     break;
                 default:
                     console.error("Error bg_func out of Index");
