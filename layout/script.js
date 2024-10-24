@@ -242,31 +242,26 @@ var layout_main = function () {
                     if (space == null) {
                         return 1;
                     }
+                    else {
+                        space.style.display = "contents";
+                    }
                     var asteroid_count = 20;
                     var asteroid_dispersion = asteroid_count / 10;
                     var generate = function () {
                         var asteroid = document.createElement("div");
                         asteroid.className = "light three-d";
-                        space.append(asteroid);
-                    };
-                    var define_animation = function () {
-                        var elems = space.children;
-                        var _loop_1 = function (i) {
-                            var elem = elems[i];
-                            elem.addEventListener("animationiteration", function () {
-                                elem.setAttribute("style", "\n                  --x-pos: ".concat((asteroid_dispersion *
-                                    (2 * Math.random() - 1)).toString(), ";\n                  --y-pos: ").concat((asteroid_dispersion *
-                                    (2 * Math.random() - 1)).toString(), ";\n                  background-color: hsl(").concat(Math.random().toString(), "turn, 100%, 50%);\n                  "));
-                            });
-                        };
-                        for (var i = 0; i < elems.length; i++) {
-                            _loop_1(i);
-                        }
+                        asteroid.addEventListener("animationiteration", function () {
+                            asteroid.setAttribute("style", "\n                --x-pos: ".concat((asteroid_dispersion *
+                                (2 * Math.random() - 1)).toString(), ";\n                --y-pos: ").concat((asteroid_dispersion *
+                                (2 * Math.random() - 1)).toString(), ";\n                background-color: hsl(").concat(Math.random().toString(), "turn, 100%, 50%);\n                "));
+                        });
+                        space === null || space === void 0 ? void 0 : space.append(asteroid);
                     };
                     for (var i = 0; i < asteroid_count; i++) {
-                        setTimeout(generate, (i * 2000) / asteroid_count);
+                        setTimeout(function () {
+                            generate();
+                        }, (i * 2000) / asteroid_count);
                     }
-                    setTimeout(define_animation, 2000);
                     return 0;
                 },
                 monochrome: function () {
