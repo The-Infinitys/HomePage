@@ -253,7 +253,7 @@ var layout_main = function () {
                         asteroid.addEventListener("animationiteration", function () {
                             asteroid.setAttribute("style", "\n                --x-pos: ".concat((asteroid_dispersion *
                                 (2 * Math.random() - 1)).toString(), ";\n                --y-pos: ").concat((asteroid_dispersion *
-                                (2 * Math.random() - 1)).toString(), ";\n                background-color: hsl(").concat(Math.random().toString(), "turn, 100%, 50%);\n                "));
+                                (2 * Math.random() - 1)).toString(), ";\n                background: radial-gradient(\n                  hsl(").concat(Math.random().toString(), "turn, 100%, 50%),\n                  transparent\n                );\n                "));
                         });
                         space === null || space === void 0 ? void 0 : space.append(asteroid);
                     };

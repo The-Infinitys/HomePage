@@ -571,7 +571,10 @@ const layout_main: Function = () => {
                   asteroid_dispersion *
                   (2 * Math.random() - 1)
                 ).toString()};
-                background-color: hsl(${Math.random().toString()}turn, 100%, 50%);
+                background: radial-gradient(
+                  hsl(${Math.random().toString()}turn, 100%, 50%),
+                  transparent
+                );
                 `
               );
             });

@@ -236,9 +236,10 @@ svg.The-Infinitys-txt {
   --y-pos: 0;
   --z-pos: 1;
   --z-depth: 400;
-  --blur-length: calc(var(--z-depth) * 20);
-  --blur-level: calc(var(--z-depth) * 5);
+  --blur-length: calc(var(--z-depth) * 10);
+  --blur-level: calc(var(--z-depth) * 2);
   z-index: calc(- 1000 - 1 * var(--z-pos));
+  visibility: visible;
   position: absolute;
   background-color: transparent;
   border-radius: 50%;
@@ -269,7 +270,7 @@ svg.The-Infinitys-txt {
 
 @keyframes space_asteroid_animation {
   0% {
-    --z-pos: calc(var(--z-depth) * 25);
+    --z-pos: calc(var(--z-depth) * 12);
   }
 
   100% {
