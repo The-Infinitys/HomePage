@@ -179,7 +179,7 @@ svg.The-Infinitys-txt {
 /* 背景 */
 #BackGround {
   position: fixed;
-  z-index: -1000;
+  z-index: -10000;
   top: 0;
   left: 0;
   width: 100%;
@@ -227,6 +227,68 @@ svg.The-Infinitys-txt {
 
 .light {
   visibility: var(--light-visilibity);
+}
+
+/*For Space BackGround*/
+#BackGround>div[data-background-name="space"] {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+}
+
+#BackGround>div[data-background-name="space"]>div.three-d {
+  --x-pos: 0;
+  --y-pos: 0;
+  --z-pos: 1;
+  --z-depth: 400;
+  --blur-length: calc(var(--z-depth) * 20);
+  --blur-level: calc(var(--z-depth) * 5);
+  z-index: calc(- 1000 - 1 * var(--z-pos));
+  position: absolute;
+  background-color: transparent;
+  border-radius: 50%;
+  opacity: min(1, max(calc(1 + (var(--blur-length) - var(--z-pos)) / var(--blur-level)), 0));
+  top: calc((var(--y-pos) * (var(--z-depth) / var(--z-pos)) + 1) * 50%);
+  left: calc((var(--x-pos) * (var(--z-depth) / var(--z-pos)) + 1) * 50%);
+  transform: translate(-50%, -50%) scale(calc(var(--z-depth) / var(--z-pos) * 100%));
+  animation: test 2s linear infinite;
+}
+
+@property --x-pos {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --y-pos {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --z-pos {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes test {
+  0% {
+    --z-pos: calc(var(--z-depth) * 25);
+  }
+
+  100% {
+    --z-pos: calc(var(--z-depth) * 0);
+  }
+}
+
+#BackGround>div[data-background-name="space"]>div.light {
+  width: 100px;
+  aspect-ratio: 1;
+  height: auto;
 }
 
 @keyframes rainbow-animation {

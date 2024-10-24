@@ -1,14 +1,14 @@
 const run: Function = () => {
-  const space_parent: HTMLElement = document.querySelector(".bg");
+  const space: HTMLElement = document.querySelector(".bg");
   const asteroid_count: number = 20;
   const asteroid_dispersion: number = asteroid_count / 10;
   const generate: Function = () => {
     const asteroid: HTMLElement = document.createElement("div");
     asteroid.className = "light three-d";
-    space_parent!.append(asteroid);
+    space!.append(asteroid);
   };
   const define_animation: Function = () => {
-    const elems: HTMLElement[] = space_parent!.children;
+    const elems: HTMLElement[] = space!.children;
     for (let i = 0; i < elems.length; i++) {
       const elem: HTMLElement = elems[i];
       elem.addEventListener("animationiteration", () => {

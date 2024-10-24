@@ -472,7 +472,9 @@ const layout_main: Function = () => {
       <div data-background-name="rainbow">
         <canvas class="background fill rainbow"></canvas>
       </div>
-      <div data-background-name="raindrop"></div>`;
+      <div data-background-name="raindrop"></div>
+      <div data-background-name="space"></div>
+      `;
       return result;
     };
     document.body.append(generate_background());
@@ -532,16 +534,59 @@ const layout_main: Function = () => {
         gradient: Function;
         raindrop: Function;
         fluffycat: Function;
+        space: Function;
         rainbow: {
           run: Function;
           rectangle: Function;
-          mono_check: Function;
+          ichimatsu: Function;
           super_check: Function;
           triangle: Function;
           honeycomb: Function;
           wave: Function;
         };
       } = {
+        space: (): number => {
+          const space: HTMLElement | null = document.querySelector(
+            '#BackGround>div[data-background-name="space"]'
+          );
+          if (space == null) {
+            return 1;
+          }
+          const asteroid_count: number = 20;
+          const asteroid_dispersion: number = asteroid_count / 10;
+          const generate: Function = () => {
+            const asteroid: HTMLElement = document.createElement("div");
+            asteroid.className = "light three-d";
+            space!.append(asteroid);
+          };
+          const define_animation: Function = () => {
+            const elems: HTMLCollection = space!.children;
+            for (let i = 0; i < elems.length; i++) {
+              const elem: Element = elems[i];
+              elem.addEventListener("animationiteration", () => {
+                elem.setAttribute(
+                  "style",
+                  `
+                  --x-pos: ${(
+                    asteroid_dispersion *
+                    (2 * Math.random() - 1)
+                  ).toString()};
+                  --y-pos: ${(
+                    asteroid_dispersion *
+                    (2 * Math.random() - 1)
+                  ).toString()};
+                  background-color: hsl(${Math.random().toString()}turn, 100%, 50%);
+                  `
+                );
+              });
+            }
+          };
+          for (let i = 0; i < asteroid_count; i++) {
+            setTimeout(generate, (i * 2000) / asteroid_count);
+          }
+          setTimeout(define_animation, 2000);
+          return 0;
+        },
         monochrome: (): number => {
           const monochrome: HTMLElement | null = document.querySelector(
             '#BackGround>div[data-background-name="monochrome"]'
@@ -760,7 +805,7 @@ const layout_main: Function = () => {
             bg_func.rainbow.run(pattern);
             setTimeout(bg_func.rainbow.rectangle, 100);
           },
-          mono_check: (): void => {
+          ichimatsu: (): void => {
             const size = 50;
             const pattern: bg_pattern = {
               width: size * 2,
@@ -774,7 +819,7 @@ const layout_main: Function = () => {
               },
             };
             bg_func.rainbow.run(pattern, false);
-            setTimeout(bg_func.rainbow.mono_check, 100);
+            setTimeout(bg_func.rainbow.ichimatsu, 100);
           },
           super_check: (): void => {
             const size = 30;
@@ -881,7 +926,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 10);
+      const bg_num: number = 11; //randInt(1, 11);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -896,7 +941,7 @@ const layout_main: Function = () => {
           bg_func.rainbow.honeycomb();
           break;
         case 5:
-          bg_func.rainbow.mono_check();
+          bg_func.rainbow.ichimatsu();
           break;
         case 6:
           bg_func.gradient();
@@ -912,6 +957,9 @@ const layout_main: Function = () => {
           break;
         case 10:
           bg_func.rainbow.super_check();
+          break;
+        case 11:
+          bg_func.space();
           break;
         default:
           console.error("Error bg_func out of Index");
