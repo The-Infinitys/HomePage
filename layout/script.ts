@@ -551,40 +551,37 @@ const layout_main: Function = () => {
           );
           if (space == null) {
             return 1;
+          } else {
+            space.style.display = "contents";
           }
           const asteroid_count: number = 20;
           const asteroid_dispersion: number = asteroid_count / 10;
           const generate: Function = () => {
             const asteroid: HTMLElement = document.createElement("div");
             asteroid.className = "light three-d";
-            space!.append(asteroid);
-          };
-          const define_animation: Function = () => {
-            const elems: HTMLCollection = space!.children;
-            for (let i = 0; i < elems.length; i++) {
-              const elem: Element = elems[i];
-              elem.addEventListener("animationiteration", () => {
-                elem.setAttribute(
-                  "style",
-                  `
-                  --x-pos: ${(
-                    asteroid_dispersion *
-                    (2 * Math.random() - 1)
-                  ).toString()};
-                  --y-pos: ${(
-                    asteroid_dispersion *
-                    (2 * Math.random() - 1)
-                  ).toString()};
-                  background-color: hsl(${Math.random().toString()}turn, 100%, 50%);
-                  `
-                );
-              });
-            }
+            asteroid.addEventListener("animationiteration", () => {
+              asteroid.setAttribute(
+                "style",
+                `
+                --x-pos: ${(
+                  asteroid_dispersion *
+                  (2 * Math.random() - 1)
+                ).toString()};
+                --y-pos: ${(
+                  asteroid_dispersion *
+                  (2 * Math.random() - 1)
+                ).toString()};
+                background-color: hsl(${Math.random().toString()}turn, 100%, 50%);
+                `
+              );
+            });
+            space?.append(asteroid);
           };
           for (let i = 0; i < asteroid_count; i++) {
-            setTimeout(generate, (i * 2000) / asteroid_count);
+            setTimeout(() => {
+              generate();
+            }, (i * 2000) / asteroid_count);
           }
-          setTimeout(define_animation, 2000);
           return 0;
         },
         monochrome: (): number => {
