@@ -694,9 +694,10 @@ const layout_main: Function = () => {
           run: Function;
           rectangle: Function;
           ichimatsu: Function;
-          super_check: Function;
+          gingham_check: Function;
           triangle: Function;
           honeycomb: Function;
+          halloween: Function;
           wave: Function;
         };
       } = {
@@ -976,7 +977,7 @@ const layout_main: Function = () => {
             bg_func.rainbow.run(pattern, false);
             setTimeout(bg_func.rainbow.ichimatsu, 100);
           },
-          super_check: (): void => {
+          gingham_check: (): void => {
             const size = 30;
             const pattern: bg_pattern = {
               width: size * 2,
@@ -994,7 +995,7 @@ const layout_main: Function = () => {
               },
             };
             bg_func.rainbow.run(pattern, false);
-            setTimeout(bg_func.rainbow.super_check, 100);
+            setTimeout(bg_func.rainbow.gingham_check, 100);
           },
           triangle: (): void => {
             const size = 25;
@@ -1077,11 +1078,47 @@ const layout_main: Function = () => {
             bg_func.rainbow.run(pattern);
             setTimeout(bg_func.rainbow.wave, 100);
           },
+          halloween: () => {
+            const width = 150;
+            const height = width;
+            const pattern: bg_pattern = {
+              width: width,
+              height: height,
+              shift: [0, -width / 2],
+              func: (ctx: CanvasRenderingContext2D, x: number, y: number) => {
+                ctx.globalCompositeOperation = "destination-out";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(x + width / 5, y + width / 5);
+                ctx.lineTo(x + width / 10, y + (width / 5) * 2);
+                ctx.lineTo(x + (width / 10) * 3, y + (width / 5) * 2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.beginPath();
+                ctx.moveTo(x + (width / 5) * 4, y + width / 5);
+                ctx.lineTo(x + (width / 10) * 9, y + (width / 5) * 2);
+                ctx.lineTo(x + (width / 10) * 7, y + (width / 5) * 2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.beginPath();
+                ctx.moveTo(x + width / 10, y + height / 2);
+                ctx.lineTo(x + width / 3, y + (height / 10) * 9);
+                ctx.lineTo(x + width / 2, y + (height / 3) * 2);
+                ctx.lineTo(x + (width / 3) * 2, y + (height / 10) * 9);
+                ctx.lineTo(x + (width / 10) * 9, y + height / 2);
+                ctx.closePath();
+                ctx.fill();
+                ctx.globalCompositeOperation = "source-over";
+              },
+            };
+            bg_func.rainbow.run(pattern);
+            setTimeout(bg_func.rainbow.halloween, 100);
+          },
         },
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 11; //randInt(1, 11);
+      const bg_num: number = randInt(1, 11);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -1111,10 +1148,13 @@ const layout_main: Function = () => {
           bg_func.raindrop();
           break;
         case 10:
-          bg_func.rainbow.super_check();
+          bg_func.rainbow.gingham_check();
           break;
         case 11:
           bg_func.space();
+          break;
+        case 12:
+          bg_func.rainbow.halloween();
           break;
         default:
           console.error("Error bg_func out of Index");
@@ -1262,8 +1302,3 @@ const layout_main: Function = () => {
   client();
 };
 layout_main();
-
-//  TODO: ハロウィーンが終わったらここから削除する
-const halloween: Function = () => {};
-halloween();
-//  TODO: ハロウィーンが終わったらここまで削除する

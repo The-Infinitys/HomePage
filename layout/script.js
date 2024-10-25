@@ -391,7 +391,7 @@ var layout_main = function () {
                         bg_func.rainbow.run(pattern, false);
                         setTimeout(bg_func.rainbow.ichimatsu, 100);
                     },
-                    super_check: function () {
+                    gingham_check: function () {
                         var size = 30;
                         var pattern = {
                             width: size * 2,
@@ -409,7 +409,7 @@ var layout_main = function () {
                             },
                         };
                         bg_func.rainbow.run(pattern, false);
-                        setTimeout(bg_func.rainbow.super_check, 100);
+                        setTimeout(bg_func.rainbow.gingham_check, 100);
                     },
                     triangle: function () {
                         var size = 25;
@@ -489,12 +489,48 @@ var layout_main = function () {
                         bg_func.rainbow.run(pattern);
                         setTimeout(bg_func.rainbow.wave, 100);
                     },
+                    halloween: function () {
+                        var width = 150;
+                        var height = width;
+                        var pattern = {
+                            width: width,
+                            height: height,
+                            shift: [0, -width / 2],
+                            func: function (ctx, x, y) {
+                                ctx.globalCompositeOperation = "destination-out";
+                                ctx.lineWidth = 1;
+                                ctx.beginPath();
+                                ctx.moveTo(x + width / 5, y + width / 5);
+                                ctx.lineTo(x + width / 10, y + (width / 5) * 2);
+                                ctx.lineTo(x + (width / 10) * 3, y + (width / 5) * 2);
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.beginPath();
+                                ctx.moveTo(x + (width / 5) * 4, y + width / 5);
+                                ctx.lineTo(x + (width / 10) * 9, y + (width / 5) * 2);
+                                ctx.lineTo(x + (width / 10) * 7, y + (width / 5) * 2);
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.beginPath();
+                                ctx.moveTo(x + width / 10, y + height / 2);
+                                ctx.lineTo(x + width / 3, y + (height / 10) * 9);
+                                ctx.lineTo(x + width / 2, y + (height / 3) * 2);
+                                ctx.lineTo(x + (width / 3) * 2, y + (height / 10) * 9);
+                                ctx.lineTo(x + (width / 10) * 9, y + height / 2);
+                                ctx.closePath();
+                                ctx.fill();
+                                ctx.globalCompositeOperation = "source-over";
+                            },
+                        };
+                        bg_func.rainbow.run(pattern);
+                        setTimeout(bg_func.rainbow.halloween, 100);
+                    },
                 },
             };
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 11; //randInt(1, 11);
+            var bg_num = randInt(1, 11);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
@@ -524,10 +560,13 @@ var layout_main = function () {
                     bg_func.raindrop();
                     break;
                 case 10:
-                    bg_func.rainbow.super_check();
+                    bg_func.rainbow.gingham_check();
                     break;
                 case 11:
                     bg_func.space();
+                    break;
+                case 12:
+                    bg_func.rainbow.halloween();
                     break;
                 default:
                     console.error("Error bg_func out of Index");
@@ -659,6 +698,3 @@ var layout_main = function () {
     client();
 };
 layout_main();
-//  TODO: ハロウィーンが終わったらここから削除する
-var halloween = function () { };
-halloween();
