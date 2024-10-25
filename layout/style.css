@@ -208,6 +208,26 @@ svg.The-Infinitys-txt {
   transform: translate(-50%, -50%);
 }
 
+.background.left {
+  position: fixed;
+  left: 0;
+}
+
+.background.right {
+  position: fixed;
+  right: 0;
+}
+
+.background.top {
+  position: fixed;
+  top: 0;
+}
+
+.background.bottom {
+  position: fixed;
+  bottom: 0;
+}
+
 .background.over {
   position: fixed;
   width: 100%;
@@ -282,6 +302,42 @@ svg.The-Infinitys-txt {
   width: 100px;
   aspect-ratio: 1;
   height: auto;
+}
+
+/* ここにゃんのサイン */
+#BackGround>div[data-background-name="space"]>svg {
+  width: min(100vw, 250px);
+  height: auto;
+  animation: kokonyan-sign-animation-x 10s linear infinite, kokonyan-sign-animation-y 11s linear infinite;
+  animation-delay: 55s, 55s; /* ここにゃんにちなんで、55秒経過すると、右下にあったここにゃんのサインがスクリーンセーバーの如く動き出す */
+}
+
+@keyframes kokonyan-sign-animation-x {
+  0% {
+    right: 0;
+  }
+
+  50% {
+    right: calc(100% - min(100vw, 250px));
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes kokonyan-sign-animation-y {
+  0% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: calc(100% - min(100vw, 250px) * 175.69679 / 232.49988);
+  }
+
+  100% {
+    bottom: 0;
+  }
 }
 
 @keyframes rainbow-animation {
