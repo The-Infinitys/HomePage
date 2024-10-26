@@ -28,7 +28,7 @@ var layout_main = function () {
                 ]);
                 var infinity_logo = document.createElement("img");
                 infinity_logo.className = "logo";
-                var The_Infinitys_logo_src = "/image/The-Infinitys.webp";
+                var The_Infinitys_logo_src = "/halloween/halloweenfinity.svg";
                 htmlAttributes(infinity_logo, [
                     {
                         name: "src",
@@ -198,7 +198,7 @@ var layout_main = function () {
         var generate_mousestalker = function () {
             var result = document.createElement("div");
             result.id = "mouse-stalker";
-            result.innerHTML = "<img src=\"/image/The-Infinitys.webp\" />";
+            result.innerHTML = "<img src=\"/halloween/halloweenfinity.svg\" />";
             var msPos = {
                 s: {
                     x: document.documentElement.clientWidth / 2,
