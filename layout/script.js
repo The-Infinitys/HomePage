@@ -513,10 +513,13 @@ var layout_main = function () {
                                 ctx.fill();
                                 ctx.beginPath();
                                 ctx.moveTo(x + width / 10, y + height / 2);
-                                ctx.lineTo(x + width / 3, y + (height / 10) * 9);
-                                ctx.lineTo(x + width / 2, y + (height / 3) * 2);
-                                ctx.lineTo(x + (width / 3) * 2, y + (height / 10) * 9);
+                                ctx.lineTo(x + width / 5, y + (height / 10) * 7);
+                                ctx.lineTo(x + width / 3, y + (height / 3) * 2);
+                                ctx.lineTo(x + width / 2, y + (height / 10) * 8);
+                                ctx.lineTo(x + (width / 3) * 2, y + (height / 3) * 2);
+                                ctx.lineTo(x + (width / 5) * 4, y + (height / 10) * 7);
                                 ctx.lineTo(x + (width / 10) * 9, y + height / 2);
+                                ctx.lineTo(x + width / 2, y + (height / 5) * 3);
                                 ctx.closePath();
                                 ctx.fill();
                                 ctx.globalCompositeOperation = "source-over";
@@ -530,7 +533,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = randInt(1, 11);
+            var bg_num = 12; //randInt(1, 11);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
