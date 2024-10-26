@@ -1102,10 +1102,13 @@ const layout_main: Function = () => {
                 ctx.fill();
                 ctx.beginPath();
                 ctx.moveTo(x + width / 10, y + height / 2);
-                ctx.lineTo(x + width / 3, y + (height / 10) * 9);
-                ctx.lineTo(x + width / 2, y + (height / 3) * 2);
-                ctx.lineTo(x + (width / 3) * 2, y + (height / 10) * 9);
+                ctx.lineTo(x + width / 5, y + (height / 10) * 7);
+                ctx.lineTo(x + width / 3, y + (height / 3) * 2);
+                ctx.lineTo(x + width / 2, y + (height / 10) * 8);
+                ctx.lineTo(x + (width / 3) * 2, y + (height / 3) * 2);
+                ctx.lineTo(x + (width / 5) * 4, y + (height / 10) * 7);
                 ctx.lineTo(x + (width / 10) * 9, y + height / 2);
+                ctx.lineTo(x + width / 2, y + (height / 5) * 3);
                 ctx.closePath();
                 ctx.fill();
                 ctx.globalCompositeOperation = "source-over";
@@ -1118,7 +1121,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = randInt(1, 11);
+      const bg_num: number = 12; //randInt(1, 11);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
