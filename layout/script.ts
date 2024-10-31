@@ -35,7 +35,7 @@ const layout_main: Function = () => {
         ]);
         const infinity_logo: HTMLElement = document.createElement("img");
         infinity_logo.className = "logo";
-        const The_Infinitys_logo_src: string = "/halloween/halloweenfinity.svg";
+        const The_Infinitys_logo_src: string = "/image/The-Infinitys.webp";
         htmlAttributes(infinity_logo, [
           {
             name: "src",
@@ -636,7 +636,7 @@ const layout_main: Function = () => {
     const generate_mousestalker: Function = (): HTMLElement => {
       const result: HTMLElement = document.createElement("div");
       result.id = "mouse-stalker";
-      result.innerHTML = `<img src="/halloween/halloweenfinity.svg" />`;
+      result.innerHTML = `<img src="/image/The-Infinitys.webp" />`;
       let msPos = {
         s: {
           x: document.documentElement.clientWidth / 2,
