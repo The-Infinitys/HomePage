@@ -533,7 +533,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 12; //randInt(1, 11);
+            var bg_num = 11; //randInt(1, 12);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
