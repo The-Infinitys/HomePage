@@ -2,6 +2,7 @@ const recommendArticles = async () => {
   const article_list = document.querySelector(".article-list-main");
   article_list.innerHTML = "";
   article_info_datas = [];
+  const loading_img_src="../image/loading-thunderbolt.svg";
   const add_article_button = (article_info) => {
     const article_button = document.createElement("button");
     const article_root_path =
@@ -18,12 +19,12 @@ const recommendArticles = async () => {
     const thumbnail = new Image();
     thumbnail.alt = article_info.id;
     if (article_info.thumbnail == "") {
-      thumbnail.src = "../image/loading-yarimasune.svg";
+      thumbnail.src = loading_img_src;
     } else {
       thumbnail.src = article_root_path + article_info.thumbnail;
     }
     const loading = new Image();
-    loading.src = "../image/loading-yarimasune.svg";
+    loading.src = loading_img_src;
     loading.alt = "";
     const title = document.createElement("div");
     title.innerHTML =
