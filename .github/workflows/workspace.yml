@@ -4,7 +4,6 @@ on: workflow_dispatch
 permissions:
   repository-projects: write
   contents: write
-  id-token: read
 jobs:
   vs-code-server:
     runs-on: ubuntu-latest
