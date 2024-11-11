@@ -15,4 +15,5 @@ jobs:
       - run: git clone https://github.com/The-Infinitys/article-2024
       - run: git clone https://github.com/The-Infinitys/app
       - run: git clone https://github.com/The-Infinitys/Scratch
+      - run: rm ./vscode_cli.tar.gz
       - run: ./code tunnel --accept-server-license-terms --name the-infinitys_tunnel
