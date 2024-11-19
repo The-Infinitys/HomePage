@@ -11,8 +11,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
       - run: tar -xf vscode_cli.tar.gz
+      - run: rm ./vscode_cli.tar.gz
+      - run: mv ./code /usr/local/bin/code-cli
       - run: git clone https://github.com/The-Infinitys/article-2024
       - run: git clone https://github.com/The-Infinitys/app
       - run: git clone https://github.com/The-Infinitys/Scratch
-      - run: rm ./vscode_cli.tar.gz
-      - run: ./code tunnel --accept-server-license-terms --name the-infinitys_tunnel
+      - run: code-cli tunnel --accept-server-license-terms --name the-inf_website
