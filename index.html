@@ -14,6 +14,9 @@
       if (now.hostname == "localhost") {
         return true;
       }
+      if (now.hostname.endsWith("devtunnels.ms")) {
+        return true;
+      }
       const params = now.searchParams;
       if (!params.has("no-redirect")) {
         window.location.href = "https://the-infinitys.f5.si" + now.pathname;
