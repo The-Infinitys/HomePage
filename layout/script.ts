@@ -433,6 +433,8 @@ const layout_main: Function = () => {
         "/layout/image/background/monochrome/light.svg";
       const monochrome_center: string =
         "/layout/image/background/monochrome/center.svg";
+      const wallpaper_infinite_url: string =
+        "/wallpaper/content/Infinite/?embed";
       const gradient_bg: string = "/layout/image/background/gradient/bg.jpeg";
       const result: HTMLDivElement = document.createElement("div");
       result.id = "BackGround";
@@ -467,6 +469,13 @@ const layout_main: Function = () => {
           alt=""
           class="background over translucent"
           src="${gradient_bg}"
+        />
+      </div>
+      <div data-background-name="wallpaper-infinite">
+        <iframe
+          class="background fill"
+          style="border:none;"
+          src="${wallpaper_infinite_url}"
         />
       </div>
       <div data-background-name="rainbow">
@@ -690,6 +699,9 @@ const layout_main: Function = () => {
         raindrop: Function;
         fluffycat: Function;
         space: Function;
+        wallpaper: {
+          infinite: Function;
+        };
         rainbow: {
           run: Function;
           rectangle: Function;
@@ -881,6 +893,19 @@ const layout_main: Function = () => {
           } else {
             fluffycat.style.display = "contents";
             return 0;
+          }
+        },
+        wallpaper:{
+          infinite: (): number => {
+            const wallpaper_infinite: HTMLElement | null = document.querySelector(
+              '#BackGround>div[data-background-name="wallpaper-infinite"]'
+            );
+            if (wallpaper_infinite == null) {
+              return 1;
+            } else {
+              wallpaper_infinite.style.display = "contents";
+              return 0;
+            } 
           }
         },
         rainbow: {
@@ -1121,7 +1146,7 @@ const layout_main: Function = () => {
       };
       const randInt: Function = (min: number, max: number): number =>
         Math.floor(Math.random() * (max + 1 - min)) + min;
-      const bg_num: number = 11; //randInt(1, 12);
+      const bg_num: number = 13; //randInt(1, 13);
       switch (bg_num) {
         case 1:
           bg_func.monochrome();
@@ -1158,6 +1183,9 @@ const layout_main: Function = () => {
           break;
         case 12:
           bg_func.rainbow.halloween();
+          break;
+        case 13:
+          bg_func.wallpaper.infinite();
           break;
         default:
           console.error("Error bg_func out of Index");
