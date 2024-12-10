@@ -1,6 +1,6 @@
 import os
 
-repos = ["article-2024", "Scratch"]
+repos = ["article-2024", "Scratch","wallpapar"]
 for repo in repos:
     os.system("git clone https://github.com/The-Infinitys/" + repo + ".git")
 
