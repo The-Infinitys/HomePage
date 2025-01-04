@@ -545,7 +545,7 @@ var layout_main = function () {
             var randInt = function (min, max) {
                 return Math.floor(Math.random() * (max + 1 - min)) + min;
             };
-            var bg_num = 13; //randInt(1, 13);
+            var bg_num = 4; //randInt(1, 13);
             switch (bg_num) {
                 case 1:
                     bg_func.monochrome();
