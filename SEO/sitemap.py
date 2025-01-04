@@ -73,7 +73,7 @@ for index in indexes:
         + 4 * " "
         + "</url>\n"
     )
-sitemap_content += "</urlset>"
+sitemap_content += "</urlset>\n"
 with open("./sitemap.xml", mode="w") as f:
     f.write(sitemap_content)
 

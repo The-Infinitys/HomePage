@@ -1,5 +1,6 @@
 import os
 def git_renew():
+    os.system("git pull")
     os.system("git config user.name github-actions")
     os.system("git config user.email github-actions@github.com")
     os.system("git add .")
