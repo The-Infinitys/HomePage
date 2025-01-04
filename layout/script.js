@@ -227,7 +227,8 @@ var layout_main = function () {
             requestAnimationFrame(ms_animation);
             return result;
         };
-        document.body.append(generate_mousestalker());
+        // document.body.append(generate_mousestalker());
+        // 2024-12-19から無効化
     };
     rendering();
     var client = function () {
