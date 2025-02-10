@@ -26,7 +26,7 @@
   --text-color: #000;
 }
 
-@media (max-aspect-ratio: 2/3) {
+@media screen and (max-width: 350px) {
   :root {
     --hamburger-width: 100%;
   }
@@ -72,16 +72,25 @@ header.The-Infinitys-Header .logo {
 header.The-Infinitys-Header+* {
   margin-top: var(--header-height);
 }
-
+img.the-inf-icon{
+  visibility: hidden;
+}
 svg.The-Infinitys-txt {
   position: absolute;
-  top: 0;
-  left: var(--header-height);
-  height: var(--header-height);
+  top: calc(0.1 * var(--header-height));
+  left: 0;
+  height: calc(0.8 * var(--header-height));
   stroke: var(--text-color);
-  fill: var(--text-color)
+  fill: var(--text-color);
 }
-
+@media screen and (max-width: 350px) {
+  svg.The-Infinitys-txt {
+    display: none;
+  }
+  img.the-inf-icon {
+    visibility: visible;
+  }
+}
 #hamburger-button {
   display: none;
   position: absolute;
@@ -153,7 +162,7 @@ svg.The-Infinitys-txt {
 #change-color-theme {
   width: fit-content;
   padding: calc(0.1 * var(--header-height));
-  border-radius: calc(var(--hamburger-width) * 0.4);
+  border-radius: calc(var(--header-height) * 0.8);
   background-color: var(--back-color);
   border: 2px solid var(--text-color);
 }
@@ -170,6 +179,7 @@ svg.The-Infinitys-txt {
   width: 100%;
   height: calc(0.8 * var(--header-height));
   margin-top: calc(0.5 * var(--header-height));
+  margin-left: calc(0.2 * var(--header-height));
 }
 
 .Hamburger-Menu>div>a {
